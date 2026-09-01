@@ -2,6 +2,7 @@
 from __future__ import annotations
 import html, re, uuid, zipfile
 from pathlib import Path
+from PIL import Image
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -11,11 +12,13 @@ DIST = ROOT / "dist"
 TITLE = "Красная будка"
 AUTHOR = "Аскер Исмайлов"
 LANG = "ru"
+PUBLISHER = "Аскер Исмайлов"
 DATE = "2026-09-01"
 DESCRIPTION = "После случайного входа в невозможную красную телефонную будку Асгар оказывается связан с аварийным возвратным контуром машины из далёкого будущего. Каждое новое окно уводит его всё дальше вперёд по истории Земли и Вселенной, а путь к источнику постепенно превращается из попытки вернуться домой в проверку того, что человек готов сохранить, когда прошлое наконец становится достижимым."
 SUBJECTS = ["Научная фантастика", "Hard SF", "Путешествия во времени", "Далёкое будущее", "Временные парадоксы"]
 OUT = DIST / "Krasnaya_budka_Asker_Ismayilov.epub"
 COVER = ASSETS / "cover_epub.jpg"
+COVER_PREPARED = DIST / "cover_1600x2560.jpg"
 
 def clean_text(s: str) -> str:
     s = s.replace("\ufeff", "").replace("\r\n", "\n").replace("\r", "\n")
@@ -77,10 +80,25 @@ def xhtml_doc(title: str, body: str, extra_head: str = "") -> str:
 <body>{body}</body>
 </html>'''
 
-def main():
-    DIST.mkdir(exist_ok=True)
+def prepare_cover() -> Path:
     if not COVER.exists():
         raise SystemExit(f"Cover missing: {COVER}")
+    with Image.open(COVER) as im:
+        im = im.convert("RGB")
+        target = (1600, 2560)
+        if im.size != target:
+            im.thumbnail(target, Image.Resampling.LANCZOS)
+            canvas = Image.new("RGB", target, (0, 0, 0))
+            x = (target[0] - im.width) // 2
+            y = (target[1] - im.height) // 2
+            canvas.paste(im, (x, y))
+            im = canvas
+        im.save(COVER_PREPARED, "JPEG", quality=95, optimize=True)
+    return COVER_PREPARED
+
+def main():
+    DIST.mkdir(exist_ok=True)
+    prepared_cover = prepare_cover()
 
     chapter_paths = sorted(CHAPTERS.glob("*.md"))
     if len(chapter_paths) != 40:
@@ -158,6 +176,7 @@ nav li { margin: .45em 0; }
 <dc:creator>{AUTHOR}</dc:creator>
 <dc:language>{LANG}</dc:language>
 <dc:type>Text</dc:type>
+<dc:publisher>{PUBLISHER}</dc:publisher>
 <dc:description>{html.escape(DESCRIPTION)}</dc:description>
 {''.join(f'<dc:subject>{html.escape(subject)}</dc:subject>' for subject in SUBJECTS)}
 <dc:date>{DATE}</dc:date>
@@ -190,7 +209,7 @@ nav li { margin: .45em 0; }
     with zipfile.ZipFile(OUT, "w") as z:
         z.writestr("mimetype", "application/epub+zip", compress_type=zipfile.ZIP_STORED)
         z.writestr("META-INF/container.xml", container_xml, compress_type=zipfile.ZIP_DEFLATED)
-        z.write(COVER, "OEBPS/cover.jpg", compress_type=zipfile.ZIP_DEFLATED)
+        z.write(prepared_cover, "OEBPS/cover.jpg", compress_type=zipfile.ZIP_DEFLATED)
         for name, data in oebps.items():
             z.writestr(f"OEBPS/{name}", data, compress_type=zipfile.ZIP_DEFLATED)
 
