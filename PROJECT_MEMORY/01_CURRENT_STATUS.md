@@ -64,7 +64,11 @@
 - 45 narrative XHTML;
 - whitespace word count: 70 495.
 
-После него в main был восстановлен полный валидный repository cover fallback; эти commits не меняют текст романа.
+После него восстановлены валидный repository cover payload и проверенный decoder workflow; текст романа при этом не менялся. Последняя подтверждённая успешная репозиторная сборка pipeline:
+- run: `33526114408`;
+- head SHA: `56e25241d0c20f12e20161b260ab818df665e378`;
+- conclusion: success;
+- artifact: `krasnaya-budka-manuscript`.
 
 ## Финальный EPUB для чтения/распространения
 
