@@ -29,14 +29,7 @@ jobs:
           done
           cp -r chapters build/chapters
       - name: Prepare cover
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import base64
-          src = ''.join(Path('assets/cover_epub.b64').read_text(encoding='ascii').split())
-          Path('assets/cover_epub.jpg').write_bytes(base64.b64decode(src, validate=True))
-          PY
+        run: base64 -d assets/cover_epub.b64 > assets/cover_epub.jpg
       - name: Install EPUB build dependency
         run: python -m pip install --disable-pip-version-check pillow
       - name: Build EPUB
