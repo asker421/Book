@@ -30,3 +30,5 @@ jobs:
           path: |
             dist/Krasnaya_budka_Asker_Ismayilov.epub
             dist/epub_build_report.txt
+
+# trigger build
