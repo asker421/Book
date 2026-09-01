@@ -149,7 +149,7 @@
 - глава 12 — 4387 — PASS;
 - глава 13 — 4090 — PASS.
 
-Первая незавершённая точка: **глава 14 «Машины без хозяев» — 1612 слов**.
+Глава 14 «Машины без хозяев» доведена до 4030 whitespace-слов и прошла lived-in/anti-stupid pass.
 
 Последние содержательные коммиты:
 - `d6b6fec2b92c8d4da0653c201f52c12e1d052b2f` — расширение главы 12 lived-time pass;
@@ -157,4 +157,4 @@
 - `aa8022398f750645b7e8e5912679b9619ce9153c` — расширение главы 13;
 - `366dc99e4329aae15ae460d0a8952ceaa4ca34c4` — доведение главы 13 до 4000+.
 
-Обязательный следующий шаг: **глава 14**, с теми же gates — continuity, anti-stupid-action, knowledge-state, causality/motivation, reveal-order/fourth-wall, coincidence, hard-SF/calendar и final-loop compatibility.
+Обязательный следующий шаг: **глава 15 «Протокол»**, с теми же gates — continuity, anti-stupid-action, knowledge-state, causality/motivation, reveal-order/fourth-wall, coincidence, hard-SF/calendar и final-loop compatibility.
