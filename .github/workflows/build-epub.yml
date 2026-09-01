@@ -1,0 +1,32 @@
+name: Build EPUB
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/build-epub.yml'
+      - 'chapters/**'
+      - 'tools/build_epub.py'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create temporary cover
+        run: |
+          mkdir -p assets dist
+          python - <<'PY'
+          import base64, pathlib
+          data=base64.b64decode('/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////2wBDAf//////////////////////////////////////////////////////////////////////////////////////wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAF//8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABBQJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAgBAwEBPwF//8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAgBAgEBPwF//8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQAGPwJ//8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPyF//9oADAMBAAIAAwAAABD/AP/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QH//EABQQAQAAAAAAAAAAAAAAAAAAABD/2gAIAQEAAT8QH//Z')
+          pathlib.Path('assets/cover_epub.jpg').write_bytes(data)
+          PY
+      - name: Build EPUB
+        run: python tools/build_epub.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: krasnaya-budka-epub
+          path: |
+            dist/Krasnaya_budka_Asker_Ismayilov.epub
+            dist/epub_build_report.txt
