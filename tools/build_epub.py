@@ -2,7 +2,7 @@
 from __future__ import annotations
 import base64, html, re, uuid, zipfile
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageOps
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -96,12 +96,15 @@ def prepare_cover() -> Path:
         im = im.convert("RGB")
         target = (1600, 2560)
         if im.size != target:
-            im.thumbnail(target, Image.Resampling.LANCZOS)
-            canvas = Image.new("RGB", target, (0, 0, 0))
-            x = (target[0] - im.width) // 2
-            y = (target[1] - im.height) // 2
-            canvas.paste(im, (x, y))
-            im = canvas
+            # Fill the whole cover instead of centering a small fallback image
+            # on a black 1600x2560 canvas. Preserve aspect ratio and crop only
+            # the excess edges around the center.
+            im = ImageOps.fit(
+                im,
+                target,
+                method=Image.Resampling.LANCZOS,
+                centering=(0.5, 0.5),
+            )
         im.save(COVER_PREPARED, "JPEG", quality=95, optimize=True)
     return COVER_PREPARED
 
