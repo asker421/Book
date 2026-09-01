@@ -11,6 +11,9 @@ DIST = ROOT / "dist"
 TITLE = "Красная будка"
 AUTHOR = "Аскер Исмайлов"
 LANG = "ru"
+DATE = "2026-09-01"
+DESCRIPTION = "После случайного входа в невозможную красную телефонную будку Асгар оказывается связан с аварийным возвратным контуром машины из далёкого будущего. Каждое новое окно уводит его всё дальше вперёд по истории Земли и Вселенной, а путь к источнику постепенно превращается из попытки вернуться домой в проверку того, что человек готов сохранить, когда прошлое наконец становится достижимым."
+SUBJECTS = ["Научная фантастика", "Hard SF", "Путешествия во времени", "Далёкое будущее", "Временные парадоксы"]
 OUT = DIST / "Krasnaya_budka_Asker_Ismayilov.epub"
 COVER = ASSETS / "cover_epub.jpg"
 
@@ -130,7 +133,14 @@ nav li { margin: .45em 0; }
         spine_ch.append(f'<itemref idref="ch{idx}"/>')
 
     nav = xhtml_doc("Оглавление", f'''<nav xmlns:epub="http://www.idpf.org/2007/ops" epub:type="toc" id="toc">
-<h1>Оглавление</h1><ol>{''.join(nav_items)}</ol></nav>''')
+<h1>Оглавление</h1><ol>{''.join(nav_items)}</ol></nav>
+<nav xmlns:epub="http://www.idpf.org/2007/ops" epub:type="landmarks" hidden="hidden">
+<ol>
+<li><a epub:type="cover" href="cover.xhtml">Обложка</a></li>
+<li><a epub:type="titlepage" href="title.xhtml">Титульная страница</a></li>
+<li><a epub:type="bodymatter" href="chapter01.xhtml">Начало текста</a></li>
+</ol>
+</nav>''')
     oebps["nav.xhtml"] = nav.encode("utf-8")
 
     ncx = f'''<?xml version="1.0" encoding="UTF-8"?>
@@ -148,7 +158,10 @@ nav li { margin: .45em 0; }
 <dc:creator>{AUTHOR}</dc:creator>
 <dc:language>{LANG}</dc:language>
 <dc:type>Text</dc:type>
-<meta property="dcterms:modified">2026-09-01T00:00:00Z</meta>
+<dc:description>{html.escape(DESCRIPTION)}</dc:description>
+{''.join(f'<dc:subject>{html.escape(subject)}</dc:subject>' for subject in SUBJECTS)}
+<dc:date>{DATE}</dc:date>
+<meta property="dcterms:modified">{DATE}T00:00:00Z</meta>
 <meta name="cover" content="cover-image"/>
 </metadata>
 <manifest>
