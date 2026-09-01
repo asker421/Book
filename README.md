@@ -10,3 +10,18 @@
 - `CHAPTER_MAP.md` — карта 40 основных глав и 5 параллельных интерлюдий.
 - `CONTINUITY.md` — факты, которые нельзя нарушать.
 - `chapters/` — утверждённые главы романа.
+
+
+## Project memory / передача между чатами
+
+Для продолжения редакционной работы в новом чате сначала читать:
+
+1. `PROJECT_MEMORY/00_READ_ME_FIRST.md`
+2. `PROJECT_MEMORY/01_CURRENT_STATUS.md`
+3. `PROJECT_MEMORY/02_CANON_AND_RULES.md`
+4. `PROJECT_MEMORY/03_EDITORIAL_HISTORY.md`
+5. `PROJECT_MEMORY/04_HANDOFF_PROMPT.md`
+
+Эти файлы — долговременная редакционная память проекта. После них читать актуальные `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md`, `MANIFEST.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md`.
+
+При конфликте память-файлов с более свежим содержимым ветки `main` источником истины остаётся актуальный `main`; затем memory-файлы нужно синхронизировать.
