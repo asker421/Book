@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import html, re, uuid, zipfile
+import base64, html, re, uuid, zipfile
 from pathlib import Path
 from PIL import Image
 from xml.etree import ElementTree as ET
@@ -18,6 +18,7 @@ DESCRIPTION = "После случайного входа в невозможн�
 SUBJECTS = ["Научная фантастика", "Hard SF", "Путешествия во времени", "Далёкое будущее", "Временные парадоксы"]
 OUT = DIST / "Krasnaya_budka_Asker_Ismayilov.epub"
 COVER = ASSETS / "cover_epub.jpg"
+COVER_B64 = ASSETS / "cover_epub.b64"
 COVER_PREPARED = DIST / "cover_1600x2560.jpg"
 
 def clean_text(s: str) -> str:
@@ -81,9 +82,17 @@ def xhtml_doc(title: str, body: str, extra_head: str = "") -> str:
 </html>'''
 
 def prepare_cover() -> Path:
-    if not COVER.exists():
-        raise SystemExit(f"Cover missing: {COVER}")
-    with Image.open(COVER) as im:
+    source = COVER
+    if not source.exists():
+        if not COVER_B64.exists():
+            raise SystemExit(f"Cover missing: {COVER} (and fallback {COVER_B64})")
+        decoded = DIST / "cover_source.jpg"
+        try:
+            decoded.write_bytes(base64.b64decode(COVER_B64.read_text(encoding="ascii").strip(), validate=True))
+        except Exception as exc:
+            raise SystemExit(f"Invalid base64 cover fallback: {exc}") from exc
+        source = decoded
+    with Image.open(source) as im:
         im = im.convert("RGB")
         target = (1600, 2560)
         if im.size != target:
