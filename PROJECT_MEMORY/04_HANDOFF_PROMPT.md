@@ -27,13 +27,14 @@
 3. `PROJECT_MEMORY/02_CANON_AND_RULES.md`
 4. `PROJECT_MEMORY/03_EDITORIAL_HISTORY.md`
 5. `PROJECT_MEMORY/04_HANDOFF_PROMPT.md`
-6. `AUTHORING_RULES.md`
-7. `STORY_BIBLE.md`
-8. `CONTINUITY.md`
-9. `CHAPTER_MAP.md`
-10. `MANIFEST.md`
-11. `NOVEL_FINAL_AUDIT_CHECKLIST.md`
-12. `README.md`
+6. `PROJECT_MEMORY/05_RECENT_COMMIT_INDEX.md`
+7. `AUTHORING_RULES.md`
+8. `STORY_BIBLE.md`
+9. `CONTINUITY.md`
+10. `CHAPTER_MAP.md`
+11. `MANIFEST.md`
+12. `NOVEL_FINAL_AUDIT_CHECKLIST.md`
+13. `README.md`
 
 После этого прочитай список файлов в `chapters/` и определи **фактическую текущую структуру** романа. Не предполагай заранее, что разделов ровно 40 или 45: используй актуальный репозиторий.
 
