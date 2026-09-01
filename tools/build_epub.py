@@ -110,8 +110,8 @@ def main():
     prepared_cover = prepare_cover()
 
     chapter_paths = sorted(CHAPTERS.glob("*.md"))
-    if len(chapter_paths) != 40:
-        raise SystemExit(f"Expected 40 chapters, found {len(chapter_paths)}")
+    if len(chapter_paths) < 40:
+        raise SystemExit(f"Expected at least 40 narrative sections, found {len(chapter_paths)}")
 
     chapters = []
     total_words = 0
@@ -232,7 +232,7 @@ nav li { margin: .45em 0; }
         assert "OEBPS/content.opf" in names
         assert "OEBPS/nav.xhtml" in names
         assert "OEBPS/cover.jpg" in names
-        for i in range(1, 41):
+        for i in range(1, len(chapters) + 1):
             assert f"OEBPS/chapter{i:02d}.xhtml" in names
         for n in names:
             if n.endswith((".xhtml", ".opf", ".xml", ".ncx")):
