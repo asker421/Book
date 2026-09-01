@@ -1,5 +1,6 @@
 name: Build EPUB
 # final publication build
+# cover asset verified
 
 on:
   push:
