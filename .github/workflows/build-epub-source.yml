@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'chapters/**'
+      - 'assets/**'
+      - 'tools/build_epub.py'
       - '.github/workflows/build-epub-source.yml'
   workflow_dispatch:
 
@@ -23,9 +25,15 @@ jobs:
             printf '\n\n' >> build/manuscript.md
           done
           cp -r chapters build/chapters
-      - name: Upload manuscript
+      - name: Install EPUB build dependency
+        run: python -m pip install --disable-pip-version-check pillow
+      - name: Build EPUB
+        run: python tools/build_epub.py
+      - name: Upload manuscript and EPUB
         uses: actions/upload-artifact@v4
         with:
           name: krasnaya-budka-manuscript
-          path: build/
+          path: |
+            build/
+            dist/
           if-no-files-found: error
