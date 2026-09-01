@@ -1,0 +1,31 @@
+name: Build EPUB source artifact
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'chapters/**'
+      - '.github/workflows/build-epub-source.yml'
+  workflow_dispatch:
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble manuscript
+        shell: bash
+        run: |
+          set -e
+          mkdir -p build
+          : > build/manuscript.md
+          for f in $(find chapters -maxdepth 1 -type f -name '*.md' | sort); do
+            cat "$f" >> build/manuscript.md
+            printf '\n\n' >> build/manuscript.md
+          done
+          cp -r chapters build/chapters
+      - name: Upload manuscript
+        uses: actions/upload-artifact@v4
+        with:
+          name: krasnaya-budka-manuscript
+          path: build/
+          if-no-files-found: error
