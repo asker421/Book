@@ -70,3 +70,30 @@
 - вода отсутствует; дополнительные слова для минимума внесены только через независимость доказательств и их причинное значение.
 
 Следующий этап: глава 4 `Окно`.
+
+
+## V2 progress — chapters 11–18
+- 11 `chapters_v2/11-ozhidanie.md` — PASS, 2533 words.
+- 12 `chapters_v2/12-shturm.md` — PASS, 2543 words.
+- 13 `chapters_v2/13-posle-voyny.md` — PASS, 2535 words.
+- 14 `chapters_v2/14-mashiny-bez-hozyaev.md` — PASS, 2521 words.
+- 15 `chapters_v2/15-protokol.md` — PASS, 2534 words.
+- 15a `chapters_v2/15a-smena.md` — PASS, interlude, 1244 words.
+- 16 `chapters_v2/16-mara.md` — PASS, 2521 words.
+- 17 `chapters_v2/17-posle-vtorogo-padeniya.md` — PASS, 2548 words.
+- 18 `chapters_v2/18-chelovek-iz-krasnoy-dveri.md` — PASS, 2545 words.
+
+Process correction adopted from chapter 11 onward:
+- Main chapters are assembled and counted before any GitHub write.
+- If pre-write count is below 2500, the draft is rejected and not committed.
+- Word-count expansion must add causal/dramatic/emotional function, never padding.
+- Density is checked before commit; screenplay-ladder regressions block the commit.
+- Reveal-order guards are checked before commit.
+
+Chapter 18 specific gate:
+- provenance is taught as a method without turning legend into fact;
+- the 2014 adult man remains unidentified;
+- no RETRO-1, aperture, empty-module reveal, or `она возвращает себя` leak;
+- archive material is split into known / unknown / hypotheses so later technical work cannot inherit legend as fact.
+
+Next stage: chapter 19 `Долгое ожидание`.
