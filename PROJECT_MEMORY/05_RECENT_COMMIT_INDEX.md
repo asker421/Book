@@ -1,206 +1,53 @@
 # RECENT COMMIT INDEX — «Красная будка»
 
-> Снимок последних 200 коммитов ветки main на момент создания файла.
-> Это справочный индекс. Полная и всегда актуальная история находится в самом GitHub.
-> Новый чат должен смотреть свежий git history, а не считать этот снимок последней истиной.
+> Актуальный компактный индекс финального post-compression pass на 02.09.2026. Это справочник; полная история всегда находится в git history ветки `main`.
 
-- `da2940b1b60f838108551f988d4adc420ec3b51f` — 2026-09-01T15:01:09Z — edit: ground final solo decision without defensive narration
-- `8be29373744497550b1a163b61a489644189bbbe` — 2026-09-01T15:00:58Z — docs: link persistent project memory from README
-- `3c44bca0389092504242ac3c22167d34fa806a26` — 2026-09-01T15:00:39Z — docs: add universal future-proof handoff prompt
-- `038692de4965187de0f159544420217b2414b83b` — 2026-09-01T15:00:19Z — ci: record latest EPUB artifact run [skip ci]
-- `3e1e4cdbf55b998ea2d1f98169502d0a77a72655` — 2026-09-01T15:00:07Z — fix: remove premature historical inference about the service
-- `31d0a355e5a634314833626e07dfdbe0d7697a92` — 2026-09-01T14:59:22Z — docs: add persistent editorial history log
-- `2f14c0d5bffbf91904b081f4013055378ca12d82` — 2026-09-01T14:59:18Z — ci: record latest EPUB artifact run [skip ci]
-- `91bbe1dbe9dcd40d262a8e4c1ae1153d25307a99` — 2026-09-01T14:59:05Z — edit: remove deleted-draft commentary from Mara introduction
-- `7df5301e8c93dd6e73d57daa32e812235d8e297f` — 2026-09-01T14:58:00Z — docs: add consolidated canon and editorial rules memory
-- `7b1e6d73cee048eebb2e147858c0de675c4154e8` — 2026-09-01T14:57:34Z — ci: record latest EPUB artifact run [skip ci]
-- `5138268cb23b3f91ac40ac28c261fd1e14f5f596` — 2026-09-01T14:57:22Z — edit: reserve operator term for future service introduction
-- `3366973e38af6bbde6da23441401679f299e13f9` — 2026-09-01T14:57:13Z — edit: remove editorialized uncertainty from interlude IV
-- `69602a1e674fce1a5ca3172fa5719b71f6ed0b14` — 2026-09-01T14:57:06Z — edit: make interlude III observational rather than argumentative
-- `ebd7d39f0cf29ed6c2e620b95def3ff67f48988a` — 2026-09-01T14:57:00Z — edit: remove self-conscious corrective framing from interlude II
-- `3feed95c6dfbb8956b582606646e64908d9c4aaa` — 2026-09-01T14:56:55Z — edit: densify bootstrap discussion in chapter 36
-- `078462023e971a6202538354ce468b9acd97781a` — 2026-09-01T14:56:54Z — edit: remove defensive narrator voice from interlude I
-- `0959e251e463e042c9976895e8428a82194d9c55` — 2026-09-01T14:56:46Z — docs: add current project status memory
-- `d62f5bc38034882d2a576cf822aeee9653fb7188` — 2026-09-01T14:56:41Z — ci: record latest EPUB artifact run [skip ci]
-- `90e97818b2d5318dcb2cde4880ea0fec34600373` — 2026-09-01T14:56:30Z — edit: densify immortality decision dialogue
-- `6bd8b063c9be675dcfc3b723b644e770cd3df383` — 2026-09-01T14:56:05Z — docs: add persistent project memory entrypoint
-- `055ad47fe2220c71364cb144cefe861efb1ffdf2` — 2026-09-01T14:56:01Z — ci: record latest EPUB artifact run [skip ci]
-- `9c9273d4be6b582f14e9430f431d79bb9b8c2a51` — 2026-09-01T14:55:37Z — edit: remove duplicated chapter 8 dialogue from interlude II
-- `45f533165bfa1e99d8033a029653123a8110f597` — 2026-09-01T14:55:34Z — ci: record latest EPUB artifact run [skip ci]
-- `58ba1a90f425da5ef6bc6cb128506b5af51718f7` — 2026-09-01T14:55:22Z — edit: densify chapter 25 and remove Q&A cadence
-- `72c331bd4520284486622bb7ff42e09e4366ccd6` — 2026-09-01T14:55:00Z — edit: hand Mara introduction cleanly into chapter 16
-- `3f3ce6bb19252b6f1e0c056d40377a0157fe4c26` — 2026-09-01T14:54:33Z — edit: densify first-contact dialogue while preserving shock beats
-- `883606ec2602591b557765caff6d7fafc5f61ba1` — 2026-09-01T14:54:28Z — edit: turn chapter 16 from Q&A into a human conversation
-- `a9c89935a9b4ad0d7c701b862f15680caeea1c3a` — 2026-09-01T14:54:20Z — ci: record latest EPUB artifact run [skip ci]
-- `035d212e643d5a8ad4c490c6159feab22d7941f0` — 2026-09-01T14:54:06Z — edit: integrate chapter 1 dialogue without losing opening tension
-- `795abf19471057930a4d036ff82a0d27e0790ed6` — 2026-09-01T14:54:00Z — docs: add deleted-draft residue audit
-- `da9cfefaaad3b6fd4f135647ccdad5ed76b64650` — 2026-09-01T14:53:45Z — ci: record latest EPUB artifact run [skip ci]
-- `cbf158b8612af79f8d4ebe529e545f9884bc7f5f` — 2026-09-01T14:53:33Z — edit: make bootstrap inference conversational in chapter 36
-- `aaf530782ead2ab87584765d789348500a2f4d59` — 2026-09-01T14:53:11Z — ci: record latest EPUB artifact run [skip ci]
-- `7436deba8e0319f97e266b5b2cde5e483e8e07f2` — 2026-09-01T14:52:56Z — edit: densify chapter 3 surveillance dialogue
-- `6a32c2ab2ecb016f218ac4dd1a9b1e226028559f` — 2026-09-01T14:52:34Z — ci: record latest EPUB artifact run [skip ci]
-- `bf92242433fb80349eb448d34d31226877b49ca6` — 2026-09-01T14:52:19Z — edit: simplify sealed-message access condition in chapter 30
-- `2d21350624a1b8f45289ebee755dd5226a44b6bc` — 2026-09-01T14:52:16Z — edit: densify chapter 10 explanatory dialogue
-- `3ec32757043f822944db164c7bdfcc75cc2969dc` — 2026-09-01T14:52:15Z — edit: simplify archive causality in chapter 28
-- `6c3a6aef6823ee804fea3d64afd6230bcf4c4031` — 2026-09-01T14:52:13Z — rewrite: restore dense interlude I prose above minimum length
-- `6011b0d4fa5378fa032a27e7379afb5263a19765` — 2026-09-01T14:52:07Z — edit: remove defensive authorial explanation after chapter 24 reveal
-- `70076da64ccebc2f5da168ef0ea15c91bd7f7e34` — 2026-09-01T14:52:05Z — ci: record latest EPUB artifact run [skip ci]
-- `f85fe2b8e1c604cebed1e0e8196af30fc9d33116` — 2026-09-01T14:51:48Z — edit: densify interlude II ending
-- `64112c709683c34332bc07b540b48efa4ceea44d` — 2026-09-01T14:51:38Z — ci: record latest EPUB artifact run [skip ci]
-- `bee0abe206702db35590def2677e64bd3a4d62b1` — 2026-09-01T14:51:24Z — rewrite: restore dense non-spoiling interlude I
-- `dc20611c66347183d15b8bb51896a4d8e2e92a63` — 2026-09-01T14:51:14Z — edit: make chapter 20 choice concrete rather than authorial
-- `a6426c357e5fb785bcec93b821a4918d1775048e` — 2026-09-01T14:51:10Z — edit: simplify chapter 13 exit mechanics
-- `c77400e6baa0f7e53d95cf8a4503434a92b5e645` — 2026-09-01T14:50:39Z — ci: record latest EPUB artifact run [skip ci]
-- `3bc4e8182a0692b53b12050b29fe77a1b9881a03` — 2026-09-01T14:50:24Z — rewrite: densify first interlude and preserve early mystery
-- `5e693c355bb3b5a4ab64898d279fa223a1e6d82a` — 2026-09-01T14:50:09Z — edit: densify immortality decision dialogue
-- `81cde1f8d48c6c767c87923a518b859ea3c14d0f` — 2026-09-01T14:50:07Z — fix: remove duplicated impulse ending in chapter 10
-- `e9bfaef772b2b2af83e0aeaed9f5bb4f79f82b43` — 2026-09-01T14:50:00Z — edit: remove defensive motivation framing from chapter 6
-- `a5a46fe65e8b86a4bd9664db50e38ebf0c1b6384` — 2026-09-01T14:49:58Z — ci: record latest EPUB artifact run [skip ci]
-- `5a9f4de764cf713756ed4899497c7bbc9833976c` — 2026-09-01T14:49:45Z — edit: finish prose-density cleanup in chapter 24
-- `7d9c7dd3f5d347ab4c074f4547c8e5390e1734b3` — 2026-09-01T14:49:42Z — ci: record latest EPUB artifact run [skip ci]
-- `d4c7e433f2c6f8f9b0e4293e6b3d58d9ab8b8fd8` — 2026-09-01T14:49:27Z — edit: densify source-line explanation and remove defensive framing
-- `a8aa21dea71dcaf31a518aecce3d4ee70519fb62` — 2026-09-01T14:49:17Z — rewrite: make first phone contact fearful and human
-- `1155ed34a0b65c19923ca3525598f9e14f65dd4b` — 2026-09-01T14:49:08Z — ci: record latest EPUB artifact run [skip ci]
-- `61ff9c73f7ba248a9b9dcad7d7e72ac35f6365d8` — 2026-09-01T14:48:55Z — edit: remove staircase dialogue from chapter 39 mechanics
-- `7a195a7efc2b890b1311b60850001f43b0d532c4` — 2026-09-01T14:48:52Z — ci: record latest EPUB artifact run [skip ci]
-- `10e40e9d7121b863e4928034a021e0258cacd909` — 2026-09-01T14:48:40Z — edit: remove authorial certainty from chapter 39
-- `a37873c1f7cb513b7ad0cd302e98c021563717fb` — 2026-09-01T14:48:34Z — edit: simplify late operator language and remove retrospective moralizing in chapter 37
-- `fe9cf93696eaa25f7d3845f28e99ddad291c8260` — 2026-09-01T14:48:30Z — edit: make chapter 36 discoveries less self-conscious
-- `9f151d4e86b0c0da7d519b2093eefc6319054b71` — 2026-09-01T14:48:24Z — edit: reduce authorial summary in chapter 31
-- `4f2db4feb558253d952e903bcd61a9abd310e67b` — 2026-09-01T14:48:20Z — edit: remove remaining short beats in interlude IV
-- `a01f93dbb4337280117ab69d2469a383e1589215` — 2026-09-01T14:48:14Z — edit: remove remaining staircase beats in chapter 24
-- `ce9719a8912525a4b109c1a698ba510b83b88856` — 2026-09-01T14:48:01Z — rewrite: humanize energy ethics and technical exposition in chapter 35
-- `3e55234277285d3c8581ec7175851ccc37ac187e` — 2026-09-01T14:47:57Z — edit: simplify identity technology in chapter 33
-- `dd2798585730a5022df2d96f0b2515da722c779c` — 2026-09-01T14:47:55Z — ci: record latest EPUB artifact run [skip ci]
-- `65b666b487ba81d6f4efe9833945a53ec7279e85` — 2026-09-01T14:47:39Z — rewrite: hide origin context in first parallel interlude
-- `4ce0753e8a878d050f310d173d42ca50170ea6f0` — 2026-09-01T14:47:26Z — ci: record latest EPUB artifact run [skip ci]
-- `66b0a1ad832e8de84b39a1bc132f4c3df93814e9` — 2026-09-01T14:47:09Z — edit: densify chapter 36 remaining reveal beats
-- `21f8e5b5f5ac4f20bbc3d43ae35c39e1dc7d267a` — 2026-09-01T14:47:04Z — edit: densify interlude V remaining short beats
-- `5414466db0fd92becf3331227d24e17fbb49d487` — 2026-09-01T14:46:58Z — rewrite: make immortality choice human and jargon-light
-- `923c613f842e8dbe6002340539a9affcf916a721` — 2026-09-01T14:46:36Z — fix: remove false callback to a stadium phone ring
-- `f922647899bb02c3c6ed05435cbe7c21d51b0800` — 2026-09-01T14:46:32Z — edit: densify RETRO-1 reveal without losing clarity
-- `80401af023d54c63924b1ca99d13c863796b43e5` — 2026-09-01T14:46:25Z — ci: record latest EPUB artifact run [skip ci]
-- `9adbc84caa5534c87d5b8b338dfe1ff41601d1bb` — 2026-09-01T14:46:10Z — edit: integrate remaining short dialogue in chapter 36
-- `1b9f5b9af3df11a5a0e241fcd3343c2f5cf8b0f7` — 2026-09-01T14:46:04Z — ci: record latest EPUB artifact run [skip ci]
-- `bdabd1d457b1cf8992a77e08d3e6edfe6b72536e` — 2026-09-01T14:45:51Z — fix: remove instant comprehension from chapter 39
-- `9faa56c487bb203d1510330a4fd718375b512992` — 2026-09-01T14:45:33Z — ci: record latest EPUB artifact run [skip ci]
-- `9c4a27cbb0977c8c6673538987df5763a7e39ba7` — 2026-09-01T14:45:20Z — edit: densify chapter 36 reveal beats
-- `8e63c7927a5301241d671a2e0ef480033e2ee508` — 2026-09-01T14:45:15Z — ci: record latest EPUB artifact run [skip ci]
-- `611972a19b133d4c724979e2f8a07a60060d37b5` — 2026-09-01T14:45:02Z — edit: densify interlude V final dialogue
-- `49f4f4c83fe7c4e9271a66ce1a5c121aa62b6585` — 2026-09-01T14:44:54Z — docs: update interlude count
-- `87e07aa5047840cbedac69eb4a5a5d648f1036dd` — 2026-09-01T14:44:49Z — rewrite: make RETRO-1 reveal discovery-driven instead of defensive
-- `1940ca6ff51da07c8366704cbb52d17ddc4bc7dc` — 2026-09-01T14:44:42Z — docs: renumber interlude V
-- `046ccd435a1873572958f5d5447e04eba5c869ca` — 2026-09-01T14:44:38Z — ci: record latest EPUB artifact run [skip ci]
-- `1f50b4be9614b397beb7557554896c3735b559ad` — 2026-09-01T14:44:25Z — edit: integrate short beats into dense chapter 25 prose
-- `297f94183bb70640c638631874d729813168a056` — 2026-09-01T14:44:20Z — docs: renumber interlude IV
-- `a94ff1b798c91cf16837cbe7da9d16eb53c156d6` — 2026-09-01T14:44:00Z — docs: canonize five operator-side interludes in CONTINUITY.md
-- `c045ad11e8e3a0076d80c939f725c3a3d6f95162` — 2026-09-01T14:43:53Z — edit: densify interlude IV dialogue and closing beats
-- `cf578ec8fa110c1a73f156065f77e436f793439e` — 2026-09-01T14:43:52Z — docs: canonize five operator-side interludes in STORY_BIBLE.md
-- `00b00063ca2bd501b1e251ed1d8c5234cd6fb37b` — 2026-09-01T14:43:34Z — docs: add continuity constraints for five interludes
-- `21faaba67bd74425ea97e0e86254e462f009baad` — 2026-09-01T14:43:30Z — edit: integrate short dialogue beats in chapter 24
-- `9f92eb702627aec8414a59be85dde664a1b8855b` — 2026-09-01T14:43:24Z — docs: canonize operator-side interlude reveal sequence
-- `495f007954eb26ffbd7919ff4fe820f53bef7a5b` — 2026-09-01T14:43:17Z — edit: keep early operator interlude detached from passenger identity
-- `504d23290f2d04e2681044b94cfbc00770c901cb` — 2026-09-01T14:43:15Z — docs: integrate Mara handoff interlude and renumber parallel line
-- `309f32222224a19eb6e152cea0599cf76917d041` — 2026-09-01T14:43:13Z — fix: keep passenger identity unknown in interlude I
-- `2b01930abbe5aab0f33cf0c930557fedfdab6b84` — 2026-09-01T14:43:06Z — ci: record latest EPUB artifact run [skip ci]
-- `264d538cb59ac704519115c08b071f33ac9bd60c` — 2026-09-01T14:42:52Z — edit: integrate farewell dialogue into dense prose
-- `70744cc44ef97984a333b0a00c3873022c326f1a` — 2026-09-01T14:42:41Z — ci: record latest EPUB artifact run [skip ci]
-- `000f2717072fcc452e62445558b4d676ea311dd2` — 2026-09-01T14:42:26Z — build: require canonical 45 text sections
-- `faa082020e05c8c0642087103a96e201a0b61911` — 2026-09-01T14:42:15Z — edit: integrate dialogue into dense prose in chapter 39
-- `8971e04caa55d14968a167309f08f01a2068db1f` — 2026-09-01T14:42:01Z — build: require canonical 45 text sections
-- `9e1ce0caa754a4dfb9b959658c4641a34b1f5f45` — 2026-09-01T14:42:00Z — edit: densify Mara farewell and late-channel dialogue
-- `27b7356754583660846b570af4f833054d71b0ce` — 2026-09-01T14:41:54Z — docs: update README for five interludes
-- `4b1a50a66d7c5ceb664304d70701c07ac05e1362` — 2026-09-01T14:41:34Z — rewrite: slow Asgar comprehension and densify finale mechanics
-- `0ed54575111e90a394c3e9811522e1b5ae96eda7` — 2026-09-01T14:41:28Z — ci: record latest EPUB artifact run [skip ci]
-- `eaa8be1bdc5510cb9d9a80935da37deb226c9668` — 2026-09-01T14:41:11Z — rewrite: densify source-line mechanics for ordinary readers
-- `8001b7ddc395a58c75cd12952eb70eacf903d155` — 2026-09-01T14:41:04Z — edit: remove defensive voluntary-choice framing in chapter 39
-- `440c5eb987b6d03c3430a6e5e88d4241e01659b4` — 2026-09-01T14:40:32Z — ci: record latest EPUB artifact run [skip ci]
-- `d6ebc21921c2752ba6aa9ea6c75880839ea20da7` — 2026-09-01T14:40:21Z — rewrite: densify Mara farewell and keep emotional focus
-- `681ac06bb9dbc0122f73c68a4995a45914e8da58` — 2026-09-01T14:40:05Z — ci: record latest EPUB artifact run [skip ci]
-- `e88421bea673fb62aff2c8752fc71f38b8cb55b7` — 2026-09-01T14:39:52Z — fix: preserve chapter 23 reveal by weakening early operator inference
-- `bd7354b21da71ed32c83fb069c283e2c6b5687ff` — 2026-09-01T14:39:43Z — ci: record latest EPUB artifact run [skip ci]
-- `0f790bea84f8ed4038b497fd4affa096f98c4f91` — 2026-09-01T14:39:30Z — rewrite: densify RETRO-1 reveal and preserve discovery order
-- `7db7f2e24dab7b52d8506c7244cd91b5e09d9245` — 2026-09-01T14:39:19Z — fix: keep interlude I from spoiling empty-module reveal
-- `2386bc4c179755b1ff2867ffe02cb65b61c694d8` — 2026-09-01T14:38:40Z — docs: update manifest for five interludes
-- `2ef7206abab01c264cf36f5e03ac754f171b8156` — 2026-09-01T14:38:24Z — docs: integrate fifth operator-side interlude
-- `ecac0ed8c0d708bc0af72fd9515620e55c11adad` — 2026-09-01T14:38:15Z — edit: densify chapter 16 dialogue rhythm
-- `e96438f060b7ebf00fe27829b6bb2b2d078d8288` — 2026-09-01T14:38:11Z — fix: renumber final interlude to V
-- `ed251b9ac19200dd4c21ee81422e84ee56228c62` — 2026-09-01T14:38:06Z — ci: record latest EPUB artifact run [skip ci]
-- `a04af691e7155a98ff579967ed6ee9d06080eb6e` — 2026-09-01T14:37:54Z — rewrite: expand and densify chapter 25 decision
-- `c84c406d8d559a4534ea149bb7068c7534437b6a` — 2026-09-01T14:37:48Z — ci: record latest EPUB artifact run [skip ci]
-- `ea9e89deafdbf2956f49575ef76ec62944b6f0a3` — 2026-09-01T14:37:34Z — edit: deepen chapter 24 choice without defensive framing
-- `ffa19afeb1c1cc39923f494ade28988f6d8cb08c` — 2026-09-01T14:37:19Z — ci: record latest EPUB artifact run [skip ci]
-- `3c0c1b0f1f7214a7766f2f6633efef33599dd353` — 2026-09-01T14:37:08Z — rewrite: densify interlude IV and preserve unresolved identity
-- `a2710215cb8cf92678ccf34a0ecb7ec2f6b426d8` — 2026-09-01T14:37:01Z — rewrite: restore dense prose and deepen Mara introduction
-- `1d0a647f53cbf18babb6966651a0108ea2411fbe` — 2026-09-01T14:36:45Z — ci: record latest EPUB artifact run [skip ci]
-- `67c03e64424657352e36b01ef605fb4e41c2a130` — 2026-09-01T14:36:29Z — rewrite: expand chapter 24 reveal in dense prose
-- `f0a40a560f1d9f1f3e3a6b641f94c352c0396a54` — 2026-09-01T14:35:09Z — ci: record latest EPUB artifact run [skip ci]
-- `c373596bc60f1897afe4b61e40382b1e5b0b1e2b` — 2026-09-01T14:34:55Z — rewrite: restore dense prose and expand Mara introduction
-- `bf82259dab0210a42ab8f3a53a2200caff1c3752` — 2026-09-01T14:33:41Z — docs: integrate fifth interlude and renumber parallel line
-- `abf9b31a2eb70183ae690cf994ab25b3ce901f8a` — 2026-09-01T14:33:23Z — docs: allow audited structural expansion and define interlude rules
-- `45b0dfdcb8b0aa161f03e2a0de95888b3bd7554c` — 2026-09-01T14:33:16Z — edit: make chapter 16 continue interlude without repeating service exposition
-- `07dd56f63fa07c4e50eb5d5ebe67607779254701` — 2026-09-01T14:32:46Z — ci: record latest EPUB artifact run [skip ci]
-- `d5b7920ee0b208412ec9e94462d6f505aea8368f` — 2026-09-01T14:32:31Z — edit: remove final contour wording from chapter 35
-- `a3edc0ba4c17e5b529af37e87f1f5d3a3b3518f2` — 2026-09-01T14:32:13Z — ci: record latest EPUB artifact run [skip ci]
-- `3bb43ca166cd1e78ca97a21c25b5d2fa4a9f8a7a` — 2026-09-01T14:31:57Z — edit: simplify final Mara explanations in chapter 37
-- `875e989005fa6beecbcb376c3ff2862b2720ec8a` — 2026-09-01T14:31:49Z — edit: simplify chapter 35 and remove duplicated technical wording
-- `84c54a74af3bb758d2d9ffd9d977dcd3ac7bda6f` — 2026-09-01T14:31:33Z — ci: record latest EPUB artifact run [skip ci]
-- `a91731c6e80ef5a095a28eb82f8472890f24e046` — 2026-09-01T14:31:19Z — edit: simplify chapter 38 reserve logic
-- `38cc0f0318186da411f038035227faeab6026b17` — 2026-09-01T14:31:14Z — edit: keep chapter 37 readable as support channel fails
-- `55bd5a5112972b11419152d3b07ad10eca2f4065` — 2026-09-01T14:31:08Z — edit: simplify late technical phrasing in chapter 35
-- `bc428865508ce8427c7881bcad1be85cd22ebf38` — 2026-09-01T14:31:03Z — edit: simplify chapter 26 institutional and technical language
-- `986014d802944e0e4c8976e16c2e1b7fce69d6d4` — 2026-09-01T14:30:25Z — ci: record latest EPUB artifact run [skip ci]
-- `d85dd009cc6ff9eb64f4cdb33a3fa13882020a14` — 2026-09-01T14:30:10Z — edit: make chapter 24 agency reveal less procedural
-- `eb20f03f5f81fa95f20371d1f069df1bac5245f5` — 2026-09-01T14:30:04Z — edit: keep chapter 23 motivation experiential rather than editorial
-- `1171f2aacef4503016da26cf8adb55f26bf653ad` — 2026-09-01T14:29:58Z — edit: simplify chapter 17 separation mechanics after Mara interlude
-- `c126fd63559b239381169aafa15c4fda9d4c8803` — 2026-09-01T14:29:43Z — ci: record latest EPUB artifact run [skip ci]
-- `218ed906c0620f98d71c3bd6a17d1cc3e1c93a13` — 2026-09-01T14:29:28Z — edit: refocus chapter 16 on Asgar meeting Mara instead of repeating interlude
-- `5bc3460d0f621f8eeea1018854b47665a7030417` — 2026-09-01T14:28:09Z — docs: update manuscript structure to five interludes
-- `4cc22903411461763f21982a3aca889452fa04a0` — 2026-09-01T14:27:53Z — docs: integrate Mara handoff interlude
-- `1535c93291775e168e549df0e0560d65dd75299c` — 2026-09-01T14:27:42Z — ci: record latest EPUB artifact run [skip ci]
-- `4575b4e90503ab57c8c3ffd56d32e9e72ea2aca1` — 2026-09-01T14:27:27Z — edit: remove unprompted Mara-denial from chapter 39
-- `a55fcffd914e6343f60416c192f27d6760a8979b` — 2026-09-01T14:26:51Z — ci: record latest EPUB artifact run [skip ci]
-- `4fc7a7a5af0618caba9b01e188d64b1300a5fa26` — 2026-09-01T14:26:30Z — fix: remove premature return term from interlude I
-- `19429f3a1dec45c5c13b1ff423027cfdf6ff80e5` — 2026-09-01T14:26:20Z — fix: remove young-Asgar labeling from chapter 39
-- `e787dfd97892086df045a887708c9c5bd0e39aec` — 2026-09-01T14:25:38Z — ci: record latest EPUB artifact run [skip ci]
-- `6f1ec845a5778feb9f09d19cfccbe76d119125c9` — 2026-09-01T14:25:26Z — edit: translate late technical label into human language
-- `7afa1c935eea1a34e49da9534405c4a4c9bd1105` — 2026-09-01T14:25:13Z — edit: simplify late archive physics for ordinary readers
-- `b835ebe682cd351002c25d160084145620b5ac99` — 2026-09-01T14:24:15Z — ci: record latest EPUB artifact run [skip ci]
-- `8e1b51347a996e2d7330bce48f9994365a977445` — 2026-09-01T14:24:05Z — edit: ground registry availability without authorial coincidence comment
-- `c65c5992008ffde6b8841350921db1d23fa4fee5` — 2026-09-01T14:24:00Z — edit: complete chapter 24 density with meaningful motive beat
-- `7f3edc44884ce1dfe5c20ab139de01b3bdd48de2` — 2026-09-01T14:23:56Z — ci: record latest EPUB artifact run [skip ci]
-- `0e6ffacede5fd2d896dc630e8154780a1c507ec6` — 2026-09-01T14:23:41Z — fix: remove convenient unique-registry coincidence in chapter 36
-- `2d3eebe18af47ca235a06f23fb64d66c3cda9311` — 2026-09-01T14:23:29Z — edit: preserve final beat without staircase
-- `17b7e6d2d68601eb76fc4ea4ea635671cba1c035` — 2026-09-01T14:23:23Z — edit: densify final Katya exchange
-- `ff3f2864ccd5cf0c7028c3677557fbd6953e7ee7` — 2026-09-01T14:23:18Z — edit: densify final recognition beat
-- `5bd7e0d6cffec9b49e0bf32b5954e53d05dbe630` — 2026-09-01T14:23:12Z — edit: complete chapter 25 minimum length
-- `2f51612de343b99e7c8df38b245fd7af9151fa22` — 2026-09-01T14:23:05Z — edit: complete chapter 24 minimum length
-- `402637a574cf92af95cfe4920c8446b357fa6422` — 2026-09-01T14:22:19Z — ci: record latest EPUB artifact run [skip ci]
-- `da4ec27b4b8d184982aa5d6a0f3d5e63f2c9c8ab` — 2026-09-01T14:22:05Z — rewrite: regroup finale into dense prose without losing loop beats
-- `f08bf95500f4749f0f2b56ad7cfe414878849538` — 2026-09-01T14:21:45Z — ci: record latest EPUB artifact run [skip ci]
-- `276516c9a33e33785aa38e520c476d70f0e9f47d` — 2026-09-01T14:21:30Z — edit: slightly deepen chapter 39 comprehension
-- `484bdfcd4f30cf40a8a1fcb0fa1b718dc5d005a6` — 2026-09-01T14:21:21Z — edit: restore chapter 25 minimum length
-- `ce90504c05c8f2a433e3916741fe89f4b766cd92` — 2026-09-01T14:21:15Z — edit: deepen chapter 24 post-reveal choice
-- `ab4c140f7c55d951bca7ad2decb76cc333f01ec4` — 2026-09-01T14:21:10Z — edit: restore chapter 16 minimum density
-- `905e55b69ff73de3a918619071a6b166e0af54ea` — 2026-09-01T14:21:03Z — ci: record latest EPUB artifact run [skip ci]
-- `2318b1de412035d7bf48cb9e69539f6029441594` — 2026-09-01T14:20:46Z — edit: replace summary ending in chapter 14 with concrete image
-- `1596935e00481b023b1c2c0d1d843ed8a45e27a5` — 2026-09-01T14:20:41Z — edit: replace summary ending in chapter 10 with concrete beat
-- `32fd4e267ca9e858d68a72e165f19351d48af12e` — 2026-09-01T14:20:38Z — ci: record latest EPUB artifact run [skip ci]
-- `af3ff29ee814bcc5a899048f134fa54958133928` — 2026-09-01T14:20:24Z — rewrite: densify finale and preserve loop payoffs
-- `dc3da86d695639b2c3d2149d65bca1e20cf3eaea` — 2026-09-01T14:19:50Z — ci: record latest EPUB artifact run [skip ci]
-- `57dca0903fc4f683e7ab3d7ea2b83b2faa2bb410` — 2026-09-01T14:19:37Z — rewrite: densify source-line mechanics and keep 2014 logic plain
-- `be2f3ec44467ba67973b2947de9067cba320c99e` — 2026-09-01T14:19:06Z — ci: record latest EPUB artifact run [skip ci]
-- `c7a7493c6564e3eaa85dc3f6e7c8cd5e08d893f1` — 2026-09-01T14:18:52Z — rewrite: densify chapter 37 and preserve Mara farewell
-- `68c4e5119ed9e2f1f32751d793bc7ea06b28c814` — 2026-09-01T14:18:48Z — ci: record latest EPUB artifact run [skip ci]
-- `4c6d9c9df2b8cfdfea98e7dd32d5877261ec3ac5` — 2026-09-01T14:18:34Z — edit: remove premature return semantics from first interlude
-- `3ce1f101dce40d9e041321f2b38b68391b438192` — 2026-09-01T14:18:21Z — ci: record latest EPUB artifact run [skip ci]
-- `1dc9ee43cd57dbe4199cc24a140144370e25009f` — 2026-09-01T14:18:07Z — edit: preserve experiment mystery in first interlude
-- `6a4946387eb2ee047d3e1d167ad4c2be1a149d10` — 2026-09-01T14:17:26Z — ci: record latest EPUB artifact run [skip ci]
-- `0f63b45c88f97df1a23f1b9888dc24afa1b12318` — 2026-09-01T14:17:13Z — rewrite: densify RETRO-1 reveal and keep documentation human-readable
-- `4429e38dcb778bf7a74380854e36e96df71bfb5b` — 2026-09-01T14:16:22Z — ci: record latest EPUB artifact run [skip ci]
-- `3436832c9cbc32f6de5087285948d6f75b22a356` — 2026-09-01T14:16:10Z — rewrite: densify chapter 31 and preserve three-step discovery
-- `f1593b5fa9541ad5256a9c1f1ca5bd8f38899090` — 2026-09-01T14:15:08Z — docs: add old-draft ghosting audit rule
-- `337ed97c70ea910f34e55e58fec4af6758208958` — 2026-09-01T14:15:07Z — rewrite: densify chapter 25 and make Asgar's motive explicit without exposition
-- `5d0b7c3f48640c2dfcf6c2aa960089dd8bf5937b` — 2026-09-01T14:14:53Z — ci: record latest EPUB artifact run [skip ci]
-- `6f63dbbdb2aa9775cc28f361f70cdda01bd5a06c` — 2026-09-01T14:14:37Z — edit: remove retrospective POV step in chapter 39
-- `ae0752a48a19ba6921340da8877fb3d0bdc2d3ea` — 2026-09-01T14:14:30Z — ci: record latest EPUB artifact run [skip ci]
+## Финальное состояние / publication
+
+- `0fed4c8085033aef7f37086f4534e5ac9311d37a` — memory: mark post-compression pass and final audit complete
+- `72761e0e964c623ae6e9c6c37d94db8044d26f05` — ci: record latest EPUB artifact run [skip ci]
+- `e1d3229095def356b8a5c16f8dc96003777192a3` — fix: remove pre-reveal RETRO-1 name from interlude V
+- GitHub Actions run `33629257923` — final checked EPUB source artifact; 45 sections; validation PASS
+
+## Policy/document sync
+
+- `0e71f95834824e22b292f4ae50d3bfde7690fab4` — docs: remove obsolete hard word-count minimums from MANIFEST
+- one-shot policy workflow successfully changed `CONTINUITY.md` from hard 1200-word minimum to function-based length policy; temporary workflow then removed
+- `aa363735596bbe53e21c0a68295e6d2dc62e042a` — ci: remove one-shot continuity policy sync
+
+## Late-fiction fixes in final pass
+
+- `3fcd4817800e8ce2eb44fee91c17ca3125799ecb` — fix: remove corrupted sentence fragment in chapter 29
+- `c9ef492593fed617e54b4ae6b82818c9dcd0ee54` — edit: restore lived-in handoff scene to interlude V
+- `42d1a90a1e51581e37abb2ae56e9232fcd96c2a0` — fix: remove early RETRO-1 leak and tighten chapter 34
+- `61fee333a807e0333957ef9c6ed2db26bd20e732` — edit: tighten source-line mechanics and final setup in chapter 39
+- `47dd79395d9ede7927c826e4090f9576fc94b58f` — edit: tighten final loop and return to Katya in chapter 40
+
+## Reveal / interlude fixes
+
+- `a2e8d5e819863c8a8ad6475891ee93c9d3f8011e` — fix: preserve chapter 24 reveal boundary in chapter 23
+- `51681f34ddb8333074348972ffded8503463298c` — edit: turn chapter 24 reveal into lived-in causal scene
+- `8dc743efd8690724a272f661bef72044fa6fdbce` — edit: restore scene and uncertainty to interlude IV
+- `7a896bc51f7aea703bed40741ea26760452c9e30` — edit: tighten consent debate and Mara handoff in interlude III
+- `c7315fbba3961ef25c10bc70445ceb775650fac0` — edit: tighten Mara introduction and separation framework in chapter 16
+
+## 2744 block
+
+- `c367b2088d4a82066324fbaef7ef66f380ab52a9` — edit: restore lived-in density to chapter 13
+- `1d0faf54b2d99f3a0774a42a2ee2f02377b9f583` — edit: remove defensive narration from chapter 14
+- `8e96cc23583b4a423d66423bd8b6ae728e229a54` — edit: remove bootstrap over-explanation from chapter 15
+
+## Earlier part of the same second pass
+
+- `32941ef8c8e10f04cf3853d6b31aa328f2d02743` — chapter 12 «Штурм»
+- `9a1aa11af66882f49538958b52ff7aae9a1c7611` — chapter 11 «Ожидание»
+- `93b2e4f2d5bd6c77a0e50ccc85a89cd35d9159f5` — chapter 10 «Красный коридор»
+- `b3ba50a87943f0368cd54f808b682f7a59bf6f43` — chapter 9 «Новая климатическая эпоха»
+- `7cdf89d7bf8ea6261a41f701961a2478a019ce84` — interlude II «Расчёт не сходится»
+- `ceff42b50f28d1676aae846b1781e83b3c327659` — chapter 8 «Второе окно»; critical early RETRO-1 leak removed
+- `7be4b9ae4aba37360d5cb1006d6aca636cf4acb2` — chapter 7 «Архив 16.08»
+- `f30d59188b11a23a5b8ce4db380f71809e3749db` — chapter 6 «Мёртвый человек»
+
+## Authoritative result
+
+The second post-compression quality pass and final audit are complete. For exact current stage always read `PROJECT_MEMORY/01_CURRENT_STATUS.md` first. Do not infer a new chapter cursor from older commits.
