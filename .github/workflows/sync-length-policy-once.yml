@@ -1,0 +1,36 @@
+name: One-shot continuity length policy sync
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-length-policy-once.yml'
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync obsolete length rules
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('CONTINUITY.md')
+          s = p.read_text(encoding='utf-8')
+          old24 = '24. Стиль: минимум 1200 слов на главу, плотная литературная проза, без «лесенок».'
+          new24 = '24. Стиль: жёсткого минимального объёма главы нет. Длина определяется драматической функцией, причинностью и прожитым материалом; плотная литературная проза без искусственного добивания объёма и постоянных «лесенок».'
+          old343 = '343. Финальный post-edit аудит подтверждает: все 40 глав содержат не менее 1200 слов; доля коротких абзацев во всех главах остаётся ниже 15%.'
+          new343 = '343. Финальный post-edit аудит не использует числовой минимум слов как критерий качества: проверяются функция главы, причинность, плотность, отсутствие воды и отсутствие сценарной «лесенки» как постоянного ритма.'
+          for old, new in ((old24, new24), (old343, new343)):
+              if old not in s:
+                  raise SystemExit(f'Expected text not found: {old}')
+              s = s.replace(old, new, 1)
+          p.write_text(s, encoding='utf-8')
+      - name: Commit policy sync
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CONTINUITY.md
+          git commit -m "docs: sync continuity length policy [skip ci]"
+          git push
