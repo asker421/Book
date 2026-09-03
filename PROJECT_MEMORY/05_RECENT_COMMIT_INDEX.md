@@ -74,3 +74,32 @@ Result: `chapters_v2/` passed final chronology / mass / source / route / bootstr
 - `09e2b8032780977d7460ec15777573476b22ed7a` — ci: record latest EPUB artifact run [skip ci]
 
 Result: current `chapters_v2/` passed independent 45-section duplicate / reveal-order / fourth-wall regression; final verdict: READY.
+
+
+## 03.09.2026 — final novel-flow / anti-defensive / humanization pass
+
+Representative fiction commits:
+- `4c5d188` — trim archival methodology in chapter 9
+- `ab7acc9` — accelerate chapter 10 toward physical event
+- `5ae140b` — humanize safety distinction in chapter 15
+- `583e47e` — center interlude III on human handover
+- `b9768f6` — trim communication methodology in chapter 16
+- `fd374d7` — reduce repeated reversibility proofs in chapter 17
+- `1e73ccd` — stop provenance proof earlier in chapter 18
+- `d2d45d6` — center chapter 20 on the choice to stay
+- `77bc7ac` — roughen Iara dialogue in chapter 22
+- `b3b03d6` — trust identity proof in chapter 23
+- `59a1c0a` — let chapter 24 reveal breathe
+- `e55375a` — trim classifier discussion in interlude IV
+- `7b43a29` — trim governance exposition in chapter 26
+- `ffb6118` — trust bootstrap wall proof in chapter 28
+- `0033e34` — trim procedure around Mara's fading voice
+- `db1b60a` — remove post-reveal self-proof in chapter 36
+- `d76fbb3` — keep chapter 37 on finite infrastructure
+- `32b67fd` — trim free-will safeguards in chapter 39
+- `403b0bf` — tighten final reveal in chapter 40
+
+Documentation:
+- `6f028bd` — record final novel-flow humanization pass
+
+Result: targeted novel-flow regression PASS; publication verdict remains **READY**.
