@@ -65,3 +65,5 @@ The second post-compression quality pass and final audit are complete. For exact
 Result: `chapters_v2/` passed final chronology / mass / source / route / bootstrap / reveal / Mara / Katya / Иара / 2014 loop / 2039 return audit.
 
 - final smoke-fix: chapter 40 thematic tail removed; novel now ends on `В динамике пошли обычные гудки.`
+
+- `407b254` — fix: remove final fourth-wall residue from chapter 28
