@@ -28,7 +28,8 @@
 4. `PROJECT_MEMORY/03_EDITORIAL_HISTORY.md`
 5. `PROJECT_MEMORY/04_HANDOFF_PROMPT.md`
 6. `PROJECT_MEMORY/05_RECENT_COMMIT_INDEX.md`
-7. `AUTHORING_RULES.md`
+7. `PROJECT_MEMORY/06_V2_REWRITE.md`
+8. `AUTHORING_RULES.md`
 8. `STORY_BIBLE.md`
 9. `CONTINUITY.md`
 10. `CHAPTER_MAP.md`
@@ -36,7 +37,7 @@
 12. `NOVEL_FINAL_AUDIT_CHECKLIST.md`
 13. `README.md`
 
-После этого прочитай список файлов в `chapters/` и определи **фактическую текущую структуру** романа. Не предполагай заранее, что разделов ровно 40 или 45: используй актуальный репозиторий.
+После этого прочитай список файлов в `chapters_v2/` и определи **фактическую текущую структуру** романа. `chapters/` использовать только как archive/reference. Не предполагай заранее, что разделов ровно 40 или 45: используй актуальный репозиторий.
 
 Также посмотри последние commit messages в `main`, чтобы понять, какие правки могли появиться после последнего обновления файлов памяти.
 

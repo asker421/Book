@@ -67,3 +67,10 @@ Result: `chapters_v2/` passed final chronology / mass / source / route / bootstr
 - final smoke-fix: chapter 40 thematic tail removed; novel now ends on `В динамике пошли обычные гудки.`
 
 - `407b254` — fix: remove final fourth-wall residue from chapter 28
+
+
+## 03.09.2026 — final anti-defensive / humanization / continuity cleanup
+- `8439ae65715d52a00eb7378a6ba8265f606a400c` — edit: final anti-defensive humanization continuity cleanup
+- `09e2b8032780977d7460ec15777573476b22ed7a` — ci: record latest EPUB artifact run [skip ci]
+
+Result: current `chapters_v2/` passed independent 45-section duplicate / reveal-order / fourth-wall regression; final verdict: READY.
