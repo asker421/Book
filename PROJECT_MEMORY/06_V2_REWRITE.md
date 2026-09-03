@@ -223,3 +223,19 @@ V2 больше не находится в режиме полной переп�
 - ch40 заканчивается обычным гудком после звонка детям.
 
 После этого состояния глобальный rewrite запрещён без нового доказанного publication blocker.
+
+## FINAL PUBLICATION BUILD — 03.09.2026
+
+Актуальный художественный корпус остаётся `chapters_v2/`; художественный HEAD последней текстовой правки — `407b254`.
+
+После финального regression-аудита:
+- publication verdict: READY;
+- fourth-wall residue: 0 подтверждённых;
+- RETRO-1 reveal-order: PASS;
+- chronology / mass / source / bootstrap / 2014→2039 loop: PASS;
+- Иара: friendship-only canon PASS;
+- Mara physical-window channel rule: PASS.
+
+EPUB tooling теперь строит именно `chapters_v2/`.
+Последняя исходная CI-сборка: run `33741083295`, workflow head `3218c5f1d3574573ff1c54e51ca901c52add0b6c`, 45 narrative sections.
+Старые EPUB artifacts, собранные до этого run из предыдущих текстовых состояний или каталога `chapters/`, не считать финальными.
