@@ -103,3 +103,15 @@ Documentation:
 - `6f028bd` — record final novel-flow humanization pass
 
 Result: targeted novel-flow regression PASS; publication verdict remains **READY**.
+
+
+## 03.09.2026 — residual targeted surgery after READY
+- `6c0745f` — edit: remove residual meta phrasing from source-line chapter; chapter 39 no longer uses disguised structural wording `мужчина из первой главы его жизни`; stray prose bold removed.
+- `40a5087` — edit: remove duplicated Katya reveal beat in chapter 3; compressed recap removed so the parking conversation plays once as a lived scene.
+- `1b25bca` — fix: repair garbled sentence in chapter 4; `трубку разговора пришлось пересказывать` corrected to natural prose.
+
+Regression after these fixes:
+- all 45 `chapters_v2/` sections smoke-scanned for direct chapter/reader/editorial/meta residue and stray markdown emphasis; no further confirmed fourth-wall residue found;
+- `RETRO-1` remains absent before chapter 36;
+- operator role still first appears in chapter 16; Mara name before 16 remains handoff-only and does not reveal the role;
+- no causality, chronology, mass-check, source-line, 2014-loop or 2039-return mechanics were changed.
