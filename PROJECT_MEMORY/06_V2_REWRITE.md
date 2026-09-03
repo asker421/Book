@@ -4,6 +4,8 @@
 
 Полная новая редакция `chapters_v2/` завершена: 40 основных глав + 5 интерлюдий.
 
+Актуальное правило объёма после авторской корректировки: около 2500 слов — ориентир, не жёсткий минимум. Приоритет: завершённая функция главы, плотность и отсутствие воды.
+
 Финальный поздний блок:
 - 31 `poslanie` — PASS, 2507 слов;
 - 32 `smert-zemli` — PASS, 2501;
@@ -35,13 +37,14 @@ Late reveal gate:
 Начата полная новая редакция романа с нуля в каталоге `chapters_v2/`.
 Старый каталог `chapters/` остаётся эталоном исходного материала, канона, reveal-order и уже найденных ошибок, но художественный текст v2 не должен копироваться механически.
 
-## Жёсткие правила v2
-- Каждая основная глава: минимум 2500 слов.
-- Минимум не может достигаться водой, повтором мысли, декоративным описанием без функции, пустыми диалогами или искусственным растягиванием.
-- Если сцене не хватает материала для 2500 слов, нужно усиливать драматическую функцию: причинность, конфликт, человеческую реакцию, физическое действие, атмосферу, последствия или параллельную интригу.
+## Правила объёма v2
+- Основная глава обычно ориентируется примерно на 2500 слов, но это не жёсткий минимум.
+- Небольшое отклонение вниз или вверх допустимо, если драматическая функция главы полностью выполнена, текст плотный и дальнейшее расширение создаст воду.
+- Добивать объём повтором мысли, декоративным описанием без функции, пустыми диалогами или искусственным растягиванием запрещено.
+- Если сцене действительно не хватает материала, усиливать нужно драматическую функцию: причинность, конфликт, человеческую реакцию, физическое действие, атмосферу, последствия или параллельную интригу — а не счётчик слов.
 - Каждая глава пишется заново.
 - После написания глава проходит полный gate по `NOVEL_FINAL_AUDIT_CHECKLIST.md`, `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md` и memory-файлам.
-- Следующую главу нельзя начинать, пока текущая имеет критический дефект.
+- Следующую главу нельзя считать готовой, пока текущая имеет критический дефект.
 - После значительной переписи gate запускается заново.
 - Особенно проверять: causality, motivation, knowledge continuity, human reaction, physical staging, ordinary-reader comprehension, density, deleted-draft residue, reveal order, финальную bootstrap-петлю.
 - Нельзя добавлять ранний foreshadow, если он существует только для читателя и не имеет естественного значения для POV Асгара.
@@ -114,10 +117,11 @@ Late reveal gate:
 - 17 `chapters_v2/17-posle-vtorogo-padeniya.md` — PASS, 2548 words.
 - 18 `chapters_v2/18-chelovek-iz-krasnoy-dveri.md` — PASS, 2545 words.
 
-Process correction adopted from chapter 11 onward:
-- Main chapters are assembled and counted before any GitHub write.
-- If pre-write count is below 2500, the draft is rejected and not committed.
-- Word-count expansion must add causal/dramatic/emotional function, never padding.
+Process correction adopted from chapter 11 onward and later refined:
+- Main chapters are assembled around their dramatic function before any GitHub write.
+- Word count is a diagnostic, not a pass/fail threshold; ~2500 words is only a target range.
+- A chapter may pass below that figure if its function is complete and adding text would create padding.
+- Any expansion must add causal/dramatic/emotional function, never padding.
 - Density is checked before commit; screenplay-ladder regressions block the commit.
 - Reveal-order guards are checked before commit.
 
