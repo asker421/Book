@@ -1,5 +1,43 @@
 # RECENT COMMIT INDEX — «Красная будка»
 
+## 03.09.2026 — POST-V3.1 PASS / LITERARY FREEZE CANDIDATE
+
+Audited fiction HEAD:
+- `4f948844961a3bf8348a942e1320517e2a7fae0e` — fix: repair speaker seam in chapter 31
+
+Memory sync:
+- `9fba9c22cf35598f7b848f261370680e8ee91b36` — memory: record post-V3.1 literary audit PASS
+
+Representative final-cycle fiction commits:
+- `477415a` — remove residual editor-facing recap from chapter 28
+- `4b8365d` — restore Mara reveal boundary to chapter 16
+- `a3f34eb` — reflow chapter 31 repeat-access model into prose
+- `0e7436c` — reflow interlude V farewell channel into prose
+- `c1ad0bd` — rebuild chapter 28 as continuous archive scene
+- `e8a3136` — remove adjacent Asgar repetition in chapter 18
+- `668340a` — reflow chapter 15 protocol sequence into sustained prose
+- `7e39522` — reduce synthetic contrast tic in chapter 38
+- `b742b48` — reduce synthetic contrast tic in chapter 21
+- `8deed4d` — reduce synthetic contrast tic in chapter 6
+- `6e6f49a` — reflow chapter 25 choice into sustained prose
+
+Regression on audited fiction HEAD:
+- 45 sections present;
+- BLOCKER 0;
+- MAJOR 0;
+- reveal-order PASS;
+- 01↔40 PASS;
+- 08↔40 PASS;
+- mass/closure PASS;
+- source/2014→2039 PASS;
+- fourth-wall/editor residue PASS;
+- protected phrase chapter 24 PASS;
+- final ordinary ringbacks PASS.
+
+Authoritative current status is always `PROJECT_MEMORY/01_CURRENT_STATUS.md`.
+
+---
+
 > Актуальный компактный индекс финального post-compression pass на 02.09.2026. Это справочник; полная история всегда находится в git history ветки `main`.
 
 ## Финальное состояние / publication
