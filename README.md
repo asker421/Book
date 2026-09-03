@@ -9,7 +9,8 @@
 - `STORY_BIBLE.md` — механика будки, временные правила, мотивации и раскрытия.
 - `CHAPTER_MAP.md` — карта 40 основных глав и 5 параллельных интерлюдий.
 - `CONTINUITY.md` — факты, которые нельзя нарушать.
-- `chapters/` — утверждённые главы романа.
+- `chapters/` — предыдущая редакция v1, сохраняется только как исторический/reference-корпус.
+- `chapters_v2/` — актуальная чистовая редакция романа: 40 основных глав + 5 интерлюдий. Для чтения, аудита и будущей сборки использовать именно её.
 
 
 ## Project memory / передача между чатами
@@ -22,6 +23,7 @@
 4. `PROJECT_MEMORY/03_EDITORIAL_HISTORY.md`
 5. `PROJECT_MEMORY/04_HANDOFF_PROMPT.md`
 6. `PROJECT_MEMORY/05_RECENT_COMMIT_INDEX.md`
+7. `PROJECT_MEMORY/06_V2_REWRITE.md`
 
 Эти файлы — долговременная редакционная память проекта. После них читать актуальные `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md`, `MANIFEST.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md`.
 
