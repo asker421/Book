@@ -764,3 +764,38 @@ Regression:
 
 После полного regression verdict: **READY**.
 
+
+
+## Этап 16. Final novel-flow / anti-defensive / humanization pass — 03.09.2026
+
+База независимого MASTER-аудита: `46dd85bd3c03b7e7a027645f2d38887a719db8ce`.
+
+Задача pass: убрать остаточные места, где роман начинал доказывать собственную корректность вместо того, чтобы оставаться историей Асгара.
+
+Сделано:
+- сокращены вторичные методологические доказательства в 09, 10, 18, 23, 24, 28;
+- formal-logic dialogue в 15 заменён человеческим distinction `можно / безопасно`;
+- handover Маре в 15a очищен от procedural transfer residue;
+- 16 очищена от объявленного communication contract;
+- Ар в 17 удержан через три lived proof, без повторных вариаций одной философии;
+- 20 возвращён к центру `реально могу остаться`;
+- Иара в 22 стала менее терапевтически идеальной без изменения friendship-only канона;
+- 24a оставлена как сцена почти допущенной реальной decision-error;
+- 26 быстрее переводит политические принципы в физическое столкновение;
+- 35a подчинена распаду человеческого голоса Мары;
+- 36 и 37 очищены от post-reveal/self-proof/provenance audit prose;
+- 39 перестал заранее защищать финал несколькими safeguards свободы воли;
+- 40 доверяет сцене: proof-memory montage сокращён, `— Это был я. — Да.` больше не получает explanatory tail.
+
+Не менялись:
+- single timeline;
+- mass mechanics;
+- voluntary entry;
+- source mechanics;
+- bootstrap boundary;
+- RETRO-1 reveal-order;
+- Иара friendship-only;
+- Катя reunion;
+- финальная строка.
+
+Финальный regression подтверждает 01↔40, mass, source, 2014→2039 ordering и финал. Verdict: **READY**.
