@@ -799,3 +799,7 @@ Regression:
 - финальная строка.
 
 Финальный regression подтверждает 01↔40, mass, source, 2014→2039 ordering и финал. Verdict: **READY**.
+
+## 03.09.2026 — full post-pass regression
+
+После final novel-flow / anti-defensive / humanization pass выполнено повторное чтение и regression всех 45 разделов v2. Проверены causality, reveal-order, 01↔40, mass closure, source mechanics, bootstrap boundary, 2014→2039 recalculation, Mara, Иара, Катя и финальный dial-tone ending. Новых blockers не обнаружено. Verdict: READY.
