@@ -51,3 +51,15 @@
 ## Authoritative result
 
 The second post-compression quality pass and final audit are complete. For exact current stage always read `PROJECT_MEMORY/01_CURRENT_STATUS.md` first. Do not infer a new chapter cursor from older commits.
+
+
+## 03.09.2026 — final surgical edit
+- `38b1d5f` — fix: resolve chronology, Mara channel, and Yara canon blockers
+- `9e657eb` — fix: enforce Mara channel only at physical windows
+- `8c80108` — edit: surgical compression of repeated explanations
+- `e0e67e9` — edit: resolve character identity collisions and two targeted science clues
+- `9c8e765` — edit: reduce local prose tics and explanatory endings
+- `39ff6e2` — edit: restore lived texture to chapter 38 after compression
+- `41b6465` — fix: restore ordinary dial tone as final image
+
+Result: `chapters_v2/` passed final chronology / mass / source / route / bootstrap / reveal / Mara / Katya / Иара / 2014 loop / 2039 return audit.

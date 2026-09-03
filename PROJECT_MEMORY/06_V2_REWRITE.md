@@ -199,3 +199,27 @@ Next stage: chapter 19 `Долгое ожидание`.
 - chronology / names / recurring-object continuity spot-check;
 - финальная сборка только после завершения текстового QA.
 
+
+
+## FINAL SURGICAL PASS — 03.09.2026
+
+V2 больше не находится в режиме полной переписи. Актуальный режим: **publication-ready surgical maintenance only**.
+
+Правила после финальной редактуры:
+- не восстанавливать старый minimum word count;
+- не переписывать сильные сцены ради единообразия;
+- не запускать очередной compression по процентам;
+- новая правка допустима только при конкретном DEFECT / EVIDENCE / FIX / DEPENDENCIES / REGRESSION TEST;
+- `chapters_v2/` остаётся единственным актуальным художественным корпусом;
+- `chapters/` — reference only.
+
+Зафиксированные финальные изменения:
+- ch4 chronology исправлена;
+- Mara voice channel существует только при физическом окне;
+- Иара — глубокая дружба без романтики;
+- provenance/source/bootstrap/final-loop explanations сжаты без изменения механики;
+- ch38 после compression повторно расширена уникальными lived scenes, чтобы сохранить реальность 21 дня;
+- duplicate names устранены: Варн (312406) и Нор (Нэр);
+- ch40 заканчивается обычным гудком после звонка детям.
+
+После этого состояния глобальный rewrite запрещён без нового доказанного publication blocker.
