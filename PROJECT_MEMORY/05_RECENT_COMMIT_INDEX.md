@@ -1,14 +1,19 @@
 # RECENT COMMIT INDEX — «Красная будка»
 
-## 03.09.2026 — POST-V3.1 PASS / LITERARY FREEZE CANDIDATE
+## 03.09.2026 — POST-V3.1 PASS / LITERARY FREEZE
 
 Audited fiction HEAD:
-- `4f948844961a3bf8348a942e1320517e2a7fae0e` — fix: repair speaker seam in chapter 31
+- `66e7aa646e8bbf88c7d1836cc365d6998e02b51f` — fix: restore voluntary closure in chapter 33
 
 Memory sync:
 - `9fba9c22cf35598f7b848f261370680e8ee91b36` — memory: record post-V3.1 literary audit PASS
 
 Representative final-cycle fiction commits:
+- `66e7aa6` — restore voluntary closure in chapter 33
+- `8ec664e` — preserve voluntary closure in chapter 32
+- `f1e4925` — remove repeated brothers thesis in chapter 34
+- `22b3842` — reduce repeated `оказалось` tic in chapter 30
+- `1dd2885` — reduce repeated `оказался` tic in chapter 29
 - `477415a` — remove residual editor-facing recap from chapter 28
 - `4b8365d` — restore Mara reveal boundary to chapter 16
 - `a3f34eb` — reflow chapter 31 repeat-access model into prose
