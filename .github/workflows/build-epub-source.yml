@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'chapters/**'
+      - 'chapters_v2/**'
       - 'assets/**'
       - 'tools/build_epub.py'
       - '.github/workflows/build-epub-source.yml'
@@ -23,11 +23,11 @@ jobs:
           set -e
           mkdir -p build
           : > build/manuscript.md
-          for f in $(find chapters -maxdepth 1 -type f -name '*.md' | sort); do
+          for f in $(find chapters_v2 -maxdepth 1 -type f -name '*.md' | sort); do
             cat "$f" >> build/manuscript.md
             printf '\n\n' >> build/manuscript.md
           done
-          cp -r chapters build/chapters
+          cp -r chapters_v2 build/chapters
       - name: Prepare cover
         run: base64 -d assets/cover_epub.b64 > assets/cover_epub.jpg
       - name: Install EPUB build dependency
