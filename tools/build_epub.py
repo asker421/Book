@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-CHAPTERS = ROOT / "chapters"
+CHAPTERS = ROOT / "chapters_v2"
 ASSETS = ROOT / "assets"
 DIST = ROOT / "dist"
 TITLE = "Красная будка"
