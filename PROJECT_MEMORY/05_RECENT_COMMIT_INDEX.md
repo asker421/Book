@@ -63,3 +63,5 @@ The second post-compression quality pass and final audit are complete. For exact
 - `41b6465` — fix: restore ordinary dial tone as final image
 
 Result: `chapters_v2/` passed final chronology / mass / source / route / bootstrap / reveal / Mara / Katya / Иара / 2014 loop / 2039 return audit.
+
+- final smoke-fix: chapter 40 thematic tail removed; novel now ends on `В динамике пошли обычные гудки.`
