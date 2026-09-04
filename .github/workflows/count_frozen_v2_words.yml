@@ -5,9 +5,6 @@ on:
     paths:
       - '.github/workflows/count_frozen_v2_words.yml'
 
-permissions:
-  contents: write
-
 jobs:
   count:
     runs-on: ubuntu-latest
@@ -33,18 +30,8 @@ jobs:
               words=re.findall(r"[A-Za-zА-Яа-яЁё0-9]+(?:[-‑–][A-Za-zА-Яа-яЁё0-9]+)*", text)
               rows.append((p.name,title,len(words)))
           total=sum(n for _,_,n in rows)
-          out=Path('release/FROZEN_V2_WORDCOUNT.md')
-          lines=['# FROZEN V2 word count','',f'Frozen source: `5e0a4e0f956c280458fa6a511799a6601a233978`','', '| File | Title | Words |','|---|---|---:|']
-          lines += [f'| `{f}` | {t.replace("|","\\|")} | {n} |' for f,t,n in rows]
-          lines += ['',f'**TOTAL: {total} words**','']
-          out.write_text('\n'.join(lines),encoding='utf-8')
-          print('TOTAL',total)
+          print('FROZEN_SHA 5e0a4e0f956c280458fa6a511799a6601a233978')
+          for f,t,n in rows:
+              print(f'{f}\t{t}\t{n}')
+          print('TOTAL\t'+str(total))
           PY
-
-      - name: Commit report
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add release/FROZEN_V2_WORDCOUNT.md
-          git commit -m "chore: count frozen v2 words"
-          git push
