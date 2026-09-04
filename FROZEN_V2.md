@@ -6,7 +6,7 @@
 - Exact literary source commit: `5e0a4e0f956c280458fa6a511799a6601a233978`
 - Sections: `45` (40 глав + 5 интерлюдий)
 - Frozen EPUB: `release/krasnaya-budka-v2-FROZEN.epub`
-- EPUB SHA256: `97ae75fee0aa74b28b7b247684219cad6cbdd37c3d0e9b817e431a5c2eb6f285`
+- EPUB SHA256: `c5da739aeb5a56f306b6708a2afb9ec947989c19e1a10099a8e88386a85f20c3`
 
 ## Неизменяемое правило
 
