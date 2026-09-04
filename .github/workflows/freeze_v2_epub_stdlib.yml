@@ -1,0 +1,108 @@
+name: Freeze V2 EPUB stdlib
+
+on: push
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build exact frozen EPUB
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/v2src
+          mkdir -p /tmp/v2src
+          git archive 5e0a4e0f956c280458fa6a511799a6601a233978 chapters_v2 assets/cover_epub.b64 | tar -x -C /tmp/v2src
+          python - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, html, re, zipfile, uuid
+
+          ROOT=Path('/tmp/v2src')
+          OUT=Path('release')
+          OUT.mkdir(exist_ok=True)
+          EPUB=OUT/'krasnaya-budka-v2-FROZEN.epub'
+          SHA='5e0a4e0f956c280458fa6a511799a6601a233978'
+          files=sorted((ROOT/'chapters_v2').glob('*.md'))
+          assert len(files)==45, len(files)
+
+          def md_to_xhtml(text,title):
+              lines=text.splitlines()
+              body=[]
+              para=[]
+              def flush():
+                  nonlocal para
+                  if para:
+                      body.append('<p>'+html.escape(' '.join(x.strip() for x in para))+'</p>')
+                      para=[]
+              for line in lines:
+                  s=line.strip()
+                  if not s:
+                      flush(); continue
+                  if s.startswith('#'):
+                      flush(); continue
+                  if s.startswith('---'):
+                      flush(); body.append('<hr/>'); continue
+                  para.append(s)
+              flush()
+              return '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><title>'+html.escape(title)+'</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body><h1>'+html.escape(title)+'</h1>'+''.join(body)+'</body></html>'
+
+          sections=[]
+          for i,p in enumerate(files,1):
+              txt=p.read_text(encoding='utf-8').strip()
+              m=re.search(r'^#+\s+(.+)$',txt,re.M)
+              assert m, p
+              title=m.group(1).strip()
+              sections.append((i,title,md_to_xhtml(txt,title)))
+
+          cover=base64.b64decode((ROOT/'assets/cover_epub.b64').read_text().strip())
+          if cover.startswith(b'\x89PNG'):
+              cover_name='cover.png'; cover_media='image/png'
+          elif cover.startswith(b'\xff\xd8\xff'):
+              cover_name='cover.jpg'; cover_media='image/jpeg'
+          else: raise RuntimeError('cover format')
+
+          uid='urn:uuid:'+str(uuid.uuid5(uuid.NAMESPACE_URL,'asker421/Book@'+SHA))
+          nav=''.join(f'<li><a href="section_{i:02d}.xhtml">{html.escape(t)}</a></li>' for i,t,_ in sections)
+          manifest=''.join(f'<item id="s{i}" href="section_{i:02d}.xhtml" media-type="application/xhtml+xml"/>' for i,_,_ in sections)
+          spine=''.join(f'<itemref idref="s{i}"/>' for i,_,_ in sections)
+          tocpoints=''.join(f'<navPoint id="n{i}" playOrder="{i}"><navLabel><text>{html.escape(t)}</text></navLabel><content src="section_{i:02d}.xhtml"/></navPoint>' for i,t,_ in sections)
+          container='''<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>'''
+          style='body{font-family:serif;line-height:1.5;margin:5%}h1{text-align:center;margin:1.8em 0 1.3em}p{text-indent:1.2em;margin:.35em 0}h1+p{text-indent:0}'
+          navx=f'''<?xml version="1.0" encoding="utf-8"?><html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="ru"><head><title>Оглавление</title></head><body><nav epub:type="toc"><h1>Оглавление</h1><ol>{nav}</ol></nav></body></html>'''
+          ncx=f'''<?xml version="1.0" encoding="utf-8"?><ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1"><head><meta name="dtb:uid" content="{uid}"/></head><docTitle><text>Красная будка</text></docTitle><navMap>{tocpoints}</navMap></ncx>'''
+          opf=f'''<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="bookid">{uid}</dc:identifier><dc:title>Красная будка</dc:title><dc:language>ru</dc:language><dc:source>{SHA}</dc:source><meta property="dcterms:modified">2026-09-04T00:00:00Z</meta></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/><item id="css" href="style.css" media-type="text/css"/><item id="cover" href="{cover_name}" media-type="{cover_media}" properties="cover-image"/>{manifest}</manifest><spine toc="ncx">{spine}</spine></package>'''
+
+          with zipfile.ZipFile(EPUB,'w') as z:
+              z.writestr('mimetype','application/epub+zip',compress_type=zipfile.ZIP_STORED)
+              z.writestr('META-INF/container.xml',container)
+              z.writestr('OEBPS/content.opf',opf)
+              z.writestr('OEBPS/nav.xhtml',navx)
+              z.writestr('OEBPS/toc.ncx',ncx)
+              z.writestr('OEBPS/style.css',style)
+              z.writestr('OEBPS/'+cover_name,cover)
+              for i,t,x in sections:
+                  z.writestr(f'OEBPS/section_{i:02d}.xhtml',x)
+
+          with zipfile.ZipFile(EPUB) as z:
+              assert z.namelist()[0]=='mimetype'
+              assert z.read('mimetype')==b'application/epub+zip'
+              assert len([n for n in z.namelist() if re.search(r'section_\d+\.xhtml$',n)])==45
+              assert 'META-INF/container.xml' in z.namelist()
+
+          digest=hashlib.sha256(EPUB.read_bytes()).hexdigest()
+          (OUT/'krasnaya-budka-v2-FROZEN.sha256').write_text(digest+'  krasnaya-budka-v2-FROZEN.epub\n')
+          Path('FROZEN_V2.md').write_text(f'''# Красная будка — FROZEN V2\n\n**Status: FROZEN / IMMUTABLE LITERARY RELEASE**\n\n- Frozen source corpus: `chapters_v2/`\n- Exact literary source commit: `{SHA}`\n- Sections: `45` (40 глав + 5 интерлюдий)\n- Frozen EPUB: `release/krasnaya-budka-v2-FROZEN.epub`\n- EPUB SHA256: `{digest}`\n\n## Неизменяемое правило\n\n`chapters_v2/` больше не редактируется литературно. Любая следующая литературная правка начинается только с копии `chapters_v3/`; frozen V2 остаётся неизменной.\n''',encoding='utf-8')
+          print(digest)
+          PY
+      - name: Commit release
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add FROZEN_V2.md release/krasnaya-budka-v2-FROZEN.epub release/krasnaya-budka-v2-FROZEN.sha256
+          git commit -m "release: freeze v2 EPUB" || exit 0
+          git push
