@@ -1,13 +1,12 @@
-# Красная будка — FROZEN V2
+# Красная будка — CURRENT V2 RELEASE
 
-**Status: FROZEN / IMMUTABLE LITERARY RELEASE**
+**Status: CURRENT LITERARY RELEASE**
 
-- Frozen source corpus: `chapters_v2/`
-- Exact literary source commit: `5e0a4e0f956c280458fa6a511799a6601a233978`
+- Source corpus: `chapters_v2/`
+- Exact literary source commit: `c800d51a0367b1143125f8693fa64ad39053e80c`
 - Sections: `45` (40 глав + 5 интерлюдий)
-- Frozen EPUB: `release/krasnaya-budka-v2-FROZEN.epub`
-- EPUB SHA256: `6905c0726a73b423bfc8f3d2504bde01713ad3d27f41000b74c44d53b709e038`
+- Words: `82081`
+- EPUB: `release/krasnaya-budka-v2-FROZEN.epub`
+- EPUB SHA256: `adf609483d0f5594ad6b2186853ef5d7ab1c82414e7b110abe8ce98050a438e0`
 
-## Неизменяемое правило
-
-`chapters_v2/` больше не редактируется литературно. Любая следующая литературная правка начинается только с копии `chapters_v3/`; frozen V2 остаётся неизменной.
+`release/krasnaya-budka-v2-FROZEN.epub` собирается из актуального `chapters_v2/` при каждом изменении литературного корпуса.
