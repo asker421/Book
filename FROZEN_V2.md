@@ -3,10 +3,10 @@
 **Status: CURRENT LITERARY RELEASE**
 
 - Source corpus: `chapters_v2/`
-- Exact literary source commit: `95c7f637a1bc53324debfd5a1603ff5d075fc7eb`
+- Exact literary source commit: `5ff745ff3d1f8cd49c6e7419b27e51fbc239652c`
 - Sections: `45` (40 глав + 5 интерлюдий)
-- Words: `87119`
+- Words: `87146`
 - EPUB: `release/krasnaya-budka-v2-FROZEN.epub`
-- EPUB SHA256: `5ca38aec0567d464bf33a83949a48e40806eb0a8fbe7fa9817f29e184d880fbf`
+- EPUB SHA256: `0fe9f300aa749883b05efb7a7f44bb787be0b0296176ed11ee893853550831d8`
 
 `release/krasnaya-budka-v2-FROZEN.epub` собирается из актуального `chapters_v2/` при каждом изменении литературного корпуса.
