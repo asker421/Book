@@ -1,0 +1,51 @@
+name: Asgar Repetition Diagnostic
+
+on:
+  push:
+    branches:
+      - asgar-repetition-pass-work
+    paths:
+      - '.github/workflows/asgar-repetition-diagnostic.yml'
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan chapters_v2
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('chapters_v2')
+          files = sorted(root.glob('*.md'))
+          total = 0
+          print('=== ASGAR TOTALS ===')
+          for p in files:
+              text = p.read_text(encoding='utf-8')
+              n = text.count('Асгар')
+              total += n
+              print(f'{p.name}\t{n}')
+          print(f'TOTAL\t{total}')
+
+          print('\n=== CANDIDATE PARAGRAPHS ===')
+          target = re.compile(r'Асгар(?: снова)? (?:посмотрел|спросил|кивнул|повернулся)')
+          sent_split = re.compile(r'(?<=[.!?…])\s+(?=[А-ЯЁ—«])')
+          for p in files:
+              text = p.read_text(encoding='utf-8')
+              paras = [x.strip() for x in re.split(r'\n\s*\n', text) if x.strip()]
+              for i, para in enumerate(paras, 1):
+                  direct = para.count('Асгар') >= 2 or bool(target.search(para))
+                  sents = sent_split.split(para)
+                  near = False
+                  for j in range(len(sents)):
+                      window = ' '.join(sents[j:j+3])
+                      if window.count('Асгар') >= 2:
+                          near = True
+                          break
+                  if direct or near:
+                      print(f'--- {p.name} :: P{i} :: count={para.count("Асгар")} direct={int(direct)} near={int(near)}')
+                      print(para.replace('\n', ' '))
+          PY
