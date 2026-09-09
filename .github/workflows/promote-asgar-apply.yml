@@ -1,0 +1,101 @@
+name: Apply Asgar promotion
+on:
+  push:
+    branches: [promote-asgar-repetition]
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply curated pass onto current-main snapshot
+        run: |
+          git fetch origin asgar-repetition-pass-work
+          python - <<'PY'
+          from pathlib import Path
+          import ast, subprocess, textwrap
+
+          root=Path('chapters_v2')
+          files=sorted(root.glob('*.md'))
+          before=sum(p.read_text(encoding='utf-8').count('Асгар') for p in files)
+
+          wf=subprocess.check_output(['git','show','origin/asgar-repetition-pass-work:.github/workflows/asgar-repetition-apply.yml'],text=True)
+          sm="          python - <<'PY'\n"; em="\n          PY\n"
+          s=wf.index(sm)+len(sm); e=wf.index(em,s)
+          code=textwrap.dedent(wf[s:e])
+          tree=ast.parse(code)
+          edits=None
+          for node in tree.body:
+              if isinstance(node,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='edits' for t in node.targets):
+                  edits=ast.literal_eval(node.value); break
+          if edits is None: raise RuntimeError('edits dict not found')
+
+          overrides={
+            '02-chetyre-dnya.md':{'Асгар кивнул.\n\nКатя спросила, что будет, если там ничего нет.':('Асгар кивнул. Катя спросила, что будет, если там ничего нет.','Он кивнул. Катя спросила, что будет, если там ничего нет.')},
+            '03-sled.md':{'Катя взяла его за руку. Асгар достал ключи, но ещё несколько секунд не открывал машину.':('Асгар достал ключи, но ещё несколько секунд не открывал машину.','Он достал ключи, но ещё несколько секунд не открывал машину.')},
+            '05-dvadtsat-pyat-let.md':{'Старый телефон зазвонил. Асгар не двинулся.':('Асгар не двинулся.','Он не двинулся.')},
+            '13-posle-voyny.md':{'Женщина назвала остаток. Асгар вышел.':('Асгар вышел.','Он вышел.')},
+            '23-razdelennoe-chelovechestvo.md':{'Отправлять внешний объект в собственное прошлое они не умели. Асгар кивнул.':('Отправлять внешний объект в собственное прошлое они не умели.\n\nАсгар кивнул.','Отправлять внешний объект в собственное прошлое они не умели.\n\nОн кивнул.')},
+            '31-poslanie.md':{'Этого хватало. Асгар попросил закрыть персональный доступ и не создавать копию.':('Асгар попросил закрыть персональный доступ и не создавать копию.','Он попросил закрыть персональный доступ и не создавать копию.')},
+            '40-16-avgusta.md':{'Рев трибун сжался в одну низкую ноту, удержался ещё секунду и оборвался. Асгар упал на колени.':('Асгар упал на колени.','Он упал на колени.')},
+          }
+          adaptations={
+            ('25-istochnik.md','Асгар задал Сай один вопрос:'):('Асгар задал Тавии один вопрос:','Он задал Тавии один вопрос:'),
+          }
+          obsolete={
+            ('30-sotni-millionov-let.md','Асгар спросил у узла, зачем вообще поддерживать планету, если люди давно способны жить почти где угодно.')
+          }
+
+          applied=0; already=0; skipped=0
+          for filename,repls in edits.items():
+              p=root/filename; text=p.read_text(encoding='utf-8'); original=text
+              for old,new in repls:
+                  if old in overrides.get(filename,{}): old,new=overrides[filename][old]
+                  if (filename,old) in adaptations: old,new=adaptations[(filename,old)]
+                  co=text.count(old); cn=text.count(new)
+                  if co==1:
+                      text=text.replace(old,new,1); applied+=1
+                  elif co==0 and cn>=1:
+                      already+=1
+                  elif (filename,old) in obsolete:
+                      skipped+=1
+                  else:
+                      raise RuntimeError(f'Unresolved curated edit: {filename}: old={co} new={cn}: {old!r}')
+              if text!=original: p.write_text(text,encoding='utf-8')
+
+          # Final QA: restore the three names that were deliberately kept to avoid ambiguous pronouns.
+          qa=[
+            ('02-chetyre-dnya.md','Она даже вспомнила, что сказала ему не трогать чужое. Он повернулся к ней.','Она даже вспомнила, что сказала ему не трогать чужое. Асгар повернулся к ней.'),
+            ('10-krasnyy-koridor.md','Перед поездкой он потребовал протокол безопасности.','Перед поездкой Асгар потребовал протокол безопасности.'),
+            ('24-ne-domoy.md','которую он несколько лет считал общей.','которую Асгар несколько лет считал общей.'),
+          ]
+          for filename,old,new in qa:
+              p=root/filename; text=p.read_text(encoding='utf-8')
+              if text.count(old)!=1: raise RuntimeError(f'QA target mismatch {filename}: {text.count(old)}')
+              p.write_text(text.replace(old,new,1),encoding='utf-8')
+
+          after=sum(p.read_text(encoding='utf-8').count('Асгар') for p in files)
+          print(f'BEFORE={before}')
+          print(f'AFTER={after}')
+          print(f'NET_REDUCTION={before-after}')
+          print(f'APPLIED={applied} ALREADY={already} OBSOLETE={skipped} QA_RESTORED=3')
+          PY
+          git diff --check -- chapters_v2
+          echo '=== STAT ==='
+          git diff --stat -- chapters_v2
+          echo '=== CHANGED FILES ==='
+          git diff --name-only -- chapters_v2
+          # Guard against accidentally reintroducing superseded character names in added lines.
+          if git diff -- chapters_v2 | grep '^+' | grep -E '(^|[^А-Яа-яЁё])(Сай|Кей|Нэй)([^А-Яа-яЁё]|$)' ; then
+            echo 'Superseded character name introduced' >&2; exit 1
+          fi
+      - name: Commit staged chapter pass
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add chapters_v2
+          git commit -m "Reduce unnecessary Asgar name repetition"
+          git push origin HEAD:promote-asgar-repetition
