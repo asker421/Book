@@ -1,0 +1,10 @@
+Title: Красная будка
+Author: Аскер Исмайлов
+Literary source commit: c4e942fcfee56e51e2932f7db29603fde623ad78
+Sections: 45 (40 chapters + 5 interludes)
+Words: 85213
+Trim: 145 x 215 mm
+Pages (including title/copyright): 431
+ISBN: not supplied
+PDF SHA256: ae543f751cd849db1abfee879ad315457f6a2d968e17e63bdb0c4774a66f57f1
+Validation: PASS
