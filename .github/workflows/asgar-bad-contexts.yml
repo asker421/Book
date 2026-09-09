@@ -1,0 +1,35 @@
+name: Inspect Asgar Bad Contexts
+
+on:
+  push:
+    branches:
+      - asgar-repetition-pass-work
+    paths:
+      - '.github/workflows/asgar-bad-contexts.yml'
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print exact context for seven candidates
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          targets = {
+            '02-chetyre-dnya.md': 'Асгар кивнул.',
+            '03-sled.md': 'Асгар достал ключи',
+            '05-dvadtsat-pyat-let.md': 'Асгар не двинулся.',
+            '13-posle-voyny.md': 'Асгар вышел.',
+            '23-razdelennoe-chelovechestvo.md': 'Асгар кивнул.',
+            '31-poslanie.md': 'Асгар попросил закрыть персональный доступ',
+            '40-16-avgusta.md': 'Асгар упал на колени.',
+          }
+          for filename, needle in targets.items():
+              text = (Path('chapters_v2') / filename).read_text(encoding='utf-8')
+              print(f'=== {filename} :: {needle!r} :: count={text.count(needle)} ===')
+              for para in [p.strip() for p in text.split('\n\n') if p.strip()]:
+                  if needle in para:
+                      print(para.replace('\n', ' '))
+          PY
