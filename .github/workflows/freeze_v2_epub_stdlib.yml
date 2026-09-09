@@ -119,3 +119,5 @@ jobs:
           git add FROZEN_V2.md release/krasnaya-budka-v2-FROZEN.epub release/krasnaya-budka-v2-FROZEN.sha256
           git commit -m "release: rebuild EPUB from current chapters_v2" || exit 0
           git push
+
+# Manual rebuild trigger after final publishing copyedit.
