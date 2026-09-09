@@ -1,0 +1,36 @@
+name: Apply chapter 37 dialogue pass
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ch37-dialogue-pass-temp.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Expand folded dialogue
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('chapters_v2/37-vy-pochti-doshli.md')
+          text = p.read_text(encoding='utf-8')
+          old = '''Асгар спросил, что будет делать сама Мара, если голос исчезнет. Ответ задержался: работать с тем, что останется. Это было настолько по-мариному, что дополнительных слов не требовалось. Ему вдруг захотелось спросить настоящее имя, место, дату рождения, кто вспомнит её после окончания службы. Потом он понял, что «настоящее имя» — глупая формулировка. Мара уже была настоящим именем для их отношений. Координаты её носителя ничего бы не добавили к человеку, который столько времени разговаривал с ним через красную трубку.'''
+          new = '''— А ты? Что будешь делать, если голос исчезнет?\n\nОтвет задержался.\n\n— Работать с тем, что останется.\n\nЭто было настолько по-мариному, что дополнительных слов не требовалось. Ему вдруг захотелось спросить настоящее имя, место, дату рождения, кто вспомнит её после окончания службы. Потом он понял, что «настоящее имя» — глупая формулировка. Мара уже была настоящим именем для их отношений. Координаты её носителя ничего бы не добавили к человеку, который столько времени разговаривал с ним через красную трубку.'''
+          n = text.count(old)
+          if n != 1:
+              raise RuntimeError(f'expected 1 match, got {n}')
+          p.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add chapters_v2/37-vy-pochti-doshli.md
+          git diff --cached --check
+          git commit -m "Expand folded dialogue in chapter 37"
+          git push
