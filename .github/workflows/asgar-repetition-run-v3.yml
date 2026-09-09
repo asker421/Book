@@ -1,0 +1,142 @@
+name: Run Asgar Repetition Pass V3
+
+on:
+  push:
+    branches:
+      - asgar-repetition-pass-work
+    paths:
+      - '.github/workflows/asgar-repetition-run-v3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply fully validated curated pass
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import ast, textwrap
+
+          wf = Path('.github/workflows/asgar-repetition-apply.yml').read_text(encoding='utf-8')
+          start_marker = "          python - <<'PY'\n"
+          end_marker = "\n          PY\n"
+          start = wf.index(start_marker) + len(start_marker)
+          end = wf.index(end_marker, start)
+          code = textwrap.dedent(wf[start:end])
+          tree = ast.parse(code)
+          edits = None
+          for node in tree.body:
+              if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'edits' for t in node.targets):
+                  edits = ast.literal_eval(node.value)
+                  break
+          if edits is None:
+              raise RuntimeError('edits dict not found')
+
+          overrides = {
+            '02-chetyre-dnya.md': {
+              'Асгар кивнул.\n\nКатя спросила, что будет, если там ничего нет.':
+                ('Асгар кивнул. Катя спросила, что будет, если там ничего нет.', 'Он кивнул. Катя спросила, что будет, если там ничего нет.'),
+            },
+            '03-sled.md': {
+              'Катя взяла его за руку. Асгар достал ключи, но ещё несколько секунд не открывал машину.':
+                ('Асгар достал ключи, но ещё несколько секунд не открывал машину.', 'Он достал ключи, но ещё несколько секунд не открывал машину.'),
+            },
+            '05-dvadtsat-pyat-let.md': {
+              'Старый телефон зазвонил. Асгар не двинулся.':
+                ('Асгар не двинулся.', 'Он не двинулся.'),
+            },
+            '13-posle-voyny.md': {
+              'Женщина назвала остаток. Асгар вышел.':
+                ('Асгар вышел.', 'Он вышел.'),
+            },
+            '23-razdelennoe-chelovechestvo.md': {
+              'Отправлять внешний объект в собственное прошлое они не умели. Асгар кивнул.':
+                ('Отправлять внешний объект в собственное прошлое они не умели.\n\nАсгар кивнул.', 'Отправлять внешний объект в собственное прошлое они не умели.\n\nОн кивнул.'),
+            },
+            '31-poslanie.md': {
+              'Этого хватало. Асгар попросил закрыть персональный доступ и не создавать копию.':
+                ('Асгар попросил закрыть персональный доступ и не создавать копию.', 'Он попросил закрыть персональный доступ и не создавать копию.'),
+            },
+            '40-16-avgusta.md': {
+              'Рев трибун сжался в одну низкую ноту, удержался ещё секунду и оборвался. Асгар упал на колени.':
+                ('Асгар упал на колени.', 'Он упал на колени.'),
+            },
+          }
+
+          adjusted = {}
+          override_hits = 0
+          for filename, replacements in edits.items():
+              out = []
+              file_overrides = overrides.get(filename, {})
+              for old, new in replacements:
+                  if old in file_overrides:
+                      old, new = file_overrides[old]
+                      override_hits += 1
+                  out.append((old, new))
+              adjusted[filename] = out
+          if override_hits != 7:
+              raise RuntimeError(f'Expected 7 override hits, got {override_hits}')
+
+          root = Path('chapters_v2')
+          files = sorted(root.glob('*.md'))
+          if len(files) != 45:
+              raise RuntimeError(f'Expected 45 corpus files, found {len(files)}')
+          before = sum(p.read_text(encoding='utf-8').count('Асгар') for p in files)
+          if before != 1791:
+              raise RuntimeError(f'Unexpected starting count: {before}')
+
+          bad = []
+          for filename, replacements in adjusted.items():
+              text = (root / filename).read_text(encoding='utf-8')
+              for old, new in replacements:
+                  n = text.count(old)
+                  if n != 1:
+                      bad.append((filename, n, old))
+          if bad:
+              for row in bad:
+                  print('BAD', row)
+              raise RuntimeError(f'{len(bad)} validated replacements are not unique')
+
+          changed = []
+          operations = 0
+          for filename, replacements in adjusted.items():
+              p = root / filename
+              text = p.read_text(encoding='utf-8')
+              original = text
+              for old, new in replacements:
+                  text = text.replace(old, new, 1)
+                  operations += 1
+              if text != original:
+                  p.write_text(text, encoding='utf-8')
+                  changed.append(filename)
+
+          after = sum(p.read_text(encoding='utf-8').count('Асгар') for p in files)
+          print(f'BEFORE={before}')
+          print(f'AFTER={after}')
+          print(f'REDUCED={before-after}')
+          print(f'EDIT_OPERATIONS={operations}')
+          print(f'CHANGED_FILES={len(changed)}')
+          print('FILES=' + ','.join(changed))
+          PY
+
+          git diff --check -- chapters_v2
+          echo '=== DIFF STAT ==='
+          git diff --stat -- chapters_v2
+          echo '=== EDITED DIFF ==='
+          git diff --unified=3 -- chapters_v2
+
+      - name: Commit chapter edits only
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add chapters_v2
+          git commit -m "Apply curated Asgar repetition pass"
+          git push origin HEAD:asgar-repetition-pass-work
