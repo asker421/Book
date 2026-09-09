@@ -1,0 +1,50 @@
+name: Validate Asgar Curated Edits
+
+on:
+  push:
+    branches:
+      - asgar-repetition-pass-work
+    paths:
+      - '.github/workflows/asgar-validate-edits.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate all source strings at once
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import ast, textwrap
+
+          wf = Path('.github/workflows/asgar-repetition-apply.yml').read_text(encoding='utf-8')
+          start_marker = "          python - <<'PY'\n"
+          end_marker = "\n          PY\n"
+          start = wf.index(start_marker) + len(start_marker)
+          end = wf.index(end_marker, start)
+          code = textwrap.dedent(wf[start:end])
+          tree = ast.parse(code)
+          edits = None
+          for node in tree.body:
+              if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'edits' for t in node.targets):
+                  edits = ast.literal_eval(node.value)
+                  break
+          if edits is None:
+              raise RuntimeError('edits dict not found')
+
+          bad = []
+          total = 0
+          for filename, replacements in edits.items():
+              text = (Path('chapters_v2') / filename).read_text(encoding='utf-8')
+              for old, new in replacements:
+                  total += 1
+                  n = text.count(old)
+                  if n != 1:
+                      bad.append((filename, n, old))
+          print(f'TOTAL_CANDIDATES={total}')
+          print(f'BAD_CANDIDATES={len(bad)}')
+          for filename, n, old in bad:
+              print(f'BAD\t{filename}\tcount={n}\t{old!r}')
+          PY
