@@ -1,4 +1,4 @@
-name: Temporary Russian Proofread
+name: Apply Final Publishing Polish
 
 on:
   push:
@@ -9,56 +9,51 @@ permissions:
   contents: write
 
 jobs:
-  proofread:
+  polish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Run static typography checks
+      - name: Apply verified copyedits and clean temporary proofing files
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re
 
-          rows=[]
-          for p in sorted(Path('chapters_v2').glob('*.md')):
-              text=p.read_text(encoding='utf-8')
-              def add(kind,m,detail=''):
-                  line=text.count('\n',0,m.start())+1
-                  a=max(0,m.start()-90); b=min(len(text),m.end()+90)
-                  ctx=text[a:b].replace('\n',' ⏎ ')
-                  rows.append((p.as_posix(),line,kind,m.group(0),detail,ctx))
+          root = Path('chapters_v2')
+          files = sorted(root.glob('*.md'))
 
-              # Whitespace/punctuation artifacts
-              for m in re.finditer(r'[^\n] {2,}[^\n]', text): add('MULTISPACE',m)
-              for m in re.finditer(r'[ \t]+\n', text): add('TRAILING_WS',m)
-              for m in re.finditer(r'\s+[,.!?;:](?!\d)', text): add('SPACE_BEFORE_PUNCT',m)
-              for m in re.finditer(r'[,.!?;:]{3,}', text): add('PUNCT_RUN',m)
-              for m in re.finditer(r'\.{4,}', text): add('DOT_RUN',m)
-              for m in re.finditer(r'(?i)\b([а-яё]{2,})\s+\1\b', text): add('DUP_WORD',m)
-              # Straight quote/apostrophe characters in Russian prose
-              for m in re.finditer(r'["“”„]', text): add('NON_GUILLEMET_QUOTE',m)
-              # Mixed script inside one token (likely accidental Latin/Cyrillic collision)
-              for m in re.finditer(r'\b(?=[\w-]*[A-Za-z])(?=[\w-]*[А-Яа-яЁё])[\w-]+\b', text): add('MIXED_SCRIPT',m)
-              # Hyphen-minus surrounded by spaces where em dash may have been intended
-              for m in re.finditer(r'\s-\s', text): add('SPACED_HYPHEN',m)
-              # Bracket / guillemet balance summary per file
-              if text.count('«') != text.count('»'):
-                  rows.append((p.as_posix(),0,'UNBALANCED_GUILLEMETS',f"«={text.count('«')} »={text.count('»')}",'',''))
-              if text.count('(') != text.count(')'):
-                  rows.append((p.as_posix(),0,'UNBALANCED_PARENS',f"(={text.count('(')} )={text.count(')')}",'',''))
+          # Typography: use a real ellipsis glyph instead of three periods.
+          ellipsis_count = 0
+          for p in files:
+              text = p.read_text(encoding='utf-8')
+              n = text.count('...')
+              if n:
+                  text = text.replace('...', '…')
+                  p.write_text(text, encoding='utf-8')
+                  ellipsis_count += n
+          assert ellipsis_count == 10, f'Expected 10 ellipses, found {ellipsis_count}'
 
-          out=[f'TOTAL={len(rows)}','']
-          for p,line,kind,bad,detail,ctx in rows:
-              out += [f'FILE={p}',f'LINE={line}',f'KIND={kind}',f'BAD={bad!r}',f'DETAIL={detail}',f'CTX={ctx}','']
-          Path('proofread_report.tmp.txt').write_text('\n'.join(out),encoding='utf-8')
-          print('TOTAL',len(rows))
+          # Two verified copyedits from the final proofing pass.
+          p = root / '03-sled.md'
+          text = p.read_text(encoding='utf-8')
+          old = 'Они проверили дверь в конце, заглянули за пожарный шкаф, вернулись обратно.'
+          new = 'Они проверили дверь в конце, заглянули за пожарный шкаф, вернулись.'
+          assert text.count(old) == 1
+          p.write_text(text.replace(old, new), encoding='utf-8')
+
+          p = root / '13-posle-voyny.md'
+          text = p.read_text(encoding='utf-8')
+          old = 'Через несколько коридоров их остановила уже не неизвестная система, а обычная тяжёлая дверь.'
+          new = 'Через несколько коридоров их остановила уже не система, а обычная тяжёлая дверь.'
+          assert text.count(old) == 1
+          p.write_text(text.replace(old, new), encoding='utf-8')
           PY
-      - name: Commit report
-        run: |
+
+          git rm -f .github/workflows/proofread_current.yml proofread_report.tmp.txt
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add proofread_report.tmp.txt
-          git commit -m "tmp: generate typography report"
+          git add chapters_v2
+          git commit -m "Final publishing copyedit pass"
           git push
