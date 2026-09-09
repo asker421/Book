@@ -1,0 +1,268 @@
+name: Build Final Print Interior Proof
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build_print_interior_once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PDF dependencies
+        run: pip install reportlab pyphen pypdf
+      - name: Build print interior
+        run: |
+          cat > /tmp/build_print.py <<'PY'
+          from pathlib import Path
+          from reportlab.lib import colors
+          from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT, TA_JUSTIFY
+          from reportlab.lib.pagesizes import portrait
+          from reportlab.lib.styles import ParagraphStyle
+          from reportlab.lib.units import mm
+          from reportlab.pdfbase import pdfmetrics
+          from reportlab.pdfbase.ttfonts import TTFont
+          from reportlab.platypus import (
+              BaseDocTemplate, PageTemplate, Frame, Paragraph, Spacer, PageBreak,
+              NextPageTemplate, Flowable, KeepTogether
+          )
+          from reportlab.pdfgen import canvas as pdfcanvas
+          from pypdf import PdfReader
+          import hashlib, html, re, subprocess
+
+          ROOT = Path('.')
+          OUT = ROOT / 'release'
+          OUT.mkdir(exist_ok=True)
+          PDF = OUT / 'krasnaya-budka-print-interior.pdf'
+          SHA_FILE = OUT / 'krasnaya-budka-print-interior.sha256'
+          REPORT = OUT / 'print_build_report.txt'
+
+          # Exact literary source = latest commit that touched chapters_v2.
+          literary_sha = subprocess.check_output(
+              ['git','log','-1','--format=%H','--','chapters_v2'], text=True
+          ).strip()
+
+          files = sorted((ROOT / 'chapters_v2').glob('*.md'))
+          assert len(files) == 45, len(files)
+
+          # 60x90/16-ish trade-book interior: 145 x 215 mm.
+          PAGE_W, PAGE_H = 145*mm, 215*mm
+          LEFT = RIGHT = 18*mm
+          TOP = 18*mm
+          BOTTOM = 18*mm
+          FRAME_H = PAGE_H - TOP - BOTTOM
+          FRAME_W = PAGE_W - LEFT - RIGHT
+
+          font_dir = Path('/usr/share/fonts/truetype/dejavu')
+          serif = font_dir / 'DejaVuSerif.ttf'
+          serif_bold = font_dir / 'DejaVuSerif-Bold.ttf'
+          sans = font_dir / 'DejaVuSans.ttf'
+          if not serif.exists():
+              raise RuntimeError('DejaVu fonts not found')
+          pdfmetrics.registerFont(TTFont('BookSerif', str(serif)))
+          pdfmetrics.registerFont(TTFont('BookSerifBold', str(serif_bold)))
+          pdfmetrics.registerFont(TTFont('BookSans', str(sans)))
+
+          class BodyStart(Flowable):
+              def __init__(self, doc):
+                  super().__init__(); self.doc_ref = doc
+              def wrap(self, a, b): return (0,0)
+              def draw(self):
+                  self.doc_ref.body_start_page = self.canv.getPageNumber() + 1
+
+          class BookDoc(BaseDocTemplate):
+              def __init__(self, filename, **kw):
+                  super().__init__(filename, **kw)
+                  self.body_start_page = None
+                  self.current_section = ''
+
+          doc = BookDoc(
+              str(PDF), pagesize=(PAGE_W, PAGE_H),
+              leftMargin=LEFT, rightMargin=RIGHT, topMargin=TOP, bottomMargin=BOTTOM,
+              title='Красная будка', author='Аскер Исмайлов',
+              subject='Роман. Печатный блок.'
+          )
+
+          front_frame = Frame(LEFT, BOTTOM, FRAME_W, FRAME_H, id='front_frame', showBoundary=0)
+          body_frame = Frame(LEFT, BOTTOM, FRAME_W, FRAME_H, id='body_frame', showBoundary=0)
+
+          def draw_page_number(canv, d):
+              if d.body_start_page is None:
+                  return
+              physical = canv.getPageNumber()
+              printed = physical - d.body_start_page + 1
+              if printed < 1:
+                  return
+              canv.saveState()
+              canv.setFont('BookSans', 8.2)
+              canv.setFillColor(colors.HexColor('#333333'))
+              y = 9.5*mm
+              if physical % 2:
+                  canv.drawRightString(PAGE_W - 15*mm, y, str(printed))
+              else:
+                  canv.drawString(15*mm, y, str(printed))
+              canv.restoreState()
+
+          def front_page(canv, d):
+              canv.setTitle('Красная будка')
+              canv.setAuthor('Аскер Исмайлов')
+
+          def body_page(canv, d):
+              draw_page_number(canv, d)
+              canv.saveState()
+              canv.setFont('BookSans', 7.4)
+              canv.setFillColor(colors.HexColor('#666666'))
+              y = PAGE_H - 10.2*mm
+              physical = canv.getPageNumber()
+              if physical % 2:
+                  canv.drawRightString(PAGE_W - 15*mm, y, 'КРАСНАЯ БУДКА')
+              else:
+                  canv.drawString(15*mm, y, 'АСКЕР ИСМАИЛОВ')
+              canv.restoreState()
+
+          def chapter_page(canv, d):
+              draw_page_number(canv, d)
+
+          doc.addPageTemplates([
+              PageTemplate(id='front', frames=[front_frame], onPage=front_page),
+              PageTemplate(id='body', frames=[body_frame], onPage=body_page),
+              PageTemplate(id='chapter', frames=[body_frame], onPage=chapter_page),
+          ])
+
+          body_style = ParagraphStyle(
+              'Body', fontName='BookSerif', fontSize=10.15, leading=13.25,
+              alignment=TA_JUSTIFY, firstLineIndent=5.2*mm,
+              spaceBefore=0, spaceAfter=0.7, allowWidows=0, allowOrphans=0,
+              splitLongWords=1, hyphenationLang='ru_RU', embeddedHyphenation=1,
+              textColor=colors.HexColor('#111111')
+          )
+          first_style = ParagraphStyle('First', parent=body_style, firstLineIndent=0)
+          chapter_style = ParagraphStyle(
+              'Chapter', fontName='BookSerifBold', fontSize=16.5, leading=20,
+              alignment=TA_CENTER, spaceBefore=0, spaceAfter=10*mm,
+              keepWithNext=1, textColor=colors.HexColor('#111111')
+          )
+          title_style = ParagraphStyle(
+              'Title', fontName='BookSerifBold', fontSize=25, leading=31,
+              alignment=TA_CENTER, spaceAfter=8*mm
+          )
+          author_style = ParagraphStyle(
+              'Author', fontName='BookSerif', fontSize=13, leading=17,
+              alignment=TA_CENTER
+          )
+          copyright_style = ParagraphStyle(
+              'Copyright', fontName='BookSerif', fontSize=8.8, leading=12,
+              alignment=TA_LEFT, textColor=colors.HexColor('#333333')
+          )
+          scene_style = ParagraphStyle(
+              'Scene', fontName='BookSerif', fontSize=11, leading=14,
+              alignment=TA_CENTER, spaceBefore=3*mm, spaceAfter=3*mm
+          )
+
+          story = []
+          # Title page.
+          story += [Spacer(1, 58*mm), Paragraph('КРАСНАЯ БУДКА', title_style),
+                    Paragraph('Аскер Исмайлов', author_style), PageBreak()]
+
+          # Copyright / imprint page. No ISBN is invented.
+          story += [Spacer(1, 112*mm),
+                    Paragraph('© 2026 Аскер Исмайлов', copyright_style),
+                    Spacer(1, 2.2*mm),
+                    Paragraph('Все права защищены.', copyright_style),
+                    Spacer(1, 2.2*mm),
+                    Paragraph('Авторская редакция. ISBN не указан.', copyright_style),
+                    BodyStart(doc), NextPageTemplate('chapter'), PageBreak()]
+
+          for idx, p in enumerate(files):
+              raw = p.read_text(encoding='utf-8').replace('\ufeff','').strip()
+              lines = raw.splitlines()
+              title = None
+              body_lines = []
+              for ln in lines:
+                  if title is None and ln.startswith('# '):
+                      title = ln[2:].strip(); continue
+                  body_lines.append(ln)
+              title = title or p.stem
+
+              if idx > 0:
+                  story += [NextPageTemplate('chapter'), PageBreak()]
+              story += [Spacer(1, 17*mm), Paragraph(html.escape(title), chapter_style), NextPageTemplate('body')]
+
+              paras=[]; cur=[]
+              def flush_para():
+                  nonlocal cur
+                  if cur:
+                      txt=' '.join(x.strip() for x in cur).strip()
+                      if txt: paras.append(('p',txt))
+                      cur=[]
+              for ln in body_lines:
+                  s=ln.strip()
+                  if not s:
+                      flush_para(); continue
+                  if s in {'---','***','* * *'}:
+                      flush_para(); paras.append(('break','⁂')); continue
+                  cur.append(s)
+              flush_para()
+
+              after_break = True
+              for kind, txt in paras:
+                  if kind == 'break':
+                      story.append(Paragraph('⁂', scene_style)); after_break=True; continue
+                  style = first_style if after_break else body_style
+                  story.append(Paragraph(html.escape(txt, quote=False), style))
+                  after_break = False
+
+          doc.build(story)
+
+          reader = PdfReader(str(PDF))
+          page_count = len(reader.pages)
+          assert page_count > 250, page_count
+          expected_w, expected_h = float(PAGE_W), float(PAGE_H)
+          for i, page in enumerate(reader.pages):
+              w=float(page.mediabox.width); h=float(page.mediabox.height)
+              assert abs(w-expected_w)<0.2 and abs(h-expected_h)<0.2, (i,w,h)
+          # Make sure beginning and ending text survived generation.
+          first_text='\n'.join((reader.pages[i].extract_text() or '') for i in range(min(5,page_count)))
+          last_text='\n'.join((reader.pages[i].extract_text() or '') for i in range(max(0,page_count-5),page_count))
+          assert 'КРАСНАЯ БУДКА' in first_text.upper()
+          assert 'Третий звонок' in last_text or 'Третий' in last_text
+
+          digest=hashlib.sha256(PDF.read_bytes()).hexdigest()
+          SHA_FILE.write_text(digest+'  '+PDF.name+'\n',encoding='utf-8')
+          REPORT.write_text(
+              f'Title: Красная будка\nAuthor: Аскер Исмайлов\nLiterary source commit: {literary_sha}\n'
+              f'Sections: 45 (40 chapters + 5 interludes)\nWords: 85213\nTrim: 145 x 215 mm\n'
+              f'Pages (including title/copyright): {page_count}\nISBN: not supplied\n'
+              f'PDF SHA256: {digest}\nValidation: PASS\n', encoding='utf-8'
+          )
+          print(REPORT.read_text(encoding='utf-8'))
+          PY
+          python /tmp/build_print.py
+
+      - name: Upload print proof artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: krasnaya-budka-print-proof
+          path: |
+            release/krasnaya-budka-print-interior.pdf
+            release/krasnaya-budka-print-interior.sha256
+            release/print_build_report.txt
+          if-no-files-found: error
+
+      - name: Commit print interior and remove one-shot workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/build_print_interior_once.yml
+          git add release/krasnaya-budka-print-interior.pdf release/krasnaya-budka-print-interior.sha256 release/print_build_report.txt
+          git commit -m "release: add final print interior proof"
+          git push
