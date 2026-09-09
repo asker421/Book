@@ -15,71 +15,50 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install LanguageTool wrapper
-        run: |
-          python -m pip install --upgrade pip
-          pip install language-tool-python
-      - name: Run Russian proofreading
+      - name: Run static typography checks
         run: |
           python - <<'PY'
           from pathlib import Path
-          from collections import Counter, defaultdict
-          import language_tool_python, re
+          import re
 
-          files = sorted(Path('chapters_v2').glob('*.md'))
-          tool = language_tool_python.LanguageTool('ru-RU')
-          rule_counts = Counter()
-          spell_counts = Counter()
-          spell_examples = {}
-          other = []
-          raw_total = 0
+          rows=[]
+          for p in sorted(Path('chapters_v2').glob('*.md')):
+              text=p.read_text(encoding='utf-8')
+              def add(kind,m,detail=''):
+                  line=text.count('\n',0,m.start())+1
+                  a=max(0,m.start()-90); b=min(len(text),m.end()+90)
+                  ctx=text[a:b].replace('\n',' ⏎ ')
+                  rows.append((p.as_posix(),line,kind,m.group(0),detail,ctx))
 
-          for p in files:
-              text = p.read_text(encoding='utf-8')
-              check_text = re.sub(r'(?m)^#+\s+', lambda m: ' ' * len(m.group(0)), text)
-              for m in tool.check(check_text):
-                  raw_total += 1
-                  issue_type = str(getattr(m, 'rule_issue_type', '') or '')
-                  rule_counts[(m.rule_id, issue_type)] += 1
-                  bad = text[m.offset:m.offset + m.error_length]
-                  start = max(0, m.offset - 120)
-                  end = min(len(text), m.offset + m.error_length + 120)
-                  ctx = text[start:end].replace('\n', ' ⏎ ')
-                  reps = ', '.join(m.replacements[:8])
-                  if m.rule_id == 'WHITESPACE_RULE' and m.offset == 0:
-                      continue
-                  if m.rule_id in {'MORFOLOGIK_RULE_RU_RU', 'RU_COMPOUNDS'}:
-                      key = bad.strip()
-                      spell_counts[key] += 1
-                      spell_examples.setdefault(key, (p.as_posix(), m.message, reps, ctx))
-                      continue
-                  if issue_type.lower() == 'style':
-                      continue
-                  other.append((p.as_posix(), issue_type, m.rule_id, bad, m.message, reps, ctx))
-          tool.close()
+              # Whitespace/punctuation artifacts
+              for m in re.finditer(r'[^\n] {2,}[^\n]', text): add('MULTISPACE',m)
+              for m in re.finditer(r'[ \t]+\n', text): add('TRAILING_WS',m)
+              for m in re.finditer(r'\s+[,.!?;:](?!\d)', text): add('SPACE_BEFORE_PUNCT',m)
+              for m in re.finditer(r'[,.!?;:]{3,}', text): add('PUNCT_RUN',m)
+              for m in re.finditer(r'\.{4,}', text): add('DOT_RUN',m)
+              for m in re.finditer(r'(?i)\b([а-яё]{2,})\s+\1\b', text): add('DUP_WORD',m)
+              # Straight quote/apostrophe characters in Russian prose
+              for m in re.finditer(r'["“”„]', text): add('NON_GUILLEMET_QUOTE',m)
+              # Mixed script inside one token (likely accidental Latin/Cyrillic collision)
+              for m in re.finditer(r'\b(?=[\w-]*[A-Za-z])(?=[\w-]*[А-Яа-яЁё])[\w-]+\b', text): add('MIXED_SCRIPT',m)
+              # Hyphen-minus surrounded by spaces where em dash may have been intended
+              for m in re.finditer(r'\s-\s', text): add('SPACED_HYPHEN',m)
+              # Bracket / guillemet balance summary per file
+              if text.count('«') != text.count('»'):
+                  rows.append((p.as_posix(),0,'UNBALANCED_GUILLEMETS',f"«={text.count('«')} »={text.count('»')}",'',''))
+              if text.count('(') != text.count(')'):
+                  rows.append((p.as_posix(),0,'UNBALANCED_PARENS',f"(={text.count('(')} )={text.count(')')}",'',''))
 
-          out = [f'RAW_TOTAL={raw_total}', '', 'RULE_COUNTS:']
-          out += [f'{n}\t{typ}\t{rid}' for (rid,typ),n in rule_counts.most_common()]
-          out += ['', f'OTHER_CANDIDATES={len(other)}', '']
-          for rec in other:
-              p,typ,rid,bad,msg,reps,ctx = rec
-              out += [f'### {p}', f'TYPE={typ}', f'RULE={rid}', f'BAD={bad!r}', f'MSG={msg}', f'REPL={reps}', f'CTX={ctx}', '']
-          out += [f'SPELLING_UNIQUE={len(spell_counts)}', '']
-          for word,count in sorted(spell_counts.items(), key=lambda kv:(-kv[1], kv[0].lower())):
-              p,msg,reps,ctx = spell_examples[word]
-              out += [f'WORD={word!r}\tCOUNT={count}\tFILE={p}', f'REPL={reps}', f'CTX={ctx}', '']
-          Path('proofread_report.tmp.txt').write_text('\n'.join(out), encoding='utf-8')
-          print('RAW_TOTAL', raw_total)
-          print('OTHER_CANDIDATES', len(other))
-          print('SPELLING_UNIQUE', len(spell_counts))
+          out=[f'TOTAL={len(rows)}','']
+          for p,line,kind,bad,detail,ctx in rows:
+              out += [f'FILE={p}',f'LINE={line}',f'KIND={kind}',f'BAD={bad!r}',f'DETAIL={detail}',f'CTX={ctx}','']
+          Path('proofread_report.tmp.txt').write_text('\n'.join(out),encoding='utf-8')
+          print('TOTAL',len(rows))
           PY
       - name: Commit report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add proofread_report.tmp.txt
-          git commit -m "tmp: summarize Russian proofreading candidates"
+          git commit -m "tmp: generate typography report"
           git push
