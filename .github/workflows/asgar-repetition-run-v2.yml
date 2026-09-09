@@ -1,0 +1,55 @@
+name: Run Asgar Repetition Pass V2
+
+on:
+  push:
+    branches:
+      - asgar-repetition-pass-work
+    paths:
+      - '.github/workflows/asgar-repetition-run-v2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply curated pass from existing script
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import textwrap
+
+          wf = Path('.github/workflows/asgar-repetition-apply.yml').read_text(encoding='utf-8')
+          start_marker = "          python - <<'PY'\n"
+          end_marker = "\n          PY\n"
+          start = wf.index(start_marker) + len(start_marker)
+          end = wf.index(end_marker, start)
+          code = textwrap.dedent(wf[start:end])
+
+          old = "('Асгар кивнул.\\n\\nКатя спросила, что будет, если там ничего нет.', 'Он кивнул.\\n\\nКатя спросила, что будет, если там ничего нет.'),"
+          new = "('Асгар кивнул. Катя спросила, что будет, если там ничего нет.', 'Он кивнул. Катя спросила, что будет, если там ничего нет.'),"
+          if code.count(old) != 1:
+              raise RuntimeError(f'Expected one in-memory workflow patch target, found {code.count(old)}')
+          code = code.replace(old, new, 1)
+          exec(compile(code, '<curated-asgar-pass>', 'exec'), {})
+          PY
+
+          git diff --check -- chapters_v2
+          echo '=== DIFF STAT ==='
+          git diff --stat -- chapters_v2
+          echo '=== EDITED DIFF ==='
+          git diff --unified=3 -- chapters_v2
+
+      - name: Commit chapter edits only
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add chapters_v2
+          git commit -m "Apply curated Asgar repetition pass"
+          git push origin HEAD:asgar-repetition-pass-work
