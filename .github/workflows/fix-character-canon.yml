@@ -1,0 +1,70 @@
+name: Fix canonical character names
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-character-canon.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Update canonical name references
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              'STORY_BIBLE.md': [
+                  ('Эн — цифровая личность', 'Энар — цифровая личность'),
+                  ('Сай — биологический специалист', 'Тавия — биологический специалист'),
+                  ('Сай и группа пассивно изучают', 'Тавия и группа пассивно изучают'),
+                  ('Глава 23 НЕ раскрывает главный твист. Сай показывает', 'Глава 23 НЕ раскрывает главный твист. Тавия показывает'),
+                  ('Сай считает безопасное отделение', 'Тавия считает безопасное отделение'),
+                  ('Сай предлагает физический маркер', 'Тавия предлагает физический маркер'),
+                  ('Кей — один из постоянных наземных жителей', 'Киран — один из постоянных наземных жителей'),
+                  ('На Земле 18 403 221 года Кей ведёт', 'На Земле 18 403 221 года Киран ведёт'),
+                  ('Перед уходом Кей даёт ему небольшой пассивный набор', 'Перед уходом Киран даёт ему небольшой пассивный набор'),
+                  ('Нэй — активный житель Долгого дома', 'Селин — активный житель Долгого дома'),
+                  ('Нэй и Орт предлагают Асгару', 'Селин и Орт предлагают Асгару'),
+              ],
+              'CONTINUITY.md': [
+                  ('Перед окном 61 084 773 года Кей даёт Асгару', 'Перед окном 61 084 773 года Киран даёт Асгару'),
+                  ('255. Нэй живёт через огромные интервалы', '255. Селин живёт через огромные интервалы'),
+              ],
+              'CHAPTER_MAP.md': [
+                  ('Сай пассивно исследует будку', 'Тавия пассивно исследует будку'),
+                  ('измерения Сай подводят Асгара', 'измерения Тавии подводят Асгара'),
+                  ('Асгар встречает Кея, одного из редких', 'Асгар встречает Кирана, одного из редких'),
+                  ('года Кей ведёт Асгара в последний крупный наземный архив', 'года Киран ведёт Асгара в последний крупный наземный архив'),
+                  ('Перед уходом Кей даёт Асгару небольшой пассивный набор', 'Перед уходом Киран даёт Асгару небольшой пассивный набор'),
+                  ('Нэй и Орт показывают общество', 'Селин и Орт показывают общество'),
+              ],
+          }
+
+          for filename, pairs in replacements.items():
+              path = Path(filename)
+              text = path.read_text(encoding='utf-8')
+              for old, new in pairs:
+                  count = text.count(old)
+                  if count != 1:
+                      raise SystemExit(f'{filename}: expected exactly 1 occurrence of {old!r}, found {count}')
+                  text = text.replace(old, new)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit fixes and remove temporary workflow
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/fix-character-canon.yml
+          git add STORY_BIBLE.md CONTINUITY.md CHAPTER_MAP.md
+          git commit -m "Fix canonical character name references"
+          git push
