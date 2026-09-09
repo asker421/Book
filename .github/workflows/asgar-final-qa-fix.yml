@@ -1,0 +1,64 @@
+name: Final QA Fix Asgar Pass
+
+on:
+  push:
+    branches:
+      - asgar-repetition-pass-work
+    paths:
+      - '.github/workflows/asgar-final-qa-fix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Revert three ambiguous pronouns
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          fixes = {
+            '02-chetyre-dnya.md': (
+              'Она даже вспомнила, что сказала ему не трогать чужое. Он повернулся к ней.',
+              'Она даже вспомнила, что сказала ему не трогать чужое. Асгар повернулся к ней.'
+            ),
+            '10-krasnyy-koridor.md': (
+              'Перед поездкой он потребовал протокол безопасности. Самир показал',
+              'Перед поездкой Асгар потребовал протокол безопасности. Самир показал'
+            ),
+            '24-ne-domoy.md': (
+              'Он только переставил роли в задаче, которую он несколько лет считал общей.',
+              'Он только переставил роли в задаче, которую Асгар несколько лет считал общей.'
+            ),
+          }
+          root = Path('chapters_v2')
+          for filename, (old, new) in fixes.items():
+              p = root / filename
+              text = p.read_text(encoding='utf-8')
+              if text.count(old) != 1:
+                  raise RuntimeError(f'{filename}: expected exactly one QA target, found {text.count(old)}')
+              p.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          files = sorted(root.glob('*.md'))
+          total = sum(p.read_text(encoding='utf-8').count('Асгар') for p in files)
+          print(f'FINAL_ASGAR_COUNT={total}')
+          if total != 1691:
+              raise RuntimeError(f'Expected final count 1691, got {total}')
+          PY
+          git diff --check -- chapters_v2
+          git diff --unified=3 -- chapters_v2/02-chetyre-dnya.md chapters_v2/10-krasnyy-koridor.md chapters_v2/24-ne-domoy.md
+
+      - name: Commit QA fixes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add chapters_v2/02-chetyre-dnya.md chapters_v2/10-krasnyy-koridor.md chapters_v2/24-ne-domoy.md
+          git commit -m "QA ambiguous pronouns in Asgar pass"
+          git push origin HEAD:asgar-repetition-pass-work
