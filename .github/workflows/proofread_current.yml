@@ -26,29 +26,38 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          from collections import Counter
           import language_tool_python
           import re
 
-          root = Path('chapters_v2')
-          files = sorted(root.glob('*.md'))
+          files = sorted(Path('chapters_v2').glob('*.md'))
           tool = language_tool_python.LanguageTool('ru-RU')
           out = []
-          total = 0
+          counts = Counter()
+          raw_total = 0
+          kept = 0
 
           for p in files:
               text = p.read_text(encoding='utf-8')
               check_text = re.sub(r'(?m)^#+\s+', lambda m: ' ' * len(m.group(0)), text)
               matches = tool.check(check_text)
-              if matches:
-                  out.append(f'### {p.as_posix()}')
+              file_out = []
               for m in matches:
-                  total += 1
-                  start = max(0, m.offset - 100)
-                  end = min(len(text), m.offset + m.error_length + 100)
-                  ctx = text[start:end].replace('\n', ' ⏎ ')
+                  raw_total += 1
+                  issue_type = str(getattr(m, 'rule_issue_type', '') or '')
+                  counts[(m.rule_id, issue_type)] += 1
                   bad = text[m.offset:m.offset + m.error_length]
+                  if issue_type.lower() == 'style':
+                      continue
+                  if m.rule_id == 'WHITESPACE_RULE' and m.offset == 0:
+                      continue
+                  kept += 1
+                  start = max(0, m.offset - 130)
+                  end = min(len(text), m.offset + m.error_length + 130)
+                  ctx = text[start:end].replace('\n', ' ⏎ ')
                   reps = ', '.join(m.replacements[:8])
-                  out.append(
+                  file_out.append(
+                      f'TYPE={issue_type}\n'
                       f'RULE={m.rule_id}\n'
                       f'OFFSET={m.offset}\n'
                       f'BAD={bad!r}\n'
@@ -56,15 +65,21 @@ jobs:
                       f'REPL={reps}\n'
                       f'CTX={ctx}\n'
                   )
+              if file_out:
+                  out.append(f'### {p.as_posix()}')
+                  out.extend(file_out)
+
           tool.close()
-          report = f'TOTAL_MATCHES={total}\n\n' + '\n'.join(out)
+          count_lines = ['RULE_COUNTS:'] + [f'{n}\t{typ}\t{rid}' for (rid,typ),n in counts.most_common()]
+          report = f'RAW_TOTAL={raw_total}\nKEPT_NON_STYLE={kept}\n\n' + '\n'.join(count_lines) + '\n\n' + '\n'.join(out)
           Path('proofread_report.tmp.txt').write_text(report, encoding='utf-8')
-          print('TOTAL_MATCHES', total)
+          print('RAW_TOTAL', raw_total)
+          print('KEPT_NON_STYLE', kept)
           PY
       - name: Commit report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add proofread_report.tmp.txt
-          git commit -m "tmp: generate Russian proofreading report"
+          git commit -m "tmp: refine Russian proofreading report"
           git push
