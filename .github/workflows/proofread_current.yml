@@ -26,60 +26,60 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          from collections import Counter
-          import language_tool_python
-          import re
+          from collections import Counter, defaultdict
+          import language_tool_python, re
 
           files = sorted(Path('chapters_v2').glob('*.md'))
           tool = language_tool_python.LanguageTool('ru-RU')
-          out = []
-          counts = Counter()
+          rule_counts = Counter()
+          spell_counts = Counter()
+          spell_examples = {}
+          other = []
           raw_total = 0
-          kept = 0
 
           for p in files:
               text = p.read_text(encoding='utf-8')
               check_text = re.sub(r'(?m)^#+\s+', lambda m: ' ' * len(m.group(0)), text)
-              matches = tool.check(check_text)
-              file_out = []
-              for m in matches:
+              for m in tool.check(check_text):
                   raw_total += 1
                   issue_type = str(getattr(m, 'rule_issue_type', '') or '')
-                  counts[(m.rule_id, issue_type)] += 1
+                  rule_counts[(m.rule_id, issue_type)] += 1
                   bad = text[m.offset:m.offset + m.error_length]
-                  if issue_type.lower() == 'style':
-                      continue
-                  if m.rule_id == 'WHITESPACE_RULE' and m.offset == 0:
-                      continue
-                  kept += 1
-                  start = max(0, m.offset - 130)
-                  end = min(len(text), m.offset + m.error_length + 130)
+                  start = max(0, m.offset - 120)
+                  end = min(len(text), m.offset + m.error_length + 120)
                   ctx = text[start:end].replace('\n', ' ⏎ ')
                   reps = ', '.join(m.replacements[:8])
-                  file_out.append(
-                      f'TYPE={issue_type}\n'
-                      f'RULE={m.rule_id}\n'
-                      f'OFFSET={m.offset}\n'
-                      f'BAD={bad!r}\n'
-                      f'MSG={m.message}\n'
-                      f'REPL={reps}\n'
-                      f'CTX={ctx}\n'
-                  )
-              if file_out:
-                  out.append(f'### {p.as_posix()}')
-                  out.extend(file_out)
-
+                  if m.rule_id == 'WHITESPACE_RULE' and m.offset == 0:
+                      continue
+                  if m.rule_id in {'MORFOLOGIK_RULE_RU_RU', 'RU_COMPOUNDS'}:
+                      key = bad.strip()
+                      spell_counts[key] += 1
+                      spell_examples.setdefault(key, (p.as_posix(), m.message, reps, ctx))
+                      continue
+                  if issue_type.lower() == 'style':
+                      continue
+                  other.append((p.as_posix(), issue_type, m.rule_id, bad, m.message, reps, ctx))
           tool.close()
-          count_lines = ['RULE_COUNTS:'] + [f'{n}\t{typ}\t{rid}' for (rid,typ),n in counts.most_common()]
-          report = f'RAW_TOTAL={raw_total}\nKEPT_NON_STYLE={kept}\n\n' + '\n'.join(count_lines) + '\n\n' + '\n'.join(out)
-          Path('proofread_report.tmp.txt').write_text(report, encoding='utf-8')
+
+          out = [f'RAW_TOTAL={raw_total}', '', 'RULE_COUNTS:']
+          out += [f'{n}\t{typ}\t{rid}' for (rid,typ),n in rule_counts.most_common()]
+          out += ['', f'OTHER_CANDIDATES={len(other)}', '']
+          for rec in other:
+              p,typ,rid,bad,msg,reps,ctx = rec
+              out += [f'### {p}', f'TYPE={typ}', f'RULE={rid}', f'BAD={bad!r}', f'MSG={msg}', f'REPL={reps}', f'CTX={ctx}', '']
+          out += [f'SPELLING_UNIQUE={len(spell_counts)}', '']
+          for word,count in sorted(spell_counts.items(), key=lambda kv:(-kv[1], kv[0].lower())):
+              p,msg,reps,ctx = spell_examples[word]
+              out += [f'WORD={word!r}\tCOUNT={count}\tFILE={p}', f'REPL={reps}', f'CTX={ctx}', '']
+          Path('proofread_report.tmp.txt').write_text('\n'.join(out), encoding='utf-8')
           print('RAW_TOTAL', raw_total)
-          print('KEPT_NON_STYLE', kept)
+          print('OTHER_CANDIDATES', len(other))
+          print('SPELLING_UNIQUE', len(spell_counts))
           PY
       - name: Commit report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add proofread_report.tmp.txt
-          git commit -m "tmp: refine Russian proofreading report"
+          git commit -m "tmp: summarize Russian proofreading candidates"
           git push
