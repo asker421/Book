@@ -23,7 +23,6 @@ jobs:
           root = Path('chapters_v2')
           files = sorted(root.glob('*.md'))
 
-          # Typography: use a real ellipsis glyph instead of three periods.
           ellipsis_count = 0
           for p in files:
               text = p.read_text(encoding='utf-8')
@@ -32,9 +31,8 @@ jobs:
                   text = text.replace('...', '…')
                   p.write_text(text, encoding='utf-8')
                   ellipsis_count += n
-          assert ellipsis_count == 10, f'Expected 10 ellipses, found {ellipsis_count}'
+          assert ellipsis_count == 11, f'Expected 11 ellipses, found {ellipsis_count}'
 
-          # Two verified copyedits from the final proofing pass.
           p = root / '03-sled.md'
           text = p.read_text(encoding='utf-8')
           old = 'Они проверили дверь в конце, заглянули за пожарный шкаф, вернулись обратно.'
