@@ -1,0 +1,92 @@
+name: Validate Asgar promotion
+on:
+  push:
+    branches: [promote-asgar-repetition]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate curated replacements against current main
+        run: |
+          git fetch origin asgar-repetition-pass-work
+          python - <<'PY'
+          from pathlib import Path
+          import ast, subprocess, textwrap
+
+          wf = subprocess.check_output([
+              'git','show','origin/asgar-repetition-pass-work:.github/workflows/asgar-repetition-apply.yml'
+          ], text=True)
+          start_marker = "          python - <<'PY'\n"
+          end_marker = "\n          PY\n"
+          start = wf.index(start_marker) + len(start_marker)
+          end = wf.index(end_marker, start)
+          code = textwrap.dedent(wf[start:end])
+          tree = ast.parse(code)
+          edits = None
+          for node in tree.body:
+              if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'edits' for t in node.targets):
+                  edits = ast.literal_eval(node.value)
+                  break
+          if edits is None:
+              raise RuntimeError('edits dict not found')
+
+          overrides = {
+            '02-chetyre-dnya.md': {
+              'Асгар кивнул.\n\nКатя спросила, что будет, если там ничего нет.':
+                ('Асгар кивнул. Катя спросила, что будет, если там ничего нет.', 'Он кивнул. Катя спросила, что будет, если там ничего нет.'),
+            },
+            '03-sled.md': {
+              'Катя взяла его за руку. Асгар достал ключи, но ещё несколько секунд не открывал машину.':
+                ('Асгар достал ключи, но ещё несколько секунд не открывал машину.', 'Он достал ключи, но ещё несколько секунд не открывал машину.'),
+            },
+            '05-dvadtsat-pyat-let.md': {
+              'Старый телефон зазвонил. Асгар не двинулся.':
+                ('Асгар не двинулся.', 'Он не двинулся.'),
+            },
+            '13-posle-voyny.md': {
+              'Женщина назвала остаток. Асгар вышел.':
+                ('Асгар вышел.', 'Он вышел.'),
+            },
+            '23-razdelennoe-chelovechestvo.md': {
+              'Отправлять внешний объект в собственное прошлое они не умели. Асгар кивнул.':
+                ('Отправлять внешний объект в собственное прошлое они не умели.\n\nАсгар кивнул.', 'Отправлять внешний объект в собственное прошлое они не умели.\n\nОн кивнул.'),
+            },
+            '31-poslanie.md': {
+              'Этого хватало. Асгар попросил закрыть персональный доступ и не создавать копию.':
+                ('Асгар попросил закрыть персональный доступ и не создавать копию.', 'Он попросил закрыть персональный доступ и не создавать копию.'),
+            },
+            '40-16-avgusta.md': {
+              'Рев трибун сжался в одну низкую ноту, удержался ещё секунду и оборвался. Асгар упал на колени.':
+                ('Асгар упал на колени.', 'Он упал на колени.'),
+            },
+          }
+
+          unresolved=[]
+          applicable=0
+          already=0
+          for filename,repls in edits.items():
+              text=(Path('chapters_v2')/filename).read_text(encoding='utf-8')
+              for old,new in repls:
+                  if old in overrides.get(filename,{}):
+                      old,new=overrides[filename][old]
+                  co=text.count(old); cn=text.count(new)
+                  if co==1:
+                      applicable+=1
+                  elif co==0 and cn>=1:
+                      already+=1
+                  else:
+                      unresolved.append((filename,co,cn,old,new))
+          print(f'TOTAL={sum(len(v) for v in edits.values())}')
+          print(f'APPLICABLE={applicable}')
+          print(f'ALREADY={already}')
+          print(f'UNRESOLVED={len(unresolved)}')
+          for fn,co,cn,old,new in unresolved:
+              print('UNRESOLVED_FILE',fn,'old_count=',co,'new_count=',cn)
+              print('OLD',repr(old))
+              print('NEW',repr(new))
+          PY
