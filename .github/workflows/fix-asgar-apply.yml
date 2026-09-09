@@ -1,0 +1,38 @@
+name: Fix Asgar Apply Workflow
+
+on:
+  push:
+    branches:
+      - asgar-repetition-pass-work
+    paths:
+      - '.github/workflows/fix-asgar-apply.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fix exact chapter 2 context and remove helper
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('.github/workflows/asgar-repetition-apply.yml')
+          text = p.read_text(encoding='utf-8')
+          old = "('Асгар кивнул.\\n\\nКатя спросила, что будет, если там ничего нет.', 'Он кивнул.\\n\\nКатя спросила, что будет, если там ничего нет.'),"
+          new = "('— Завтра камеры, — сказала она. Асгар кивнул. Катя спросила, что будет, если там ничего нет.', '— Завтра камеры, — сказала она. Он кивнул. Катя спросила, что будет, если там ничего нет.'),"
+          if text.count(old) != 1:
+              raise RuntimeError(f'Expected one target, found {text.count(old)}')
+          p.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/asgar-repetition-apply.yml
+          git rm -f .github/workflows/fix-asgar-apply.yml
+          git commit -m "Fix temporary Asgar apply context"
+          git push origin HEAD:asgar-repetition-pass-work
