@@ -30,22 +30,22 @@ jobs:
               print(f'{p.name}\t{n}')
           print(f'TOTAL\t{total}')
 
-          print('\n=== CANDIDATE PARAGRAPHS ===')
+          print('\n=== CROSS-PARAGRAPH / ADJACENT-SENTENCE WINDOWS ===')
           target = re.compile(r'Асгар(?: снова)? (?:посмотрел|спросил|кивнул|повернулся)')
-          sent_split = re.compile(r'(?<=[.!?…])\s+(?=[А-ЯЁ—«])')
+          sentence_re = re.compile(r'[^.!?…\n]+(?:[.!?…]+|$)', re.M)
           for p in files:
               text = p.read_text(encoding='utf-8')
-              paras = [x.strip() for x in re.split(r'\n\s*\n', text) if x.strip()]
-              for i, para in enumerate(paras, 1):
-                  direct = para.count('Асгар') >= 2 or bool(target.search(para))
-                  sents = sent_split.split(para)
-                  near = False
-                  for j in range(len(sents)):
-                      window = ' '.join(sents[j:j+3])
-                      if window.count('Асгар') >= 2:
-                          near = True
-                          break
-                  if direct or near:
-                      print(f'--- {p.name} :: P{i} :: count={para.count("Асгар")} direct={int(direct)} near={int(near)}')
-                      print(para.replace('\n', ' '))
+              sentences = [m.group(0).strip() for m in sentence_re.finditer(text) if m.group(0).strip()]
+              emitted = set()
+              for i, sent in enumerate(sentences):
+                  lo = max(0, i - 1)
+                  hi = min(len(sentences), i + 3)
+                  window = sentences[lo:hi]
+                  joined = ' '.join(window)
+                  has_near = sum(s.count('Асгар') for s in sentences[i:min(len(sentences), i+3)]) >= 2
+                  has_special = bool(target.search(sent))
+                  if (has_near or has_special) and (lo, hi) not in emitted:
+                      emitted.add((lo, hi))
+                      print(f'--- {p.name} :: S{i+1} :: near={int(has_near)} special={int(has_special)}')
+                      print(joined)
           PY
