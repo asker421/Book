@@ -57,3 +57,4 @@ jobs:
           git push
 
 # Rebuild artifact after chapter-title rename (2026-09-09)
+# Manual rebuild requested 2026-09-13: current chapters_v2/main
