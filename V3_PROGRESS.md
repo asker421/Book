@@ -12,14 +12,14 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **NOT PASS — opening rewritten after user rejection; awaiting user reading**
-- last completed action: Глава 1 переписана заново по встроенному FAIL-CLOSED protocol, полный adversarial audit → repair → полный re-audit завершён; текст и worklog сохранены
+- current episode status: **проверена, ожидает решения пользователя** — полный аудит по запросу пользователя выявил MAJOR (anti-ladder в бытовой половине); дефект исправлен хирургически, полный 24-осевой re-audit пройден заново
+- last completed action: Глава 1 — полный аудит → MAJOR ANTI-LADDER FAIL → хирургическая правка бытовой половины → полный повторный аудит с первого пункта; `ASGAR_STATE_LEDGER` синхронизирован по одежде/инвентарю; текст и worklog сохранены
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
 
 ## Prompt readiness
-- Глава 1: **NOT PASS — revised opening saved after user rejection**; text `chapters_v3/01-16-avgusta.md`, log `worklogs_v3/01.md`; user approval not received.
+- Глава 1: **проверена, ожидает решения пользователя** — anti-ladder MAJOR исправлен, полный re-audit пройден; text `chapters_v3/01-16-avgusta.md`, log `worklogs_v3/01.md`; user approval not received.
 - Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
