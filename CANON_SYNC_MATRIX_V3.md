@@ -35,7 +35,7 @@
 | Release audit | `NOVEL_FINAL_AUDIT_CHECKLIST.md` | PASS | FULL CANON STACK GATE добавлен | release пока заблокирован rewrite-статусом | **GREEN infrastructure / YELLOW corpus** |
 | PROJECT_MEMORY | `PROJECT_MEMORY/*` | subordinate | handoff/style memory синхронизированы | current status обновляется этой матрицей | **GREEN after this pass** |
 
-Контроль: все **36 root-level markdown-файлов** упоминаются в `MANIFEST.md`. Неиндексированных root markdown-файлов: **0**.
+Контроль: все **37 root-level markdown-файлов** упоминаются в `MANIFEST.md`. Неиндексированных root markdown-файлов: **0**.
 
 ---
 
