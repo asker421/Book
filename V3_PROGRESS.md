@@ -1,0 +1,59 @@
+# V3 PROGRESS
+
+## Prompt pack
+- source commit: `17f48f3e1dc0dc03fba362de8435644672b0d28d`
+- structure: **35 chapters + 5 interludes**
+- individual prompts: **40 / 40**
+- usage: `prompts_v3/00_USAGE.md`
+- index: `prompts_v3/01_INDEX.md`
+- source registry: `prompts_v3/SOURCE_REGISTRY.md`
+- cross-episode matrix: `prompts_v3/CROSS_EPISODE_MATRIX.md`
+- coverage: `prompts_v3/COVERAGE_MATRIX.md`
+- blockers: `prompts_v3/BLOCKERS.md`
+- current writing episode: **none selected in this prompt-generation run**
+- last completed action: полный individual prompt pack подготовлен
+- next permitted action: пользователь явно выбирает один эпизод
+- automatic move to next episode: **FORBIDDEN**
+- prose written by this run: **NO**
+
+## Prompt readiness
+- Глава 1: prompt ready — `prompts_v3/episodes/01.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Интерлюдия I: prompt ready — `prompts_v3/episodes/04a.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 5: prompt ready — `prompts_v3/episodes/05.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 6: prompt ready — `prompts_v3/episodes/06.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 7: prompt ready — `prompts_v3/episodes/07.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 8: prompt ready — `prompts_v3/episodes/08.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Интерлюдия II: prompt ready — `prompts_v3/episodes/08a.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 9: prompt ready — `prompts_v3/episodes/09.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 10: prompt ready — `prompts_v3/episodes/10.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 11: prompt ready — `prompts_v3/episodes/11.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 12: prompt ready — `prompts_v3/episodes/12.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 13: prompt ready — `prompts_v3/episodes/13.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 14: prompt ready — `prompts_v3/episodes/14.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 15: prompt ready — `prompts_v3/episodes/15.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Интерлюдия III: prompt ready — `prompts_v3/episodes/15a.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 16: prompt ready — `prompts_v3/episodes/16.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 17: prompt ready — `prompts_v3/episodes/17.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 18: prompt ready — `prompts_v3/episodes/18.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 19: prompt ready — `prompts_v3/episodes/19.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 20: prompt ready — `prompts_v3/episodes/20.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 21: prompt ready — `prompts_v3/episodes/21.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 22: prompt ready — `prompts_v3/episodes/22.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Интерлюдия IV: prompt ready — `prompts_v3/episodes/22a.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 23: prompt ready — `prompts_v3/episodes/23.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 24: prompt ready — `prompts_v3/episodes/24.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 25: prompt ready — `prompts_v3/episodes/25.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 26: prompt ready — `prompts_v3/episodes/26.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 27: prompt ready — `prompts_v3/episodes/27.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 28: prompt ready — `prompts_v3/episodes/28.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 29: prompt ready — `prompts_v3/episodes/29.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 30: prompt ready — `prompts_v3/episodes/30.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Интерлюдия V: prompt ready — `prompts_v3/episodes/30a.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 31: prompt ready — `prompts_v3/episodes/31.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 32: prompt ready — `prompts_v3/episodes/32.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 33: prompt ready — `prompts_v3/episodes/33.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 34: prompt ready — `prompts_v3/episodes/34.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 35: prompt ready — `prompts_v3/episodes/35.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.

@@ -1780,3 +1780,23 @@ CONFLICT_ANTAGONISM_CANON.md.
 - матрица обновляется после крупного canon-sync, структурной операции или завершения full rewrite главы.
 
 На контрольном проходе 14.09.2026 canon architecture синхронизирована, но художественный корпус ещё не имеет полного GREEN: часть `chapters_v3/` остаётся frozen-v2 baseline или не имеет доказанного full-rewrite certificate.
+
+
+---
+
+## V3 PROMPT PACK — ИНДИВИДУАЛЬНЫЕ ЗАДАНИЯ
+
+Обязательный служебный комплект для последовательного полного rewrite V3:
+- `prompts_v3/00_USAGE.md` — инструкция;
+- `prompts_v3/01_INDEX.md` — точный порядок 35 + 5;
+- `prompts_v3/SOURCE_REGISTRY.md` — source freeze и обязательные источники;
+- `prompts_v3/CROSS_EPISODE_MATRIX.md` — сквозные выборы/выходы;
+- `prompts_v3/COVERAGE_MATRIX.md` — покрытие требований;
+- `prompts_v3/BLOCKERS.md` — blockers/warnings;
+- `prompts_v3/episodes/` — 40 индивидуальных prompts;
+- `V3_PROGRESS.md` — указатель текущего состояния;
+- `worklogs_v3/` — журналы rewrite/audit.
+
+Комплект не меняет канон и не заменяет чтение active sources.
+Каждый individual prompt содержит полный цикл `write → audit → fix → re-audit → Git/logs → full display → STOP`.
+Переход к следующей главе/интерлюдии — только по явной команде пользователя.
