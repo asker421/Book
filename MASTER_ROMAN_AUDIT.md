@@ -52,6 +52,7 @@
 - `RELATIONSHIP_CANON.md`;
 - `CONFLICT_ANTAGONISM_CANON.md`;
 - `NARRATIVE_STYLE_CANON.md`;
+- `CANON_AUTHOR_STYLE_V3.md`;
 - `PROSE_DIALOGUE_CANON.md`;
 - `READER_EXPERIENCE_CANON.md`;
 - `CANON_WRITING_TICS.md`.
@@ -576,3 +577,18 @@ FAIL-категории:
 
 После правки поведения конфликтного персонажа повторяются passes:
 MOTIVATION → KNOWLEDGE → VOICE → RELATIONSHIPS → CAUSE/EFFECT → HUMAN CONFLICT.
+
+
+# PASS — AUTHOR STYLE / CAUSAL ECHO
+
+Перед финальным prose/tics pass сверить `CANON_AUTHOR_STYLE_V3.md`:
+- следствие и объяснение появляются в психологически честном порядке;
+- неизвестное не получает преждевременного имени;
+- причинные эхо не декоративны;
+- второй смысл ранних сцен не требует реткона;
+- диалогический параллакс имеет мотивационную причину;
+- эмоция меняет геометрию внимания;
+- сенсорные швы совместимы с физикой;
+- стиль не превратился в повторяемый трюк.
+
+Любой **SECOND-READING CHEAT** или **POV OMNISCIENCE** = CRITICAL. Систематический **STYLE TIC** = MAJOR до исправления.
