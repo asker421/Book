@@ -519,8 +519,9 @@ PASS означает только состояние, подтверждённ�
 - битых markdown-ссылок между активными canon/ledger/authoring/audit документами: **0** (шаблонные `*_CANON.md` / `*_LEDGER.md` не считаются файлами);
 - chapter contracts: **40/40**;
 - файлов `chapters_v3/`: **40/40**;
-- byte-identical V2 на момент проверки: **19/40**;
-- отличающихся SHA от V2: **21/40**;
+- byte-identical V2 среди 39 файлов с тем же техническим путём: **0/39**;
+- отличающихся SHA среди тех же путей: **39/39**;
+- отдельная переименованная пара пути: **1/40** (`16-mara.md` → `16-maren.md`);
 - автоматических FULL V3 PASS: **0/40** — специально, до полного rewrite + full-stack audit.
 
 ### Reveal firewall
@@ -547,7 +548,7 @@ PASS означает только состояние, подтверждённ�
 **MANIFEST INDEX: PASS**  
 **ACTIVE CROSS-REFERENCES: PASS**  
 **STRUCTURE 35+5: PASS**  
-**CANON ARCHITECTURE: PASS**  
+**CANON ARCHITECTURE: PATCHED / PASS**  
 **ARTISTIC V3 COMPLETION: BLOCKED / REWRITE REQUIRED**
 
 ---
