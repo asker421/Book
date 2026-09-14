@@ -12,7 +12,7 @@
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
 - current episode status: **проверена, ожидает решения пользователя**
-- last completed action: полный rewrite Главы 1 + полный audit/recheck; текст, worklog и sync matrix подготовлены к фиксации
+- last completed action: Глава 1 — пользовательский self-proof defect исправлен; выполнен focused re-audit, worklog и sync matrix обновлены
 - next permitted action: только решение пользователя по Главе 1 — одобрение или правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
