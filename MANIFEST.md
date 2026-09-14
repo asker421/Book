@@ -1116,6 +1116,20 @@ chapter contract → cause/effect → knowledge → reveal → Asgar state → t
 
 При конфликте любого общего/служебного документа со специализированным каноном в его области действует специализированный канон.
 
+### Build / release source invariant
+
+Текущая рабочая сборка романа обязана читать **только `chapters_v3/`**.
+
+- `tools/build_epub.py` — V3 builder;
+- `.github/workflows/build-epub-source.yml` — V3 working-artifact workflow;
+- frozen-v2 workflows могут продолжать существовать только как явно архивные механизмы;
+- пока `CANON_SYNC_MATRIX.md` содержит `REWRITE REQUIRED`, `AUDIT REQUIRED` или глобальный `RELEASE: BLOCKED`, производный EPUB/PDF не имеет права маркироваться финальным релизом;
+- переключение build source обратно на v2 без отдельного изменения этого манифеста = **RELEASE SOURCE FAIL**.
+
+`release/` остаётся производным каталогом и никогда не переопределяет художественный source-of-truth.
+
+---
+
 ### 18. Проверка полноты перед новой сессией
 
 Перед написанием, переписыванием или аудитом нового чата необходимо:
