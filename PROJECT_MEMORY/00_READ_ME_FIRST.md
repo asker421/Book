@@ -19,7 +19,7 @@
 Перед правкой:
 1. прочитать `MANIFEST.md`;
 2. по его секции обязательной загрузки открыть все релевантные canon/ledger-файлы;
-3. прочитать `PROJECT_MEMORY/01_CURRENT_STATUS.md`, `PROJECT_MEMORY/07_V3_NARRATIVE_STYLE.md` и `CANON_SYNC_MATRIX_V3.md`;
+3. прочитать `PROJECT_MEMORY/01_CURRENT_STATUS.md`, `PROJECT_MEMORY/07_V3_NARRATIVE_STYLE.md` и `CANON_SYNC_MATRIX.md`;
 4. прочитать исходную соответствующую главу v2 как source material, затем текущую v3-главу и соседние v3-главы;
 5. заново построить сцену по v3-канону, а не line-edit старой прозы;
 6. если меняется знание, состояние, staging или payoff — обновить соответствующий ledger в том же цикле;
@@ -161,4 +161,4 @@
 
 ## Canon sync matrix
 
-`CANON_SYNC_MATRIX_V3.md` — обязательный контрольный слой статуса. Он не создаёт новый канон, но запрещает объявлять главу/роман PASS, если canon architecture и фактический художественный корпус не синхронизированы. RED означает обязательный full rewrite; YELLOW — отсутствие полной сертификации; GREEN — clean full-stack audit.
+`CANON_SYNC_MATRIX.md` — обязательный контрольный слой статуса. Он не создаёт новый канон, но запрещает объявлять главу/роман PASS, если canon architecture и фактический художественный корпус не синхронизированы. RED означает обязательный full rewrite; YELLOW — отсутствие полной сертификации; GREEN — clean full-stack audit.
