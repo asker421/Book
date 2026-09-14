@@ -97,19 +97,19 @@
 | Лорен | PASS | PASS | PASS | PASS | PASS | PASS |
 | Ренел | PASS | PASS | PASS | PASS | PASS | PASS |
 | Йорин | PASS | PASS | PASS | PASS | PASS | PASS |
-| Эс | PATCHED | PASS | PASS | PATCHED | PASS | PASS |
+| Ирия | PATCHED | PASS | PASS | PATCHED | PASS | PASS |
 | Эриан | PASS | PASS | PASS | PASS | PASS | PASS |
 | Тавена | PASS | PASS | PASS | PASS | PASS | PASS |
 | Кирен | PASS | PASS | PASS | PASS | PASS | PASS |
 | Селиан | PASS | PASS | PASS | PASS | PASS | PASS |
 | Орлан | PASS | PASS | PASS | PASS | PASS | PASS |
 | Сарен | PASS | PASS | PASS | PATCHED | PASS | PASS |
-| Аэль | PASS | PASS | PASS | PASS | PASS | PASS |
+| Аурел | PASS | PASS | PASS | PASS | PASS | PASS |
 | Северин | PASS | PASS | PASS | PASS | PASS | PASS |
-| Сава | PASS | PASS | PASS | PASS | PASS | PASS |
+| Авелина | PASS | PASS | PASS | PASS | PASS | PASS |
 | Рауф Керимов | PASS | PASS | PASS | PASS | PASS | PASS |
-| Кей | PASS | PASS | PASS | PASS | PASS | PASS |
-| Вар | PASS | PASS | PASS | PASS | PASS | PASS |
+| Дариан | PASS | PASS | PASS | PASS | PASS | PASS |
+| Вален | PASS | PASS | PASS | PASS | PASS | PASS |
 
 **Дыр после текущей синхронизации: 0.**
 
@@ -126,7 +126,7 @@
 
 Жёсткое правило: безымянность не разрешает универсальный «служебный голос» или коллективное всезнание.
 
-Отдельно устранён **duplicate source-of-truth** в `CHARACTER_HISTORY_CANON.md`: ранние сокращённые дубли Адриан/Элена/Эс удалены; для каждого оставлен один расширенный профиль.
+Отдельно устранён **duplicate source-of-truth** в `CHARACTER_HISTORY_CANON.md`: ранние сокращённые дубли Адриан/Элена/Ирия удалены; для каждого оставлен один расширенный профиль.
 
 ---
 
@@ -176,7 +176,7 @@ Audit coverage:
 
 **Статус: PATCHED / CANONICALLY PRESENT.**
 
-## Кей — интерлюдии I и III
+## Дариан — интерлюдии I и III
 
 Канон:
 - отдельная этика операционного риска;
@@ -191,7 +191,7 @@ Audit coverage:
 
 **Статус: PATCHED / CANONICALLY PRESENT.**
 
-## Вар — главы 17–20
+## Вален — главы 17–20
 
 Канон:
 - внешний риск Ар;
@@ -387,15 +387,15 @@ Audit coverage:
 
 1. `FINAL_CANON_OVERRIDE.md` переведён с устаревших художественных ссылок `chapters_v2/31,34,35` на `chapters_v3/`.
 2. Алиев в главах 2–5 синхронизирован с каноническим Рауфом Керимовым.
-3. Кей реально введён в Интерлюдии I и III.
-4. Вар реально введён в главы 17, 19, 20.
+3. Дариан реально введён в Интерлюдии I и III.
+4. Вален реально введён в главы 17, 19, 20.
 5. Теневая дуга Асгара синхронизирована в главах 8, 22, 23, 30, 33, 35.
 6. Удалены найденные служебные возрастные ярлыки из финальной художественной прозы.
-7. Адриан, Элена и Эс получили недостающие history-профили.
-8. Адриан, Элена, Эс, Нелия/Эмиан/Тавиан и Сарен получили недостающие relationship-контракты.
+7. Адриан, Элена и Ирия получили недостающие history-профили.
+8. Адриан, Элена, Ирия, Нелия/Эмиан/Тавиан и Сарен получили недостающие relationship-контракты.
 9. Удалён дублированный блок human-conflict causal chains из `CAUSE_EFFECT_LEDGER.md`.
 10. Персонажная матрица повторно проверена: 24/24 ключевых именованных персонажа имеют шесть обязательных слоёв.
-11. Удалён duplicate source-of-truth для Адриан/Элена/Эс в `CHARACTER_HISTORY_CANON.md`.
+11. Удалён duplicate source-of-truth для Адриан/Элена/Ирия в `CHARACTER_HISTORY_CANON.md`.
 12. Для повторяющихся безымянных ролей добавлены отдельные motivation/voice gates.
 13. Активная терминология возрастных состояний Асгара нормализована: внутренний canon stack использует «Асгар после маршрута» / «Асгар в 2014», без модели двух версий персонажа.
 14. Канон Кати синхронизирован между `CHARACTER_HISTORY_CANON.md` и `RELATIONSHIP_CANON.md`: после исчезновения Асгара у неё нет новых романтических отношений; Катя закреплена как эмоциональная святыня романа, без нового партнёра, любовного треугольника или позднего «другого большого романа».
