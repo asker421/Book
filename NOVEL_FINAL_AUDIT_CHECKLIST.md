@@ -366,3 +366,16 @@
 - `TERMINOLOGY_CANON.md`
 
 Если специализированный файл и общий документ расходятся, сначала разрешить конфликт по приоритету `MANIFEST.md`, затем править художественный текст. Нельзя объявлять PASS при известном конфликте.
+
+
+## CANON SYNC MATRIX RELEASE GATE
+
+Перед EPUB/печатью открыть `CANON_SYNC_MATRIX.md`.
+
+Релиз запрещён, если хотя бы одна из 40 строк имеет:
+- REWRITE REQUIRED;
+- AUDIT REQUIRED;
+- unresolved FAIL;
+- неподтверждённый canon/ledger drift.
+
+Все 40 строк должны иметь FULL V3 PASS.
