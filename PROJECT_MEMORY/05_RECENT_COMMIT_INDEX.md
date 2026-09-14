@@ -1,5 +1,30 @@
 # RECENT COMMIT INDEX — «Красная будка»
 
+> **INDEX STATUS:** commit index хранит историю и поэтому неизбежно содержит старые номера глав, прежние reveal-gates и отменённые финалы. Он **не является каноном**. Текущая норма всегда берётся из `MANIFEST.md` + специализированных canon/ledger-файлов.
+
+## 14.09.2026 — V3 CANON CONSOLIDATION / LEGACY CLEANUP
+
+Current working model:
+- `chapters_v3/` — полный rewrite 35 основных глав + 5 интерлюдий;
+- `chapters_v2/` — frozen source material;
+- active reveal: technical twist ch.22, RETRO-1 ch.31, source ch.34, identity/final payoff ch.35;
+- 2039 opens physically but permanent return fails; Asgar returns to source;
+- no fixed chapter/interlude word minimums and no 50–100-word paragraph quota.
+
+Key consolidation commits:
+- `34da1d8fe65f84349b9a0f897217d5d9ee5e17c6` — clarify exact 2039 passenger-state constraint in CHAPTER_MAP;
+- `1661f6c7e3894c7752256d98fdbdc9ed745d114b` — mark v2 editorial records as historical/non-normative;
+- `997e11dd39a79eaf7465a76ce3586268ef1f746a` — sync active project memory and handoff to v3 canon;
+- `21297e2e53e6c3e91af902a20a843e3070f432d6` — consolidate legacy rules, overrides and conflict gate into MANIFEST;
+- `7477f056db1050adef2dae0dcf9bd9aaeecfbce4` — define v3 as full rewrite from v2 source material;
+- `5e9d522538bf133c1e2e61fb1d00d95c0f9b15f6` — index canons and ledgers in MANIFEST;
+- `30895fc00a4a520dfb91148f29b87a28161731a5` — add prose/dialogue/anti-ladder canon.
+
+Everything below this block is historical commit context. Old statements such as 40 main chapters, chapters 36–40, RETRO-1 reveal in 36, 2500-word gates or final permanent return to Katya must be read only as history and are superseded by the LEGACY → V3 table in `MANIFEST.md`.
+
+---
+
+
 ## 03.09.2026 — POST-V3.1 PASS / LITERARY FREEZE
 
 Audited fiction HEAD:
