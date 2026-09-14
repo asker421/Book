@@ -1,3 +1,26 @@
+
+
+## 14.09.2026 — CANON SYNC MATRIX PASS
+
+Создан `CANON_SYNC_MATRIX_V3.md` и зарегистрирован в `MANIFEST.md`.
+
+### Canon architecture
+- все root-level markdown-файлы индексируются `MANIFEST.md`;
+- active canon stack закрыт FULL CANON STACK GATE в authoring/chapter/final audit;
+- `FINAL_CANON_OVERRIDE.md` больше не указывает frozen v2 как актуальный художественный source of truth;
+- character coverage для 24 проверенных повторяющихся персонажей замкнут: history + voice + motivation + relationship + knowledge;
+- конфликтные дуги Рауф / Кей / Вар синхронизированы с художественным корпусом;
+- обязательные shadow beats Асгара в 8/22/23/30/33/35 восстановлены;
+- causal-echo author style включён в handoff и v3 narrative memory.
+
+### Corpus status
+Сравнение `chapters_v3/` с frozen `chapters_v2/` после sync-pass:
+- 19/40 файлов всё ещё byte-identical v2 → **RED / REWRITE REQUIRED**;
+- 21/40 отличаются от v2 → **YELLOW / changed or patched**, но full rewrite + full-stack clean audit не доказаны;
+- 0/40 получают GREEN автоматически.
+
+Следовательно, canon architecture сейчас можно считать синхронизированной, но роман целиком **не release-ready** до полного v3 rewrite и chapter-by-chapter certification.
+
 # CURRENT STATUS — «Красная будка»
 
 > GitHub `asker421/Book`, branch `main` — единственный источник истины.
