@@ -10,14 +10,15 @@
 - cross-episode matrix: `prompts_v3/CROSS_EPISODE_MATRIX.md`
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
-- current writing episode: **none selected in this prompt-generation run**
-- last completed action: полный individual prompt pack подготовлен
-- next permitted action: пользователь явно выбирает один эпизод
+- current writing episode: **Глава 1**
+- current episode status: **проверена, ожидает решения пользователя**
+- last completed action: полный rewrite Главы 1 + полный audit/recheck; текст, worklog и sync matrix подготовлены к фиксации
+- next permitted action: только решение пользователя по Главе 1 — одобрение или правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
-- prose written by this run: **NO**
+- prose written by this run: **YES — Глава 1**
 
 ## Prompt readiness
-- Глава 1: prompt ready — `prompts_v3/episodes/01.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
+- Глава 1: **FULL V3 PASS по rewrite/audit; ожидает решения пользователя** — текст `chapters_v3/01-16-avgusta.md`, prompt `prompts_v3/episodes/01.md`, log `worklogs_v3/01.md`.
 - Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
