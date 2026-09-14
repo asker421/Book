@@ -112,6 +112,21 @@
 
 **Дыр после текущей синхронизации: 0.**
 
+### Повторяющиеся неименованные роли
+
+Для них emotional relationship layer не обязателен как отдельная сквозная связь, но обязательны **history/competence → motivation/entry causality → voice motor → knowledge firewall → chapter-local contract**.
+
+| Роль | History / competence | Motivation | Voice | Knowledge | Scene/contract | Статус |
+|---|---:|---:|---:|---:|---:|---:|
+| Предыдущая женщина на линии | PASS | PASS | PASS | PASS | PASS | PASS |
+| Куратор / сотрудники 2039 | PASS | PATCHED | PATCHED | PASS | PASS | PASS |
+| Врач 2744 | PASS | PATCHED | PATCHED | PASS | PASS | PASS |
+| Исследовательская группа Тавии | PASS | PATCHED | PATCHED | PASS by specialty | PASS | PASS |
+
+Жёсткое правило: безымянность не разрешает универсальный «служебный голос» или коллективное всезнание.
+
+Отдельно устранён **duplicate source-of-truth** в `CHARACTER_HISTORY_CANON.md`: ранние сокращённые дубли Самир/Лейла/Эс удалены; для каждого оставлен один расширенный профиль.
+
 ---
 
 # 4. Человеческий конфликт / антагонизм
@@ -353,7 +368,9 @@
 7. Самир, Лейла и Эс получили недостающие history-профили.
 8. Самир, Лейла, Эс, Нура/Эмил/Тар и Сей получили недостающие relationship-контракты.
 9. Удалён дублированный блок human-conflict causal chains из `CAUSE_EFFECT_LEDGER.md`.
-10. Персонажная матрица повторно проверена: 24/24 ключевых персонажа имеют шесть обязательных слоёв.
+10. Персонажная матрица повторно проверена: 24/24 ключевых именованных персонажа имеют шесть обязательных слоёв.
+11. Удалён duplicate source-of-truth для Самир/Лейла/Эс в `CHARACTER_HISTORY_CANON.md`.
+12. Для повторяющихся безымянных ролей добавлены отдельные motivation/voice gates.
 
 ---
 
