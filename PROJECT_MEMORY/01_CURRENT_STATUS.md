@@ -2,7 +2,7 @@
 
 ## 14.09.2026 — CANON SYNC MATRIX PASS
 
-Создан `CANON_SYNC_MATRIX_V3.md` и зарегистрирован в `MANIFEST.md`.
+Актуализирован `CANON_SYNC_MATRIX.md` и зарегистрирован в `MANIFEST.md`.
 
 ### Canon architecture
 - все root-level markdown-файлы индексируются `MANIFEST.md`;
