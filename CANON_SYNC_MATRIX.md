@@ -409,3 +409,11 @@
 Запрещено ставить `PASS` по памяти или по факту старого аудита.
 
 PASS означает только состояние, подтверждённое актуальным корпусом и актуальными канонами.
+
+
+# 14. Дополнительная герметизация audit/memory
+
+- `AUTHORING_RULES.md`, `CHAPTER_AUDIT_PROMPT.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md` содержат явный FULL CANON STACK GATE.
+- `PROJECT_MEMORY/04_HANDOFF_PROMPT.md` синхронизирован с author style, motivation, antagonism и Asgar flaw canons.
+- `PROJECT_MEMORY/07_V3_NARRATIVE_STYLE.md` синхронизирован с `CANON_AUTHOR_STYLE_V3.md` и методом «Проза причинного эха».
+- Любой root-level обязательный markdown обязан быть индексирован `MANIFEST.md`; MANIFEST DRIFT блокирует PASS.
