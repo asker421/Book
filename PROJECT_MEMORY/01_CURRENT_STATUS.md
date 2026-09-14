@@ -1,3 +1,19 @@
+## 14.09.2026 — MACHINE INTEGRITY GATE
+
+Последний полный sync-check после правок:
+- 37/37 root-level markdown-файлов индексированы `MANIFEST.md`;
+- 23/23 активных `*_CANON.md` + `*_LEDGER.md` присутствуют в манифесте;
+- битых ссылок между активными canon/ledger/authoring/audit документами: 0;
+- структура `chapters_v3/`: 35 глав + 5 интерлюдий = 40/40;
+- chapter contracts: 40/40;
+- critical reveal firewall согласован;
+- `CANON_SYNC_MATRIX.md` обновлён и является обязательным release gate;
+- 19/40 файлов всё ещё byte-identical V2, 21/40 отличаются, но 0/40 автоматически не считаются FULL V3.
+
+**CANON ARCHITECTURE: PASS.**
+**ARTISTIC V3 COMPLETION: REWRITE REQUIRED.**
+**RELEASE: BLOCKED до полного rewrite + chapter-by-chapter certification.**
+
 
 ## 14.09.2026 — BUILD / RELEASE SYNC
 
