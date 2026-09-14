@@ -245,8 +245,9 @@ nav li { margin: .45em 0; }
                 ET.fromstring(z.read(n))
 
     report = DIST / "epub_build_report.txt"
+    build_status = "RELEASE READY" if RELEASE_READY else "WORKING V3 — NOT RELEASE READY"
     report.write_text(
-        f"Title: {TITLE}\nAuthor: {AUTHOR}\nSource: chapters_v3\nStatus: {\"RELEASE READY\" if RELEASE_READY else \"WORKING V3 — NOT RELEASE READY\"}\nChapters: {len(chapters)}\nWords (whitespace count): {total_words}\nEPUB: {OUT.name}\nStructural validation: PASS\n",
+        f"Title: {TITLE}\nAuthor: {AUTHOR}\nSource: chapters_v3\nStatus: {build_status}\nChapters: {len(chapters)}\nWords (whitespace count): {total_words}\nEPUB: {OUT.name}\nStructural validation: PASS\n",
         encoding="utf-8",
     )
     print(report.read_text(encoding="utf-8"))
