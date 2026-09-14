@@ -43,6 +43,19 @@
 
 Если v2 и новый канон расходятся, **канон определяет v3**.
 
+### Текущий статус миграции V3
+
+`chapters_v3/` является рабочим корпусом, но сам факт нахождения файла в этом каталоге **не означает завершённый V3 rewrite**.
+
+Текущее состояние отслеживается в `CANON_SYNC_MATRIX.md`.
+
+Жёсткие правила:
+- файл, скопированный из v2 без полного переписывания, имеет статус **REWRITE REQUIRED**;
+- хирургическая каноническая правка старого текста не превращает файл автоматически в FULL V3;
+- глава получает FULL V3 PASS только после полного rewrite по актуальному canon stack и полного chapter audit;
+- release/EPUB/печать не имеют права считать незавершённую строку матрицы готовой главой;
+- после каждого rewrite/audit соответствующая строка `CANON_SYNC_MATRIX.md` обновляется в том же цикле.
+
 Все перечисленные ниже каноны обязательны. Файл не считается «второстепенным» только потому, что его правило повторяется в другом документе.
 
 
@@ -991,6 +1004,7 @@
 3. `CHAPTER_AUDIT_PROMPT.md`
 4. `NOVEL_FINAL_AUDIT_CHECKLIST.md`
 5. `MASTER_ROMAN_AUDIT.md`
+6. `CANON_SYNC_MATRIX.md`
 
 
 ---
@@ -1001,6 +1015,7 @@
 
 **Всегда:**
 - `MANIFEST.md`;
+- `CANON_SYNC_MATRIX.md`;
 - `NARRATIVE_STYLE_CANON.md`;
 - `CANON_AUTHOR_STYLE_V3.md`;
 - `PROSE_DIALOGUE_CANON.md`;
@@ -1081,6 +1096,7 @@ chapter contract → cause/effect → knowledge → reveal → Asgar state → t
 - `CHAPTER_AUDIT_PROMPT.md` — обязательная процедура по-главного аудита.
 - `NOVEL_FINAL_AUDIT_CHECKLIST.md` — финальный контрольный чек-лист.
 - `MASTER_ROMAN_AUDIT.md` — обязательная единая процедура полного аудита v3 и cross-book проверки.
+- `CANON_SYNC_MATRIX.md` — обязательная живая матрица синхронизации canon/ledger/characters/chapters и статуса полного V3 rewrite.
 - `README.md` — краткий навигационный файл; **не заменяет MANIFEST**.
 - `FROZEN_V2.md` — служебная отметка состояния предыдущей версии; не является художественным source-of-truth v3.
 
