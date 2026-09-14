@@ -187,4 +187,4 @@ Regression after these fixes:
 
 ## CANON SYNC MATRIX PASS — 14.09.2026
 
-Создан `CANON_SYNC_MATRIX_V3.md`. Проведён cross-sync manifest/canons/ledgers/audits/chapters/project-memory. Закрыты обнаруженные source-of-truth и сюжетные рассинхроны: final override → v3; Рауф/Кей/Вар; shadow beats Асгара 8/22/23/30/33/35; full canon stack gates; causal-echo handoff. Зафиксирован честный corpus status: 19/40 byte-identical v2 = RED rewrite required, 21/40 changed/patched = YELLOW pending full rewrite audit, GREEN автоматически не присваивается.
+Актуализирован `CANON_SYNC_MATRIX.md`. Проведён cross-sync manifest/canons/ledgers/audits/chapters/project-memory. Закрыты обнаруженные source-of-truth и сюжетные рассинхроны: final override → v3; Рауф/Кей/Вар; shadow beats Асгара 8/22/23/30/33/35; full canon stack gates; causal-echo handoff. Зафиксирован честный corpus status: 19/40 byte-identical v2 = RED rewrite required, 21/40 changed/patched = YELLOW pending full rewrite audit, GREEN автоматически не присваивается.
