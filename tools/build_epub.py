@@ -6,7 +6,8 @@ from PIL import Image, ImageOps
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-CHAPTERS = ROOT / "chapters_v2"
+CHAPTERS = ROOT / "chapters_v3"
+MATRIX = ROOT / "CANON_SYNC_MATRIX.md"
 ASSETS = ROOT / "assets"
 DIST = ROOT / "dist"
 TITLE = "Красная будка"
@@ -16,7 +17,9 @@ PUBLISHER = "Аскер Исмайлов"
 DATE = "2026-09-01"
 DESCRIPTION = "После случайного входа в невозможную красную телефонную будку Асгар оказывается связан с аварийным возвратным контуром машины из далёкого будущего. Каждое новое окно уводит его всё дальше вперёд по истории Земли и Вселенной, а путь к источнику постепенно превращается из попытки вернуться домой в проверку того, что человек готов сохранить, когда прошлое наконец становится достижимым."
 SUBJECTS = ["Научная фантастика", "Hard SF", "Путешествия во времени", "Далёкое будущее", "Временные парадоксы"]
-OUT = DIST / "Krasnaya_budka_Asker_Ismayilov.epub"
+MATRIX_TEXT = MATRIX.read_text(encoding="utf-8") if MATRIX.exists() else ""
+RELEASE_READY = "REWRITE REQUIRED" not in MATRIX_TEXT and "# **RELEASE: BLOCKED**" not in MATRIX_TEXT
+OUT = DIST / ("Krasnaya_budka_Asker_Ismayilov.epub" if RELEASE_READY else "Krasnaya_budka_V3_WORKING_NOT_RELEASE.epub")
 COVER = ASSETS / "cover_epub.jpg"
 COVER_B64 = ASSETS / "cover_epub.b64"
 COVER_PREPARED = DIST / "cover_1600x2560.jpg"
@@ -243,7 +246,7 @@ nav li { margin: .45em 0; }
 
     report = DIST / "epub_build_report.txt"
     report.write_text(
-        f"Title: {TITLE}\nAuthor: {AUTHOR}\nChapters: {len(chapters)}\nWords (whitespace count): {total_words}\nEPUB: {OUT.name}\nValidation: PASS\n",
+        f"Title: {TITLE}\nAuthor: {AUTHOR}\nSource: chapters_v3\nStatus: {\"RELEASE READY\" if RELEASE_READY else \"WORKING V3 — NOT RELEASE READY\"}\nChapters: {len(chapters)}\nWords (whitespace count): {total_words}\nEPUB: {OUT.name}\nStructural validation: PASS\n",
         encoding="utf-8",
     )
     print(report.read_text(encoding="utf-8"))
