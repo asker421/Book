@@ -3,9 +3,9 @@
 **Status: SUPERSEDED RELEASE / EPUB STALE AFTER STRUCTURAL COMPRESSION**
 
 - Source corpus: `chapters_v2/`
-- Current literary source commit at this audit point: `3526eba0c9524377b9df2a2c9c113a7f0af461b6`
+- Current literary source commit at this audit point: `80fd051667a1606188794facfac5cf8edbc748fd`
 - Sections: `40` (35 основных глав + 5 интерлюдий)
-- Words: `79091`
+- Words: `79034`
 - Previous frozen EPUB: `release/krasnaya-budka-v2-FROZEN.epub`
 - Previous EPUB status: **STALE — собран до удаления промежуточных миров и не соответствует текущему `main`**
 
