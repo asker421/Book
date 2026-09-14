@@ -141,6 +141,31 @@
 Если существует очевидный более безопасный вариант, текст обязан показать, почему персонаж его не выбирает.
 
 
+#### `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md` — обязательный персональный и сценический gate
+Определяет **почему конкретный человек вообще появляется, замечает событие, подходит, говорит, проверяет, помогает, конфликтует и принимает решение**.
+
+Главный запрет:
+**ни один персонаж не является механизмом доставки сюжета.**
+
+Для каждого значимого взаимодействия требуется причинная цепочка:
+**где был → что делал → как узнал → почему это его касается → почему вмешался → чего хочет → что знает → почему не выбрал очевидную альтернативу → что изменилось после действия.**
+
+Отдельно запрещает:
+- NPC, которые «активируются» при появлении Асгара;
+- врача/учёного/охранника только потому, что сценарию нужна их функция;
+- проверки, результат которых ничего не меняет;
+- worldbuilding-реплики без цели говорящего;
+- повторяющийся шаблон «появился → проверили → объяснили → отпустили»;
+- доверие без заработанного основания;
+- молчание ради твиста;
+- игнорирование очевидного безопасного действия без причины;
+- поведение, после которого читателю приходится спрашивать «какого хуя он вообще это сделал/зачем он сюда подошёл?».
+
+Обязательные гейты файла: **ENTRY CAUSALITY, INTERACTION, ANTI-IDIOT, KNOWLEDGE, COMPETENCE, HUMAN REACTION, TRUST, SILENCE, EXPOSITION, CONVENIENCE, PERSONALITY OVERRIDE**.
+
+Если действие логично только потому, что автору нужен следующий эпизод, сцена получает **CONVENIENCE FAIL**.
+
+
 #### `CAUSE_EFFECT_LEDGER.md` — обязательный causal ledger
 Фиксирует для ключевых событий:
 - причину;
@@ -1171,9 +1196,10 @@ chapter contract → cause/effect → knowledge → reveal → Asgar state → t
 7. **TIME/STATE:** `TIME_CONTINUITY_CANON.md` + `ASGAR_STATE_LEDGER.md`.
 8. **EPOCH:** `EPOCH_CAPABILITY_CANON.md`.
 9. **MOTIVATION:** `DECISION_MOTIVATION_CANON.md`.
-10. **CHARACTERS:** `CHARACTER_HISTORY_CANON.md`, `CHARACTER_VOICE_CANON.md`, `RELATIONSHIP_CANON.md`.
-11. **NARRATIVE/PROSE:** `NARRATIVE_STYLE_CANON.md`, `PROSE_DIALOGUE_CANON.md`, `READER_EXPERIENCE_CANON.md`, `CANON_WRITING_TICS.md`.
-12. **PAYOFF:** `FORESHADOWING_PAYOFF_LEDGER.md`.
+10. **ANTI-IDIOT / INTERACTION CAUSALITY:** `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md` — почему каждый персонаж находится в сцене, как узнал о событии, зачем подошёл/сказал/проверил/помог, почему не выбрал очевидную альтернативу; обязательный «какого хуя?» test.
+11. **CHARACTERS:** `CHARACTER_HISTORY_CANON.md`, `CHARACTER_VOICE_CANON.md`, `RELATIONSHIP_CANON.md`.
+12. **NARRATIVE/PROSE:** `NARRATIVE_STYLE_CANON.md`, `PROSE_DIALOGUE_CANON.md`, `READER_EXPERIENCE_CANON.md`, `CANON_WRITING_TICS.md`.
+13. **PAYOFF:** `FORESHADOWING_PAYOFF_LEDGER.md`.
 
 Если два **активных** специализированных источника дают несовместимые требования:
 - не выбирать удобную версию;
