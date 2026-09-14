@@ -29,7 +29,7 @@
 |---|---|---|---|
 | Индекс проекта | `MANIFEST.md` | все canon/ledger/audit files | PASS |
 | Финальная механика | `FINAL_CANON_OVERRIDE.md` | physics, terminology, reveal, chapters 34–35 | PATCHED / PASS |
-| Структура 35+5 | `CHAPTER_BY_CHAPTER_CANON.md` | chapter map, ledgers, chapters_v3 | PASS |
+| Структура 35+5 | `CHAPTER_BY_CHAPTER_CANON.md` + `V3_ARCHITECTURE_MAP.md` | chapter map, ledgers, chapters_v3 | PASS |
 | Reveal | `REVEAL_ORDER_CANON.md` | knowledge, terminology, foreshadow | PASS |
 | Знание персонажей | `KNOWLEDGE_LEDGER.md` | voices, motivation, chapters | PASS |
 | Причина/следствие | `CAUSE_EFFECT_LEDGER.md` | decisions, conflict, foreshadow, chapters | PATCHED / PASS |
@@ -403,6 +403,7 @@ Audit coverage:
 16. Финальный блок 31–35 переведён в режим обязательного драматургического сжатия: после 31-й запрещено расширять роман новыми крупными концепциями.
 17. Разрыв доверия Асгар–Марен после главы 22 получил долговременное последствие; извинение главы 23 не обнуляет отношения.
 18. Глава 26 получила обязательный психологический/голосовой delta за 22 месяца одиночества; глава 35 — запрет на лекционное исполнение финального payoff.
+19. Создан `V3_ARCHITECTURE_MAP.md`: все 35 глав и 5 интерлюдий получили отдельный драматический двигатель, reader experience, необратимый delta и exit vector; отдельно зафиксированы зоны потенциального провисания и финальное сжатие.
 
 ---
 
@@ -427,6 +428,7 @@ Audit coverage:
 ## Герметично на уровне канонической архитектуры
 
 - структура 35+5;
+- полный structural skeleton 40/40 в `V3_ARCHITECTURE_MAP.md`: двигатель / reader experience / irreversible delta / resistance / reveal-payoff / exit vector;
 - приоритет источников;
 - финальная механика;
 - reveal-order;
@@ -491,7 +493,7 @@ PASS означает только состояние, подтверждённ�
 
 Последний sync-pass подтверждает:
 
-- root-level markdown-файлов: **37**;
+- root-level markdown-файлов: **38**;
 - root-level markdown-файлов, отсутствующих в `MANIFEST.md`: **0**;
 - активных root `*_CANON.md` + `*_LEDGER.md`: **23**;
 - активных canon/ledger, отсутствующих в `MANIFEST.md`: **0**;
