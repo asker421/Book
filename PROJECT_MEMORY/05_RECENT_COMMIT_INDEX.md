@@ -183,3 +183,8 @@ Regression after these fixes:
 - `RETRO-1` remains absent before chapter 36;
 - operator role still first appears in chapter 16; Mara name before 16 remains handoff-only and does not reveal the role;
 - no causality, chronology, mass-check, source-line, 2014-loop or 2039-return mechanics were changed.
+
+
+## CANON SYNC MATRIX PASS — 14.09.2026
+
+Создан `CANON_SYNC_MATRIX_V3.md`. Проведён cross-sync manifest/canons/ledgers/audits/chapters/project-memory. Закрыты обнаруженные source-of-truth и сюжетные рассинхроны: final override → v3; Рауф/Кей/Вар; shadow beats Асгара 8/22/23/30/33/35; full canon stack gates; causal-echo handoff. Зафиксирован честный corpus status: 19/40 byte-identical v2 = RED rewrite required, 21/40 changed/patched = YELLOW pending full rewrite audit, GREEN автоматически не присваивается.
