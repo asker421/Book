@@ -379,3 +379,15 @@
 - неподтверждённый canon/ledger drift.
 
 Все 40 строк должны иметь FULL V3 PASS.
+
+
+## BUILD SOURCE / RELEASE GATE
+
+Перед финальным релизом обязательно:
+- `tools/build_epub.py` читает только `chapters_v3/`;
+- текущий EPUB workflow собирает только `chapters_v3/`;
+- `CANON_SYNC_MATRIX.md` не содержит ни одной строки `REWRITE REQUIRED` или `AUDIT REQUIRED`;
+- глобальный статус матрицы не `RELEASE: BLOCKED`;
+- frozen V2 artifact не выдаётся за актуальный роман.
+
+Нарушение любого пункта = **RELEASE PIPELINE FAIL**.
