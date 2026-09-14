@@ -12,14 +12,14 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **NOT PASS — opening rewritten after user rejection; awaiting user reading**
-- last completed action: master FAIL-CLOSED protocol strengthened; refreshed in **40/40** episode prompts with mandatory V2↔V3 comparative literary gate
+- current episode status: **проверена, ожидает решения пользователя** — full restart from scratch under mandatory V2 literary benchmark; full canon + literary audit complete
+- last completed action: Глава 1 полностью переписана с нуля после чтения V2 как literary benchmark; literary-regression failures исправлены; full canon + V2↔V3 comparative audit logged
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
 
 ## Prompt readiness
-- Глава 1: **NOT PASS — revised opening saved after user rejection**; text `chapters_v3/01-16-avgusta.md`, log `worklogs_v3/01.md`; user approval not received.
+- Глава 1: **проверена, ожидает решения пользователя** — full restart from scratch; V2 literary benchmark + 24-axis canon audit complete; text `chapters_v3/01-16-avgusta.md`, log `worklogs_v3/01.md`; user approval not received.
 - Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
