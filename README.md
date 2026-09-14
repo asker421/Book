@@ -7,10 +7,16 @@
 ## Структура
 - `MANIFEST.md` — замысел, жанр, тон и обязательные принципы.
 - `NARRATIVE_STYLE_CANON.md` — обязательный повествовательный режим v3: близкое третье лицо, прошедшее время, ограниченная фокализация, авторская дистанция и запреты.
+- `PROSE_DIALOGUE_CANON.md` — цельная романная сцена, диалоги, абзацный ритм и запрет сценарной лесенки.
+- `READER_EXPERIENCE_CANON.md` — обязательная проживаемость вместо пересказа.
+- `CANON_WRITING_TICS.md` — полный список запрещённых писательских тиков и конструкций.
+- `CHARACTER_HISTORY_CANON.md` — биография, профессия, компетенции и предыстория персонажей.
 - `STORY_BIBLE.md` — механика будки, временные правила, мотивации и раскрытия.
 - `CHAPTER_MAP.md` — карта 35 основных глав и 5 параллельных интерлюдий.
 - `CONTINUITY.md` — факты, которые нельзя нарушать.
-- `HARD_SCENE_CANON.md` — жёсткий канон связи, языка, физического staging, знания персонажей, среды, психологии и состояния Асгара.
+- `PHYSICS_CANON.md` — обязательный физический канон RETRO-1, мира, двери, массы, материализации и ограничений.
+- `HARD_SCENE_CANON.md` — жёсткий канон связи, физического staging, знания персонажей, среды, психологии и состояния Асгара.
+- `LANGUAGE_CANON.md` — язык, перевод, взаимопонимание и запрет автоматического понимания будущих языков.
 - `CHARACTER_VOICE_CANON.md` — канонические голоса, эмоциональные реакции и поведенческие границы персонажей.
 - `EPOCH_CAPABILITY_CANON.md` — технологический потолок и запреты каждой крупной эпохи.
 - `TIME_CONTINUITY_CANON.md` — календарное и субъективное время Асгара, известные длительности и правила старения/обучения.
@@ -29,17 +35,21 @@
 
 ## Project memory / передача между чатами
 
-Для продолжения редакционной работы в новом чате сначала читать:
+Первым документом нового чата всегда является **`MANIFEST.md`**. Он содержит полный индекс действующих канонов, ledgers, legacy-источников и таблицу LEGACY → V3.
 
+После манифеста читаются релевантные специализированные каноны и только затем `PROJECT_MEMORY/`.
+
+Текущие memory/handoff:
 1. `PROJECT_MEMORY/00_READ_ME_FIRST.md`
 2. `PROJECT_MEMORY/01_CURRENT_STATUS.md`
-3. `PROJECT_MEMORY/02_CANON_AND_RULES.md`
-4. `PROJECT_MEMORY/03_EDITORIAL_HISTORY.md`
-5. `PROJECT_MEMORY/04_HANDOFF_PROMPT.md`
-6. `PROJECT_MEMORY/05_RECENT_COMMIT_INDEX.md`
-7. `PROJECT_MEMORY/06_V2_REWRITE.md`
-8. `PROJECT_MEMORY/07_V3_NARRATIVE_STYLE.md`
+3. `PROJECT_MEMORY/04_HANDOFF_PROMPT.md`
+4. `PROJECT_MEMORY/05_RECENT_COMMIT_INDEX.md`
+5. `PROJECT_MEMORY/07_V3_NARRATIVE_STYLE.md`
 
-Эти файлы — долговременная редакционная память проекта. После них читать актуальные `NARRATIVE_STYLE_CANON.md`, `FINAL_CANON_OVERRIDE.md`, `HARD_SCENE_CANON.md`, `CHARACTER_VOICE_CANON.md`, `EPOCH_CAPABILITY_CANON.md`, `TIME_CONTINUITY_CANON.md`, `REVEAL_ORDER_CANON.md`, `DECISION_MOTIVATION_CANON.md`, `RELATIONSHIP_CANON.md`, `CHAPTER_BY_CHAPTER_CANON.md`, `KNOWLEDGE_LEDGER.md`, `ASGAR_STATE_LEDGER.md`, `FORESHADOWING_PAYOFF_LEDGER.md`, `LOCATION_STAGING_LEDGER.md`, `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md`, `MANIFEST.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md`.
+Исторические/non-normative:
+- `PROJECT_MEMORY/02_CANON_AND_RULES.md` — legacy snapshot/compatibility note;
+- `PROJECT_MEMORY/03_EDITORIAL_HISTORY.md` — история решений;
+- `PROJECT_MEMORY/06_V2_REWRITE.md` — история старого v2 rewrite;
+- `PROJECT_MEMORY/07_LIVE_NOVELISTIC_PASS_2026-09-04.md` — история старого прохода.
 
-При конфликте память-файлов с более свежим содержимым ветки `main` источником истины остаётся актуальный `main`; затем memory-файлы нужно синхронизировать.
+Если память или старый handoff расходятся с `MANIFEST.md` / специализированным каноном, действует актуальный canon stack из `main`.
