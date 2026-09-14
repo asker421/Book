@@ -113,8 +113,8 @@ def main():
     prepared_cover = prepare_cover()
 
     chapter_paths = sorted(CHAPTERS.glob("*.md"))
-    if len(chapter_paths) != 45:
-        raise SystemExit(f"Expected 45 narrative sections (40 chapters + 5 interludes), found {len(chapter_paths)}")
+    if len(chapter_paths) != 40:
+        raise SystemExit(f"Expected 40 narrative sections (35 chapters + 5 interludes), found {len(chapter_paths)}")
 
     chapters = []
     total_words = 0
