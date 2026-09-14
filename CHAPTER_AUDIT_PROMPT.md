@@ -405,36 +405,88 @@
 Нарушения маркировать: **PREMATURE NAMING FAIL**, **CAUSE-BEFORE-EVIDENCE FAIL**, **FAKE MYSTERY FAIL**, **SECOND-READING CHEAT FAIL**, **EXPLANATION AFTER PROOF FAIL**, **STYLE TIC FAIL**.
 
 
-## FULL CANON STACK GATE
+## FULL CANON STACK GATE — ВСЕ КАНОНЫ БЕЗ ИСКЛЮЧЕНИЙ
 
-Перед статусом PASS обязателен conflict-check по полному активному стеку. Файл может быть нерелевантен конкретной сцене по содержанию, но его правила нельзя считать несуществующими только потому, что он не был явно назван в локальном prompt.
+Перед любым статусом `PASS` необходимо **реально открыть и проверить каждый действующий канонический источник**, а не только локально очевидные файлы.
 
-- `FINAL_CANON_OVERRIDE.md`
-- `CHAPTER_BY_CHAPTER_CANON.md`
-- `REVEAL_ORDER_CANON.md`
-- `KNOWLEDGE_LEDGER.md`
-- `PHYSICS_CANON.md`
-- `HARD_SCENE_CANON.md`
-- `EPOCH_CAPABILITY_CANON.md`
-- `TIME_CONTINUITY_CANON.md`
-- `LANGUAGE_CANON.md`
-- `LOCATION_STAGING_LEDGER.md`
-- `CAUSE_EFFECT_LEDGER.md`
-- `FORESHADOWING_PAYOFF_LEDGER.md`
-- `ASGAR_STATE_LEDGER.md`
-- `DECISION_MOTIVATION_CANON.md`
-- `ASGAR_FLAW_CANON.md`
-- `CHARACTER_HISTORY_CANON.md`
-- `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md`
-- `CHARACTER_VOICE_CANON.md`
-- `RELATIONSHIP_CANON.md`
-- `CONFLICT_ANTAGONISM_CANON.md`
-- `NARRATIVE_STYLE_CANON.md`
-- `CANON_AUTHOR_STYLE_V3.md`
-- `PROSE_DIALOGUE_CANON.md`
-- `READER_EXPERIENCE_CANON.md`
-- `CANON_WRITING_TICS.md`
-- `TERMINOLOGY_CANON.md`
+### Полный обязательный canon stack
+
+| № | Canon / ledger / architecture source | Что обязательно проверяет аудит |
+|---:|---|---|
+| 1 | `FINAL_CANON_OVERRIDE.md` | Финальная механика, единая временная линия, bootstrap-loop, финальные overrides. |
+| 2 | `CHAPTER_BY_CHAPTER_CANON.md` | Что обязано / запрещено происходить именно в этой главе. |
+| 3 | `V3_ARCHITECTURE_MAP.md` | Двигатель главы, reader experience, delta, функция в общей архитектуре. |
+| 4 | `REVEAL_ORDER_CANON.md` | Что читателю уже можно и ещё нельзя раскрывать. |
+| 5 | `KNOWLEDGE_LEDGER.md` | Что каждый персонаж знает, предполагает, ошибочно считает и не может знать. |
+| 6 | `DECISION_MOTIVATION_CANON.md` | Почему персонаж принимает конкретное решение именно сейчас. |
+| 7 | `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md` | Логичность действий, альтернативы, first-contact realism, отсутствие сценарной глупости. |
+| 8 | `CAUSE_EFFECT_LEDGER.md` | Причина → немедленное следствие → отложенное следствие; отсутствие dropped consequences. |
+| 9 | `TIME_CONTINUITY_CANON.md` | Календарное и субъективное время, длительности, отсутствие скрытого времени. |
+| 10 | `ASGAR_STATE_LEDGER.md` | Тело, травмы, одежда, инвентарь, навыки, психическое и физическое состояние Асгара. |
+| 11 | `EPOCH_CAPABILITY_CANON.md` | Что технически и институционально может конкретная эпоха. |
+| 12 | `HARD_SCENE_CANON.md` | Физическая постановка hard-SF сцены, каналы наблюдения, дистанции и взаимодействия. |
+| 13 | `PHYSICS_CANON.md` | Физика RETRO-1, двери, объёма, переходов, массы, окон и мира главы. |
+| 14 | `LOCATION_STAGING_LEDGER.md` | Точная география: кто где стоит, куда может идти, видеть, слышать и дотянуться. |
+| 15 | `LANGUAGE_CANON.md` | Общий язык, перевод, сервисный канал, пределы понимания. |
+| 16 | `TERMINOLOGY_CANON.md` | Разрешённые термины, их точные значения и глава первого допустимого появления. |
+| 17 | `CHARACTER_HISTORY_CANON.md` | Реальная биография, профессия, компетенции и backstage-история персонажей. |
+| 18 | `CHARACTER_REVEAL_MAP.md` | Какая часть биографии и когда разрешена читателю и Асгару. |
+| 19 | `CHARACTER_VOICE_CANON.md` | Индивидуальный голос каждого присутствующего персонажа во всех эмоциональных состояниях. |
+| 20 | `RELATIONSHIP_CANON.md` | Текущее состояние отношений, накопленная история, доверие, обиды, обещания и границы. |
+| 21 | `CONFLICT_ANTAGONISM_CANON.md` | Нужен ли конфликт, откуда он берётся, нет ли «антагониста недели». |
+| 22 | `ASGAR_FLAW_CANON.md` | Ошибки, контроль, самообман, давление, моральная цена и отсутствие идеального героя. |
+| 23 | `NARRATIVE_STYLE_CANON.md` | Close third, фокализация, дистанция, проживаемость, отсутствие всеведения. |
+| 24 | `CANON_AUTHOR_STYLE_V3.md` | Уникальный метод **«Проза причинного эха»** и полный AUTHOR STYLE PASS. |
+| 25 | `PROSE_DIALOGUE_CANON.md` | Романная ткань, диалоги, ритм, отсутствие сценарной лесенки и протокольной речи. |
+| 26 | `READER_EXPERIENCE_CANON.md` | Что читатель должен прожить на странице, а не получить пересказом. |
+| 27 | `CANON_WRITING_TICS.md` | Все запрещённые тики, самодоказательства, AI-ритм, клише и авторские костыли. |
+| 28 | `FORESHADOWING_PAYOFF_LEDGER.md` | Seeds, reinforcements, reframes, payoffs и честность второго чтения. |
+
+### Нельзя считать список статическим
+
+Перед **каждым** аудитом необходимо:
+
+1. открыть актуальный `MANIFEST.md`;
+2. просканировать текущий `main` как минимум на:
+   - `*_CANON.md`;
+   - `*_LEDGER.md`;
+   - `CANON_*.md`;
+   - `*CANON_OVERRIDE.md`;
+   - архитектурные / reveal / character-map source-of-truth документы, отмеченные в `MANIFEST.md` как обязательные;
+3. сравнить найденный активный набор с таблицей выше;
+4. если появился новый действующий canon/ledger/source-of-truth и его нет в этом prompt — поставить **`AUDIT PROMPT DRIFT FAIL`**;
+5. сначала обновить `CHAPTER_AUDIT_PROMPT.md`, затем начать аудит главы заново;
+6. если файл из таблицы перестал быть действующим по `MANIFEST.md`, не удалять его молча: сначала разрешить source-of-truth drift и зафиксировать изменение.
+
+### Полный CANON COVERAGE REGISTER обязателен
+
+После проверки вывести **отдельную строку для каждого из 28 источников**:
+
+| Canon / source | Applicability | Status | Evidence / reason |
+|---|---|---|---|
+| `FILE.md` | APPLICABLE / N/A | PASS / FAIL / N/A | конкретное доказательство |
+
+Правила:
+- `PASS` нельзя ставить по памяти, названию или прошлому аудиту;
+- `N/A` разрешён только с конкретным объяснением;
+- запрещено объединять несколько канонов в одну строку;
+- запрещено пропускать prose/style/voice canons после сюжетно-физического PASS;
+- `CANON_AUTHOR_STYLE_V3.md` всегда проверяется отдельно от `NARRATIVE_STYLE_CANON.md`;
+- `CHARACTER_VOICE_CANON.md` проверяется отдельно по каждому реально говорящему персонажу;
+- `CHARACTER_REVEAL_MAP.md` не заменяется `CHARACTER_HISTORY_CANON.md`;
+- `LOCATION_STAGING_LEDGER.md` не заменяется общим physics-pass;
+- `CAUSE_EFFECT_LEDGER.md` не заменяется общей оценкой «логично».
+
+### Любой FAIL обнуляет проход
+
+Если **любой один** из 28 канонов или любой обязательный procedural gate получает `FAIL / NOT PASS / NEEDS REPAIR`:
+1. текущий audit pass полностью недействителен;
+2. исправить дефект хирургически;
+3. открыть актуальную версию главы;
+4. начать аудит **с пункта 1 — `FINAL_CANON_OVERRIDE.md`**;
+5. снова пройти **все 28 источников до `FORESHADOWING_PAYOFF_LEDGER.md`**, затем все procedural gates;
+6. если новый FAIL найден даже в пункте 28 — после правки снова вернуться к пункту 1;
+7. финальный PASS разрешён только после **одного непрерывного полного прохода 1→28 + procedural gates с `FAIL count = 0`**.
 
 Если специализированный файл и общий документ расходятся, сначала разрешить конфликт по приоритету `MANIFEST.md`, затем править художественный текст. Нельзя объявлять PASS при известном конфликте.
 
