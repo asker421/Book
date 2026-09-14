@@ -43,6 +43,7 @@
 | Мотивация решений | `DECISION_MOTIVATION_CANON.md` | anti-idiot, flaw, cause/effect | PASS |
 | Мотивация персонажей | `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md` | history, voice, knowledge, relationships | PASS |
 | Биографии | `CHARACTER_HISTORY_CANON.md` | voice, motivation, relationship | PATCHED / PASS |
+| Художественное раскрытие прошлого | `CHARACTER_REVEAL_MAP.md` | history, knowledge, chapter contract, foreshadow | PATCHED / PASS |
 | Голоса | `CHARACTER_VOICE_CANON.md` | history, motivation, prose | PASS at canon level |
 | Отношения | `RELATIONSHIP_CANON.md` | history, motivation, chapters | PATCHED / PASS |
 | Конфликт/антагонизм | `CONFLICT_ANTAGONISM_CANON.md` | motivation, voice, knowledge, cause/effect | PATCHED / PASS |
@@ -126,6 +127,31 @@
 Жёсткое правило: безымянность не разрешает универсальный «служебный голос» или коллективное всезнание.
 
 Отдельно устранён **duplicate source-of-truth** в `CHARACTER_HISTORY_CANON.md`: ранние сокращённые дубли Самир/Лейла/Эстер удалены; для каждого оставлен один расширенный профиль.
+
+---
+
+## 3A. Герметичность раскрытия прошлого
+
+`CHARACTER_REVEAL_MAP.md` включён в обязательный canon stack и audit gates.
+
+Проверено разделение:
+- `CHARACTER_HISTORY_CANON.md` хранит полную объективную биографию;
+- `CHARACTER_REVEAL_MAP.md` определяет художественную доступность прошлого читателю;
+- `KNOWLEDGE_LEDGER.md` ограничивает доступность знания персонажам;
+- `CHAPTER_BY_CHAPTER_CANON.md` задаёт локальный контракт главы.
+
+Исправленный конфликт:
+- глава 33 больше не раскрывает Сабину как идентифицированного персонажа;
+- разрешены только стук и неопознанный человеческий силуэт;
+- имя, голос, профессия, бытовая конкретика и цепочка преемственности Сабины начинаются только в главе 34.
+
+Audit coverage:
+- `CHAPTER_AUDIT_PROMPT.md` — CHARACTER REVEAL GATE;
+- `MASTER_ROMAN_AUDIT.md` — PASS 13A;
+- `NOVEL_FINAL_AUDIT_CHECKLIST.md` — final character reveal continuity;
+- `AUTHORING_RULES.md` — обязательный reveal gate до написания.
+
+**Статус: PATCHED / PASS.**
 
 ---
 
