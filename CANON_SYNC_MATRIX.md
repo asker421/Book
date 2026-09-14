@@ -29,12 +29,12 @@
 |---|---|---|---|
 | Индекс проекта | `MANIFEST.md` | все canon/ledger/audit files | PASS |
 | Финальная механика | `FINAL_CANON_OVERRIDE.md` | physics, terminology, reveal, chapters 34–35 | PATCHED / PASS |
-| Структура 35+5 | `CHAPTER_BY_CHAPTER_CANON.md` + `V3_ARCHITECTURE_MAP.md` | chapter map, ledgers, chapters_v3 | PASS |
+| Структура 35+5 | `CHAPTER_BY_CHAPTER_CANON.md` + `V3_ARCHITECTURE_MAP.md` | chapter map, ledgers, chapters_v3 | PATCHED / PASS |
 | Reveal | `REVEAL_ORDER_CANON.md` | knowledge, terminology, foreshadow | PASS |
-| Знание персонажей | `KNOWLEDGE_LEDGER.md` | voices, motivation, chapters | PASS |
+| Знание персонажей | `KNOWLEDGE_LEDGER.md` | voices, motivation, chapters | PATCHED / PASS |
 | Причина/следствие | `CAUSE_EFFECT_LEDGER.md` | decisions, conflict, foreshadow, chapters | PATCHED / PASS |
-| Состояние Асгара | `ASGAR_STATE_LEDGER.md` | time, physics, continuity, chapters | PASS |
-| Время | `TIME_CONTINUITY_CANON.md` | Asgar state, chapter contract | PASS |
+| Состояние Асгара | `ASGAR_STATE_LEDGER.md` | time, physics, continuity, chapters | PATCHED / PASS |
+| Время | `TIME_CONTINUITY_CANON.md` | Asgar state, chapter contract | PATCHED / PASS |
 | Физика | `PHYSICS_CANON.md` | hard scene, staging, final override | PASS at canon level |
 | Геометрия/сцена | `LOCATION_STAGING_LEDGER.md` | physics, hard scene, chapters | PASS at canon level |
 | Язык | `LANGUAGE_CANON.md` | hard scene, knowledge, epoch capability | PASS at canon level |
@@ -44,7 +44,7 @@
 | Мотивация персонажей | `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md` | history, voice, knowledge, relationships | PASS |
 | Биографии | `CHARACTER_HISTORY_CANON.md` | voice, motivation, relationship | PATCHED / PASS |
 | Художественное раскрытие прошлого | `CHARACTER_REVEAL_MAP.md` | history, knowledge, chapter contract, foreshadow | PATCHED / PASS |
-| Голоса | `CHARACTER_VOICE_CANON.md` | history, motivation, prose | PASS at canon level |
+| Голоса | `CHARACTER_VOICE_CANON.md` | history, motivation, prose | PATCHED / PASS at canon level |
 | Отношения | `RELATIONSHIP_CANON.md` | history, motivation, chapters | PATCHED / PASS |
 | Конфликт/антагонизм | `CONFLICT_ANTAGONISM_CANON.md` | motivation, voice, knowledge, cause/effect | PATCHED / PASS |
 | Недостатки Асгара | `ASGAR_FLAW_CANON.md` | decisions, relationships, cause/effect | PATCHED / PASS |
@@ -74,7 +74,7 @@
 
 `PHYSICS_CANON.md`, `ASGAR_STATE_LEDGER.md`, `KNOWLEDGE_LEDGER.md` покрывают главы 1–35 и интерлюдии I–V.
 
-**Статус структуры: PASS.**
+**Статус структуры: PATCHED / PASS.**
 
 ---
 
@@ -103,7 +103,7 @@
 | Кирен | PASS | PASS | PASS | PASS | PASS | PASS |
 | Селиан | PASS | PASS | PASS | PASS | PASS | PASS |
 | Орлан | PASS | PASS | PASS | PASS | PASS | PASS |
-| Сарен | PASS | PASS | PASS | PATCHED | PASS | PASS |
+| Сарен | PASS | PATCHED | PASS | PATCHED | PATCHED | PASS |
 | Аурел | PASS | PASS | PASS | PASS | PASS | PASS |
 | Северин | PASS | PASS | PASS | PASS | PASS | PASS |
 | Авелина | PASS | PASS | PASS | PASS | PASS | PASS |
@@ -141,9 +141,9 @@
 - `CHAPTER_BY_CHAPTER_CANON.md` задаёт локальный контракт главы.
 
 Исправленный конфликт:
-- глава 33 больше не раскрывает Саву как идентифицированного персонажа;
+- глава 33 больше не раскрывает Авелину как идентифицированного персонажа;
 - разрешены только стук и неопознанный человеческий силуэт;
-- имя, голос, профессия, бытовая конкретика и цепочка преемственности Савы начинаются только в главе 34.
+- имя, голос, профессия, бытовая конкретика и цепочка преемственности Авелины начинаются только в главе 34.
 
 Audit coverage:
 - `CHAPTER_AUDIT_PROMPT.md` — CHARACTER REVEAL GATE;
@@ -203,7 +203,7 @@ Audit coverage:
 - гл.17 — причинный вход через неизвестного человека + аномалию;
 - гл.19 — социальное голосование и след конфликта;
 - гл.20 — формальное ограничение у окна;
-- решение Асгара уйти не вызвано Варом.
+- решение Асгара уйти не вызвано Валеном.
 
 **Статус: PATCHED / CANONICALLY PRESENT.**
 
@@ -316,10 +316,13 @@ Audit coverage:
 Актуальный snapshot после текущего цикла синхронизации:
 
 - файлов V3: **40**;
-- файлов, blob SHA которых отличается от V2: **21**;
-- файлов, которые всё ещё побайтно равны V2: **19**.
+- файлов с тем же техническим путём, blob SHA которых отличается от V2: **39**;
+- файлов с тем же техническим путём, которые побайтно равны V2: **0**;
+- отдельная переименованная пара пути: **1** — `chapters_v2/16-mara.md` → `chapters_v3/16-maren.md`.
 
 Изменение SHA **не означает полный rewrite**: часть файлов получила только канонические хирургические исправления, необходимые для устранения уже найденных конфликтов.
+
+Нормализация верхних заголовков до `Глава N` / `Интерлюдия I–V` сама по себе меняет SHA, поэтому после этого цикла SHA используется только как факт различия файлов, но не как оценка степени rewrite.
 
 Следовательно:
 
@@ -340,46 +343,46 @@ Audit coverage:
 
 | Файл | Contract | Canon coverage | Current relation to V2 | Current V3 status |
 |---|---|---|---|---|
-| 01-16-avgusta.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 02-chetyre-dnya.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 03-sled.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 04-okno.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 04a-lishnyaya-massa.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 05-dvadtsat-pyat-let.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 06-mertvyy-chelovek.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 07-arhiv-16-08.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 08-vtoroe-okno.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 08a-raschet-ne-shoditsya.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 09-novaya-klimaticheskaya-epoha.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 10-krasnyy-koridor.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 11-ozhidanie.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 12-shturm.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 13-posle-voyny.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 14-mashiny-bez-hozyaev.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 15-protokol.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 15a-smena.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 16-maren.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 17-posle-vtorogo-padeniya.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 18-chelovek-iz-krasnoy-dveri.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 19-dolgoe-ozhidanie.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 20-vozrozhdenie.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 21-nepreryvnost.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 22-ne-domoy.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 22a-slepaya-zona.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 23-istochnik.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 24-milliony-let.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 25-posledniy-arhiv-zemli.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 26-odin.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 27-poslanie.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 28-smert-zemli.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 29-poslednie-zvezdy.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 30-temnaya-epoha.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 30a-do-poslednego-okna.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 31-retro-1.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 32-vy-pochti-doshli.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 33-tishina.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 34-liniya-istochnika.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 35-16-avgusta.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 01-16-avgusta.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 02-chetyre-dnya.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 03-sled.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 04-okno.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 04a-lishnyaya-massa.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 05-dvadtsat-pyat-let.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 06-mertvyy-chelovek.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 07-arhiv-16-08.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 08-vtoroe-okno.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 08a-raschet-ne-shoditsya.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 09-novaya-klimaticheskaya-epoha.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 10-krasnyy-koridor.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 11-ozhidanie.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 12-shturm.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 13-posle-voyny.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 14-mashiny-bez-hozyaev.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 15-protokol.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 15a-smena.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 16-maren.md | COVERED | COVERED | renamed path vs V2; not rewrite proof | REWRITE REQUIRED |
+| 17-posle-vtorogo-padeniya.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 18-chelovek-iz-krasnoy-dveri.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 19-dolgoe-ozhidanie.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 20-vozrozhdenie.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 21-nepreryvnost.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 22-ne-domoy.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 22a-slepaya-zona.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 23-istochnik.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 24-milliony-let.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 25-posledniy-arhiv-zemli.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 26-odin.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 27-poslanie.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 28-smert-zemli.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 29-poslednie-zvezdy.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 30-temnaya-epoha.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 30a-do-poslednego-okna.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 31-retro-1.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 32-vy-pochti-doshli.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 33-tishina.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 34-liniya-istochnika.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
+| 35-16-avgusta.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 
 ---
 
@@ -406,6 +409,14 @@ Audit coverage:
 19. Создан `V3_ARCHITECTURE_MAP.md`: все 35 глав и 5 интерлюдий получили отдельный драматический двигатель, reader experience, необратимый delta и exit vector; отдельно зафиксированы зоны потенциального провисания и финальное сжатие.
 20. Проведён cold-reader structural surgery: усилена причинность ухода из 2039 без превращения его в вынужденный побег; глава 16 вводит Марен через практический consent-test; архив «Человека из Красной двери» перенесён из главы 17 в причинно мотивированную главу 18; три точки «остаться/уйти» разведены по разным мотивациям; главы 24–25 закреплены как одна человеческая остановка, 29–30 — как одна поздняя ресурсная цивилизационная линия; правило однозначности оплачивается в 31 до финального применения; глава 35 получила конкретный человеческий payoff дуги контроля без нового mission hook.
 21. Сквозной бытовой мотив дома закреплён как ситуация «кто-то ждёт Асгара домой/завтра» с максимум четырьмя структурными использованиями (1/7/20/35), без буквального рефрена.
+22. Удалён остаток отменённого финала из `CONTINUITY.md`: краткое появление Асгара после маршрута в 2039 больше не превращается в длительное присутствие, обычную биометрию или новую биографию.
+23. Главы 8 и 22 разведены по знанию и эмоции: глава 8 убирает гарантию дома, но оставляет человеческую надежду на отдельное решение источника; глава 22 раскрывает более глубокий факт — пассажир вообще не является штатным адресатом возвратной задачи.
+24. Субъективная хронология пересчитана накопительно: итог ≈2,4 года, каноническая человеческая формулировка — «примерно два с половиной года»; «около года» к главе 23 исправлено на ≈5 месяцев; скрытое добирание месяцев запрещено.
+25. Сарен получила полный voice profile, collision gate и отдельные knowledge boundaries.
+26. Активный слой дочищен от старых имён: Кемаль → Дариан, Вар → Вален, Сава → Авелина, Мара → Марен; художественный V3 дополнительно проверен, остаток Кемаля в Интерлюдии I исправлен.
+27. `AUTHORING_RULES.md` разделён на AUDIT ONLY / AUDIT + SURGICAL REPAIR / CONTINUOUS WRITING; автоматический переход к следующей главе теперь разрешён только при явном включении непрерывного режима.
+28. SHA-сравнение V2/V3 пересчитано по Git: 0 byte-identical среди 39 одинаковых путей; глава 16 имеет отдельный переименованный путь. SHA явно не используется как доказательство полного rewrite.
+29. Рабочие названия глав сняты: художественный и служебный V3 использует только `Глава N` / `Интерлюдия I–V`; slug-имена файлов остаются техническими до финального именования после прозы.
 
 ---
 
@@ -448,6 +459,11 @@ Audit coverage:
 - terminology;
 - author-style stack;
 - audit stack.
+- накопительная шкала субъективного времени без скрытых месяцев;
+- различие reveal главы 8 и технического overturn главы 22;
+- полные voice/knowledge boundaries Сарен;
+- единый режим рабочих инструкций без конфликта auto-continue / stop-for-approval;
+- временная политика названий: только номера до завершения prose rewrite.
 
 ## Ещё НЕ герметично как готовый роман V3
 
@@ -457,7 +473,7 @@ Audit coverage:
 
 Поэтому текущий глобальный статус:
 
-# **CANON ARCHITECTURE: PASS**
+# **CANON ARCHITECTURE: PATCHED / PASS**
 # **V3 ARTISTIC CORPUS: REWRITE REQUIRED**
 # **RELEASE: BLOCKED**
 
