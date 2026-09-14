@@ -48,6 +48,7 @@ V3 — **полный rewrite всех 35 глав + 5 интерлюдий**, �
 Всегда:
 - `MANIFEST.md`;
 - `NARRATIVE_STYLE_CANON.md`;
+- `CANON_AUTHOR_STYLE_V3.md`;
 - `PROSE_DIALOGUE_CANON.md`;
 - `READER_EXPERIENCE_CANON.md`;
 - `CANON_WRITING_TICS.md`.
@@ -73,10 +74,13 @@ V3 — **полный rewrite всех 35 глав + 5 интерлюдий**, �
 - `KNOWLEDGE_LEDGER.md`;
 - `ASGAR_STATE_LEDGER.md`.
 
-Для персонажей/диалога:
+Для персонажей/диалога/человеческого конфликта:
 - `CHARACTER_HISTORY_CANON.md`;
+- `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md`;
 - `CHARACTER_VOICE_CANON.md`;
-- `RELATIONSHIP_CANON.md`.
+- `RELATIONSHIP_CANON.md`;
+- `CONFLICT_ANTAGONISM_CANON.md`;
+- `ASGAR_FLAW_CANON.md`.
 
 ## 4. ТЕКУЩИЕ НЕИЗМЕННЫЕ ИНВАРИАНТЫ
 
