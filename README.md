@@ -9,6 +9,7 @@
 - `STORY_BIBLE.md` — механика будки, временные правила, мотивации и раскрытия.
 - `CHAPTER_MAP.md` — карта 35 основных глав и 5 параллельных интерлюдий.
 - `CONTINUITY.md` — факты, которые нельзя нарушать.
+- `HARD_SCENE_CANON.md` — жёсткий канон связи, языка, физического staging, знания персонажей, среды, психологии и состояния Асгара.
 - `chapters/` — предыдущая редакция v1, сохраняется только как исторический/reference-корпус.
 - `chapters_v2/` — актуальная чистовая редакция романа: 35 основных глав + 5 интерлюдий. Для чтения, аудита и будущей сборки использовать именно её.
 
@@ -25,6 +26,6 @@
 6. `PROJECT_MEMORY/05_RECENT_COMMIT_INDEX.md`
 7. `PROJECT_MEMORY/06_V2_REWRITE.md`
 
-Эти файлы — долговременная редакционная память проекта. После них читать актуальные `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md`, `MANIFEST.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md`.
+Эти файлы — долговременная редакционная память проекта. После них читать актуальные `FINAL_CANON_OVERRIDE.md`, `HARD_SCENE_CANON.md`, `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md`, `MANIFEST.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md`.
 
 При конфликте память-файлов с более свежим содержимым ветки `main` источником истины остаётся актуальный `main`; затем memory-файлы нужно синхронизировать.
