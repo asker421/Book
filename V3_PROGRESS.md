@@ -12,14 +12,14 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **проверена, ожидает решения пользователя** — final uninterrupted **28-canon** audit complete after causal-echo/self-proof and POV repairs; `FAIL count = 0`; `WORD COUNT = 2471`; V2 literary benchmark PASS
-- last completed action: full audit rerun found two authorial self-proof tails and one Katya POV-omniscience defect; surgically repaired; `CHAPTER_AUDIT_PROMPT.md` expanded to explicit 28-canon stack; final audit rerun from canon #1 through #28 + procedural gates; `FAIL count = 0`
+- current episode status: **проверена, ожидает решения пользователя** — independent **29-canon cold-start audit** completed after micro-staging/knowledge/hand-occupancy/door-continuity/self-proof repairs; `FAIL count = 0`; `WORD COUNT = 2464`; V2 literary benchmark PASS
+- last completed action: user-triggered cold-start re-audit discarded all previous PASS results; added `MICRO_STAGING_CANON.md` and cold-start protocol to all 40 prompts; repeated full resets after each discovered defect; final uninterrupted audit canon #1 through #29 + procedural gates; `FAIL count = 0`
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
 
 ## Prompt readiness
-- Глава 1: **проверена, ожидает решения пользователя** — final uninterrupted 28-canon audit + procedural gates complete after self-proof/POV repairs; `FAIL count = 0`; `WORD COUNT = 2471`; text `chapters_v3/01-16-avgusta.md`, log `worklogs_v3/01.md`; user approval not received.
+- Глава 1: **проверена, ожидает решения пользователя** — final uninterrupted independent 29-canon cold-start audit + procedural gates complete; `FAIL count = 0`; `WORD COUNT = 2464`; text `chapters_v3/01-16-avgusta.md`, log `worklogs_v3/01.md`; user approval not received.
 - Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
