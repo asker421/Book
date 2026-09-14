@@ -853,6 +853,28 @@
 
 ---
 
+### 10B. Уникальный авторский метод v3 — «Проза причинного эха»
+
+#### `CANON_AUTHOR_STYLE_V3.md`
+Обязателен для всего художественного корпуса `chapters_v3/`.
+
+Фиксирует не жанр и не косметический стиль, а узнаваемый авторский способ организации восприятия:
+- следствие часто ощущается раньше объяснения;
+- неизвестное не получает имени раньше доступного персонажу понимания;
+- повторяющаяся деталь обязана менять смысл;
+- эмоция меняет геометрию внимания и ритм текста;
+- значимый диалог строится как столкновение целей и карт мира;
+- переходы между эпохами сохраняют физический сенсорный шов, когда это оправдано сценой;
+- поздняя причина может переосмыслить раннюю сцену без реткона и обмана POV;
+- сильный конец сцены предпочтительно бьёт назад по уже прочитанному, а не только обещает следующую загадку.
+
+Ключевой анти-шаблон: **ни одна сцена не обязана демонстрировать все фирменные механизмы.** Если приём становится предсказуемым, он считается тиком и должен быть ослаблен или заменён естественным способом проживания сцены.
+
+Главная формула:
+**читатель сначала сталкивается со следствием, затем вместе с персонажем добывает причину; поздняя причина способна изменить смысл уже прочитанного, не отменяя ни одного честно показанного факта.**
+
+---
+
 ### 11. Канон прозы, диалогов и анти-«лесенки»
 
 #### `PROSE_DIALOGUE_CANON.md`
@@ -948,10 +970,11 @@
 14. `CONFLICT_ANTAGONISM_CANON.md`
 15. `ASGAR_FLAW_CANON.md`
 16. `NARRATIVE_STYLE_CANON.md`
-17. `PROSE_DIALOGUE_CANON.md`
-18. `READER_EXPERIENCE_CANON.md`
-19. `CANON_WRITING_TICS.md`
-20. `TERMINOLOGY_CANON.md`
+17. `CANON_AUTHOR_STYLE_V3.md`
+18. `PROSE_DIALOGUE_CANON.md`
+19. `READER_EXPERIENCE_CANON.md`
+20. `CANON_WRITING_TICS.md`
+21. `TERMINOLOGY_CANON.md`
 
 #### Обязательные ledgers
 
@@ -979,6 +1002,7 @@
 **Всегда:**
 - `MANIFEST.md`;
 - `NARRATIVE_STYLE_CANON.md`;
+- `CANON_AUTHOR_STYLE_V3.md`;
 - `PROSE_DIALOGUE_CANON.md`;
 - `READER_EXPERIENCE_CANON.md`;
 - `CANON_WRITING_TICS.md`.
@@ -1028,7 +1052,7 @@
 Обязательная процедура полного аудита `chapters_v3/`.
 
 Она проводит каждую главу через последовательные passes:
-chapter contract → cause/effect → knowledge → reveal → Asgar state → time → motivation → anti-idiot/interaction causality → human conflict/antagonism → epoch capability → physics → staging/sensory → language → terminology → competence → voice → relationships → foreshadow/payoff → reader experience → prose/dialogue → writing tics → exit/next-entry.
+chapter contract → cause/effect → knowledge → reveal → Asgar state → time → motivation → anti-idiot/interaction causality → human conflict/antagonism → epoch capability → physics → staging/sensory → language → terminology → competence → voice → relationships → foreshadow/payoff → reader experience → author-style/causal-echo → prose/dialogue → writing tics → exit/next-entry.
 
 После главы 35 обязательны cross-book проверки:
 - 1↔35;
