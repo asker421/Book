@@ -343,7 +343,7 @@ Audit coverage:
 
 | Файл | Contract | Canon coverage | Current relation to V2 | Current V3 status |
 |---|---|---|---|---|
-| 01-16-avgusta.md | COVERED | FULL REGISTER PASS | post-voice-fix uninterrupted full audit rerun from first canon to final gate; all pre-fix PASS results discarded; evidence in `worklogs_v3/01.md` | VERIFIED — FAIL COUNT 0 — AWAITING USER DECISION |
+| 01-16-avgusta.md | COVERED | FULL 28-CANON REGISTER PASS | post-causal-echo/self-proof + POV repairs; final uninterrupted audit rerun from canon 1 through canon 28 + procedural gates; `WORD COUNT = 2471`; evidence in `worklogs_v3/01.md` | VERIFIED — FAIL COUNT 0 — AWAITING USER DECISION |
 | 02-chetyre-dnya.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 03-sled.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 04-okno.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
