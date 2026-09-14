@@ -362,6 +362,17 @@
 
 Нельзя выдавать будущую близость за уже существующую.
 
+#### `CONFLICT_ANTAGONISM_CANON.md`
+Фиксирует человеческое противодействие, отрицательных и эгоистичных персонажей, отказ от мира всеобщей помощи и запрет «антагониста недели».
+
+Ключевые требования:
+- чужая цель существует независимо от Асгара;
+- помощь, отказ, ложь, давление и сотрудничество имеют причинное основание;
+- не все конфликты заканчиваются дружбой;
+- некоторые люди могут быть реально неприятными или вредными без обязательного искупления;
+- отрицательный персонаж не получает лишнего знания и не освобождается от anti-idiot canon;
+- новый или устойчиво изменённый повторяющийся персонаж синхронизируется с history/voice/knowledge/relationship canons до написания сцены.
+
 ---
 
 ### 10. Канон повествовательного режима
@@ -913,19 +924,21 @@
 2. `CHAPTER_BY_CHAPTER_CANON.md`
 3. `REVEAL_ORDER_CANON.md`
 4. `DECISION_MOTIVATION_CANON.md`
-5. `TIME_CONTINUITY_CANON.md`
-6. `EPOCH_CAPABILITY_CANON.md`
-7. `HARD_SCENE_CANON.md`
-8. `LANGUAGE_CANON.md`
-9. `PHYSICS_CANON.md`
-10. `CHARACTER_HISTORY_CANON.md`
-11. `CHARACTER_VOICE_CANON.md`
-12. `RELATIONSHIP_CANON.md`
-13. `NARRATIVE_STYLE_CANON.md`
-14. `PROSE_DIALOGUE_CANON.md`
-15. `READER_EXPERIENCE_CANON.md`
-16. `CANON_WRITING_TICS.md`
-17. `TERMINOLOGY_CANON.md`
+5. `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md`
+6. `TIME_CONTINUITY_CANON.md`
+7. `EPOCH_CAPABILITY_CANON.md`
+8. `HARD_SCENE_CANON.md`
+9. `LANGUAGE_CANON.md`
+10. `PHYSICS_CANON.md`
+11. `CHARACTER_HISTORY_CANON.md`
+12. `CHARACTER_VOICE_CANON.md`
+13. `RELATIONSHIP_CANON.md`
+14. `CONFLICT_ANTAGONISM_CANON.md`
+15. `NARRATIVE_STYLE_CANON.md`
+16. `PROSE_DIALOGUE_CANON.md`
+17. `READER_EXPERIENCE_CANON.md`
+18. `CANON_WRITING_TICS.md`
+19. `TERMINOLOGY_CANON.md`
 
 #### Обязательные ledgers
 
@@ -968,6 +981,7 @@
 
 **Для действий, физики и мира:**
 - `DECISION_MOTIVATION_CANON.md`;
+- `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md`;
 - `TIME_CONTINUITY_CANON.md`;
 - `EPOCH_CAPABILITY_CANON.md`;
 - `HARD_SCENE_CANON.md`;
@@ -984,8 +998,10 @@
 
 **Для персонажей и диалогов:**
 - `CHARACTER_HISTORY_CANON.md`;
+- `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md`;
 - `CHARACTER_VOICE_CANON.md`;
-- `RELATIONSHIP_CANON.md`.
+- `RELATIONSHIP_CANON.md`;
+- `CONFLICT_ANTAGONISM_CANON.md`.
 
 **Для глав 34–35 и любых сцен, затрагивающих финальную механику:**
 - `FINAL_CANON_OVERRIDE.md` обязателен дополнительно и имеет высший приоритет.
@@ -998,7 +1014,7 @@
 Обязательная процедура полного аудита `chapters_v3/`.
 
 Она проводит каждую главу через последовательные passes:
-chapter contract → cause/effect → knowledge → reveal → Asgar state → time → motivation → epoch capability → physics → staging/sensory → language → terminology → competence → voice → relationships → foreshadow/payoff → reader experience → prose/dialogue → writing tics → exit/next-entry.
+chapter contract → cause/effect → knowledge → reveal → Asgar state → time → motivation → anti-idiot/interaction causality → human conflict/antagonism → epoch capability → physics → staging/sensory → language → terminology → competence → voice → relationships → foreshadow/payoff → reader experience → prose/dialogue → writing tics → exit/next-entry.
 
 После главы 35 обязательны cross-book проверки:
 - 1↔35;
@@ -1197,9 +1213,10 @@ chapter contract → cause/effect → knowledge → reveal → Asgar state → t
 8. **EPOCH:** `EPOCH_CAPABILITY_CANON.md`.
 9. **MOTIVATION:** `DECISION_MOTIVATION_CANON.md`.
 10. **ANTI-IDIOT / INTERACTION CAUSALITY:** `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md` — почему каждый персонаж находится в сцене, как узнал о событии, зачем подошёл/сказал/проверил/помог, почему не выбрал очевидную альтернативу; обязательный «какого хуя?» test.
-11. **CHARACTERS:** `CHARACTER_HISTORY_CANON.md`, `CHARACTER_VOICE_CANON.md`, `RELATIONSHIP_CANON.md`.
-12. **NARRATIVE/PROSE:** `NARRATIVE_STYLE_CANON.md`, `PROSE_DIALOGUE_CANON.md`, `READER_EXPERIENCE_CANON.md`, `CANON_WRITING_TICS.md`.
-13. **PAYOFF:** `FORESHADOWING_PAYOFF_LEDGER.md`.
+11. **HUMAN CONFLICT / ANTAGONISM:** `CONFLICT_ANTAGONISM_CANON.md` — не превратился ли мир в автоматическую службу помощи Асгару; есть ли у противодействия собственная цель; не вставлен ли «антагонист недели»; синхронизированы ли history/voice/knowledge/relationship canons для новых или устойчиво изменённых персонажей.
+12. **CHARACTERS:** `CHARACTER_HISTORY_CANON.md`, `CHARACTER_VOICE_CANON.md`, `RELATIONSHIP_CANON.md`.
+13. **NARRATIVE/PROSE:** `NARRATIVE_STYLE_CANON.md`, `PROSE_DIALOGUE_CANON.md`, `READER_EXPERIENCE_CANON.md`, `CANON_WRITING_TICS.md`.
+14. **PAYOFF:** `FORESHADOWING_PAYOFF_LEDGER.md`.
 
 Если два **активных** специализированных источника дают несовместимые требования:
 - не выбирать удобную версию;
@@ -1519,3 +1536,21 @@ chapter contract → cause/effect → knowledge → reveal → Asgar state → t
 
 > **Чем невозможнее событие, тем точнее должна быть человеческая реакция на него. Точнее — не значит громче. Никто не обязан кричать, но никто не имеет права вести себя так, будто невозможного не произошло.**
 
+---
+
+## КАНОН ЧЕЛОВЕЧЕСКОГО КОНФЛИКТА И ОТРИЦАТЕЛЬНЫХ ПЕРСОНАЖЕЙ
+
+**Статус: ЖЁСТКИЙ КАНОН V3. Полная версия — `CONFLICT_ANTAGONISM_CANON.md`.**
+
+- Мир не обязан помогать Асгару.
+- У каждого значимого человека есть собственная цель, цена и предел помощи.
+- Допустимы реально неприятные, эгоистичные, корыстные, властные, манипулятивные и вредящие люди без обязательного искупления.
+- Не каждый конфликт заканчивается дружбой.
+- Запрещён «антагонист недели»: человеческое противодействие появляется только там, где естественно вытекает из эпохи, интересов и отношений.
+- Негативность не отменяет причинность, компетентность, физику, знание и anti-idiot canon.
+- Новый повторяющийся конфликтный персонаж до полноценной сцены получает history + полный voice profile + knowledge/relationship entries при релевантности.
+- Если существующий персонаж получает устойчиво новое поведение, соответствующие каноны синхронизируются до художественного текста.
+- Голоса конфликтных людей не унифицируются в шаблон «холодно-коротко-угрожающе».
+- Конфликт обязан оставлять последствия.
+- Тест: если убрать личную цель человека, останется ли его действие тем же? Если да — вероятен сценарный рычаг.
+- Тест: не стал ли весь мир снова автоматически доброжелательным Асгару?
