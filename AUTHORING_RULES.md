@@ -642,3 +642,37 @@
 - профессиональными терминами поверх одинаковой речевой конструкции.
 
 Различие должно быть структурным: **как персонаж думает → так он строит фразу**.
+
+
+## FULL CANON STACK GATE
+
+Перед статусом PASS обязателен conflict-check по полному активному стеку. Файл может быть нерелевантен конкретной сцене по содержанию, но его правила нельзя считать несуществующими только потому, что он не был явно назван в локальном prompt.
+
+- `FINAL_CANON_OVERRIDE.md`
+- `CHAPTER_BY_CHAPTER_CANON.md`
+- `REVEAL_ORDER_CANON.md`
+- `KNOWLEDGE_LEDGER.md`
+- `PHYSICS_CANON.md`
+- `HARD_SCENE_CANON.md`
+- `EPOCH_CAPABILITY_CANON.md`
+- `TIME_CONTINUITY_CANON.md`
+- `LANGUAGE_CANON.md`
+- `LOCATION_STAGING_LEDGER.md`
+- `CAUSE_EFFECT_LEDGER.md`
+- `FORESHADOWING_PAYOFF_LEDGER.md`
+- `ASGAR_STATE_LEDGER.md`
+- `DECISION_MOTIVATION_CANON.md`
+- `ASGAR_FLAW_CANON.md`
+- `CHARACTER_HISTORY_CANON.md`
+- `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md`
+- `CHARACTER_VOICE_CANON.md`
+- `RELATIONSHIP_CANON.md`
+- `CONFLICT_ANTAGONISM_CANON.md`
+- `NARRATIVE_STYLE_CANON.md`
+- `CANON_AUTHOR_STYLE_V3.md`
+- `PROSE_DIALOGUE_CANON.md`
+- `READER_EXPERIENCE_CANON.md`
+- `CANON_WRITING_TICS.md`
+- `TERMINOLOGY_CANON.md`
+
+Если специализированный файл и общий документ расходятся, сначала разрешить конфликт по приоритету `MANIFEST.md`, затем править художественный текст. Нельзя объявлять PASS при известном конфликте.
