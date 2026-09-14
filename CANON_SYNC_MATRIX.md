@@ -402,6 +402,7 @@
 - reveal-order;
 - knowledge firewall;
 - персонажные history/voice/motivation/relationship/knowledge/contracts;
+- character reveal architecture: след → давление → причина → payoff, с отдельной картой раскрытия прошлого;
 - конфликтные дуги;
 - теневая дуга Асгара;
 - cause/effect;
