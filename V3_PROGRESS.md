@@ -1,7 +1,7 @@
 # V3 PROGRESS
 
 ## Prompt pack
-- fail-closed protocol: `prompts_v3/FAIL_CLOSED_PROTOCOL.md` — full copy embedded before all 40 episode prompts
+- fail-closed protocol: `prompts_v3/FAIL_CLOSED_PROTOCOL.md` — full copy embedded before all 40 episode prompts; includes mandatory **V2 literary benchmark**, `LITERARY REGRESSION FAIL`, `ROMANNESS GATE`, and UI-reality gate
 - source commit: `17f48f3e1dc0dc03fba362de8435644672b0d28d`
 - structure: **35 chapters + 5 interludes**
 - individual prompts: **40 / 40**
@@ -13,7 +13,7 @@
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
 - current episode status: **NOT PASS — opening rewritten after user rejection; awaiting user reading**
-- last completed action: Глава 1 переписана заново по встроенному FAIL-CLOSED protocol, полный adversarial audit → repair → полный re-audit завершён; текст и worklog сохранены
+- last completed action: master FAIL-CLOSED protocol strengthened; refreshed in **40/40** episode prompts with mandatory V2↔V3 comparative literary gate
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
