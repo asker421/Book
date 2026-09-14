@@ -40,6 +40,7 @@
 - `REVEAL_ORDER_CANON.md`;
 - `TIME_CONTINUITY_CANON.md`;
 - `DECISION_MOTIVATION_CANON.md`;
+- `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md`;
 - `EPOCH_CAPABILITY_CANON.md`;
 - `HARD_SCENE_CANON.md`;
 - `PHYSICS_CANON.md`;
@@ -48,6 +49,7 @@
 - `CHARACTER_HISTORY_CANON.md`;
 - `CHARACTER_VOICE_CANON.md`;
 - `RELATIONSHIP_CANON.md`;
+- `CONFLICT_ANTAGONISM_CANON.md`;
 - `NARRATIVE_STYLE_CANON.md`;
 - `PROSE_DIALOGUE_CANON.md`;
 - `READER_EXPERIENCE_CANON.md`;
@@ -162,6 +164,22 @@
 Если ответ: «иначе не будет следующей главы» = FAIL.
 
 ---
+
+# 9A. PASS 7A — ANTI-IDIOT / INTERACTION CAUSALITY
+
+Источник: `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md`.
+
+Проверить: почему каждый значимый персонаж находится в сцене; как узнал о событии; зачем подошёл, заговорил, проверил, помог, отказал или вмешался; почему не выбрал очевидную альтернативу; не существует ли взаимодействие только потому, что сюжету нужен следующий шаг.
+
+Любой необоснованный контакт = **ANTI-IDIOT FAIL**.
+
+# 9B. PASS 7B — HUMAN CONFLICT / ANTAGONISM
+
+Источник: `CONFLICT_ANTAGONISM_CANON.md`.
+
+Проверить: не помогают ли Асгару все по умолчанию; есть ли у людей самостоятельные цели; естественно ли человеческое противодействие; не возник ли «антагонист недели»; не закрывается ли каждый конфликт примирением; не знает ли противник лишнего; не действует ли он глупо ради сюжета; синхронизированы ли history/voice/knowledge/relationship canons; остаются ли последствия.
+
+Нарушение = **HUMAN CONFLICT CANON FAIL**.
 
 # 10. PASS 8 — EPOCH CAPABILITY
 
