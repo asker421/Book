@@ -11,14 +11,14 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **AUDIT FAILED / REWORK — полный повторный аудит по всем обязательным канонам**
-- last completed action: ложный FULL V3 PASS снят после выявления системных дефектов аудита
-- next permitted action: завершить полный re-audit Главы 1, исправить все подтверждённые дефекты и только после доказуемого clean pass показать главу пользователю; переход к Главе 2 запрещён
+- current episode status: **FULL V3 PASS по полному повторному аудиту; ожидает решения пользователя**
+- last completed action: Глава 1 полностью переписана после снятия ложного PASS; выполнен полный 20-pass canon/prose re-audit
+- next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
 
 ## Prompt readiness
-- Глава 1: **AUDIT FAILED / REWORK** — предыдущий PASS признан недействительным; требуется полный построчный cross-check по всем обязательным канонам.
+- Глава 1: **FULL V3 PASS — PENDING USER ACCEPTANCE** — полный rewrite + полный повторный аудит; текст `chapters_v3/01-16-avgusta.md`, log `worklogs_v3/01.md`.
 - Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
