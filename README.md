@@ -6,6 +6,7 @@
 
 ## Структура
 - `MANIFEST.md` — замысел, жанр, тон и обязательные принципы.
+- `NARRATIVE_STYLE_CANON.md` — обязательный повествовательный режим v3: близкое третье лицо, прошедшее время, ограниченная фокализация, авторская дистанция и запреты.
 - `STORY_BIBLE.md` — механика будки, временные правила, мотивации и раскрытия.
 - `CHAPTER_MAP.md` — карта 35 основных глав и 5 параллельных интерлюдий.
 - `CONTINUITY.md` — факты, которые нельзя нарушать.
@@ -21,7 +22,8 @@
 - `ASGAR_STATE_LEDGER.md` — физический, инвентарный, языковой, навыковый и психологический паспорт Асгара по главам.
 - `FORESHADOWING_PAYOFF_LEDGER.md` — карта всех ключевых подсказок, естественных ложных моделей, reframes и payoff по роману.
 - `chapters/` — предыдущая редакция v1, сохраняется только как исторический/reference-корпус.
-- `chapters_v2/` — актуальная чистовая редакция романа: 35 основных глав + 5 интерлюдий. Для чтения, аудита и будущей сборки использовать именно её.
+- `chapters_v2/` — замороженный baseline предыдущей редакции; не править в ходе v3.
+- `chapters_v3/` — текущий рабочий художественный корпус: 35 основных глав + 5 интерлюдий. Все новые литературные правки вести здесь.
 
 
 ## Project memory / передача между чатами
@@ -35,7 +37,8 @@
 5. `PROJECT_MEMORY/04_HANDOFF_PROMPT.md`
 6. `PROJECT_MEMORY/05_RECENT_COMMIT_INDEX.md`
 7. `PROJECT_MEMORY/06_V2_REWRITE.md`
+8. `PROJECT_MEMORY/07_V3_NARRATIVE_STYLE.md`
 
-Эти файлы — долговременная редакционная память проекта. После них читать актуальные `FINAL_CANON_OVERRIDE.md`, `HARD_SCENE_CANON.md`, `CHARACTER_VOICE_CANON.md`, `EPOCH_CAPABILITY_CANON.md`, `TIME_CONTINUITY_CANON.md`, `REVEAL_ORDER_CANON.md`, `DECISION_MOTIVATION_CANON.md`, `RELATIONSHIP_CANON.md`, `CHAPTER_BY_CHAPTER_CANON.md`, `KNOWLEDGE_LEDGER.md`, `ASGAR_STATE_LEDGER.md`, `FORESHADOWING_PAYOFF_LEDGER.md`, `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md`, `MANIFEST.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md`.
+Эти файлы — долговременная редакционная память проекта. После них читать актуальные `NARRATIVE_STYLE_CANON.md`, `FINAL_CANON_OVERRIDE.md`, `HARD_SCENE_CANON.md`, `CHARACTER_VOICE_CANON.md`, `EPOCH_CAPABILITY_CANON.md`, `TIME_CONTINUITY_CANON.md`, `REVEAL_ORDER_CANON.md`, `DECISION_MOTIVATION_CANON.md`, `RELATIONSHIP_CANON.md`, `CHAPTER_BY_CHAPTER_CANON.md`, `KNOWLEDGE_LEDGER.md`, `ASGAR_STATE_LEDGER.md`, `FORESHADOWING_PAYOFF_LEDGER.md`, `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md`, `MANIFEST.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md`.
 
 При конфликте память-файлов с более свежим содержимым ветки `main` источником истины остаётся актуальный `main`; затем memory-файлы нужно синхронизировать.
