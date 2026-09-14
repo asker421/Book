@@ -357,6 +357,22 @@
 
 ---
 
+# 11A. Build / release pipeline
+
+Проверена не только рукопись, но и путь сборки.
+
+| Контур | Состояние | Статус |
+|---|---|---|
+| `tools/build_epub.py` | читает `chapters_v3/`, не `chapters_v2/` | PATCHED / PASS |
+| `.github/workflows/build-epub-source.yml` | следит за `chapters_v3/**` и `CANON_SYNC_MATRIX.md` | PATCHED / PASS |
+| Working EPUB при RED/YELLOW матрице | имя `Krasnaya_budka_V3_WORKING_NOT_RELEASE.epub` | PASS |
+| Финальный EPUB | допускается только когда матрица больше не содержит `REWRITE REQUIRED` / release block | BLOCKED сейчас |
+| Frozen V2 workflows | остаются архивными и не являются текущей V3-сборкой | PASS / LEGACY |
+
+Это закрывает опасный прежний рассинхрон: до исправления текущий EPUB workflow продолжал собирать `chapters_v2/`, хотя рабочим корпусом уже был объявлен V3.
+
+---
+
 # 12. Что сейчас герметично, а что нет
 
 ## Герметично на уровне канонической архитектуры
