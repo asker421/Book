@@ -343,7 +343,7 @@ Audit coverage:
 
 | Файл | Contract | Canon coverage | Current relation to V2 | Current V3 status |
 |---|---|---|---|---|
-| 01-16-avgusta.md | COVERED | COVERED | opening rebuilt again after user identified retelling/narrative-distance failure; latest repair logged in `worklogs_v3/01.md` | NOT PASS — AWAITING USER READING |
+| 01-16-avgusta.md | COVERED | COVERED | full restart from scratch under mandatory V2 literary benchmark; canon + literary comparative audit logged in `worklogs_v3/01.md` | VERIFIED — AWAITING USER DECISION |
 | 02-chetyre-dnya.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 03-sled.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 04-okno.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
