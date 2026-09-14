@@ -26,6 +26,7 @@
 
 Всегда:
 - `MANIFEST.md`;
+- `CANON_SYNC_MATRIX.md`;
 - соответствующая глава v3;
 - соответствующая глава v2 только как источник сюжетного материала, если нужно;
 - `CHAPTER_BY_CHAPTER_CANON.md`;
@@ -619,3 +620,17 @@ MOTIVATION → KNOWLEDGE → VOICE → RELATIONSHIPS → CAUSE/EFFECT → HUMAN 
 - Йо ↔ Тар;
 - Селин ↔ Сет;
 - Рауф ↔ Вар ↔ Кей.
+
+
+# PASS — SYNC MATRIX / REWRITE STATUS
+
+После каждого chapter pass сверить `CANON_SYNC_MATRIX.md`.
+
+Глава не может получить FINAL PASS, если её строка остаётся `REWRITE REQUIRED` или `AUDIT REQUIRED`.
+
+После главы 35 дополнительно проверить, что:
+- все 40 художественных файлов имеют подтверждённый FULL V3 PASS;
+- нет byte-identical seed-копий v2, ошибочно помеченных как переписанные;
+- все изменения персонажей/голосов/мотиваций/cause-effect отражены в матрице.
+
+Несоответствие = **GLOBAL SYNC MATRIX FAIL**.
