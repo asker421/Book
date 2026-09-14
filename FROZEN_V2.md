@@ -1,12 +1,16 @@
-# Красная будка — CURRENT V2 RELEASE
+# FROZEN_V2 — статус литературного корпуса
 
-**Status: CURRENT LITERARY RELEASE**
+**Status: SUPERSEDED RELEASE / EPUB STALE AFTER STRUCTURAL COMPRESSION**
 
 - Source corpus: `chapters_v2/`
-- Exact literary source commit: `30e5e6dc5823e7ac22e12777f999d794ab972b5e`
-- Sections: `45` (40 глав + 5 интерлюдий)
-- Words: `86782`
-- EPUB: `release/krasnaya-budka-v2-FROZEN.epub`
-- EPUB SHA256: `74ddaa91fd0dff3d29db7fb9dfa39d65582a12e3e1073d07a40d4ab0c6fb9dd7`
+- Current literary source commit at this audit point: `3526eba0c9524377b9df2a2c9c113a7f0af461b6`
+- Sections: `40` (35 основных глав + 5 интерлюдий)
+- Words: `79091`
+- Previous frozen EPUB: `release/krasnaya-budka-v2-FROZEN.epub`
+- Previous EPUB status: **STALE — собран до удаления промежуточных миров и не соответствует текущему `main`**
 
-`release/krasnaya-budka-v2-FROZEN.epub` собирается из актуального `chapters_v2/` при каждом изменении литературного корпуса.
+Текущая литературная структура после хирургического сокращения не должна собираться или распространяться из прежнего frozen EPUB без новой сборки.
+
+Удалены как самостоятельные эпохи: 12870, 312406 и Нэр / 91 208 004 000 000. Эпоха 703 118 402 объединена в одну главу. Финальная нумерация основной линии: 1–35.
+
+Новый freeze допустим только после отдельной сборки EPUB из актуального `chapters_v2/` и проверки TOC, порядка 35 глав + 5 интерлюдий и соответствия текущему commit SHA.
