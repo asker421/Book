@@ -272,17 +272,17 @@
 
 # 9. Состояние V3-корпуса относительно V2
 
-Snapshot на момент создания матрицы:
+Актуальный snapshot после текущего цикла синхронизации:
 
 - файлов V3: **40**;
-- файлов, blob SHA которых уже отличается от V2: **16**;
-- файлов, которые всё ещё побайтно равны V2: **24**.
+- файлов, blob SHA которых отличается от V2: **21**;
+- файлов, которые всё ещё побайтно равны V2: **19**.
 
-Изменение SHA не означает полный rewrite: часть 16 файлов получила только канонические хирургические исправления текущего цикла.
+Изменение SHA **не означает полный rewrite**: часть файлов получила только канонические хирургические исправления, необходимые для устранения уже найденных конфликтов.
 
 Следовательно:
 
-> **На данный момент ни один файл не получает автоматический статус FULL V3 REWRITE только по факту нахождения в chapters_v3.**
+> **Ни один файл не получает автоматический статус FULL V3 REWRITE только по факту отличия от V2 или нахождения в chapters_v3.**
 
 Для перехода строки главы в FULL V3 PASS требуется:
 1. прочитать v2 только как сюжетный материал;
@@ -300,45 +300,45 @@ Snapshot на момент создания матрицы:
 | Файл | Contract | Canon coverage | Current relation to V2 | Current V3 status |
 |---|---|---|---|---|
 | 01-16-avgusta.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 02-chetyre-dnya.md | COVERED | COVERED | patched | REWRITE REQUIRED |
-| 03-sled.md | COVERED | COVERED | patched | REWRITE REQUIRED |
-| 04-okno.md | COVERED | COVERED | patched | REWRITE REQUIRED |
-| 04a-lishnyaya-massa.md | COVERED | COVERED | patched | REWRITE REQUIRED |
-| 05-dvadtsat-pyat-let.md | COVERED | COVERED | patched | REWRITE REQUIRED |
+| 02-chetyre-dnya.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 03-sled.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 04-okno.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 04a-lishnyaya-massa.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 05-dvadtsat-pyat-let.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 06-mertvyy-chelovek.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 07-arhiv-16-08.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 08-vtoroe-okno.md | COVERED | COVERED | patched | REWRITE REQUIRED |
-| 08a-raschet-ne-shoditsya.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
+| 07-arhiv-16-08.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 08-vtoroe-okno.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 08a-raschet-ne-shoditsya.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 09-novaya-klimaticheskaya-epoha.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 10-krasnyy-koridor.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 11-ozhidanie.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 12-shturm.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 13-posle-voyny.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
+| 12-shturm.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 13-posle-voyny.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 14-mashiny-bez-hozyaev.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 15-protokol.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 15a-smena.md | COVERED | COVERED | patched | REWRITE REQUIRED |
+| 15a-smena.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 16-mara.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 17-posle-vtorogo-padeniya.md | COVERED | COVERED | patched | REWRITE REQUIRED |
-| 18-chelovek-iz-krasnoy-dveri.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 19-dolgoe-ozhidanie.md | COVERED | COVERED | patched | REWRITE REQUIRED |
-| 20-vozrozhdenie.md | COVERED | COVERED | patched | REWRITE REQUIRED |
+| 17-posle-vtorogo-padeniya.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 18-chelovek-iz-krasnoy-dveri.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 19-dolgoe-ozhidanie.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 20-vozrozhdenie.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 21-nepreryvnost.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 22-ne-domoy.md | COVERED | COVERED | patched | REWRITE REQUIRED |
+| 22-ne-domoy.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 22a-slepaya-zona.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 23-istochnik.md | COVERED | COVERED | patched | REWRITE REQUIRED |
+| 23-istochnik.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 24-milliony-let.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 25-posledniy-arhiv-zemli.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 26-odin.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 27-poslanie.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 28-smert-zemli.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 29-poslednie-zvezdy.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 30-temnaya-epoha.md | COVERED | COVERED | patched | REWRITE REQUIRED |
+| 30-temnaya-epoha.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 30a-do-poslednego-okna.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 31-retro-1.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 32-vy-pochti-doshli.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
-| 33-tishina.md | COVERED | COVERED | patched | REWRITE REQUIRED |
-| 34-liniya-istochnika.md | COVERED | COVERED | patched | REWRITE REQUIRED |
-| 35-16-avgusta.md | COVERED | COVERED | patched | REWRITE REQUIRED |
+| 33-tishina.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 34-liniya-istochnika.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
+| 35-16-avgusta.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 
 ---
 
