@@ -1,5 +1,7 @@
 # Live Novelistic / Dialogue / Cold-Reader Pass — 2026-09-04
 
+> **STATUS: HISTORICAL / NON-NORMATIVE V2 PASS.** Этот файл фиксирует конкретный проход по старому `chapters_v2/`. Он полезен как история найденных дефектов, но не задаёт нынешний стиль, структуру, объём или reveal-order v3.
+
 ## Scope
 
 Full linear reread of the current `chapters_v2/` corpus with the explicit goal of eliminating:
