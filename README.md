@@ -17,6 +17,7 @@
 - `DECISION_MOTIVATION_CANON.md` — каноническая мотивация каждого крупного добровольного решения Асгара.
 - `RELATIONSHIP_CANON.md` — динамика и границы ключевых отношений без случайной романтизации и эмоциональных скачков.
 - `CHAPTER_BY_CHAPTER_CANON.md` — жёсткий контракт каждой из 35 глав и 5 интерлюдий: что обязано произойти, что должно измениться и что категорически запрещено.
+- `KNOWLEDGE_LEDGER.md` — кто, в какой главе, что впервые узнаёт, из какого источника и чего ещё знать не может.
 - `chapters/` — предыдущая редакция v1, сохраняется только как исторический/reference-корпус.
 - `chapters_v2/` — актуальная чистовая редакция романа: 35 основных глав + 5 интерлюдий. Для чтения, аудита и будущей сборки использовать именно её.
 
@@ -33,6 +34,6 @@
 6. `PROJECT_MEMORY/05_RECENT_COMMIT_INDEX.md`
 7. `PROJECT_MEMORY/06_V2_REWRITE.md`
 
-Эти файлы — долговременная редакционная память проекта. После них читать актуальные `FINAL_CANON_OVERRIDE.md`, `HARD_SCENE_CANON.md`, `CHARACTER_VOICE_CANON.md`, `EPOCH_CAPABILITY_CANON.md`, `TIME_CONTINUITY_CANON.md`, `REVEAL_ORDER_CANON.md`, `DECISION_MOTIVATION_CANON.md`, `RELATIONSHIP_CANON.md`, `CHAPTER_BY_CHAPTER_CANON.md`, `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md`, `MANIFEST.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md`.
+Эти файлы — долговременная редакционная память проекта. После них читать актуальные `FINAL_CANON_OVERRIDE.md`, `HARD_SCENE_CANON.md`, `CHARACTER_VOICE_CANON.md`, `EPOCH_CAPABILITY_CANON.md`, `TIME_CONTINUITY_CANON.md`, `REVEAL_ORDER_CANON.md`, `DECISION_MOTIVATION_CANON.md`, `RELATIONSHIP_CANON.md`, `CHAPTER_BY_CHAPTER_CANON.md`, `KNOWLEDGE_LEDGER.md`, `AUTHORING_RULES.md`, `STORY_BIBLE.md`, `CONTINUITY.md`, `CHAPTER_MAP.md`, `MANIFEST.md` и `NOVEL_FINAL_AUDIT_CHECKLIST.md`.
 
 При конфликте память-файлов с более свежим содержимым ветки `main` источником истины остаётся актуальный `main`; затем memory-файлы нужно синхронизировать.
