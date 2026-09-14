@@ -528,3 +528,35 @@
 - после канонической финальной строки нет sequel-hook.
 
 Только после этого допускается сборка печатной версии/EPUB как `release/`.
+
+# 27. PASS 21 — HUMAN CONFLICT / ANTAGONISM
+
+Этот pass обязателен после MOTIVATION, KNOWLEDGE и VOICE.
+
+Проверить:
+1. Нужен ли этой главе вообще персональный человеческий оппонент?
+2. Предусмотрен ли он CONFLICT_ANTAGONISM_CANON.md?
+3. Не повторяется ли конфликт предыдущей эпохи?
+4. Если персонаж отрицательный — в чём его собственная выгода?
+5. Если персонаж рационально спорит с Асгаром — не затемнил ли текст его без причины?
+6. Не помогают ли все остальные слишком легко?
+7. Не превращён ли любой отказ в злодейство?
+8. Совпадает ли поведение с CHARACTER_HISTORY_CANON.md?
+9. Совпадает ли речь с CHARACTER_VOICE_CANON.md?
+10. Совпадает ли действие с CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md?
+11. Есть ли источник знания в KNOWLEDGE_LEDGER.md?
+12. Есть ли причинное следствие в CAUSE_EFFECT_LEDGER.md?
+13. Не вытолкнул ли антагонист Асгара в следующий chapter beat вместо самостоятельного решения?
+14. Не ощущается ли структура как «новая эпоха → новый враг»?
+
+FAIL-категории:
+- INSERTED VILLAIN FAIL;
+- HELPFUL WORLD FAIL;
+- ANTAGONIST KNOWLEDGE FAIL;
+- ANTAGONIST VOICE FAIL;
+- ANTAGONIST MOTIVATION FAIL;
+- ANTAGONIST-OF-THE-WEEK FAIL;
+- FORCED HERO DECISION FAIL.
+
+После правки поведения конфликтного персонажа повторяются passes:
+MOTIVATION → KNOWLEDGE → VOICE → RELATIONSHIPS → CAUSE/EFFECT → HUMAN CONFLICT.
