@@ -3,9 +3,10 @@ on:
   push:
     branches: [main]
     paths:
-      - 'chapters_v2/**'
+      - 'chapters_v3/**'
       - 'assets/**'
       - 'tools/build_epub.py'
+      - 'CANON_SYNC_MATRIX.md'
       - '.github/workflows/build-epub-source.yml'
   workflow_dispatch:
 
@@ -23,11 +24,11 @@ jobs:
           set -e
           mkdir -p build
           : > build/manuscript.md
-          for f in $(find chapters_v2 -maxdepth 1 -type f -name '*.md' | sort); do
+          for f in $(find chapters_v3 -maxdepth 1 -type f -name '*.md' | sort); do
             cat "$f" >> build/manuscript.md
             printf '\n\n' >> build/manuscript.md
           done
-          cp -r chapters_v2 build/chapters
+          cp -r chapters_v3 build/chapters
       - name: Prepare cover
         run: base64 -d assets/cover_epub.b64 > assets/cover_epub.jpg
       - name: Install EPUB build dependency
@@ -37,7 +38,7 @@ jobs:
       - name: Upload manuscript and EPUB
         uses: actions/upload-artifact@v4
         with:
-          name: krasnaya-budka-manuscript
+          name: krasnaya-budka-v3-working-manuscript
           path: |
             build/
             dist/
@@ -57,4 +58,4 @@ jobs:
           git push
 
 # Rebuild artifact after chapter-title rename (2026-09-09)
-# Manual rebuild requested 2026-09-13: current chapters_v2/main
+# V3 source switched 2026-09-14: current chapters_v3/main
