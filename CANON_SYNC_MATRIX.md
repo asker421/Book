@@ -358,7 +358,7 @@ Audit coverage:
 | 14-mashiny-bez-hozyaev.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 15-protokol.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 15a-smena.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
-| 16-mara.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
+| 16-maren.md | COVERED | COVERED | byte-identical | REWRITE REQUIRED |
 | 17-posle-vtorogo-padeniya.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 18-chelovek-iz-krasnoy-dveri.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
 | 19-dolgoe-ozhidanie.md | COVERED | COVERED | patched/different SHA | REWRITE REQUIRED |
