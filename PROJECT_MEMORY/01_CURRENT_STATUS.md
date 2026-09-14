@@ -1,4 +1,12 @@
 
+## 14.09.2026 — BUILD / RELEASE SYNC
+
+- `tools/build_epub.py` переведён с `chapters_v2/` на `chapters_v3/`.
+- `.github/workflows/build-epub-source.yml` теперь собирает V3 и реагирует на изменения `CANON_SYNC_MATRIX.md`.
+- Пока матрица содержит `REWRITE REQUIRED`, EPUB маркируется `V3_WORKING_NOT_RELEASE` и не может выглядеть как финальный релиз.
+- frozen-v2 workflows остаются только legacy/archive и не являются текущей сборкой романа.
+
+
 
 ## 14.09.2026 — CANON SYNC MATRIX PASS
 
