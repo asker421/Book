@@ -1,6 +1,7 @@
 # V3 PROGRESS
 
 ## Prompt pack
+- fail-closed protocol: `prompts_v3/FAIL_CLOSED_PROTOCOL.md` — full copy embedded before all 40 episode prompts
 - source commit: `17f48f3e1dc0dc03fba362de8435644672b0d28d`
 - structure: **35 chapters + 5 interludes**
 - individual prompts: **40 / 40**
@@ -12,7 +13,7 @@
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
 - current episode status: **FULL V3 PASS по полному повторному аудиту; ожидает решения пользователя**
-- last completed action: Глава 1 полностью переписана после снятия ложного PASS; выполнен полный 20-pass canon/prose re-audit
+- last completed action: FAIL-CLOSED protocol сохранён как master и физически встроен перед всеми 40 индивидуальными V3-prompts
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**

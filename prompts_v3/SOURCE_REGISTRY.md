@@ -1,3 +1,12 @@
+# GLOBAL PROMPT PROTOCOL
+
+- `prompts_v3/FAIL_CLOSED_PROTOCOL.md` — master source процесса написания и аудита V3.
+- Маркер синхронизации: `<!-- FAIL_CLOSED_PROTOCOL_V3 -->`.
+- Требование: идентичный полный протокол должен стоять перед индивидуальной частью каждого из 40 `prompts_v3/episodes/*.md`.
+- При расхождении master/embedded prompt получает PROCESS SYNC FAIL.
+
+---
+
 # V3 PROMPT PACK — SOURCE REGISTRY
 
 - branch: `main`
