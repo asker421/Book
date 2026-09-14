@@ -433,3 +433,49 @@ PASS означает только состояние, подтверждённ�
 - `PROJECT_MEMORY/04_HANDOFF_PROMPT.md` синхронизирован с author style, motivation, antagonism и Asgar flaw canons.
 - `PROJECT_MEMORY/07_V3_NARRATIVE_STYLE.md` синхронизирован с `CANON_AUTHOR_STYLE_V3.md` и методом «Проза причинного эха».
 - Любой root-level обязательный markdown обязан быть индексирован `MANIFEST.md`; MANIFEST DRIFT блокирует PASS.
+
+---
+
+# 14. Машинные проверки целостности
+
+Последний sync-pass подтверждает:
+
+- root-level markdown-файлов: **37**;
+- root-level markdown-файлов, отсутствующих в `MANIFEST.md`: **0**;
+- активных root `*_CANON.md` + `*_LEDGER.md`: **23**;
+- активных canon/ledger, отсутствующих в `MANIFEST.md`: **0**;
+- битых markdown-ссылок между активными canon/ledger/authoring/audit документами: **0** (шаблонные `*_CANON.md` / `*_LEDGER.md` не считаются файлами);
+- chapter contracts: **40/40**;
+- файлов `chapters_v3/`: **40/40**;
+- byte-identical V2 на момент проверки: **19/40**;
+- отличающихся SHA от V2: **21/40**;
+- автоматических FULL V3 PASS: **0/40** — специально, до полного rewrite + full-stack audit.
+
+### Reveal firewall
+
+Критические границы согласованы:
+- `RETRO-1` — основная линия с главы 31;
+- пассажирская модель — раскрывается с главы 22;
+- operator terminology в основном POV — с главы 16;
+- исторический якорь / общий физический объём — поздний блок главы 34;
+- физическое подтверждение личности мужчины 2014 — глава 35.
+
+Проверенные ранние интерлюдии используют до reveal нейтральные категории вроде **внешней нагрузки / живой массы**, а не преждевременную пассажирскую модель.
+
+### Physical / POV false-positive discipline
+
+Автоматический поиск не считается доказательством нарушения без контекста:
+- «скамейка» допустима снаружи будки;
+- визуальное действие Мары допустимо в интерлюдии с POV службы;
+- сравнительная конструкция «выглядел старше Асгара» не является служебным ярлыком «старший Асгар»;
+- слова «версия/копия» допустимы только там, где текст явно отвергает такую модель и не объясняет через неё финальную физику.
+
+### Итог machine integrity gate
+
+**MANIFEST INDEX: PASS**  
+**ACTIVE CROSS-REFERENCES: PASS**  
+**STRUCTURE 35+5: PASS**  
+**CANON ARCHITECTURE: PASS**  
+**ARTISTIC V3 COMPLETION: BLOCKED / REWRITE REQUIRED**
+
+---
