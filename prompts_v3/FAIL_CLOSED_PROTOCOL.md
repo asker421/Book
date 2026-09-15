@@ -6,6 +6,20 @@
 
 <!-- FAIL_CLOSED_PROTOCOL_V3 -->
 
+## 0A. MAXIMUM CAUTION PROTOCOL — ОБЯЗАТЕЛЕН
+
+`MAXIMUM_CAUTION_AUDIT_PROTOCOL.md` является обязательным верхнеуровневым procedural source для любого V3 audit run.
+
+Этот файл не может ослабить его требования. В частности:
+- никакого grouped canon PASS;
+- никакого grouped voice PASS;
+- каждая реплика проверяется отдельно по voice mode и текущему состоянию;
+- каждый FAIL вызывает полный reset;
+- после первого чистого полного run обязателен второй независимый adversarial run;
+- только два последовательных полных run с `FAIL count = 0` дают право на `VERIFIED — DOUBLE AUDIT PASS`.
+
+Все старые VERIFIED/PASS без такого двойного прохода маркируются как `LEGACY / NOT VERIFIED UNDER MAXIMUM CAUTION`.
+
 ## ОБЯЗАТЕЛЬНЫЙ LINE-BY-LINE / REPLICA-BY-REPLICA GATE
 
 Нельзя проверять главу только на уровне абзацев, сцен или общей логики. Перед любым финальным PASS необходимо пройти текст **последовательно от первой строки до последней** и проверить каждую единицу отдельно.
