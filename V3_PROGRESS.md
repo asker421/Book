@@ -12,14 +12,14 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **VERIFIED — DOUBLE FULL AUDIT PASS — AWAITING USER DECISION** — Chapter 1 content SHA `3e6d50521882a8eafc6ec82dc48c80c8cfe95a5c`; exact word count **1903**
-- last completed action: full fail-closed reset audit completed after user-found dialogue/physics/humanization defects; two consecutive clean passes on exact content SHA `3e6d50521882a8eafc6ec82dc48c80c8cfe95a5c`
+- current episode status: **VERIFIED — DOUBLE FULL AUDIT PASS — AWAITING USER DECISION** — Chapter 1 content SHA `c8acd39efccd006cc8e11e139f9eee498c0dec2f`; exact word count **1907**
+- last completed action: fail-closed reset audit after hand-state, invented-backstory, birthday, dialogue-speaker-state, prose-tic and premature-service-reveal defects; full clean pass + independent cold/adversarial clean pass on exact content SHA `c8acd39efccd006cc8e11e139f9eee498c0dec2f`
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
 
 ## Prompt readiness
-- Глава 1: **VERIFIED — DOUBLE FULL AUDIT PASS — AWAITING USER DECISION** — content SHA `3e6d50521882a8eafc6ec82dc48c80c8cfe95a5c`; exact word count **1903**; user approval not yet recorded; Chapter 2 transition forbidden without explicit command.
+- Глава 1: **VERIFIED — DOUBLE FULL AUDIT PASS — AWAITING USER DECISION** — content SHA `c8acd39efccd006cc8e11e139f9eee498c0dec2f`; exact word count **1907**; user approval not yet recorded; Chapter 2 transition forbidden without explicit command.
 - Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
