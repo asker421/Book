@@ -12,8 +12,8 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **LEGACY / NOT VERIFIED UNDER MAXIMUM CAUTION** — предыдущий PASS получен до обязательного двойного MAXIMUM CAUTION аудита; для VERIFIED нужны два новых независимых полных прохода с доказательством каждого применимого требования и отдельным voice-state audit каждой реплики
-- last completed action: second independent cold-start audit; repaired chapter-boundary overrun, false thermal history, and hidden hand position; final uninterrupted pass completed on chapter content SHA `0d533c52dda67d0b1ee9278827e6101870cce8b5`; `FAIL count = 0`
+- current episode status: **NOT VERIFIED — EXTERNAL 1→2 CONTINUITY BLOCKER** — Chapter 1 internal motivation repaired; double-audit cannot complete until canonical Chapter 2 opening contains the actual threshold exit / receiver-cord handoff / booth disappearance sequence
+- last completed action: MAXIMUM CAUTION run #1 restarted after motivation repair `5593b526...`, then aborted on CRITICAL external 1→2 continuity blocker: Chapter 2 currently skips the physical booth exit/disappearance sequence assigned to it by canon
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
