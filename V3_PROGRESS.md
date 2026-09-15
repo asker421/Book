@@ -12,14 +12,14 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **NOT REVERIFIED AFTER SURGICAL EDIT + AUDIT PROTOCOL CHANGE** — current Chapter 1 content SHA `4a5e768204e332970ca0d8783b0c46cc094f4b2b`; previous double PASS applied to obsolete SHA `6299452519a76ac9b0c9065fe88640c063af1921` and is invalidated
-- last completed action: surgical dialogue-naturalness fix in Chapter 1 + mandatory `DIALOGUE NATURALNESS` gate added to V3/Maximum Caution/chapter audit protocols; full re-audit has not yet been run
+- current episode status: **NOT REVERIFIED — USER-FOUND DIALOGUE/CAUSALITY FAILS REPAIRED** — current Chapter 1 content SHA `6c591eba8f8919ba639b45ef93de9d0deff68d63`; full reset audit required
+- last completed action: surgical repair of Katya/Asgar escape behavior, removal of unsupported safety question, and reconstruction of first-accident sound/connection causality; added UNSTATED PREMISE + EVENT-PHASE audit gates
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
 
 ## Prompt readiness
-- Глава 1: **NOT REVERIFIED / AWAITING FULL RESET AUDIT** — current content SHA `4a5e768204e332970ca0d8783b0c46cc094f4b2b`; prior PASS invalidated by text change and new dialogue-naturalness gate; user approval not yet recorded; Chapter 2 transition forbidden without explicit command.
+- Глава 1: **NOT REVERIFIED / AWAITING FULL RESET AUDIT** — current content SHA `6c591eba8f8919ba639b45ef93de9d0deff68d63`; prior PASS invalidated; user approval not yet recorded; Chapter 2 transition forbidden without explicit command.
 - Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
