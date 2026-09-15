@@ -15,7 +15,7 @@
 | Глава 5 | chapters_v4/05.md | 2547 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/05.md |
 | Глава 6 | chapters_v4/06.md | 2248 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/06.md |
 | Глава 7 | chapters_v4/07.md | 2238 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/07.md |
-| Глава 8 | chapters_v4/08.md | 2526 | Полный reset-аудит: FAIL / NOT VERIFIED (3 FAIL); см. worklogs_v4/08.md |
+| Глава 8 | chapters_v4/08.md | 2510 | VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/08.md |
 | Интерлюдия II | chapters_v4/08a.md | 1230 | Хирургически исправлена; AUDIT PASS; см. worklogs_v4/08a.md |
 | Глава 9 | chapters_v4/09.md | 2149 | Хирургически исправлена после аудита; FIXED / NOT VERIFIED — нужен полный RESET-аудит; см. worklogs_v4/09.md |
 
