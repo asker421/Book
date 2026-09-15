@@ -12,14 +12,14 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **проверена, ожидает решения пользователя** — SECOND cold-start audit completed after fail-closed repairs; 147 non-empty lines / 80 replica lines / 324 sentence-action units; Chapter 1↔35 + canonical Ch1→2 boundary PASS; `FAIL count = 0`; `WORD COUNT = 2415`
+- current episode status: **LEGACY / NOT VERIFIED UNDER MAXIMUM CAUTION** — предыдущий PASS получен до обязательного двойного MAXIMUM CAUTION аудита; для VERIFIED нужны два новых независимых полных прохода с доказательством каждого применимого требования и отдельным voice-state audit каждой реплики
 - last completed action: second independent cold-start audit; repaired chapter-boundary overrun, false thermal history, and hidden hand position; final uninterrupted pass completed on chapter content SHA `0d533c52dda67d0b1ee9278827e6101870cce8b5`; `FAIL count = 0`
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
 
 ## Prompt readiness
-- Глава 1: **проверена, ожидает решения пользователя** — SECOND cold-start line-by-line audit complete; 147 non-empty lines / 80 replica lines / 324 sentence-action units; `FAIL count = 0`; `WORD COUNT = 2415`; text `chapters_v3/01-16-avgusta.md`, log `worklogs_v3/01.md`; user approval not received.
+- Глава 1: **LEGACY / NOT VERIFIED UNDER MAXIMUM CAUTION** — предыдущий PASS недействителен по новому протоколу; следующий допустимый шаг — полный MAXIMUM CAUTION audit run #1 с нуля; переход к Главе 2 запрещён.
 - Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
