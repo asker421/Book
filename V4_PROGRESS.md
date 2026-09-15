@@ -17,8 +17,10 @@
 | Глава 7 | chapters_v4/07.md | 2244 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; переаттестована после sync с главой 5; см. worklogs_v4/07.md |
 | Глава 8 | chapters_v4/08.md | 2498 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; переаттестована после cold prose cleanup; см. worklogs_v4/08.md |
 | Интерлюдия II | chapters_v4/08a.md | 1195 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; переаттестована после post-cert rhythm/POV fix; см. worklogs_v4/08a.md |
-| Глава 9 | chapters_v4/09.md | 2161 | Повторно хирургически исправлена после RESET-аудита; FIXED / NOT VERIFIED — нужен новый полный RESET-аудит; см. worklogs_v4/09.md |
-| Глава 10 | chapters_v4/10.md | 2588 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/10.md |n`; следующий художественный эпизод — глава 35.
+| Глава 9 | chapters_v4/09.md | 2151 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/09.md |
+| Глава 10 | chapters_v4/10.md | 2588 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/10.md |
+| Глава 11 | chapters_v4/11.md | 2270 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/11.md |
+| Глава 12 | chapters_v4/12.md | 2138 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/12.md |
 
 ## Непрерывность
 - Главы 1–3: вход 16.08.2014; выход 20.08.2014; будка и мужчина подтверждены записью; личность мужчины неизвестна.
