@@ -343,7 +343,7 @@ Audit coverage:
 
 | Файл | Contract | Canon coverage | Current relation to V2 | Current V3 status |
 |---|---|---|---|---|
-| 01-16-avgusta.md | COVERED | MAXIMUM CAUTION DOUBLE AUDIT PASS | exact WORD COUNT = 1903; content SHA `3e6d50521882a8eafc6ec82dc48c80c8cfe95a5c`; two consecutive full clean passes; 79 dialogue lines checked; 1↔35 mirror PASS; evidence in `worklogs_v3/01.md` | VERIFIED — DOUBLE AUDIT PASS — AWAITING USER DECISION |
+| 01-16-avgusta.md | COVERED | MAXIMUM CAUTION DOUBLE AUDIT PASS | exact WORD COUNT = 1907; content SHA `c8acd39efccd006cc8e11e139f9eee498c0dec2f`; two consecutive full clean passes; 79 dialogue lines checked; 1↔35 mirror PASS; evidence in `worklogs_v3/01.md` | VERIFIED — DOUBLE AUDIT PASS — AWAITING USER DECISION |
 | 02-chetyre-dnya.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 03-sled.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 04-okno.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
@@ -522,7 +522,7 @@ PASS означает только состояние, подтверждённ�
 - byte-identical V2 среди 39 файлов с тем же техническим путём: **0/39**;
 - отличающихся SHA среди тех же путей: **39/39**;
 - отдельная переименованная пара пути: **1/40** (`16-mara.md` → `16-maren.md`);
-- подтверждённых fail-closed full rewrite + exhaustive canon-register audit на текущих художественных SHA и текущем audit protocol: **1/40** — Глава 1 прошла полный reset-аудит и независимый cold/adversarial re-audit на content SHA `3e6d50521882a8eafc6ec82dc48c80c8cfe95a5c`; остальные 39 эпизодов не получают автоматический PASS.
+- подтверждённых fail-closed full rewrite + exhaustive canon-register audit на текущих художественных SHA и текущем audit protocol: **1/40** — Глава 1 прошла полный reset-аудит и независимый cold/adversarial re-audit на content SHA `c8acd39efccd006cc8e11e139f9eee498c0dec2f`; остальные 39 эпизодов не получают автоматический PASS.
 - автоматических FULL V3 PASS по факту SHA: **0/40** — автоматическое присвоение по SHA по-прежнему запрещено; 1/40 получен только доказательным аудитом.
 
 ### Reveal firewall
