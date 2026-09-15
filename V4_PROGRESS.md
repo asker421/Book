@@ -21,7 +21,7 @@
 | Глава 10 | chapters_v4/10.md | 2588 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/10.md |
 | Глава 11 | chapters_v4/11.md | 2270 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/11.md |
 | Глава 12 | chapters_v4/12.md | 2138 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/12.md |
-| Глава 13 | chapters_v4/13.md | 2061 | VERIFIED — DOUBLE AUDIT PASS; downstream continuity blocker resolved after restoration/audit of chapter 14; см. worklogs_v4/13.md |
+| Глава 13 | chapters_v4/13.md | 2061 | VERIFIED — DOUBLE AUDIT PASS; downstream continuity blocker закрыт после восстановления главы 14; см. worklogs_v4/13.md |nstream continuity blocker resolved after restoration/audit of chapter 14; см. worklogs_v4/13.md |
 | Глава 14 | chapters_v4/14.md | 2096 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS на SHA 668fbb17; см. worklogs_v4/14.md |
 | Глава 15 | chapters_v4/15.md | 1352 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS на SHA 996805ab; см. worklogs_v4/15.md |
 | Интерлюдия III | chapters_v4/15a.md | 1302 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS на SHA b08cdb44; см. worklogs_v4/15a.md |
