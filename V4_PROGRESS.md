@@ -21,6 +21,7 @@
 | Глава 10 | chapters_v4/10.md | 2588 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/10.md |
 | Глава 11 | chapters_v4/11.md | 2270 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/11.md |
 | Глава 12 | chapters_v4/12.md | 2138 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/12.md |
+| Глава 13 | chapters_v4/13.md | 2061 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/13.md |
 
 ## Непрерывность
 - Главы 1–3: вход 16.08.2014; выход 20.08.2014; будка и мужчина подтверждены записью; личность мужчины неизвестна.
