@@ -12,14 +12,14 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **NOT REVERIFIED — FIRST-JUMP ACOUSTIC ORDER REPAIRED** — current Chapter 1 content SHA `0d0a75671a099bf6b0703fce6a298f136069be6b`; full reset audit required
-- last completed action: moved loss of stadium sound to after the physical first jump; added Ch1-specific physics and audit gate for acoustic ordering and reaction scale
+- current episode status: **VERIFIED — DOUBLE FULL AUDIT PASS — AWAITING USER DECISION** — Chapter 1 content SHA `3e6d50521882a8eafc6ec82dc48c80c8cfe95a5c`; exact word count **1903**
+- last completed action: full fail-closed reset audit completed after user-found dialogue/physics/humanization defects; two consecutive clean passes on exact content SHA `3e6d50521882a8eafc6ec82dc48c80c8cfe95a5c`
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
 
 ## Prompt readiness
-- Глава 1: **NOT REVERIFIED / AWAITING FULL RESET AUDIT** — current content SHA `0d0a75671a099bf6b0703fce6a298f136069be6b`; prior PASS invalidated; user approval not yet recorded; Chapter 2 transition forbidden without explicit command.
+- Глава 1: **VERIFIED — DOUBLE FULL AUDIT PASS — AWAITING USER DECISION** — content SHA `3e6d50521882a8eafc6ec82dc48c80c8cfe95a5c`; exact word count **1903**; user approval not yet recorded; Chapter 2 transition forbidden without explicit command.
 - Глава 2: prompt ready — `prompts_v3/episodes/02.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 3: prompt ready — `prompts_v3/episodes/03.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
 - Глава 4: prompt ready — `prompts_v3/episodes/04.md`; перед prose восстановить фактический статус из `CANON_SYNC_MATRIX.md` + worklog.
