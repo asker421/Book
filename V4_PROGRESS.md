@@ -7,7 +7,7 @@
 
 | Эпизод | Файл | Слов | Статус |
 |---|---|---:|---|
-| Глава 1 | chapters_v4/01.md | 1819 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/01.md |
+| Глава 1 | chapters_v4/01.md | 1819 | VERIFIED — DOUBLE AUDIT PASS; переаттестована после eye-contact sync; см. worklogs_v4/01.md |
 | Глава 2 | chapters_v4/02.md | 2497 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/02.md |
 | Глава 3 | chapters_v4/03.md | 1938 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/03.md |
 | Глава 4 | chapters_v4/04.md | 2321 | Написана, сохранена; без аудита |
