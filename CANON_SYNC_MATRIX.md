@@ -343,7 +343,7 @@ Audit coverage:
 
 | Файл | Contract | Canon coverage | Current relation to V2 | Current V3 status |
 |---|---|---|---|---|
-| 01-16-avgusta.md | COVERED | FULL 29-CANON COLD-START REGISTER PASS | independent cold-start audit; micro-staging/knowledge/hand-occupancy/door-continuity/self-proof defects repaired; final uninterrupted audit canon 1→29 + procedural gates; `WORD COUNT = 2464`; evidence in `worklogs_v3/01.md` | VERIFIED — FAIL COUNT 0 — AWAITING USER DECISION |
+| 01-16-avgusta.md | COVERED | FULL NEW-PROTOCOL COLD-START + LINE-BY-LINE PASS | 155 non-empty lines / 91 replica lines / 347 sentence-action units checked; 1↔35 + 1→2 continuity; V2 literary benchmark; `WORD COUNT = 2518`; evidence in `worklogs_v3/01.md` | VERIFIED — FAIL COUNT 0 — AWAITING USER DECISION |
 | 02-chetyre-dnya.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 03-sled.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 04-okno.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
