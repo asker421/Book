@@ -343,7 +343,7 @@ Audit coverage:
 
 | Файл | Contract | Canon coverage | Current relation to V2 | Current V3 status |
 |---|---|---|---|---|
-| 01-16-avgusta.md | COVERED | MAXIMUM CAUTION RE-AUDIT REQUIRED | Previous PASS predates mandatory per-canon/per-replica double-audit protocol; two independent full runs from zero are required | LEGACY / NOT VERIFIED UNDER MAXIMUM CAUTION |
+| 01-16-avgusta.md | COVERED | MAXIMUM CAUTION RUN #1 BLOCKED | Motivation repaired in Ch1; current Ch2 opening skips canon-assigned physical exit/receiver/disappearance seam; double-audit not completed | NOT VERIFIED — EXTERNAL 1→2 CONTINUITY BLOCKER |
 | 02-chetyre-dnya.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 03-sled.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 04-okno.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
