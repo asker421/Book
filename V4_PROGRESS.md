@@ -11,7 +11,7 @@
 | Глава 2 | chapters_v4/02.md | 2497 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/02.md |
 | Глава 3 | chapters_v4/03.md | 1958 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/03.md |
 | Глава 4 | chapters_v4/04.md | 2338 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/04.md |
-| Интерлюдия I | chapters_v4/04a.md | 1184 | Написана, сохранена; без аудита |
+| Интерлюдия I | chapters_v4/04a.md | 1186 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/04a.md |
 | Глава 5 | chapters_v4/05.md | 2547 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/05.md |
 | Глава 6 | chapters_v4/06.md | 2248 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/06.md |
 | Глава 7 | chapters_v4/07.md | 2238 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/07.md |
