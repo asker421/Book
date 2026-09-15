@@ -343,7 +343,7 @@ Audit coverage:
 
 | Файл | Contract | Canon coverage | Current relation to V2 | Current V3 status |
 |---|---|---|---|---|
-| 01-16-avgusta.md | COVERED | MAXIMUM CAUTION RUN #1 IN PROGRESS | False Ch2 placeholder blocker retracted; current audit uses canonical Ch1 exit + planned Ch2 entry contract; old placeholder prose is non-binding | NOT VERIFIED — AUDIT IN PROGRESS |
+| 01-16-avgusta.md | COVERED | MAXIMUM CAUTION DOUBLE AUDIT PASS | 144 non-empty lines / 76 replica lines / 324 deterministic sentence units / 0 unverified; exact WORD COUNT = 2428; content SHA `6299452519a76ac9b0c9065fe88640c063af1921`; 1↔35 mirror PASS; evidence in `worklogs_v3/01.md` | VERIFIED — DOUBLE AUDIT PASS — AWAITING USER DECISION |
 | 02-chetyre-dnya.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 03-sled.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
 | 04-okno.md | COVERED | COVERED | different SHA; not rewrite proof | REWRITE REQUIRED |
