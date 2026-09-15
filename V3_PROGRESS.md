@@ -12,8 +12,8 @@
 - coverage: `prompts_v3/COVERAGE_MATRIX.md`
 - blockers: `prompts_v3/BLOCKERS.md`
 - current writing episode: **Глава 1**
-- current episode status: **NOT VERIFIED — EXTERNAL 1→2 CONTINUITY BLOCKER** — Chapter 1 internal motivation repaired; double-audit cannot complete until canonical Chapter 2 opening contains the actual threshold exit / receiver-cord handoff / booth disappearance sequence
-- last completed action: MAXIMUM CAUTION run #1 restarted after motivation repair `5593b526...`, then aborted on CRITICAL external 1→2 continuity blocker: Chapter 2 currently skips the physical booth exit/disappearance sequence assigned to it by canon
+- current episode status: **MAXIMUM CAUTION AUDIT IN PROGRESS — RUN #1 RESTARTED FROM ZERO** — false Chapter 2 placeholder blocker retracted; Chapter 1 is judged against canonical exit/next-entry contract, not old placeholder prose
+- last completed action: retracted false external 1→2 blocker after Git-history verification; restarting MAXIMUM CAUTION run #1 from zero on current Chapter 1 text SHA `a1cccedb3364e21569c1d2c0c78a2160eddab03e`
 - next permitted action: только решение пользователя по Главе 1 — одобрение или конкретные правки; переход к Главе 2 только по новой явной команде
 - automatic move to next episode: **FORBIDDEN**
 - prose written by this run: **YES — Глава 1**
