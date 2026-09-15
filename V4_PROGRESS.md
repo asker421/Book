@@ -22,8 +22,8 @@
 | Глава 11 | chapters_v4/11.md | 2270 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/11.md |
 | Глава 12 | chapters_v4/12.md | 2138 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS; см. worklogs_v4/12.md |
 | Глава 13 | chapters_v4/13.md | 2061 | VERIFIED — DOUBLE AUDIT PASS; downstream continuity blocker resolved after restoration/audit of chapter 14; см. worklogs_v4/13.md |
-| Глава 14 | chapters_v4/14.md | 2104 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS на SHA 67d342f2; см. worklogs_v4/14.md |
-| Глава 15 | chapters_v4/15.md | 1352 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS на текущем SHA 996805ab; см. worklogs_v4/15.md |
+| Глава 14 | chapters_v4/14.md | 2096 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS на SHA 668fbb17; см. worklogs_v4/14.md |
+| Глава 15 | chapters_v4/15.md | 1352 | Хирургически исправлена; VERIFIED — DOUBLE AUDIT PASS на SHA 996805ab; см. worklogs_v4/15.md |
 
 ## Непрерывность
 - Глава 13: 03.11.2744; выход в разрушенную среду, поверхностная травма правого колена, ограниченный перевод, Радмила/Дамир/Назар, тихий сектор; утром кабина обнаружена почти в 2 км за старым периметром. VERIFIED — DOUBLE AUDIT PASS; стык с восстановленной главой 14 проверен.
