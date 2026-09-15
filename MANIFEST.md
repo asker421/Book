@@ -266,6 +266,22 @@
 
 ---
 
+
+### MAXIMUM CAUTION audit protocol
+
+#### `MAXIMUM_CAUTION_AUDIT_PROTOCOL.md`
+Обязательный верхнеуровневый fail-closed протокол аудита V3.
+
+Требует:
+- отдельного доказательства каждого применимого требования каждого канона;
+- отдельного voice-state audit каждой реплики;
+- отдельной проверки каждого предложения и микродействия;
+- полного reset после любого FAIL;
+- двух последовательных независимых полных audit run с `FAIL count = 0`;
+- статуса `LEGACY / NOT VERIFIED UNDER MAXIMUM CAUTION` для старых PASS, не прошедших новый двойной цикл.
+
+Ни `CHAPTER_AUDIT_PROMPT.md`, ни episode prompt, ни worklog не могут ослаблять этот procedural gate.
+
 ### 8. Жёсткая физика и логика конкретной сцены
 
 #### `HARD_SCENE_CANON.md`
