@@ -99,6 +99,9 @@ def read_sections():
         if not p.exists(): raise SystemExit(f"Missing {p}")
         raw=p.read_text(encoding="utf-8")
         bs=blocks(raw)
+        kicker,title=TITLES[key]
+        if bs and bs[0][0]=="p" and title.lower() in bs[0][1].lower() and bs[0][1].strip().lower().startswith(("глава","интерлюдия")):
+            bs=bs[1:]
         wc=sum(len(re.findall(r"\b[\wЁёА-я-]+\b",t,re.UNICODE)) for k,t in bs if k=="p")
         total += wc
         secs.append((key,kicker,title,bs,wc))
