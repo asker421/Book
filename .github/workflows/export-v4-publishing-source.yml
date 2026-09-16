@@ -1,0 +1,48 @@
+name: Export V4 publishing source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/export-v4-publishing-source.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate V4 corpus
+        shell: bash
+        run: |
+          set -euo pipefail
+          count=$(find chapters_v4 -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')
+          test "$count" = "40"
+          test -f chapters_v4/04a.md
+          test -f chapters_v4/08a.md
+          test -f chapters_v4/15a.md
+          test -f chapters_v4/22a.md
+          test -f chapters_v4/30a.md
+      - name: Stage publishing source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p publishing_source/assets publishing_source/worklogs_v4
+          cp -r chapters_v4 publishing_source/
+          cp V4_NAMING_CANON.md publishing_source/
+          cp V4_PROGRESS.md publishing_source/
+          cp V4_AUTHORING_RULES.md publishing_source/
+          cp MANIFEST.md publishing_source/
+          cp worklogs_v4/GLOBAL_FINAL_AUDIT.md publishing_source/worklogs_v4/
+          cp worklogs_v4/GLOBAL_AUDIT_2026-09-16.md publishing_source/worklogs_v4/
+          cp assets/cover_epub.b64 publishing_source/assets/
+          printf '%s\n' "$GITHUB_SHA" > publishing_source/SOURCE_COMMIT.txt
+      - name: Upload V4 publishing source
+        uses: actions/upload-artifact@v4
+        with:
+          name: krasnaya-budka-v4-publishing-source
+          path: publishing_source/
+          if-no-files-found: error
