@@ -330,7 +330,7 @@ def build_cover(pages):
     # front design
     c.setFillColor(colors.HexColor("#ECE7DD")); c.setFont("BookSerifB",24); c.drawString(front_x+14*mm,(TRIM_H_MM-40)*mm,TITLE)
     c.setFont("BookSans",9); c.setFillColor(colors.HexColor("#B8B8B8")); c.drawString(front_x+14*mm,(TRIM_H_MM-28)*mm,"РОМАН")
-    c.setFillColor(colors.HexColor("#A51F2B")); x0=front_x+87*mm; y0=42*mm; ww=38*mm; hh=117*mm
+    c.setStrokeColor(colors.HexColor("#A51F2B")); x0=front_x+87*mm; y0=42*mm; ww=38*mm; hh=117*mm
     c.setLineWidth(3); c.rect(x0,y0,ww,hh,stroke=1,fill=0); c.line(x0+ww/2,y0+8*mm,x0+ww/2,y0+hh-20*mm)
     for yy in [y0+31*mm,y0+60*mm,y0+89*mm]: c.line(x0+3*mm,yy,x0+ww-3*mm,yy)
     c.rect(x0+3*mm,y0+hh-18*mm,ww-6*mm,12*mm,stroke=1,fill=0)
