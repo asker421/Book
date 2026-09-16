@@ -1,0 +1,30 @@
+name: Build V4 publishing package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'chapters_v4/**'
+      - 'tools/build_v4_release.py'
+      - '.github/workflows/build-v4-publishing-package.yml'
+      - 'V4_NAMING_CANON.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python dependencies
+        run: python -m pip install --disable-pip-version-check pillow reportlab python-docx
+      - name: Build package
+        run: python tools/build_v4_release.py
+      - name: Upload publishing package
+        uses: actions/upload-artifact@v4
+        with:
+          name: krasnaya-budka-v4-publishing-package
+          path: release_v4/
+          if-no-files-found: error
