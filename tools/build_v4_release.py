@@ -101,7 +101,7 @@ def read_sections():
         bs=blocks(raw)
         wc=sum(len(re.findall(r"\b[\wЁёА-я-]+\b",t,re.UNICODE)) for k,t in bs if k=="p")
         total += wc
-        secs.append((key,*TITLES[key],bs,wc))
+        secs.append((key,kicker,title,bs,wc))
     if len(secs)!=40: raise SystemExit("Expected 40 sections")
     return secs,total
 
