@@ -387,3 +387,31 @@
 - Абстрактный инвариант пассажирской нагрузки известен, но его применение к 2039 ещё неизвестно.
 - Сумка, палка, поясной набор и пассивная чёрная лента продолжают путь.
 - Дверь закрывает Асгар; глава 32 начинается с теми же вещами и с дальнейшей деградацией линии Мирены.
+
+
+## FINAL GLOBAL STATUS — V4
+
+- Корпус: **35 глав + 5 интерлюдий = 40 / 40 эпизодов**.
+- Для всех 40 художественных файлов существует актуальный `worklogs_v4/<file>.md`.
+- Все post-cert изменения были отдельно переаттестованы с полного RESET.
+- Глобальный аудит обнаружил и закрыл:
+  - отсутствующую Интерлюдию V;
+  - naming drift Интерлюдии IV;
+  - narrator inference в главе 17;
+  - synthetic sequencing в главе 27;
+  - два explanatory self-proof в главе 32;
+  - canon-time drift финального контракта главы 35.
+- Reveal-order: PASS.
+- Physics / hard-scene: PASS.
+- Time continuity: PASS.
+- Body / injury continuity: PASS.
+- Inventory continuity: PASS.
+- 2014 bootstrap loop: PASS.
+- 2039 mirror/payoff: PASS.
+- Prose / anti-self-proof / anti-synthetic-sequencing: PASS.
+- Final no-mystery-hook gate: PASS.
+- GLOBAL RUN #1: **PASS — FAIL count 0**.
+- INDEPENDENT GLOBAL ADVERSARIAL RUN #2: **PASS — FAIL count 0**.
+- Полный сертификат: `worklogs_v4/GLOBAL_FINAL_AUDIT.md`.
+
+**V4 GLOBAL VERIFIED — DOUBLE AUDIT PASS — UNRESOLVED FAILS: 0.**
