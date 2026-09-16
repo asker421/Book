@@ -290,12 +290,11 @@ def build_docx(secs):
     x=d.add_paragraph(); x.alignment=WD_ALIGN_PARAGRAPH.CENTER; x.paragraph_format.space_before=Mm(68)
     r=x.add_run(TITLE); r.bold=True; r.font.size=Pt(25)
     x=d.add_paragraph(); x.alignment=WD_ALIGN_PARAGRAPH.CENTER; r=x.add_run(AUTHOR); r.font.size=Pt(13)
-    d.add_page_break()
-    for line in ["© Аскер Исмайлов, 2026","Все права защищены.","ISBN: ______________________________","Издатель: ___________________________"]:
+    for idx,line in enumerate(["© Аскер Исмайлов, 2026","Все права защищены.","ISBN: ______________________________","Издатель: ___________________________"]):
         q=d.add_paragraph(line); q.paragraph_format.first_line_indent=Mm(0)
+        if idx==0: q.paragraph_format.page_break_before=True
     for key,kicker,title,bs,wc in secs:
-        d.add_page_break()
-        q=d.add_paragraph(); q.alignment=WD_ALIGN_PARAGRAPH.CENTER; q.paragraph_format.space_before=Mm(28)
+        q=d.add_paragraph(); q.paragraph_format.page_break_before=True; q.alignment=WD_ALIGN_PARAGRAPH.CENTER; q.paragraph_format.space_before=Mm(28)
         r=q.add_run(kicker.upper()); r.font.name="Arial"; r.font.size=Pt(8.5)
         q=d.add_paragraph(); q.alignment=WD_ALIGN_PARAGRAPH.CENTER
         r=q.add_run(title); r.bold=True; r.font.size=Pt(18)
