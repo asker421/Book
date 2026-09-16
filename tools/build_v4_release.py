@@ -22,6 +22,7 @@ from docx.oxml.ns import qn
 
 ROOT = Path(__file__).resolve().parents[1]
 CH = ROOT / "chapters_v4"
+PREFACE = ROOT / "V4_PREFACE.md"
 OUT = ROOT / "release_v4"
 OUT.mkdir(exist_ok=True)
 
@@ -93,7 +94,10 @@ def blocks(md):
     return out
 
 def read_sections():
-    secs=[]; total=0
+    if not PREFACE.exists(): raise SystemExit(f"Missing {PREFACE}")
+    preface_bs=blocks(PREFACE.read_text(encoding="utf-8"))
+    preface_wc=sum(len(re.findall(r"\b[\wЁёА-я-]+\b",t,re.UNICODE)) for k,t in preface_bs if k=="p")
+    secs=[("preface","","Предисловие",preface_bs,preface_wc)]; total=preface_wc
     for key in ORDER:
         p=CH/(key+".md")
         if not p.exists(): raise SystemExit(f"Missing {p}")
@@ -105,7 +109,7 @@ def read_sections():
         wc=sum(len(re.findall(r"\b[\wЁёА-я-]+\b",t,re.UNICODE)) for k,t in bs if k=="p")
         total += wc
         secs.append((key,kicker,title,bs,wc))
-    if len(secs)!=40: raise SystemExit("Expected 40 sections")
+    if len(secs)!=41: raise SystemExit("Expected preface + 40 literary sections")
     return secs,total
 
 def find_font(candidates):
@@ -167,7 +171,8 @@ class BookPDF:
         self.new_page(first=True)
         left,right=self.margins(); width=PAGE_W-left-right
         y=PAGE_H-46*mm
-        p=Paragraph(esc(kicker.upper()),KICK_STYLE); w,h=p.wrap(width,20*mm); p.drawOn(self.c,left,y-h); y-=h+6*mm
+        if kicker:
+            p=Paragraph(esc(kicker.upper()),KICK_STYLE); w,h=p.wrap(width,20*mm); p.drawOn(self.c,left,y-h); y-=h+6*mm
         p=Paragraph(esc(title),TITLE_STYLE); w,h=p.wrap(width,30*mm); p.drawOn(self.c,left,y-h); y-=h+18*mm
         first=True
         for typ,txt in bs:
@@ -247,7 +252,7 @@ def build_epub(secs,front):
             else:
                 cl=' class="noindent"' if first else ''
                 body.append(f'<p{cl}>{html.escape(txt)}</p>'); first=False
-        fn=f"ch{i:02d}.xhtml"; label=f"{kicker}. {title}"
+        fn=f"ch{i:02d}.xhtml"; label=title if not kicker else f"{kicker}. {title}"
         files[fn]=xdoc(label,f"<h1>{html.escape(kicker)}</h1><h2>{html.escape(title)}</h2>"+''.join(body)).encode()
         nav.append(f'<li><a href="{fn}">{html.escape(label)}</a></li>')
         mani.append(f'<item id="c{i}" href="{fn}" media-type="application/xhtml+xml"/>')
@@ -295,7 +300,8 @@ def build_docx(secs):
         if idx==0: q.paragraph_format.page_break_before=True
     for key,kicker,title,bs,wc in secs:
         q=d.add_paragraph(); q.paragraph_format.page_break_before=True; q.alignment=WD_ALIGN_PARAGRAPH.CENTER; q.paragraph_format.space_before=Mm(28)
-        r=q.add_run(kicker.upper()); r.font.name="Arial"; r.font.size=Pt(8.5)
+        if kicker:
+            r=q.add_run(kicker.upper()); r.font.name="Arial"; r.font.size=Pt(8.5)
         q=d.add_paragraph(); q.alignment=WD_ALIGN_PARAGRAPH.CENTER
         r=q.add_run(title); r.bold=True; r.font.size=Pt(18)
         first=True
@@ -350,7 +356,8 @@ def build_cover(pages):
 def combined_markdown(secs):
     p=OUT/"krasnaya-budka-v4-master.md"; parts=[f"# {TITLE}\n\n**{AUTHOR}**\n"]
     for key,kicker,title,bs,wc in secs:
-        parts += [f"\n\n# {kicker}. {title}\n"]
+        heading=title if not kicker else f"{kicker}. {title}"
+        parts += [f"\n\n# {heading}\n"]
         for typ,txt in bs:
             parts.append("\n***\n" if typ=="break" else "\n"+txt+"\n")
     p.write_text("".join(parts),encoding="utf-8"); return p
@@ -370,7 +377,7 @@ def main():
     master=combined_markdown(secs)
     meta={
       "title":TITLE,"author":AUTHOR,"language":"ru","year":2026,"genre":"научная фантастика / hard SF",
-      "trim_mm":[TRIM_W_MM,TRIM_H_MM],"bleed_mm":BLEED_MM,"sections":40,"main_chapters":35,"interludes":5,
+      "trim_mm":[TRIM_W_MM,TRIM_H_MM],"bleed_mm":BLEED_MM,"sections":40,"main_chapters":35,"interludes":5,"preface":True,
       "word_count":total_words,"print_pages":pages,"isbn":None,"publisher":None,
       "cover_spine_mm":spine,"spine_assumption":"0.10 mm sheet caliper; recalculate to printer paper stock before final commercial print run",
       "source":"asker421/Book main, chapters_v4, V4 globally verified 2026-09-16",
@@ -379,7 +386,7 @@ def main():
     meta_p=OUT/"publication_metadata.json"; meta_p.write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding="utf-8")
     readme=OUT/"README_PUBLISHING_PACKAGE.txt"
     readme.write_text(
-      f"""{TITLE} — издательский пакет V4\nАвтор: {AUTHOR}\n\nСостав:\n- {interior.name}: печатный блок, {TRIM_W_MM:.0f}x{TRIM_H_MM:.0f} мм, без вылетов, {pages} стр.\n- {full_cover.name}: полная обложка с вылетами 3 мм; корешок {spine:.2f} мм.\n- {wrap_png.name}: 300 dpi preview/растровый источник полной обложки.\n- {cover_jpg.name}: обложка для EPUB.\n- {epub.name}: EPUB 3.\n- {docx.name}: редактируемый издательский исходник.\n- {master.name}: единый мастер-текст Markdown.\n- {meta_p.name}: метаданные издания.\n\nВАЖНО ПО КОРЕШКУ: ширина {spine:.2f} мм рассчитана из условной толщины листа {SHEET_CALIPER_MM:.2f} мм. Перед отправкой конкретной типографии подставьте её фактический paper caliper/шаблон. ISBN намеренно не выдуман: поле оставлено пустым.\n\nИсточник текста: актуальная V4, 35 глав + 5 интерлюдий.\nСлов: {total_words}.\n""",
+      f"""{TITLE} — издательский пакет V4\nАвтор: {AUTHOR}\n\nСостав:\n- {interior.name}: печатный блок, {TRIM_W_MM:.0f}x{TRIM_H_MM:.0f} мм, без вылетов, {pages} стр.\n- {full_cover.name}: полная обложка с вылетами 3 мм; корешок {spine:.2f} мм.\n- {wrap_png.name}: 300 dpi preview/растровый источник полной обложки.\n- {cover_jpg.name}: обложка для EPUB.\n- {epub.name}: EPUB 3.\n- {docx.name}: редактируемый издательский исходник.\n- {master.name}: единый мастер-текст Markdown.\n- {meta_p.name}: метаданные издания.\n\nВАЖНО ПО КОРЕШКУ: ширина {spine:.2f} мм рассчитана из условной толщины листа {SHEET_CALIPER_MM:.2f} мм. Перед отправкой конкретной типографии подставьте её фактический paper caliper/шаблон. ISBN намеренно не выдуман: поле оставлено пустым.\n\nИсточник текста: актуальная V4, предисловие + 35 глав + 5 интерлюдий.\nСлов: {total_words}.\n""",
       encoding="utf-8")
     files=[interior,full_cover,wrap_png,cover_jpg,epub,docx,master,meta_p,readme]
     sums=OUT/"SHA256SUMS.txt"; sums.write_text("\n".join(f"{sha256(p)}  {p.name}" for p in files)+"\n",encoding="utf-8"); files.append(sums)
