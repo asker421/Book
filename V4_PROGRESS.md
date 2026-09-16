@@ -5,6 +5,25 @@
 Режим: написание по канонам; по умолчанию без аудита; каждую новую главу сохранять в Git. Главы 5–9 и Интерлюдия II отдельно проаудированы по прямым командам пользователя; найденные дефекты хирургически исправлялись по отдельным командам.
 Правила: V4_AUTHORING_RULES.md.
 
+## AUTHORITATIVE CURRENT STATUS — 2026-09-16
+
+> Этот раздел является текущим source-of-truth по состоянию V4. Более ранние `FIXED / NOT VERIFIED`, старые SHA и промежуточные статусы ниже сохранены как история работы и не описывают текущее состояние корпуса.
+
+- Корпус: **35 глав + 5 интерлюдий = 40 художественных эпизодов**.
+- Completeness: **40/40**, missing 0, extras 0.
+- Для каждого эпизода существует `worklogs_v4/*.md`.
+- Финальная SHA-сверка: **40/40 current content SHA совпадают с последним DOUBLE AUDIT PASS сертификатом**.
+- Whole-book audit: `worklogs_v4/GLOBAL_AUDIT_2026-09-16.md`.
+- Глобальный статус: **V4 WHOLE-BOOK VERIFIED — 40/40 CURRENT BLOBS DOUBLE-AUDITED**.
+- Известных обязательных canon / reveal / continuity / physics / naming / prose FAIL на текущем `main` нет.
+
+### Исправления whole-book прохода
+- восстановлена отсутствовавшая Интерлюдия V `chapters_v4/30a.md` — current SHA `4c96212c216b5b4d1e8c9fe404cc88b4fafcf7b6`;
+- Интерлюдия IV синхронизирована с V4 naming canon — current SHA `71787653f3f2091cb2d31a718aea43a0110def5e`;
+- Глава 17: удалён narrator inference — current SHA `f916fea1d0e0d4e23e5d8607011d56700803a885`;
+- Глава 27: удалён synthetic sequencing — current SHA `ea868997dfb2a70b6f6f33c1256b5299bf94035a`;
+- Глава 32: удалены два author-explanation/self-proof хвоста — current SHA `35b8a23bcaa2b4384a93ea32a405c6c3405ed931`.
+
 | Эпизод | Файл | Слов | Статус |
 |---|---|---:|---|
 | Глава 1 | chapters_v4/01.md | 1819 | VERIFIED — DOUBLE AUDIT PASS; переаттестована после eye-contact sync; см. worklogs_v4/01.md |
