@@ -12,7 +12,7 @@ from reportlab.pdfgen import canvas
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "release_v4"
-SOURCE = ROOT / "assets" / "v4_cover_wrap.jpg"
+SOURCE = ROOT / "assets" / "v4_cover_wrap.webp"
 
 TOTAL_W_MM = 317.5
 TOTAL_H_MM = 221.0
@@ -72,11 +72,16 @@ def patch_epub_cover(epub_path: Path, cover_bytes: bytes) -> None:
         assert z.read("OEBPS/cover.jpg") == cover_bytes
 
 
-def write_full_cover_pdf(source_path: Path) -> None:
-    c = canvas.Canvas(str(FULL_PDF), pagesize=(TOTAL_W_MM * mm, TOTAL_H_MM * mm), pageCompression=1)
-    c.drawImage(str(source_path), 0, 0, width=TOTAL_W_MM * mm, height=TOTAL_H_MM * mm, preserveAspectRatio=False, mask="auto")
-    c.showPage()
-    c.save()
+def write_full_cover_pdf(source: Image.Image) -> None:
+    temp = OUT / ".approved-v4-cover.jpg"
+    source.convert("RGB").save(temp, "JPEG", quality=95, optimize=True)
+    try:
+        c = canvas.Canvas(str(FULL_PDF), pagesize=(TOTAL_W_MM * mm, TOTAL_H_MM * mm), pageCompression=1)
+        c.drawImage(str(temp), 0, 0, width=TOTAL_W_MM * mm, height=TOTAL_H_MM * mm, preserveAspectRatio=False, mask="auto")
+        c.showPage()
+        c.save()
+    finally:
+        temp.unlink(missing_ok=True)
 
 
 def write_preview(source: Image.Image) -> None:
@@ -90,7 +95,7 @@ def update_metadata() -> None:
     if META.exists():
         data = json.loads(META.read_text(encoding="utf-8"))
         data["cover_spine_mm"] = SPINE_MM
-        data["cover_source"] = "assets/v4_cover_wrap.jpg (author-approved source of truth)"
+        data["cover_source"] = "assets/v4_cover_wrap.webp (author-approved source of truth)"
         data["cover_total_mm"] = [TOTAL_W_MM, TOTAL_H_MM]
         data["spine_assumption"] = "Author-approved fixed cover artwork uses a 21.5 mm spine. Rebuild the artwork if printer stock requires a different spine."
         META.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -135,7 +140,7 @@ def main() -> None:
     front = make_front(source)
     front.save(EPUB_COVER, "JPEG", quality=95, optimize=True)
     patch_epub_cover(EPUB, EPUB_COVER.read_bytes())
-    write_full_cover_pdf(SOURCE)
+    write_full_cover_pdf(source)
     write_preview(source)
     update_metadata()
     update_readme()

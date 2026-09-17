@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'chapters_v4/**'
-      - 'assets/v4_cover_wrap.jpg'
+      - 'assets/v4_cover_wrap.webp'
       - 'tools/build_v4_release.py'
       - 'tools/apply_v4_cover.py'
       - '.github/workflows/build-v4-publishing-package.yml'
