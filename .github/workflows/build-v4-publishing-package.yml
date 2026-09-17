@@ -20,24 +20,62 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Install Python dependencies
         run: python -m pip install --disable-pip-version-check pillow reportlab python-docx
-      - name: Build package
+
+      - name: Build V4 release
         run: python tools/build_v4_release.py
-      - name: Upload fresh V4 EPUB
+
+      # IMPORTANT: no EPUB/package artifact is uploaded before this step.
+      # This step is fail-closed and locks the exact author-approved wrap asset.
+      - name: Apply locked author-approved cover
+        run: python tools/apply_v4_cover.py
+
+      - name: Verify published EPUB uses approved cover
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+
+          out = Path('release_v4')
+          epub = out / 'Krasnaya_budka_Asker_Ismayilov_V4.epub'
+          cover = out / 'krasnaya-budka-v4-cover-epub.jpg'
+          package = out / 'Krasnaya_budka_V4_PUBLISHING_PACKAGE.zip'
+          full_cover = out / 'krasnaya-budka-v4-full-cover-145x215-bleed3mm.pdf'
+
+          assert epub.exists(), epub
+          assert cover.exists(), cover
+          assert package.exists(), package
+          assert full_cover.exists(), full_cover
+
+          with zipfile.ZipFile(epub, 'r') as z:
+              assert z.namelist()[0] == 'mimetype'
+              assert z.read('OEBPS/cover.jpg') == cover.read_bytes(), 'EPUB cover is not the approved crop'
+
+          with zipfile.ZipFile(package, 'r') as z:
+              names = set(z.namelist())
+              assert epub.name in names, 'Final EPUB missing from package'
+              assert full_cover.name in names, 'Approved full wrap missing from package'
+
+          print('Approved cover verification: PASS')
+          PY
+
+      - name: Upload V4 EPUB with approved cover
         uses: actions/upload-artifact@v4
         with:
           name: krasnaya-budka-v4-epub
           path: release_v4/Krasnaya_budka_Asker_Ismayilov_V4.epub
           if-no-files-found: error
-      - name: Apply author-approved cover
-        run: python tools/apply_v4_cover.py
+
       - name: Upload publishing package
         uses: actions/upload-artifact@v4
         with:
           name: krasnaya-budka-v4-publishing-package
           path: release_v4/
           if-no-files-found: error
+
       - name: Publish latest successful run id
         shell: bash
         run: |
