@@ -14,6 +14,12 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "release_v4"
 SOURCE = ROOT / "assets" / "v4_cover_wrap.webp"
 
+# This is the author-approved full flat wrap. Do not silently substitute another
+# cover. If the author approves a new cover, replace the asset intentionally and
+# update this lock in the same commit.
+APPROVED_SOURCE_GIT_BLOB_SHA1 = "ddb54d6e89eeb7a54723de93771374d7f97c808f"
+APPROVED_SOURCE_PIXELS = (1503, 1046)
+
 TOTAL_W_MM = 317.5
 TOTAL_H_MM = 221.0
 BLEED_MM = 3.0
@@ -30,6 +36,31 @@ META = OUT / "publication_metadata.json"
 README = OUT / "README_PUBLISHING_PACKAGE.txt"
 SUMS = OUT / "SHA256SUMS.txt"
 PACKAGE = OUT / "Krasnaya_budka_V4_PUBLISHING_PACKAGE.zip"
+
+
+def git_blob_sha1(path: Path) -> str:
+    data = path.read_bytes()
+    header = f"blob {len(data)}\0".encode("ascii")
+    return hashlib.sha1(header + data).hexdigest()
+
+
+def verify_approved_source() -> None:
+    if not SOURCE.exists():
+        raise SystemExit(f"Missing author-approved cover source: {SOURCE}")
+
+    actual_blob = git_blob_sha1(SOURCE)
+    if actual_blob != APPROVED_SOURCE_GIT_BLOB_SHA1:
+        raise SystemExit(
+            "Author-approved cover lock failed: "
+            f"expected git blob {APPROVED_SOURCE_GIT_BLOB_SHA1}, got {actual_blob}. "
+            "Do not publish until the cover change is explicitly approved and the lock is updated."
+        )
+
+    with Image.open(SOURCE) as probe:
+        if probe.size != APPROVED_SOURCE_PIXELS:
+            raise SystemExit(
+                f"Approved cover dimensions changed: expected {APPROVED_SOURCE_PIXELS}, got {probe.size}"
+            )
 
 
 def mm_to_px_x(mm_value: float, width: int) -> int:
@@ -96,6 +127,8 @@ def update_metadata() -> None:
         data = json.loads(META.read_text(encoding="utf-8"))
         data["cover_spine_mm"] = SPINE_MM
         data["cover_source"] = "assets/v4_cover_wrap.webp (author-approved source of truth)"
+        data["cover_source_git_blob_sha1"] = APPROVED_SOURCE_GIT_BLOB_SHA1
+        data["cover_source_pixels"] = list(APPROVED_SOURCE_PIXELS)
         data["cover_total_mm"] = [TOTAL_W_MM, TOTAL_H_MM]
         data["spine_assumption"] = "Author-approved fixed cover artwork uses a 21.5 mm spine. Rebuild the artwork if printer stock requires a different spine."
         META.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -110,6 +143,9 @@ def update_readme() -> None:
         "ВАЖНО ПО КОРЕШКУ: ширина 21.25 мм рассчитана из условной толщины листа 0.10 мм. Перед отправкой конкретной типографии подставьте её фактический paper caliper/шаблон.",
         "ВАЖНО ПО КОРЕШКУ: утверждённый автором artwork использует корешок 21.5 мм. Если шаблон конкретной типографии требует другую ширину, нужно адаптировать сам artwork, а не растягивать его автоматически."
     )
+    lock_line = f"Approved cover git blob: {APPROVED_SOURCE_GIT_BLOB_SHA1}\n"
+    if lock_line not in text:
+        text += "\n" + lock_line
     README.write_text(text, encoding="utf-8")
 
 
@@ -126,8 +162,7 @@ def rebuild_checksums_and_package() -> None:
 
 
 def main() -> None:
-    if not SOURCE.exists():
-        raise SystemExit(f"Missing author-approved cover source: {SOURCE}")
+    verify_approved_source()
     if not EPUB.exists():
         raise SystemExit(f"Build V4 release first; missing {EPUB}")
 
@@ -146,7 +181,8 @@ def main() -> None:
     update_readme()
     rebuild_checksums_and_package()
 
-    print(f"Applied author-approved V4 cover: {SOURCE}")
+    print(f"Applied LOCKED author-approved V4 cover: {SOURCE}")
+    print(f"Approved git blob: {APPROVED_SOURCE_GIT_BLOB_SHA1}")
     print(f"EPUB cover: {EPUB_COVER} ({front.width}x{front.height})")
     print(f"Full cover: {TOTAL_W_MM} x {TOTAL_H_MM} mm; spine {SPINE_MM} mm")
 
