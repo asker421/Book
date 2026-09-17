@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 import zipfile
 from pathlib import Path
 
@@ -44,7 +45,7 @@ def git_blob_sha1(path: Path) -> str:
     return hashlib.sha1(header + data).hexdigest()
 
 
-def verify_approved_source() -> None:
+def verify_approved_source_bytes() -> None:
     if not SOURCE.exists():
         raise SystemExit(f"Missing author-approved cover source: {SOURCE}")
 
@@ -56,11 +57,42 @@ def verify_approved_source() -> None:
             "Do not publish until the cover change is explicitly approved and the lock is updated."
         )
 
-    with Image.open(SOURCE) as probe:
-        if probe.size != APPROVED_SOURCE_PIXELS:
-            raise SystemExit(
-                f"Approved cover dimensions changed: expected {APPROVED_SOURCE_PIXELS}, got {probe.size}"
+
+def load_approved_source() -> Image.Image:
+    """Load the locked wrap. Pillow is attempted first; dwebp is the CI fallback.
+
+    The repository WebP is intentionally kept bit-for-bit locked. Some Pillow/libwebp
+    combinations fail to create a decoder for this particular file, so the fallback
+    avoids ever replacing the approved artwork merely to satisfy one decoder.
+    """
+    try:
+        with Image.open(SOURCE) as probe:
+            source = probe.convert("RGB")
+    except OSError as pillow_error:
+        decoded = OUT / ".approved-v4-cover-decoded.png"
+        try:
+            subprocess.run(
+                ["dwebp", str(SOURCE), "-o", str(decoded)],
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
             )
+            with Image.open(decoded) as probe:
+                source = probe.convert("RGB")
+        except (FileNotFoundError, subprocess.CalledProcessError, OSError) as fallback_error:
+            raise SystemExit(
+                "Unable to decode the LOCKED author-approved cover. "
+                f"Pillow error: {pillow_error!r}; dwebp fallback error: {fallback_error!r}"
+            ) from fallback_error
+        finally:
+            decoded.unlink(missing_ok=True)
+
+    if source.size != APPROVED_SOURCE_PIXELS:
+        raise SystemExit(
+            f"Approved cover dimensions changed: expected {APPROVED_SOURCE_PIXELS}, got {source.size}"
+        )
+    return source
 
 
 def mm_to_px_x(mm_value: float, width: int) -> int:
@@ -162,11 +194,11 @@ def rebuild_checksums_and_package() -> None:
 
 
 def main() -> None:
-    verify_approved_source()
+    verify_approved_source_bytes()
     if not EPUB.exists():
         raise SystemExit(f"Build V4 release first; missing {EPUB}")
 
-    source = Image.open(SOURCE).convert("RGB")
+    source = load_approved_source()
     ratio = source.width / source.height
     expected = TOTAL_W_MM / TOTAL_H_MM
     if abs(ratio - expected) > 0.003:
@@ -183,6 +215,7 @@ def main() -> None:
 
     print(f"Applied LOCKED author-approved V4 cover: {SOURCE}")
     print(f"Approved git blob: {APPROVED_SOURCE_GIT_BLOB_SHA1}")
+    print(f"Approved source pixels: {source.width}x{source.height}")
     print(f"EPUB cover: {EPUB_COVER} ({front.width}x{front.height})")
     print(f"Full cover: {TOTAL_W_MM} x {TOTAL_H_MM} mm; spine {SPINE_MM} mm")
 
