@@ -1,0 +1,150 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import hashlib
+import json
+import zipfile
+from pathlib import Path
+
+from PIL import Image
+from reportlab.lib.pagesizes import mm
+from reportlab.pdfgen import canvas
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "release_v4"
+SOURCE = ROOT / "assets" / "v4_cover_wrap.jpg"
+
+TOTAL_W_MM = 317.5
+TOTAL_H_MM = 221.0
+BLEED_MM = 3.0
+BACK_MM = 145.0
+SPINE_MM = 21.5
+FRONT_MM = 145.0
+TRIM_H_MM = 215.0
+
+EPUB = OUT / "Krasnaya_budka_Asker_Ismayilov_V4.epub"
+EPUB_COVER = OUT / "krasnaya-budka-v4-cover-epub.jpg"
+FULL_PDF = OUT / "krasnaya-budka-v4-full-cover-145x215-bleed3mm.pdf"
+FULL_PREVIEW = OUT / "krasnaya-budka-v4-full-cover-preview-300dpi.png"
+META = OUT / "publication_metadata.json"
+README = OUT / "README_PUBLISHING_PACKAGE.txt"
+SUMS = OUT / "SHA256SUMS.txt"
+PACKAGE = OUT / "Krasnaya_budka_V4_PUBLISHING_PACKAGE.zip"
+
+
+def mm_to_px_x(mm_value: float, width: int) -> int:
+    return round(mm_value / TOTAL_W_MM * width)
+
+
+def mm_to_px_y(mm_value: float, height: int) -> int:
+    return round(mm_value / TOTAL_H_MM * height)
+
+
+def make_front(source: Image.Image) -> Image.Image:
+    x0 = mm_to_px_x(BLEED_MM + BACK_MM + SPINE_MM, source.width)
+    x1 = mm_to_px_x(BLEED_MM + BACK_MM + SPINE_MM + FRONT_MM, source.width)
+    y0 = mm_to_px_y(BLEED_MM, source.height)
+    y1 = mm_to_px_y(BLEED_MM + TRIM_H_MM, source.height)
+    front = source.crop((x0, y0, x1, y1)).convert("RGB")
+    target_w = 1600
+    target_h = round(target_w * TRIM_H_MM / FRONT_MM)
+    return front.resize((target_w, target_h), Image.Resampling.LANCZOS)
+
+
+def patch_epub_cover(epub_path: Path, cover_bytes: bytes) -> None:
+    tmp = epub_path.with_suffix(".epub.tmp")
+    with zipfile.ZipFile(epub_path, "r") as zin, zipfile.ZipFile(tmp, "w") as zout:
+        for info in zin.infolist():
+            data = cover_bytes if info.filename == "OEBPS/cover.jpg" else zin.read(info.filename)
+            out = zipfile.ZipInfo(info.filename, info.date_time)
+            out.compress_type = zipfile.ZIP_STORED if info.filename == "mimetype" else info.compress_type
+            out.comment = info.comment
+            out.extra = info.extra
+            out.internal_attr = info.internal_attr
+            out.external_attr = info.external_attr
+            out.create_system = info.create_system
+            out.flag_bits = info.flag_bits
+            zout.writestr(out, data)
+    tmp.replace(epub_path)
+    with zipfile.ZipFile(epub_path, "r") as z:
+        assert z.namelist()[0] == "mimetype"
+        assert z.getinfo("mimetype").compress_type == zipfile.ZIP_STORED
+        assert z.read("OEBPS/cover.jpg") == cover_bytes
+
+
+def write_full_cover_pdf(source_path: Path) -> None:
+    c = canvas.Canvas(str(FULL_PDF), pagesize=(TOTAL_W_MM * mm, TOTAL_H_MM * mm), pageCompression=1)
+    c.drawImage(str(source_path), 0, 0, width=TOTAL_W_MM * mm, height=TOTAL_H_MM * mm, preserveAspectRatio=False, mask="auto")
+    c.showPage()
+    c.save()
+
+
+def write_preview(source: Image.Image) -> None:
+    dpi = 300
+    w = round(TOTAL_W_MM / 25.4 * dpi)
+    h = round(TOTAL_H_MM / 25.4 * dpi)
+    source.resize((w, h), Image.Resampling.LANCZOS).save(FULL_PREVIEW, "PNG", optimize=True, dpi=(dpi, dpi))
+
+
+def update_metadata() -> None:
+    if META.exists():
+        data = json.loads(META.read_text(encoding="utf-8"))
+        data["cover_spine_mm"] = SPINE_MM
+        data["cover_source"] = "assets/v4_cover_wrap.jpg (author-approved source of truth)"
+        data["cover_total_mm"] = [TOTAL_W_MM, TOTAL_H_MM]
+        data["spine_assumption"] = "Author-approved fixed cover artwork uses a 21.5 mm spine. Rebuild the artwork if printer stock requires a different spine."
+        META.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def update_readme() -> None:
+    if not README.exists():
+        return
+    text = README.read_text(encoding="utf-8")
+    text = text.replace("корешок 21.25 мм", "корешок 21.5 мм")
+    text = text.replace(
+        "ВАЖНО ПО КОРЕШКУ: ширина 21.25 мм рассчитана из условной толщины листа 0.10 мм. Перед отправкой конкретной типографии подставьте её фактический paper caliper/шаблон.",
+        "ВАЖНО ПО КОРЕШКУ: утверждённый автором artwork использует корешок 21.5 мм. Если шаблон конкретной типографии требует другую ширину, нужно адаптировать сам artwork, а не растягивать его автоматически."
+    )
+    README.write_text(text, encoding="utf-8")
+
+
+def rebuild_checksums_and_package() -> None:
+    files = sorted(
+        p for p in OUT.iterdir()
+        if p.is_file() and p.name not in {SUMS.name, PACKAGE.name}
+    )
+    lines = [f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}" for p in files]
+    SUMS.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    with zipfile.ZipFile(PACKAGE, "w", compression=zipfile.ZIP_DEFLATED) as z:
+        for p in files + [SUMS]:
+            z.write(p, arcname=p.name)
+
+
+def main() -> None:
+    if not SOURCE.exists():
+        raise SystemExit(f"Missing author-approved cover source: {SOURCE}")
+    if not EPUB.exists():
+        raise SystemExit(f"Build V4 release first; missing {EPUB}")
+
+    source = Image.open(SOURCE).convert("RGB")
+    ratio = source.width / source.height
+    expected = TOTAL_W_MM / TOTAL_H_MM
+    if abs(ratio - expected) > 0.003:
+        raise SystemExit(f"Cover source ratio {ratio:.6f} does not match {expected:.6f}")
+
+    front = make_front(source)
+    front.save(EPUB_COVER, "JPEG", quality=95, optimize=True)
+    patch_epub_cover(EPUB, EPUB_COVER.read_bytes())
+    write_full_cover_pdf(SOURCE)
+    write_preview(source)
+    update_metadata()
+    update_readme()
+    rebuild_checksums_and_package()
+
+    print(f"Applied author-approved V4 cover: {SOURCE}")
+    print(f"EPUB cover: {EPUB_COVER} ({front.width}x{front.height})")
+    print(f"Full cover: {TOTAL_W_MM} x {TOTAL_H_MM} mm; spine {SPINE_MM} mm")
+
+
+if __name__ == "__main__":
+    main()
