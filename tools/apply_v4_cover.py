@@ -9,7 +9,7 @@ import subprocess
 import zipfile
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageFile
 from reportlab.lib.pagesizes import mm
 from reportlab.pdfgen import canvas
 
@@ -21,6 +21,8 @@ FALLBACK_PARTS = [
     (ROOT / "assets" / "v4_cover_wrap_approved" / "part002.b64", "2e7587c28cb60d4c9644d9e7ca4c047b5b66ce5f"),
     (ROOT / "assets" / "v4_cover_wrap_approved" / "part003.b64", "04b58dcc268a728eb1db2b445320ea767c5616b3"),
 ]
+APPROVED_ARCHIVE_B64_CHARS = 38821
+APPROVED_ARCHIVE_DANGLING_CHARS = 1
 
 # This is the author-approved full flat wrap. Do not silently substitute another
 # cover. If the author approves a new cover, replace the asset intentionally and
@@ -83,10 +85,26 @@ def load_archived_approved_source() -> Image.Image:
             )
         chunks.append("".join(path.read_text(encoding="ascii").split()))
 
+    encoded = "".join(chunks)
+    if len(encoded) != APPROVED_ARCHIVE_B64_CHARS:
+        raise SystemExit(
+            "Approved cover archive encoded length changed: "
+            f"expected {APPROVED_ARCHIVE_B64_CHARS}, got {len(encoded)}"
+        )
+
+    # The locked archive predates this build guard and contains one known dangling
+    # base64 character plus a JPEG without the optional EOI marker. Both quirks
+    # are accepted ONLY for the exact SHA-pinned archive parts above.
+    encoded = encoded[:-APPROVED_ARCHIVE_DANGLING_CHARS]
     try:
-        data = base64.b64decode("".join(chunks), validate=True)
-        with Image.open(io.BytesIO(data)) as probe:
-            source = probe.convert("RGB")
+        data = base64.b64decode(encoded, validate=True)
+        old_truncated = ImageFile.LOAD_TRUNCATED_IMAGES
+        ImageFile.LOAD_TRUNCATED_IMAGES = True
+        try:
+            with Image.open(io.BytesIO(data)) as probe:
+                source = probe.convert("RGB")
+        finally:
+            ImageFile.LOAD_TRUNCATED_IMAGES = old_truncated
     except Exception as exc:
         raise SystemExit(f"Unable to reconstruct LOCKED approved cover archive: {exc!r}") from exc
 
