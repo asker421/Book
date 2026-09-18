@@ -81,7 +81,7 @@ def load_archived_approved_source() -> Image.Image:
                 "Approved cover archive lock failed: "
                 f"{path.name}: expected git blob {expected_blob}, got {actual_blob}"
             )
-        chunks.append(path.read_text(encoding="ascii").strip())
+        chunks.append("".join(path.read_text(encoding="ascii").split()))
 
     try:
         data = base64.b64decode("".join(chunks), validate=True)
