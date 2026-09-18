@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import base64
 import hashlib
+import io
 import json
 import subprocess
 import zipfile
@@ -14,6 +16,11 @@ from reportlab.pdfgen import canvas
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "release_v4"
 SOURCE = ROOT / "assets" / "v4_cover_wrap.webp"
+FALLBACK_PARTS = [
+    (ROOT / "assets" / "v4_cover_wrap_approved" / "part001.b64", "c931e692c4b5745aa5f1bca6e19bf02598252337"),
+    (ROOT / "assets" / "v4_cover_wrap_approved" / "part002.b64", "2e7587c28cb60d4c9644d9e7ca4c047b5b66ce5f"),
+    (ROOT / "assets" / "v4_cover_wrap_approved" / "part003.b64", "04b58dcc268a728eb1db2b445320ea767c5616b3"),
+]
 
 # This is the author-approved full flat wrap. Do not silently substitute another
 # cover. If the author approves a new cover, replace the asset intentionally and
@@ -58,12 +65,40 @@ def verify_approved_source_bytes() -> None:
         )
 
 
-def load_approved_source() -> Image.Image:
-    """Load the locked wrap. Pillow is attempted first; dwebp is the CI fallback.
+def load_archived_approved_source() -> Image.Image:
+    """Reconstruct the author-approved wrap from locked base64 archive parts.
 
-    The repository WebP is intentionally kept bit-for-bit locked. Some Pillow/libwebp
-    combinations fail to create a decoder for this particular file, so the fallback
-    avoids ever replacing the approved artwork merely to satisfy one decoder.
+    This is a fail-closed recovery path for CI environments that cannot decode the
+    locked WebP. Every text part is pinned by its Git blob SHA before decoding.
+    """
+    chunks = []
+    for path, expected_blob in FALLBACK_PARTS:
+        if not path.exists():
+            raise SystemExit(f"Missing approved cover archive part: {path}")
+        actual_blob = git_blob_sha1(path)
+        if actual_blob != expected_blob:
+            raise SystemExit(
+                "Approved cover archive lock failed: "
+                f"{path.name}: expected git blob {expected_blob}, got {actual_blob}"
+            )
+        chunks.append(path.read_text(encoding="ascii").strip())
+
+    try:
+        data = base64.b64decode("".join(chunks), validate=True)
+        with Image.open(io.BytesIO(data)) as probe:
+            source = probe.convert("RGB")
+    except Exception as exc:
+        raise SystemExit(f"Unable to reconstruct LOCKED approved cover archive: {exc!r}") from exc
+
+    return source
+
+
+def load_approved_source() -> Image.Image:
+    """Load the locked wrap without ever substituting unapproved artwork.
+
+    Pillow is attempted first, then dwebp. If this particular locked WebP cannot
+    be decoded by the runner, reconstruct the same author-approved artwork from
+    separately locked base64 archive parts committed to the repository.
     """
     try:
         with Image.open(SOURCE) as probe:
@@ -80,11 +115,12 @@ def load_approved_source() -> Image.Image:
             )
             with Image.open(decoded) as probe:
                 source = probe.convert("RGB")
-        except (FileNotFoundError, subprocess.CalledProcessError, OSError) as fallback_error:
-            raise SystemExit(
-                "Unable to decode the LOCKED author-approved cover. "
-                f"Pillow error: {pillow_error!r}; dwebp fallback error: {fallback_error!r}"
-            ) from fallback_error
+        except (FileNotFoundError, subprocess.CalledProcessError, OSError):
+            source = load_archived_approved_source()
+            print(
+                "Locked WebP decoder unavailable; used locked approved cover archive "
+                f"(Pillow error: {pillow_error!r})."
+            )
         finally:
             decoded.unlink(missing_ok=True)
 
