@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import base64, hashlib, html, io, json, math, os, re, textwrap, uuid, zipfile
+from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
@@ -92,6 +93,22 @@ def blocks(md):
         buf.append(ln)
     flush()
     return out
+
+def build_revision():
+    """Короткая метка содержимого сборки.
+
+    Считается по всем главам chapters_v4 и по утверждённой обложке. Если текст
+    не менялся, метка та же; если менялся хоть один символ - другая. Через неё
+    EPUB получает новый dc:identifier, иначе читалки считают пересобранный файл
+    той же книгой, что уже стоит у них в библиотеке, и показывают старую копию.
+    """
+    h = hashlib.sha256()
+    for path in sorted(CH.glob("*.md")):
+        h.update(path.name.encode("utf-8"))
+        h.update(path.read_bytes())
+    h.update(approved_cover.APPROVED_BLOB_SHA1.encode("ascii"))
+    return h.hexdigest()[:12]
+
 
 def read_sections():
     if not PREFACE.exists(): raise SystemExit(f"Missing {PREFACE}")
@@ -221,7 +238,9 @@ def cover_front(size=None):
 def build_epub(secs,front):
     path=OUT/"Krasnaya_budka_Asker_Ismayilov_V4.epub"
     cover=OUT/"krasnaya-budka-v4-cover-epub.jpg"; front.save(cover,"JPEG",quality=95,optimize=True)
-    book_id=f"urn:uuid:{uuid.uuid5(uuid.NAMESPACE_URL,'asker421/Book:Красная будка:V4:2026-09-16')}"
+    revision=build_revision()
+    book_id=f"urn:uuid:{uuid.uuid5(uuid.NAMESPACE_URL,'asker421/Book:Красная будка:V4:'+revision)}"
+    modified=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     files={}
     css="""body{font-family:serif;line-height:1.5;margin:5%}h1{text-align:center;font-size:1.6em;margin:2em 0 .3em}h2{text-align:center;font-size:1.15em;font-weight:normal;margin:.3em 0 2em}p{margin:0;text-indent:1.25em;text-align:justify;orphans:2;widows:2}h2+p,.noindent{text-indent:0}.scene{text-align:center;margin:1.2em 0}.cover{text-align:center;margin:0}.cover img{max-width:100%;height:auto}.title{text-align:center;margin-top:30%}nav ol{list-style:none;padding:0}nav li{margin:.45em 0}"""
     files["styles.css"]=css.encode()
@@ -246,7 +265,7 @@ def build_epub(secs,front):
         ncx.append(f'<navPoint id="n{i}" playOrder="{i}"><navLabel><text>{html.escape(label)}</text></navLabel><content src="{fn}"/></navPoint>')
     files["nav.xhtml"]=xdoc("Оглавление",'<nav xmlns:epub="http://www.idpf.org/2007/ops" epub:type="toc"><h1>Оглавление</h1><ol>'+''.join(nav)+'</ol></nav>').encode()
     files["toc.ncx"]=f'<?xml version="1.0" encoding="UTF-8"?><ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1"><head><meta name="dtb:uid" content="{book_id}"/></head><docTitle><text>{TITLE}</text></docTitle><navMap>{"".join(ncx)}</navMap></ncx>'.encode()
-    files["content.opf"]=f'''<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid" xml:lang="ru"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="bookid">{book_id}</dc:identifier><dc:title>{TITLE}</dc:title><dc:creator>{AUTHOR}</dc:creator><dc:language>ru</dc:language><dc:publisher>{AUTHOR}</dc:publisher><dc:description>{html.escape(DESCRIPTION)}</dc:description>{''.join(f'<dc:subject>{s}</dc:subject>' for s in SUBJECTS)}<dc:date>{YEAR}</dc:date><meta property="dcterms:modified">2026-09-16T00:00:00Z</meta><meta name="cover" content="cover-image"/></metadata><manifest><item id="cover-image" href="cover.jpg" media-type="image/jpeg" properties="cover-image"/><item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/><item id="title" href="title.xhtml" media-type="application/xhtml+xml"/><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/><item id="css" href="styles.css" media-type="text/css"/>{''.join(mani)}</manifest><spine toc="ncx"><itemref idref="title"/>{''.join(spine)}</spine></package>'''.encode()
+    files["content.opf"]=f'''<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid" xml:lang="ru"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="bookid">{book_id}</dc:identifier><dc:title>{TITLE}</dc:title><dc:creator>{AUTHOR}</dc:creator><dc:language>ru</dc:language><dc:publisher>{AUTHOR}</dc:publisher><dc:description>{html.escape(DESCRIPTION)}</dc:description>{''.join(f'<dc:subject>{s}</dc:subject>' for s in SUBJECTS)}<dc:date>{YEAR}</dc:date><dc:source>build {revision}</dc:source><meta property="dcterms:modified">{modified}</meta><meta name="cover" content="cover-image"/></metadata><manifest><item id="cover-image" href="cover.jpg" media-type="image/jpeg" properties="cover-image"/><item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/><item id="title" href="title.xhtml" media-type="application/xhtml+xml"/><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/><item id="css" href="styles.css" media-type="text/css"/>{''.join(mani)}</manifest><spine toc="ncx"><itemref idref="title"/>{''.join(spine)}</spine></package>'''.encode()
     container=b'<?xml version="1.0" encoding="UTF-8"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>'
     with zipfile.ZipFile(path,"w") as z:
         z.writestr("mimetype","application/epub+zip",compress_type=zipfile.ZIP_STORED)
@@ -369,7 +388,7 @@ def main():
       "word_count":total_words,"print_pages":pages,"isbn":None,"publisher":None,
       "cover_spine_mm":spine,"spine_assumption":"Утверждённый автором artwork использует корешок 21.5 мм. Если шаблон типографии требует другую ширину, переделывается artwork, а не масштабируется готовая обложка.",
       "cover_source":"assets/cover_wrap.png (единственный утверждённый источник)","cover_source_git_blob_sha1":approved_cover.APPROVED_BLOB_SHA1,
-      "source":"asker421/Book main, chapters_v4, V4 globally verified 2026-09-16",
+      "source":"asker421/Book main, chapters_v4, V4 globally verified 2026-09-16","build_revision":build_revision(),
       "description":DESCRIPTION,"subjects":SUBJECTS
     }
     meta_p=OUT/"publication_metadata.json"; meta_p.write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding="utf-8")
@@ -382,7 +401,7 @@ def main():
     zip_p=OUT/"Krasnaya_budka_V4_PUBLISHING_PACKAGE.zip"
     with zipfile.ZipFile(zip_p,"w",zipfile.ZIP_DEFLATED) as z:
         for p in files: z.write(p,p.name)
-    print(json.dumps({"pages":pages,"words":total_words,"spine_mm":spine,"zip":zip_p.name,
+    print(json.dumps({"build_revision":build_revision(),"pages":pages,"words":total_words,"spine_mm":spine,"zip":zip_p.name,
                       "files":[p.name for p in files],"zip_sha256":sha256(zip_p)},ensure_ascii=False,indent=2))
 
 if __name__=="__main__":
