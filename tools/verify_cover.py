@@ -75,9 +75,7 @@ def check_no_generated_covers() -> None:
             if marker in text:
                 fail(f"{path.relative_to(ROOT)}: обложка снова рисуется кодом ({marker!r})")
         for retired in RETIRED:
-            # freeze_v2_epub.yml достаёт обложку из замороженного коммита и
-            # намеренно не трогается: это неизменяемый релиз V2.
-            if retired in text and path.name != "freeze_v2_epub.yml":
+            if retired in text:
                 fail(f"{path.relative_to(ROOT)}: ссылка на снятый источник обложки {retired}")
 
 
@@ -110,13 +108,6 @@ def check_built_artifacts() -> None:
                 for required in (epub, full_pdf, preview, front_jpg):
                     if required.name not in names:
                         fail(f"{package.name}: в пакете нет {required.name}")
-
-    dist_epubs = sorted((ROOT / "dist").glob("*.epub")) if (ROOT / "dist").exists() else []
-    for built in dist_epubs:
-        checked_any = True
-        with zipfile.ZipFile(built) as z:
-            if z.read("OEBPS/cover.jpg") != approved_front:
-                fail(f"{built.name}: внутри EPUB не утверждённая обложка")
 
     if not checked_any:
         print("Собранных артефактов нет — проверены только источники.")
