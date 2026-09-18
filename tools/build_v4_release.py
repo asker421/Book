@@ -208,29 +208,15 @@ def build_interior(secs):
 def font_pil(path,size):
     return ImageFont.truetype(path,size=size)
 
-def cover_front(size=(1600,2560)):
-    W,H=size
-    im=Image.new("RGB",(W,H),(18,18,20)); d=ImageDraw.Draw(im)
-    # restrained vertical texture
-    for y in range(H):
-        q=int(18+14*y/H)
-        d.line([(0,y),(W,y)],fill=(q,q,q+2))
-    # red booth silhouette
-    bx0=int(W*.58); bx1=int(W*.89); by0=int(H*.22); by1=int(H*.82)
-    red=(154,25,33)
-    d.rounded_rectangle([bx0,by0,bx1,by1],radius=int(W*.018),outline=red,width=int(W*.018))
-    d.rectangle([bx0+int(W*.025),by0+int(H*.055),bx1-int(W*.025),by0+int(H*.135)],outline=red,width=int(W*.010))
-    mid=(bx0+bx1)//2
-    d.line([(mid,by0+int(H*.15)),(mid,by1-int(H*.06))],fill=red,width=int(W*.009))
-    for yy in [0.31,0.47,0.63]:
-        y=int(H*yy); d.line([(bx0+int(W*.025),y),(bx1-int(W*.025),y)],fill=red,width=int(W*.009))
-    d.rectangle([bx0-int(W*.018),by1,bx1+int(W*.018),by1+int(H*.022)],fill=red)
-    f_title=font_pil(SERIF_B,int(W*.090)); f_author=font_pil(SANS,int(W*.034)); f_roman=font_pil(SANS,int(W*.024))
-    cream=(239,235,224)
-    d.text((int(W*.09),int(H*.19)),TITLE,font=f_title,fill=cream,anchor="la")
-    d.text((int(W*.095),int(H*.14)),"РОМАН",font=f_roman,fill=(175,175,175),anchor="la")
-    d.text((int(W*.095),int(H*.88)),AUTHOR.upper(),font=f_author,fill=cream,anchor="la")
-    return im
+import cover as approved_cover
+
+def cover_front(size=None):
+    """Передняя сторонка утверждённой автором обложки.
+
+    Обложка не рисуется кодом и не берётся ниоткуда, кроме
+    assets/cover_wrap.png. Проверка источника — в tools/cover.py.
+    """
+    return approved_cover.front(size)
 
 def build_epub(secs,front):
     path=OUT/"Krasnaya_budka_Asker_Ismayilov_V4.epub"
@@ -316,42 +302,44 @@ def build_docx(secs):
     d.save(p); return p
 
 def build_cover(pages):
-    spine=round((pages/2.0)*SHEET_CALIPER_MM,2)
-    total_w=TRIM_W_MM*2+spine+BLEED_MM*2; total_h=TRIM_H_MM+BLEED_MM*2
-    pdf=OUT/"krasnaya-budka-v4-full-cover-145x215-bleed3mm.pdf"
-    c=canvas.Canvas(str(pdf),pagesize=(total_w*mm,total_h*mm),pageCompression=1)
-    # background
-    c.setFillColor(colors.HexColor("#171719")); c.rect(0,0,total_w*mm,total_h*mm,stroke=0,fill=1)
-    bx=BLEED_MM*mm; by=BLEED_MM*mm
-    back_x=bx; spine_x=(BLEED_MM+TRIM_W_MM)*mm; front_x=(BLEED_MM+TRIM_W_MM+spine)*mm
-    # back
-    c.setFillColor(colors.HexColor("#ECE7DD")); c.setFont("BookSerifB",12); c.drawString(back_x+16*mm,(TRIM_H_MM-26)*mm,TITLE)
-    txt=Paragraph(esc(DESCRIPTION),ParagraphStyle("back",fontName="BookSerif",fontSize=9.2,leading=12,textColor=colors.HexColor("#ECE7DD")))
-    w,h=txt.wrap((TRIM_W_MM-32)*mm,90*mm); txt.drawOn(c,back_x+16*mm,(TRIM_H_MM-40)*mm-h)
-    # barcode placeholder
-    c.setFillColor(colors.white); c.roundRect(back_x+17*mm,18*mm,42*mm,27*mm,2*mm,stroke=0,fill=1)
-    c.setFillColor(colors.black); c.setFont("BookSans",6.5); c.drawCentredString(back_x+38*mm,30*mm,"ISBN / BARCODE")
-    # spine
-    c.saveState(); c.translate(spine_x+spine*mm/2,total_h*mm/2); c.rotate(90)
-    c.setFillColor(colors.HexColor("#ECE7DD")); c.setFont("BookSerifB",10.5); c.drawCentredString(0,0,TITLE)
-    c.restoreState()
-    # front design
-    c.setFillColor(colors.HexColor("#ECE7DD")); c.setFont("BookSerifB",24); c.drawString(front_x+14*mm,(TRIM_H_MM-40)*mm,TITLE)
-    c.setFont("BookSans",9); c.setFillColor(colors.HexColor("#B8B8B8")); c.drawString(front_x+14*mm,(TRIM_H_MM-28)*mm,"РОМАН")
-    c.setStrokeColor(colors.HexColor("#A51F2B")); x0=front_x+87*mm; y0=42*mm; ww=38*mm; hh=117*mm
-    c.setLineWidth(3); c.rect(x0,y0,ww,hh,stroke=1,fill=0); c.line(x0+ww/2,y0+8*mm,x0+ww/2,y0+hh-20*mm)
-    for yy in [y0+31*mm,y0+60*mm,y0+89*mm]: c.line(x0+3*mm,yy,x0+ww-3*mm,yy)
-    c.rect(x0+3*mm,y0+hh-18*mm,ww-6*mm,12*mm,stroke=1,fill=0)
-    c.setFillColor(colors.HexColor("#ECE7DD")); c.setFont("BookSans",10); c.drawString(front_x+14*mm,19*mm,AUTHOR.upper())
-    c.save()
-    # 300 dpi raster wrap preview
-    dpi=300; W=round(total_w/25.4*dpi); H=round(total_h/25.4*dpi)
-    img=Image.new("RGB",(W,H),(23,23,25)); draw=ImageDraw.Draw(img)
-    front=cover_front((round(TRIM_W_MM/25.4*dpi),round(TRIM_H_MM/25.4*dpi)))
-    fx=round((BLEED_MM+TRIM_W_MM+spine)/25.4*dpi); fy=round(BLEED_MM/25.4*dpi)
-    img.paste(front,(fx,fy))
-    wrap=OUT/"krasnaya-budka-v4-full-cover-preview-300dpi.png"; img.save(wrap,"PNG",optimize=True)
-    return pdf,wrap,spine,total_w,total_h
+    """Полная обложка = утверждённый разворот, без дорисовки.
+
+    Геометрия жёстко задана утверждённым artwork (корешок 21.5 мм). Если
+    типографии нужен другой корешок, переделывается сам artwork, а не
+    растягивается готовая картинка.
+    """
+    spine = approved_cover.SPINE_MM
+    total_w = approved_cover.TOTAL_W_MM
+    total_h = approved_cover.TOTAL_H_MM
+
+    computed = round((pages / 2.0) * SHEET_CALIPER_MM, 2)
+    if abs(computed - spine) > 0.5:
+        print(f"ПРЕДУПРЕЖДЕНИЕ: расчётный корешок {computed} мм при {pages} стр. "
+              f"расходится с корешком утверждённой обложки {spine} мм. "
+              f"Публикуется утверждённый artwork; при печати сверьте с типографией.")
+
+    wrap_image = approved_cover.wrap()
+
+    pdf = OUT / "krasnaya-budka-v4-full-cover-145x215-bleed3mm.pdf"
+    temp = OUT / ".approved-cover-for-pdf.jpg"
+    wrap_image.save(temp, "JPEG", quality=95, optimize=True)
+    try:
+        c = canvas.Canvas(str(pdf), pagesize=(total_w * mm, total_h * mm), pageCompression=1)
+        c.drawImage(str(temp), 0, 0, width=total_w * mm, height=total_h * mm,
+                    preserveAspectRatio=False, mask="auto")
+        c.showPage()
+        c.save()
+    finally:
+        temp.unlink(missing_ok=True)
+
+    dpi = 300
+    W = round(total_w / 25.4 * dpi)
+    H = round(total_h / 25.4 * dpi)
+    wrap_png = OUT / "krasnaya-budka-v4-full-cover-preview-300dpi.png"
+    wrap_image.resize((W, H), Image.Resampling.LANCZOS).save(
+        wrap_png, "PNG", optimize=True, dpi=(dpi, dpi))
+
+    return pdf, wrap_png, spine, total_w, total_h
 
 def combined_markdown(secs):
     p=OUT/"krasnaya-budka-v4-master.md"; parts=[f"# {TITLE}\n\n**{AUTHOR}**\n"]
@@ -379,14 +367,15 @@ def main():
       "title":TITLE,"author":AUTHOR,"language":"ru","year":2026,"genre":"научная фантастика / hard SF",
       "trim_mm":[TRIM_W_MM,TRIM_H_MM],"bleed_mm":BLEED_MM,"sections":40,"main_chapters":35,"interludes":5,"preface":True,
       "word_count":total_words,"print_pages":pages,"isbn":None,"publisher":None,
-      "cover_spine_mm":spine,"spine_assumption":"0.10 mm sheet caliper; recalculate to printer paper stock before final commercial print run",
+      "cover_spine_mm":spine,"spine_assumption":"Утверждённый автором artwork использует корешок 21.5 мм. Если шаблон типографии требует другую ширину, переделывается artwork, а не масштабируется готовая обложка.",
+      "cover_source":"assets/cover_wrap.png (единственный утверждённый источник)","cover_source_git_blob_sha1":approved_cover.APPROVED_BLOB_SHA1,
       "source":"asker421/Book main, chapters_v4, V4 globally verified 2026-09-16",
       "description":DESCRIPTION,"subjects":SUBJECTS
     }
     meta_p=OUT/"publication_metadata.json"; meta_p.write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding="utf-8")
     readme=OUT/"README_PUBLISHING_PACKAGE.txt"
     readme.write_text(
-      f"""{TITLE} — издательский пакет V4\nАвтор: {AUTHOR}\n\nСостав:\n- {interior.name}: печатный блок, {TRIM_W_MM:.0f}x{TRIM_H_MM:.0f} мм, без вылетов, {pages} стр.\n- {full_cover.name}: полная обложка с вылетами 3 мм; корешок {spine:.2f} мм.\n- {wrap_png.name}: 300 dpi preview/растровый источник полной обложки.\n- {cover_jpg.name}: обложка для EPUB.\n- {epub.name}: EPUB 3.\n- {docx.name}: редактируемый издательский исходник.\n- {master.name}: единый мастер-текст Markdown.\n- {meta_p.name}: метаданные издания.\n\nВАЖНО ПО КОРЕШКУ: ширина {spine:.2f} мм рассчитана из условной толщины листа {SHEET_CALIPER_MM:.2f} мм. Перед отправкой конкретной типографии подставьте её фактический paper caliper/шаблон. ISBN намеренно не выдуман: поле оставлено пустым.\n\nИсточник текста: актуальная V4, предисловие + 35 глав + 5 интерлюдий.\nСлов: {total_words}.\n""",
+      f"""{TITLE} — издательский пакет V4\nАвтор: {AUTHOR}\n\nСостав:\n- {interior.name}: печатный блок, {TRIM_W_MM:.0f}x{TRIM_H_MM:.0f} мм, без вылетов, {pages} стр.\n- {full_cover.name}: полная обложка с вылетами 3 мм; корешок {spine:.2f} мм.\n- {wrap_png.name}: 300 dpi preview/растровый источник полной обложки.\n- {cover_jpg.name}: обложка для EPUB.\n- {epub.name}: EPUB 3.\n- {docx.name}: редактируемый издательский исходник.\n- {master.name}: единый мастер-текст Markdown.\n- {meta_p.name}: метаданные издания.\n\nВАЖНО ПО КОРЕШКУ: утверждённый автором artwork использует корешок {spine:.2f} мм. Если шаблон типографии требует другую ширину, нужно переделать сам artwork, а не растягивать готовую обложку. ISBN намеренно не выдуман: поле оставлено пустым.\n\nОБЛОЖКА: единственный источник — assets/cover_wrap.png. Сборка падает, если файл заменён без обновления замка в tools/cover.py.\n\nИсточник текста: актуальная V4, предисловие + 35 глав + 5 интерлюдий.\nСлов: {total_words}.\n""",
       encoding="utf-8")
     files=[interior,full_cover,wrap_png,cover_jpg,epub,docx,master,meta_p,readme]
     sums=OUT/"SHA256SUMS.txt"; sums.write_text("\n".join(f"{sha256(p)}  {p.name}" for p in files)+"\n",encoding="utf-8"); files.append(sums)

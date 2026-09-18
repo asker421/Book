@@ -38,7 +38,7 @@ jobs:
           cp MANIFEST.md publishing_source/
           cp worklogs_v4/GLOBAL_FINAL_AUDIT.md publishing_source/worklogs_v4/
           cp worklogs_v4/GLOBAL_AUDIT_2026-09-16.md publishing_source/worklogs_v4/
-          cp assets/cover_epub.b64 publishing_source/assets/
+          cp assets/cover_wrap.png publishing_source/assets/
           printf '%s\n' "$GITHUB_SHA" > publishing_source/SOURCE_COMMIT.txt
       - name: Upload V4 publishing source
         uses: actions/upload-artifact@v4

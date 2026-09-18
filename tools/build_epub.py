@@ -3,6 +3,8 @@ from __future__ import annotations
 import base64, html, re, uuid, zipfile
 from pathlib import Path
 from PIL import Image, ImageOps
+
+import cover as approved_cover
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,9 +22,7 @@ SUBJECTS = ["Научная фантастика", "Hard SF", "Путешест�
 MATRIX_TEXT = MATRIX.read_text(encoding="utf-8") if MATRIX.exists() else ""
 RELEASE_READY = "REWRITE REQUIRED" not in MATRIX_TEXT and "# **RELEASE: BLOCKED**" not in MATRIX_TEXT
 OUT = DIST / ("Krasnaya_budka_Asker_Ismayilov.epub" if RELEASE_READY else "Krasnaya_budka_V3_WORKING_NOT_RELEASE.epub")
-COVER = ASSETS / "cover_epub.jpg"
-COVER_B64 = ASSETS / "cover_epub.b64"
-COVER_PREPARED = DIST / "cover_1600x2560.jpg"
+COVER_PREPARED = DIST / f"cover_{approved_cover.EPUB_FRONT_WIDTH}x{approved_cover.EPUB_FRONT_HEIGHT}.jpg"
 
 def clean_text(s: str) -> str:
     s = s.replace("\ufeff", "").replace("\r\n", "\n").replace("\r", "\n")
@@ -85,30 +85,13 @@ def xhtml_doc(title: str, body: str, extra_head: str = "") -> str:
 </html>'''
 
 def prepare_cover() -> Path:
-    source = COVER
-    if not source.exists():
-        if not COVER_B64.exists():
-            raise SystemExit(f"Cover missing: {COVER} (and fallback {COVER_B64})")
-        decoded = DIST / "cover_source.jpg"
-        try:
-            decoded.write_bytes(base64.b64decode(COVER_B64.read_text(encoding="ascii").strip(), validate=True))
-        except Exception as exc:
-            raise SystemExit(f"Invalid base64 cover fallback: {exc}") from exc
-        source = decoded
-    with Image.open(source) as im:
-        im = im.convert("RGB")
-        target = (1600, 2560)
-        if im.size != target:
-            # Fill the whole cover instead of centering a small fallback image
-            # on a black 1600x2560 canvas. Preserve aspect ratio and crop only
-            # the excess edges around the center.
-            im = ImageOps.fit(
-                im,
-                target,
-                method=Image.Resampling.LANCZOS,
-                centering=(0.5, 0.5),
-            )
-        im.save(COVER_PREPARED, "JPEG", quality=95, optimize=True)
+    """Обложка берётся только из утверждённого автором разворота.
+
+    Никаких запасных копий и никакой дорисовки: если assets/cover_wrap.png
+    отсутствует или не совпадает с замком в tools/cover.py, сборка падает.
+    """
+    front = approved_cover.front()
+    front.save(COVER_PREPARED, "JPEG", quality=95, optimize=True)
     return COVER_PREPARED
 
 def main():

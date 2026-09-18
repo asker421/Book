@@ -1,0 +1,6 @@
+dist/
+release_v4/
+publishing_source/
+build/
+__pycache__/
+*.pyc

@@ -4,7 +4,8 @@ on:
   push:
     paths:
       - 'chapters_v2/**'
-      - 'assets/cover_epub.b64'
+      - 'assets/cover_wrap.png'
+      - 'tools/cover.py'
       - '.github/workflows/freeze_v2_epub_stdlib.yml'
   workflow_dispatch:
 
@@ -19,13 +20,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install cover dependency
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Check approved cover before building
+        run: python tools/verify_cover.py
+
       - name: Build EPUB from current chapters_v2
         run: |
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
           from datetime import datetime, timezone
-          import base64, hashlib, html, os, re, zipfile, uuid
+          import hashlib, html, os, re, sys, zipfile, uuid
 
           ROOT=Path('.')
           OUT=Path('release')
@@ -67,13 +74,10 @@ jobs:
               title=m.group(1).strip()
               sections.append((i,title,md_to_xhtml(txt,title)))
 
-          cover=base64.b64decode((ROOT/'assets/cover_epub.b64').read_text(encoding='utf-8').strip())
-          if cover.startswith(b'\x89PNG'):
-              cover_name='cover.png'; cover_media='image/png'
-          elif cover.startswith(b'\xff\xd8\xff'):
-              cover_name='cover.jpg'; cover_media='image/jpeg'
-          else:
-              raise RuntimeError('Unknown cover format')
+          sys.path.insert(0, str((ROOT/'tools').resolve()))
+          import cover as approved_cover
+          cover=approved_cover.front_jpeg_bytes()
+          cover_name='cover.jpg'; cover_media='image/jpeg'
 
           uid='urn:uuid:'+str(uuid.uuid5(uuid.NAMESPACE_URL,'asker421/Book@'+SHA))
           nav=''.join(f'<li><a href="section_{i:02d}.xhtml">{html.escape(t)}</a></li>' for i,t,_ in sections)
