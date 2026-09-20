@@ -5,17 +5,35 @@
 Режим: написание по канонам; по умолчанию без аудита; каждую новую главу сохранять в Git. Главы 5–9 и Интерлюдия II отдельно проаудированы по прямым командам пользователя; найденные дефекты хирургически исправлялись по отдельным командам.
 Правила: V4_AUTHORING_RULES.md.
 
-## AUTHORITATIVE CURRENT STATUS — 2026-09-16
+## AUTHORITATIVE CURRENT STATUS — 2026-09-20
 
 > Этот раздел является текущим source-of-truth по состоянию V4. Более ранние `FIXED / NOT VERIFIED`, старые SHA и промежуточные статусы ниже сохранены как история работы и не описывают текущее состояние корпуса.
 
 - Корпус: **35 глав + 5 интерлюдий = 40 художественных эпизодов**.
 - Completeness: **40/40**, missing 0, extras 0.
 - Для каждого эпизода существует `worklogs_v4/*.md`.
-- SHA-сверка: **37/40 current content SHA совпадают с последним DOUBLE AUDIT PASS сертификатом**. Главы 27, 34 и 35 получили последующие хирургические правки 2026-09-20; для них старые сертификаты сохранены только как история.
-- Whole-book audit: `worklogs_v4/GLOBAL_AUDIT_2026-09-16.md`.
-- Глобальный baseline: предыдущий whole-book audit завершён. Текущие blobs глав 27, 34 и 35 прошли целевые canon/continuity проверки после правок, но прежний статус 40/40 CURRENT BLOBS DOUBLE-AUDITED к ним больше не применяется.
-- На текущем `main` после целевой проверки связки 27→34→35 известных обязательных canon / reveal / continuity / physics FAIL в этой связке нет.
+- Whole-book audit 2026-09-16 сохранён как baseline: `worklogs_v4/GLOBAL_AUDIT_2026-09-16.md`.
+- Старые пометки `VERIFIED — DOUBLE AUDIT PASS` не сертифицируют художественные blobs, изменённые после соответствующего аудита.
+- 2026-09-20 выполнен хирургический **READER-FLOW / ANTI-BOREDOM PASS** диапазона 27–35. Художественно изменены главы 28, 29, 30, 31, 32, 34 и 35; главы 27, Интерлюдия V и глава 33 после перечитывания оставлены без новой литературной правки.
+- Для изменённых blobs выполнена целевая проверка chapter-contract / canon / reveal / continuity / physics и стыков 27→31→34→35. Полный новый DOUBLE AUDIT после этих правок не заявляется.
+- Литеральная готовая реплика `Не входи` в актуальном художественном диапазоне 27–35 отсутствует.
+
+### CURRENT READER-FLOW PASS — 2026-09-20
+
+| Эпизод | Current words | Current content SHA | Reader-flow status |
+|---|---:|---|---|
+| Глава 27 | 2137 | `d8114778af6e2e069423024c5d6d25c81a323241` | перечитана; без новой правки |
+| Глава 28 | 2715 | `5369e33d4997ed390cca498b24106a66323b4fbd` | surgical edit; targeted canon/continuity PASS |
+| Глава 29 | 2417 | `5fc5785589750da812447b8d9f37ec12cdba39a8` | surgical edit; targeted canon/continuity PASS |
+| Глава 30 | 2014 | `798021cc7ac53b83a317ad8d23bb86b2db1fbe04` | surgical edit; targeted canon/continuity PASS |
+| Интерлюдия V | 555 | `dadf38dd76e977b836fd1fbedea6ecc6622aa314` | перечитана; без новой правки |
+| Глава 31 | 1281 | `8849008535da61e966de7778292a4d6e676c0cfb` | surgical edit; targeted canon/continuity PASS |
+| Глава 32 | 2080 | `7082d4e6c688e3bdf0de3ce356224e4c609413a9` | surgical edit; targeted canon/continuity PASS |
+| Глава 33 | 2561 | `689d7bbca4c4b6bd82535c928acc7f9dc5e9f58a` | перечитана; без новой правки |
+| Глава 34 | 1933 | `1d72d474a0f50090cdab8d0b7cae64fae67abc88` | surgical edit; targeted canon/continuity PASS |
+| Глава 35 | 2642 | `87cd180505f77e07f44aa9666551bbf298b5f59a` | surgical edit; targeted canon/continuity PASS |
+
+Reader-flow delta по изменённым главам: **17 613 → 15 082 слов, −2531 слова (−14.4%)**. Сокращение получено удалением повторной механики, повторного exposition и повторных процедурных циклов; сюжетные события и обязательные reveals не удалялись.
 
 ### Исправления whole-book прохода
 - восстановлена отсутствовавшая Интерлюдия V `chapters_v4/30a.md` — current SHA `4c96212c216b5b4d1e8c9fe404cc88b4fafcf7b6`;
