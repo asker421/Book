@@ -85,7 +85,7 @@
 
 ### 12m fair-play pass
 - `chapters_v4/07.md` — `29399aa5cfef73bb972f8a48aed887a29879bea4`;
-- `chapters_v4/08.md` — `64c896f34378c91057045db18ca93fc9de27a8d9`;
+- `chapters_v4/08.md` — `805e912cd995b3671f28bfc5e7dce04d2e3bdedb`;
 - `chapters_v4/12.md` — `c2f2b467565730745f3729279c0ab179d7fdd65e`;
 - `chapters_v4/14.md` — `5253928e793dcc1c4ae6d504ab9047d0640d82d8`;
 - `chapters_v4/15.md` — `a26553bed5247e481db4f2bd82b83374820133cc`;
