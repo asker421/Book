@@ -1,0 +1,42 @@
+name: Build V4 English EPUB
+
+on:
+  push:
+    branches: [v4-english]
+    paths:
+      - 'chapters_v4/**'
+      - 'V4_PREFACE.md'
+      - 'tools/build_v4_english_epub.py'
+      - '.github/workflows/build-v4-english-epub.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build English EPUB
+        run: python tools/build_v4_english_epub.py
+      - name: Validate EPUB ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f release_v4_english/The_Red_Booth_Asker_Ismayilov_V4_English.epub
+          python - <<'PY'
+          import zipfile
+          p='release_v4_english/The_Red_Booth_Asker_Ismayilov_V4_English.epub'
+          with zipfile.ZipFile(p) as z:
+              assert z.testzip() is None
+              assert z.namelist()[0] == 'mimetype'
+              assert z.read('mimetype') == b'application/epub+zip'
+          print('EPUB validation OK')
+          PY
+      - name: Upload English EPUB
+        uses: actions/upload-artifact@v4
+        with:
+          name: red-booth-v4-english-epub
+          path: release_v4_english/The_Red_Booth_Asker_Ismayilov_V4_English.epub
+          if-no-files-found: error
