@@ -6,6 +6,31 @@
 
 
 
+## ACTIVE V4 INDEX — ПРИОРИТЕТ НАД НИЖЕЛЕЖАЩЕЙ V3-ИСТОРИЕЙ
+
+Для текущей работы действуют только следующие границы:
+
+- художественный source of truth: `chapters_v4/`;
+- структура: **30 глав + 4 интерлюдии**;
+- названия/имена: `V4_NAMING_CANON.md`;
+- рабочий режим: `V4_AUTHORING_RULES.md`;
+- финальная механика: `FINAL_CANON_OVERRIDE.md`;
+- карта: `CHAPTER_MAP.md`;
+- chapter contracts: `CHAPTER_BY_CHAPTER_CANON.md`;
+- continuity: `CONTINUITY.md`, `TIME_CONTINUITY_CANON.md`, `ASGAR_STATE_LEDGER.md`;
+- physics/staging: `PHYSICS_CANON.md`, `HARD_SCENE_CANON.md`, `LOCATION_STAGING_LEDGER.md`, `MICRO_STAGING_CANON.md`, `EPOCH_CAPABILITY_CANON.md`;
+- knowledge/reveal: `REVEAL_ORDER_CANON.md`, `KNOWLEDGE_LEDGER.md`, `TERMINOLOGY_CANON.md`;
+- causality/motivation: `CAUSE_EFFECT_LEDGER.md`, `DECISION_MOTIVATION_CANON.md`, `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md`, `FORESHADOWING_PAYOFF_LEDGER.md`;
+- characters: history/reveal/voice/relationship/conflict/flaw canons;
+- prose: `NARRATIVE_STYLE_CANON.md`, `CANON_AUTHOR_STYLE_V3.md`, `PROSE_DIALOGUE_CANON.md`, `READER_EXPERIENCE_CANON.md`, `CANON_WRITING_TICS.md`;
+- audit: `MASTER_ROMAN_AUDIT.md`, `CHAPTER_AUDIT_PROMPT.md`, `MAXIMUM_CAUTION_AUDIT_PROTOCOL.md`, `NOVEL_FINAL_AUDIT_CHECKLIST.md`, `CANON_SYNC_MATRIX.md`.
+
+**Любая нижележащая строка, которая называет `chapters_v3/` текущим корпусом, структуру 35+5 активной, RETRO-1 reveal главы 31, финал 34–35, pair-check 1↔35/8↔35 или удалённые после главы 28 эпохи обязательными, является исторической V3-записью и не применяется к V4.**
+
+`chapters_v2/`, `chapters_v3/`, `V3_ARCHITECTURE_MAP.md`, `V3_AUDIT_PROTOCOL.md`, `V3_PROGRESS.md` и V3 prompt-pack сохраняются только как редакционная история.
+
+---
+
 # Манифест романа «Красная будка»
 
 ## Канонический индекс и приоритет
@@ -89,7 +114,7 @@
 
 1. `FINAL_CANON_OVERRIDE.md` имеет абсолютный приоритет в вопросах финальной временной механики, исторических якорей, пассажирской записи и исхода активных V4-глав 29–30. Ссылки на 34–35 ниже относятся к V3/историческому слою.
 2. Более узкий специализированный канон имеет приоритет над общим редакционным правилом в своей области.
-3. `chapters_v3/` является художественным источником уже произошедших конкретных событий и деталей сцены, **если они не противоречат явному обязательному канону**. Ошибка в художественном тексте не становится каноном только потому, что уже попала в главу.
+3. `chapters_v4/` является художественным источником уже произошедших конкретных событий и деталей активной версии, **если они не противоречат явному обязательному канону**. `chapters_v2/` и `chapters_v3/` — только исторические слои. Ошибка в художественном тексте не становится каноном только потому, что уже попала в главу.
 4. Ledger-файлы — обязательные контрольные индексы состояния, знания и foreshadowing, но они производны от канона и художественного корпуса. При расхождении ledger должен быть синхронизирован; он не имеет права отменять более свежий явный канон.
 5. Если два специализированных канона действительно противоречат друг другу и приоритет нельзя определить по области, нельзя молча выбрать удобный вариант: конфликт сначала фиксируется и устраняется в каноне.
 
@@ -1192,7 +1217,7 @@ chapter contract → cause/effect → knowledge → reveal → Asgar state → t
 #### Художественные корпуса
 - `chapters/` — историческая ранняя версия.
 - `chapters_v2/` — предыдущая законченная версия и сюжетный материал/baseline.
-- `chapters_v3/` — текущий рабочий художественный корпус; переписывается заново по действующим канонам.
+- `chapters_v4/` — текущий рабочий художественный корпус. `chapters_v3/` — исторический слой.
 - `release/` — производные сборки/релизные артефакты; не источник канона.
 
 #### Прочие каталоги
@@ -1241,7 +1266,7 @@ chapter contract → cause/effect → knowledge → reveal → Asgar state → t
 #### Художественные корпуса
 - `chapters/` — **V1 / HISTORICAL REFERENCE**. Не источник текущей прозы и не самостоятельный канон.
 - `chapters_v2/` — **FROZEN SOURCE MATERIAL**. Источник событий, причинности, удачных деталей и уже оплаченных сюжетных функций для полного rewrite v3.
-- `chapters_v3/` — **CURRENT WORKING CORPUS**. Единственный художественный корпус, который сейчас переписывается и будет проходить финальный QA.
+- `chapters_v4/` — **CURRENT WORKING CORPUS** и единственный художественный source of truth активной версии. `chapters_v3/` — исторический корпус.
 
 #### Старые release-материалы
 - `FROZEN_V2.md` — историческая отметка заморозки предыдущей версии.
@@ -1817,7 +1842,7 @@ CONFLICT_ANTAGONISM_CANON.md.
 
 Он не создаёт сюжетный канон и не переопределяет специализированные источники истины. Его функция — показывать фактическую синхронизацию цепочки:
 
-**MANIFEST → canons/ledgers → authoring/audit → chapters_v3 → PROJECT_MEMORY.**
+**MANIFEST → active V4 canons/ledgers → V4 authoring/audit → chapters_v4 → historical/project memory only as secondary context.**
 
 Обязательные правила:
 - перед объявлением главы или романа `PASS` сверить матрицу;
