@@ -385,7 +385,7 @@ def main():
       "word_count":total_words,"print_pages":pages,"isbn":None,"publisher":None,
       "cover_spine_mm":spine,"spine_assumption":"Утверждённый автором artwork использует корешок 21.5 мм. Если шаблон типографии требует другую ширину, переделывается artwork, а не масштабируется готовая обложка.",
       "cover_source":"assets/cover_wrap.png (единственный утверждённый источник)","cover_source_git_blob_sha1":approved_cover.APPROVED_BLOB_SHA1,
-      "source":"asker421/Book main, chapters_v4, V4 globally verified 2026-09-16","build_revision":build_revision(),
+      "source":"asker421/Book main, chapters_v4, final publishing build 2026-09-20","build_revision":build_revision(),
       "description":DESCRIPTION,"subjects":SUBJECTS
     }
     meta_p=OUT/"publication_metadata.json"; meta_p.write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding="utf-8")
