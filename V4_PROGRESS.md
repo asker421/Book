@@ -21,7 +21,7 @@
 - восстановлена отсутствовавшая Интерлюдия V `chapters_v4/30a.md` — current SHA `4c96212c216b5b4d1e8c9fe404cc88b4fafcf7b6`;
 - Интерлюдия IV синхронизирована с V4 naming canon — current SHA `71787653f3f2091cb2d31a718aea43a0110def5e`;
 - Глава 17: удалён narrator inference — current SHA `f916fea1d0e0d4e23e5d8607011d56700803a885`;
-- Глава 27: удалён synthetic sequencing — current SHA `ea868997dfb2a70b6f6f33c1256b5299bf94035a`;
+- Глава 27: канонический repair исторической адресации и причинного выбора — current SHA `e208fa160eb0f853bed1347b2f03736700fbd9b6`;
 - Глава 32: удалены два author-explanation/self-proof хвоста — current SHA `35b8a23bcaa2b4384a93ea32a405c6c3405ed931`.
 
 | Эпизод | Файл | Слов | Статус |
