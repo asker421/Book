@@ -24,8 +24,8 @@
 |---|---:|---|---|
 | Глава 27 | 2137 | `d8114778af6e2e069423024c5d6d25c81a323241` | перечитана; без новой правки |
 | Глава 28 | 2715 | `5369e33d4997ed390cca498b24106a66323b4fbd` | surgical edit; targeted canon/continuity PASS |
-| Глава 29 | current | `aa81c2fcad62a7ce8dafec602b39e8d76d47f27e` | reader-logic + motivation + medical causality rewrite; targeted PASS |
-| Глава 30 | 2019 | `3733cdab75fe51b84918205066b8fa15ab0bd87a` | post-29 continuity edit; targeted PASS |
+| Глава 29 | 2022 | `aa81c2fcad62a7ce8dafec602b39e8d76d47f27e` | reader-logic + medical causality rewrite; targeted PASS |
+| Глава 30 | 2006 | `eab7689b371458c7ccc092d33eb4ed60786cabef` | aligned to revised chapter 29 continuity; targeted PASS |
 | Интерлюдия V | 555 | `dadf38dd76e977b836fd1fbedea6ecc6622aa314` | перечитана; без новой правки |
 | Глава 31 | 1281 | `8849008535da61e966de7778292a4d6e676c0cfb` | surgical edit; targeted canon/continuity PASS |
 | Глава 32 | 2080 | `7082d4e6c688e3bdf0de3ce356224e4c609413a9` | surgical edit; targeted canon/continuity PASS |
@@ -233,7 +233,7 @@ Reader-flow delta по изменённым главам: **17 613 → 15 082 с
 ## Дополнение — Глава 29
 - Файл: `chapters_v4/29.md`.
 - Current content SHA: `aa81c2fcad62a7ce8dafec602b39e8d76d47f27e`.
-- Текущий объём пересчитан после reader-logic rewrite; старые word-count записи выше не являются сертификатом текущего blob.
+- 2022 слова без заголовка.
 - Прежний DOUBLE AUDIT и reader-flow сертификаты относятся к superseded blobs; текущая редакция прошла целевую canon/continuity/physics проверку, но новый DOUBLE AUDIT не заявляется.
 - Переход 28→29 прямо показывает временной разрыв: после эпохи Смотрителя прошло почти десять триллионов лет.
 - Жители Долгого дома — сильно изменённые человеческие ветви; Элиас и другие визуально далеко ушли от Homo sapiens XXI века.
