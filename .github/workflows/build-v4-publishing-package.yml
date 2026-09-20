@@ -58,10 +58,29 @@ jobs:
       - name: Publish latest successful run id
         shell: bash
         run: |
-          mkdir -p .github
-          printf '%s\n' "$GITHUB_RUN_ID" > .github/latest_v4_release_run.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/latest_v4_release_run.txt
-          git commit -m "ci: record latest V4 publishing package run [skip ci]"
-          git push
+
+          # This metadata write must not turn a valid publishing build red just
+          # because main moved while the artifacts were being produced.
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p .github
+            printf '%s\n' "$GITHUB_RUN_ID" > .github/latest_v4_release_run.txt
+            git add .github/latest_v4_release_run.txt
+
+            if git diff --cached --quiet; then
+              exit 0
+            fi
+
+            git commit -m "ci: record latest V4 publishing package run [skip ci]"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            sleep 1
+          done
+
+          echo "::warning::Publishing artifacts succeeded, but latest_v4_release_run.txt could not be updated because main kept moving."
+          exit 0
