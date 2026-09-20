@@ -6,9 +6,18 @@ Audit head: `eeba0a05f781b1e40b27d1d7be1e5739c94216fd`
 
 Audited fiction blobs:
 - `chapters_v4/29.md` — `d6a75b17fe86df94289e0282b5642269db42a2df`
-- `chapters_v4/30.md` — `3e5a763acbc1b4d9152cd31516e470b1f68e051a`
+- `chapters_v4/30.md` — `322375df5bb91081c932dab6d96b575098aa9487`
 
 This certificate applies only to these exact blobs. Any fiction edit invalidates READY and requires re-audit of affected passes.
+
+### Post-pass micro-edit revalidation
+
+After the initial full pass, chapter 30 received three micro-edits:
+- removed a remaining authorial self-proof about the 2014 motive;
+- removed redundant narrator inference about Katya noticing Asgar's changed appearance;
+- clarified that post-failure checks of earlier 2039 states are **computational only**, without opening another physical connection.
+
+Those edits were re-audited against knowledge/POV, single-worldline physics, repeat-access limits, staging, motivation, prose/tics and the 8↔30 pair. No new FAIL was introduced.
 
 ## Source-of-truth status
 
