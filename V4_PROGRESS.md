@@ -80,7 +80,7 @@
 Полный обязательный аудит завершён для точных художественных blob:
 
 - `chapters_v4/29.md` — `d6a75b17fe86df94289e0282b5642269db42a2df`;
-- `chapters_v4/30.md` — `3e5a763acbc1b4d9152cd31516e470b1f68e051a`.
+- `chapters_v4/30.md` — `322375df5bb91081c932dab6d96b575098aa9487`.
 
 Проведены два независимых полных прохода после финальных fiction-repair: причинно-физический и cold-reader/literary. Проверены physics, single-worldline, door/mass, knowledge/reveal, terminology, language, motivation/anti-idiot, character flaw, voice, relationships, reaction, staging, body/inventory, 1↔30, 8↔30, foreshadow/payoff, prose/tics/self-proof и exit-state.
 
