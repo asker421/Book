@@ -75,21 +75,38 @@
 - `MICRO_STAGING_CANON.md`;
 - `MANIFEST.md`.
 
-## Аудит 29–30 — READY
+## Текущий аудит 28–30 — IN PROGRESS
 
-Полный обязательный аудит завершён для точных художественных blob:
+Актуальные художественные blob после последних fiction-правок:
 
-- `chapters_v4/29.md` — `d6a75b17fe86df94289e0282b5642269db42a2df`;
-- `chapters_v4/30.md` — `322375df5bb91081c932dab6d96b575098aa9487`.
+- `chapters_v4/28.md` — `159fdc3e4b9800a2addddeb7d97c8d8d47e4aea0`;
+- `chapters_v4/29.md` — `476aa59cca3269f1183e070648c6a5767b923c97`;
+- `chapters_v4/30.md` — `bafb7e5335ba183363491325ed581e25d220998c`.
 
-Проведены два независимых полных прохода после финальных fiction-repair: причинно-физический и cold-reader/literary. Проверены physics, single-worldline, door/mass, knowledge/reveal, terminology, language, motivation/anti-idiot, character flaw, voice, relationships, reaction, staging, body/inventory, 1↔30, 8↔30, foreshadow/payoff, prose/tics/self-proof и exit-state.
+Предыдущий worklog `worklogs_v4/FINAL_29_30_FULL_AUDIT_2026-09-20.md` фиксировал PASS для более ранних blob:
+- 29: `d6a75b17fe86df94289e0282b5642269db42a2df`;
+- 30: `322375df5bb91081c932dab6d96b575098aa9487`.
 
-Статус:
-- **глава 29 — READY**;
-- **глава 30 — READY**;
-- unresolved CRITICAL: 0;
-- unresolved MAJOR: 0.
+По собственному правилу проекта этот READY **аннулирован изменением художественного текста**.
 
-Полный протокол и список найденных/исправленных дефектов: `worklogs_v4/FINAL_29_30_FULL_AUDIT_2026-09-20.md`.
+Текущий статус:
+- документация активной V4 синхронизирована с 30+4;
+- удалённые поздние эпохи не считаются частью маршрута;
+- глава 29 — **RE-AUDIT REQUIRED** на текущем blob;
+- глава 30 — **RE-AUDIT REQUIRED** на текущем blob;
+- полный роман-аудит — **IN PROGRESS**;
+- формальный release-grade PASS будет возвращён только после проверки актуальных blob и записи нового audit protocol.
 
-Любое последующее изменение художественного текста 29 или 30 аннулирует READY для изменённого blob и требует повторного аудита затронутых gates.
+### Документационная синхронизация этого цикла
+
+Исправлены активные документы:
+- `PHYSICS_CANON.md`;
+- `TIME_CONTINUITY_CANON.md`;
+- `EPOCH_CAPABILITY_CANON.md`;
+- `CHAPTER_BY_CHAPTER_CANON.md`;
+- `ASGAR_STATE_LEDGER.md` (актуальная V4-версия уже присутствует в main);
+- `LOCATION_STAGING_LEDGER.md`;
+- `CANON_SYNC_MATRIX.md`.
+
+Ключевая политика: старые 31–35 и удалённые поздние эпохи могут существовать только в истории git/worklogs, но не как действующие правила активной V4.
+
