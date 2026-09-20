@@ -2,68 +2,71 @@
 
 Рабочий репозиторий романа «Красная будка».
 
-## Active source of truth
+## Активная версия
 
-- Ветка: `main`.
-- Художественный корпус: **`chapters_v4/`**.
-- Структура: **30 основных глав + 4 интерлюдии**.
-- Финальный маршрут: **28 → 29 «Крошки на столе» → 30 «На расстоянии руки»**.
-- `chapters_v2/` и `chapters_v3/` — исторические версии; не использовать их как художественный source of truth V4.
-- Старые главы 31–35, Интерлюдия V и удалённые поздние эпохи не входят в активную V4.
+Текущий художественный source of truth — **`chapters_v4/`**.
 
-Первым документом нового чата всегда читать **`MANIFEST.md`**.
+Активная структура:
+- **30 основных глав**;
+- **4 интерлюдии**;
+- финальный блок: **28 → 29 → 30**.
 
-## Главные документы V4
+`chapters_v2/` и `chapters_v3/` — исторические версии. Они могут использоваться только как редакционная история и не переопределяют V4.
 
-- `V4_AUTHORING_RULES.md` — активный режим работы с V4.
+Перед любой работой сначала читать **`MANIFEST.md`**.
+
+## Ключевые активные документы
+
+- `V4_AUTHORING_RULES.md` — рабочие правила V4.
 - `V4_NAMING_CANON.md` — утверждённые названия и имена.
-- `V4_PROGRESS.md` — текущее состояние V4.
 - `FINAL_CANON_OVERRIDE.md` — абсолютный source of truth финальной механики.
-- `CHAPTER_MAP.md` — актуальная карта 30+4.
-- `CHAPTER_BY_CHAPTER_CANON.md` — обязательный контракт глав.
-- `CONTINUITY.md` — краткий активный continuity-слой.
-- `CANON_SYNC_MATRIX.md` — текущая матрица синхронизации.
-- `MASTER_ROMAN_AUDIT.md` — полный аудит V4.
-- `CHAPTER_AUDIT_PROMPT.md` — движок аудита отдельной главы.
-- `MAXIMUM_CAUTION_AUDIT_PROTOCOL.md` — fail-closed cold-start протокол.
-
-## Специализированные каноны
-
-- `PHYSICS_CANON.md` — физика RETRO-1, двери, массы, материализации и финального ограничения.
-- `HARD_SCENE_CANON.md` — сценическая физика, связь, знание, безопасность среды.
-- `LOCATION_STAGING_LEDGER.md` + `MICRO_STAGING_CANON.md` — география и покадровая наблюдаемость.
+- `CHAPTER_BY_CHAPTER_CANON.md` — активные chapter contracts.
+- `PHYSICS_CANON.md` — физика RETRO-1, двери, массы, материализации и исторического доступа.
 - `TIME_CONTINUITY_CANON.md` — календарное и субъективное время.
-- `ASGAR_STATE_LEDGER.md` — тело, травмы, инвентарь, навыки, психологическое состояние Асгара.
-- `KNOWLEDGE_LEDGER.md` + `REVEAL_ORDER_CANON.md` — кто что знает и когда.
-- `CAUSE_EFFECT_LEDGER.md` + `FORESHADOWING_PAYOFF_LEDGER.md` — причинность и payoff.
-- `TERMINOLOGY_CANON.md` — единый технический словарь.
-- `EPOCH_CAPABILITY_CANON.md` — технологические потолки эпох.
-- `LANGUAGE_CANON.md` — язык и перевод.
-- `DECISION_MOTIVATION_CANON.md` + `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md` — мотивация и obvious-alternative gate.
-- `CHARACTER_HISTORY_CANON.md`, `CHARACTER_REVEAL_MAP.md`, `CHARACTER_VOICE_CANON.md`, `RELATIONSHIP_CANON.md`, `ASGAR_FLAW_CANON.md`, `CONFLICT_ANTAGONISM_CANON.md` — персонажные каноны.
-- `NARRATIVE_STYLE_CANON.md`, `CANON_AUTHOR_STYLE_V3.md`, `PROSE_DIALOGUE_CANON.md`, `READER_EXPERIENCE_CANON.md`, `CANON_WRITING_TICS.md` — проза и стиль. Имя `CANON_AUTHOR_STYLE_V3.md` историческое; метод остаётся действующим для V4.
+- `REVEAL_ORDER_CANON.md` — порядок раскрытий.
+- `KNOWLEDGE_LEDGER.md` — кто что знает и когда.
+- `ASGAR_STATE_LEDGER.md` — тело, инвентарь, язык, навыки и психологическое состояние Асгара.
+- `CAUSE_EFFECT_LEDGER.md` — причинно-следственные цепочки.
+- `FORESHADOWING_PAYOFF_LEDGER.md` — seeds/reframes/payoffs.
+- `LOCATION_STAGING_LEDGER.md` + `MICRO_STAGING_CANON.md` — геометрия и покадровая наблюдаемость.
+- `EPOCH_CAPABILITY_CANON.md` — технологические возможности эпох.
+- `LANGUAGE_CANON.md` — язык и каналы понимания.
+- `DECISION_MOTIVATION_CANON.md` + `CHARACTER_MOTIVATION_ANTI_IDIOT_CANON.md` — мотивация и очевидные альтернативы.
+- `CHARACTER_HISTORY_CANON.md`, `CHARACTER_REVEAL_MAP.md`, `CHARACTER_VOICE_CANON.md`, `RELATIONSHIP_CANON.md` — персонажи.
+- `ASGAR_FLAW_CANON.md` — теневая дуга Асгара.
+- `NARRATIVE_STYLE_CANON.md`, `CANON_AUTHOR_STYLE_V3.md`, `PROSE_DIALOGUE_CANON.md`, `READER_EXPERIENCE_CANON.md`, `CANON_WRITING_TICS.md` — стиль и проза. Имя `CANON_AUTHOR_STYLE_V3.md` историческое; сам стилевой метод продолжает применяться к V4.
 
-## Критические границы V4
+## Аудит
 
-- RETRO-1 впервые называется в основной линии в **главе 29**.
-- «Машина возвращает себя» раскрывается в **главе 22**.
-- Принцип исторической адресации готовится в **главе 27**.
-- Конкретный исторический доступ источника — **глава 29**.
-- Мужчина 2014 физически подтверждается как Асгар только в **главе 30**.
-- В главе 30 сначала проверяются 20.08.2014 и 24.08.2014, только затем 24.08.2039.
-- Причина отказа постоянного выхода 2039 формулируется только после фактического отказа.
-- Обязательные финальные pair-check: **1↔30** и **8↔30**.
+Активный audit stack:
+- `MASTER_ROMAN_AUDIT.md`;
+- `CHAPTER_AUDIT_PROMPT.md`;
+- `MAXIMUM_CAUTION_AUDIT_PROTOCOL.md`;
+- `NOVEL_FINAL_AUDIT_CHECKLIST.md`;
+- `CANON_SYNC_MATRIX.md`.
 
-## Исторические материалы
+Любой новый аудит начинается с **NOT VERIFIED**. Старый PASS/READY не переносится на изменённый художественный blob.
 
-Следующие файлы/каталоги могут хранить полезную редакционную историю, но не имеют права переопределять V4:
+Обязательные финальные pair-check:
+- **глава 1 ↔ глава 30 (2014)**;
+- **глава 8 ↔ глава 30 (2039)**.
 
-- `chapters_v2/`;
-- `chapters_v3/`;
-- `V3_ARCHITECTURE_MAP.md`;
-- `V3_AUDIT_PROTOCOL.md`;
-- `V3_PROGRESS.md`;
-- старые worklogs и старые build/release статусы.
+## Исторические каталоги
 
-Если исторический документ конфликтует с активной V4, действует активная V4.
+- `chapters/` — ранняя версия;
+- `chapters_v2/` — замороженный V2;
+- `chapters_v3/` — предыдущая 35+5 архитектура;
+- `V3_ARCHITECTURE_MAP.md`, `V3_AUDIT_PROTOCOL.md`, `V3_PROGRESS.md` — исторические V3-служебные материалы.
 
+Исторические материалы не являются release-gate V4.
+
+## Project memory / handoff
+
+Новый чат начинает с:
+1. `MANIFEST.md`;
+2. `V4_AUTHORING_RULES.md`;
+3. `V4_NAMING_CANON.md`;
+4. релевантных специализированных канонов;
+5. только затем — `PROJECT_MEMORY/` и старых worklogs при необходимости.
+
+При конфликте памяти/handoff со свежим `main` действует актуальный canon stack V4.
