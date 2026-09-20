@@ -59,12 +59,9 @@ TITLES = {
 "23":("Глава 23","После сказанного"),"24":("Глава 24","Там, где был берег"),
 "25":("Глава 25","Через столько рук"),"26":("Глава 26","Пока держится огонь"),
 "27":("Глава 27","Право на воздух"),"28":("Глава 28","На ручном управлении"),
-"29":("Глава 29","Время на музыку"),"30":("Глава 30","Чья-то доля тепла"),
-"30a":("Интерлюдия V","Подтвердите приём"),"31":("Глава 31","Имя на полях"),
-"32":("Глава 32","Пауза между словами"),"33":("Глава 33","Стол у стены"),
-"34":("Глава 34","Крошки на столе"),"35":("Глава 35","На расстоянии руки"),
+"29":("Глава 29","Крошки на столе"),"30":("Глава 30","На расстоянии руки"),
 }
-ORDER = ["01","02","03","04","04a","05","06","07","08","08a","09","10","11","12","13","14","15","15a","16","17","18","19","20","21","22","22a","23","24","25","26","27","28","29","30","30a","31","32","33","34","35"]
+ORDER = ["01","02","03","04","04a","05","06","07","08","08a","09","10","11","12","13","14","15","15a","16","17","18","19","20","21","22","22a","23","24","25","26","27","28","29","30"]
 
 def clean_md(s):
     s=s.replace("\ufeff","").replace("\r\n","\n").replace("\r","\n").strip()
@@ -126,7 +123,7 @@ def read_sections():
         wc=sum(len(re.findall(r"\b[\wЁёА-я-]+\b",t,re.UNICODE)) for k,t in bs if k=="p")
         total += wc
         secs.append((key,kicker,title,bs,wc))
-    if len(secs)!=41: raise SystemExit("Expected preface + 40 literary sections")
+    if len(secs)!=35: raise SystemExit("Expected preface + 34 literary sections")
     return secs,total
 
 def find_font(candidates):
@@ -384,7 +381,7 @@ def main():
     master=combined_markdown(secs)
     meta={
       "title":TITLE,"author":AUTHOR,"language":"ru","year":2026,"genre":"научная фантастика / hard SF",
-      "trim_mm":[TRIM_W_MM,TRIM_H_MM],"bleed_mm":BLEED_MM,"sections":40,"main_chapters":35,"interludes":5,"preface":True,
+      "trim_mm":[TRIM_W_MM,TRIM_H_MM],"bleed_mm":BLEED_MM,"sections":34,"main_chapters":30,"interludes":4,"preface":True,
       "word_count":total_words,"print_pages":pages,"isbn":None,"publisher":None,
       "cover_spine_mm":spine,"spine_assumption":"Утверждённый автором artwork использует корешок 21.5 мм. Если шаблон типографии требует другую ширину, переделывается artwork, а не масштабируется готовая обложка.",
       "cover_source":"assets/cover_wrap.png (единственный утверждённый источник)","cover_source_git_blob_sha1":approved_cover.APPROVED_BLOB_SHA1,
@@ -394,7 +391,7 @@ def main():
     meta_p=OUT/"publication_metadata.json"; meta_p.write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding="utf-8")
     readme=OUT/"README_PUBLISHING_PACKAGE.txt"
     readme.write_text(
-      f"""{TITLE} — издательский пакет V4\nАвтор: {AUTHOR}\n\nСостав:\n- {interior.name}: печатный блок, {TRIM_W_MM:.0f}x{TRIM_H_MM:.0f} мм, без вылетов, {pages} стр.\n- {full_cover.name}: полная обложка с вылетами 3 мм; корешок {spine:.2f} мм.\n- {wrap_png.name}: 300 dpi preview/растровый источник полной обложки.\n- {cover_jpg.name}: обложка для EPUB.\n- {epub.name}: EPUB 3.\n- {docx.name}: редактируемый издательский исходник.\n- {master.name}: единый мастер-текст Markdown.\n- {meta_p.name}: метаданные издания.\n\nВАЖНО ПО КОРЕШКУ: утверждённый автором artwork использует корешок {spine:.2f} мм. Если шаблон типографии требует другую ширину, нужно переделать сам artwork, а не растягивать готовую обложку. ISBN намеренно не выдуман: поле оставлено пустым.\n\nОБЛОЖКА: единственный источник — assets/cover_wrap.png. Сборка падает, если файл заменён без обновления замка в tools/cover.py.\n\nИсточник текста: актуальная V4, предисловие + 35 глав + 5 интерлюдий.\nСлов: {total_words}.\n""",
+      f"""{TITLE} — издательский пакет V4\nАвтор: {AUTHOR}\n\nСостав:\n- {interior.name}: печатный блок, {TRIM_W_MM:.0f}x{TRIM_H_MM:.0f} мм, без вылетов, {pages} стр.\n- {full_cover.name}: полная обложка с вылетами 3 мм; корешок {spine:.2f} мм.\n- {wrap_png.name}: 300 dpi preview/растровый источник полной обложки.\n- {cover_jpg.name}: обложка для EPUB.\n- {epub.name}: EPUB 3.\n- {docx.name}: редактируемый издательский исходник.\n- {master.name}: единый мастер-текст Markdown.\n- {meta_p.name}: метаданные издания.\n\nВАЖНО ПО КОРЕШКУ: утверждённый автором artwork использует корешок {spine:.2f} мм. Если шаблон типографии требует другую ширину, нужно переделать сам artwork, а не растягивать готовую обложку. ISBN намеренно не выдуман: поле оставлено пустым.\n\nОБЛОЖКА: единственный источник — assets/cover_wrap.png. Сборка падает, если файл заменён без обновления замка в tools/cover.py.\n\nИсточник текста: актуальная V4, предисловие + 30 глав + 4 интерлюдии.\nСлов: {total_words}.\n""",
       encoding="utf-8")
     files=[interior,full_cover,wrap_png,cover_jpg,epub,docx,master,meta_p,readme]
     sums=OUT/"SHA256SUMS.txt"; sums.write_text("\n".join(f"{sha256(p)}  {p.name}" for p in files)+"\n",encoding="utf-8"); files.append(sums)
