@@ -1,60 +1,79 @@
 # V4_PROGRESS — «Красная будка»
 
-## ACTIVE V4 STATUS — 20.09.2026
+## ACTIVE SOURCE OF TRUTH — 20.09.2026
 
-**Source of truth:** `chapters_v4/` on `main`.
+- Ветка: `main`.
+- Художественный корпус: **`chapters_v4/`**.
+- Активная структура: **30 глав + 4 интерлюдии**.
+- После главы 28 маршрут идёт напрямую: **28 → 29 источник → 30 финал**.
+- Удалены из активного корпуса: прежние 29–33, Интерлюдия V и старая нумерация 34–35.
+- Исторические worklog старой структуры сохранены только как редакционная история и не задают текущий канон.
 
-**Active structure:** **30 main chapters + 4 interludes**.
+## Финальный блок
 
-Final sequence:
-- 27 — «Право на воздух»
-- 28 — «На ручном управлении»
-- 29 — «Крошки на столе»
-- 30 — «На расстоянии руки»
+### Глава 28 — «На ручном управлении»
+- Последняя промежуточная остановка: 5 612 441 090.
+- Смотритель — древний автономный ИИ солнечной обсерватории.
+- Земля мертва; Солнце — красный гигант.
+- Асгар получает неглубокий порез левой ладони; рана обработана, чёрная пассивная лента остаётся на запястье.
+- Сквозной канал Мирены деградирует; происходит окончательное прощание.
+- Мирена физически остаётся на Земле 2744 года.
+- Асгар закрывает дверь без подтверждения дальнейшей голосовой связи.
 
-Old V4 files 30a/31/32/33/34/35 are removed from the active corpus. References to the former 35+5 architecture in older worklogs, V3 canons, ledgers or audit certificates are historical and do not describe current V4.
+### Глава 29 — «Крошки на столе»
+- Физическое место: искусственный принимающий узел Солнечной системы, не Земля.
+- Единого универсального календарного «сейчас» у источника нет.
+- Авелина — сотрудница принимающей стороны.
+- RETRO-1 впервые называется в активной основной линии.
+- Служба Мирены и источник разведены физически; линия 2744 к источнику уже не существует.
+- Конкретная архитектура RETRO-1 имеет причинно замкнутое происхождение: реальные люди строят аппарат по историческому следу самого RETRO-1.
+- Общие законы физики и исследовательские методы развиваются независимо; bootstrap не является магическим происхождением науки.
+- В главе нет раннего 2039, варианта «остаться на источнике», медицинского осмотра и лекции об инварианте на нейтральном грузе.
+- Единственная непосредственная цель Асгара — 16.08.2014.
+- Исторический доступ физический, ограниченный уже существовавшим состоянием RETRO-1; Асгар может реально вмешаться.
+- Конец: Асгар входит в RETRO-1 для доступа к 2014.
 
-## Current final-act canon
+### Глава 30 — «На расстоянии руки»
+- Старший Асгар физически выходит в коридор 16.08.2014 и подтверждается как мужчина главы 1.
+- Он способен говорить/касаться/вмешаться; молчание — его свободный выбор.
+- Молодой Асгар сам входит и сам закрывает дверь.
+- Сверка массы после закрытия создаёт одну незапланированную пассажирскую запись.
+- Старший возвращается к источнику.
+- Только после этого Асгар сам поднимает 24.08.2039.
+- 2039 открывается реально; Катя видит его, он видит Катю; staging совпадает с главой 8.
+- Постоянный выход не проходит: для этого состояния RETRO-1 уже существует сохранённое продолжение той же пассажирской нагрузки.
+- Конкретный инвариант объясняется только после фактического отказа.
+- Асгар требует альтернативы и повторную проверку.
+- Альтернативная история после вмешательства в 2014 неизвестна; роман не объявляет молчание правильным или неправильным.
+- RETRO-1 завершает собственный возврат; пассажирская задача Асгара остаётся открытой.
+- Нового mystery/sequel-hook нет.
+- Каноническая последняя строка: **«Асгар смотрел на неё ещё несколько секунд.»**
 
-- Chapter 28 ends at the 5,612,441,090-era observatory after Asgar's farewell to Mirena; the voice channel collapses.
-- Emergency Support physically remains on Earth in 2744. Mirena and Corwin do not travel through epochs. Their connection follows RETRO-1's service contour along the apparatus worldline and cannot address arbitrary dates or people.
-- The source line is a physical artificial receiving node in the Solar System, not Earth. There is no single universal calendar “now” meaningful to Asgar there.
-- Chapter 29 reveals RETRO-1 by name for the first time in active V4.
-- RETRO-1 has real human builders, but the specific configuration has no first external author: historical traces of RETRO-1 guide reconstruction of RETRO-1, and the completed module then creates those traces in 2014. Human physics and engineering methods are independently developed; the machine-specific specification is causally closed.
-- Chapter 29 has one immediate objective only: 16.08.2014. It does not preview 2039, does not ask whether Asgar should remain at the source, does not perform a medical examination, and does not teach the final uniqueness rule on neutral cargo.
-- Historical access is physical, local and limited to already existing RETRO-1 states. It is not a free date selector.
-- In chapter 30 Asgar physically meets his 2014 self and is free to speak or intervene. He chooses silence; no field or rule forces him.
-- Young Asgar voluntarily enters RETRO-1 and closes the door. Only then does the apparatus register the unexpected passenger mass.
-- Only after the 2014 node is reconciled does Asgar ask for 24.08.2039.
-- Katya in 2039 is real, sees him and tries to reach him. Their shared volume is physical, not simulation.
-- Permanent continuation in 2039 fails because the same RETRO-1 state already has the preserved continuation of that passenger load: the Asgar who left 2039 with the apparatus. Temporary co-presence is allowed; a second permanent continuation for the same apparatus state is not.
-- RETRO-1 completes its own return. Asgar's passenger record remains unresolved.
-- No sequel hook, unexplained signal or new mystery follows the completion of the machine's return.
-- Canonical last line of the novel: **«Асгар смотрел на неё ещё несколько секунд.»**
+## Финальная география и связь
 
-## Current files touched by final restructuring
+- Служба аварийного сопровождения: **Земля, 2744 год**.
+- Мирена, Корвин и инженеры физически работают там и не путешествуют по эпохам.
+- Связь идёт по сервисному контуру RETRO-1 вдоль мировой линии аппарата; это не свободная связь во времени.
+- Источник: **искусственный принимающий узел Солнечной системы**, не Земля.
+- Источник не выбирает произвольные даты; он работает только с уже существовавшими историческими состояниями RETRO-1.
 
-- `chapters_v4/16.md` — service location and service-contour explanation.
-- `chapters_v4/28.md` — Mirena farewell and handoff into the source.
-- `chapters_v4/29.md` — source geography, RETRO-1 origin loop, 2014-only objective.
-- `chapters_v4/30.md` — 2014 free choice, 2039 payoff, final passenger-record failure.
-- `FINAL_CANON_OVERRIDE.md` — active final physics and causal canon.
-- `MANIFEST.md` — V4 structural/source boundary.
-- `V4_AUTHORING_RULES.md` — 30+4 authoring structure.
-- `V4_NAMING_CANON.md` — active chapter/title naming.
+## Канон-синхронизация 20.09.2026
 
-## Build
+Активные final-overrides внесены в:
+- `FINAL_CANON_OVERRIDE.md`;
+- `REVEAL_ORDER_CANON.md`;
+- `KNOWLEDGE_LEDGER.md`;
+- `FORESHADOWING_PAYOFF_LEDGER.md`;
+- `PHYSICS_CANON.md`;
+- `EPOCH_CAPABILITY_CANON.md`;
+- `LOCATION_STAGING_LEDGER.md`;
+- `ASGAR_STATE_LEDGER.md`;
+- `CHAPTER_BY_CHAPTER_CANON.md`;
+- `TIME_CONTINUITY_CANON.md`;
+- `CAUSE_EFFECT_LEDGER.md`;
+- `MICRO_STAGING_CANON.md`;
+- `MANIFEST.md`.
 
-The V4 build pipeline is configured for 30 chapters + 4 interludes. The publishing workflow must use `chapters_v4/` and must not expect removed files 30a/31–35.
+## Аудит 29–30
 
-## Audit status
-
-The previous global V4 audit certificates predate the 20.09.2026 structural cut and final-act rewrite and therefore **do not certify current chapters 29–30**.
-
-A new full audit of chapters 29–30 is required against:
-- current `FINAL_CANON_OVERRIDE.md`;
-- unchanged general physics/staging/knowledge/reveal/motivation/voice/style rules;
-- continuity with chapters 1, 8, 16, 22, 27 and 28;
-- the active 30+4 structure.
-
-Do not label current chapters 29–30 READY merely because older 34–35 versions previously passed.
+Идёт полный аудит по обязательному протоколу. Старые сертификаты прежних версий 29–35 к текущим SHA не применяются. READY может быть заявлен только после исправления найденных дефектов и двух независимых полных PASS подряд.
