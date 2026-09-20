@@ -83,9 +83,18 @@
 
 Актуальные художественные blob после последних fiction-правок:
 
+### 12m fair-play pass
+- `chapters_v4/07.md` — `29399aa5cfef73bb972f8a48aed887a29879bea4`;
+- `chapters_v4/08.md` — `64c896f34378c91057045db18ca93fc9de27a8d9`;
+- `chapters_v4/12.md` — `c2f2b467565730745f3729279c0ab179d7fdd65e`;
+- `chapters_v4/14.md` — `5253928e793dcc1c4ae6d504ab9047d0640d82d8`;
+- `chapters_v4/15.md` — `a26553bed5247e481db4f2bd82b83374820133cc`;
+- `chapters_v4/21.md` — `af5bf5c1a37bcdd5abe16e3b71bc340a63b4fd8f`.
+
+### Финальный стык
 - `chapters_v4/28.md` — `159fdc3e4b9800a2addddeb7d97c8d8d47e4aea0`;
-- `chapters_v4/29.md` — `476aa59cca3269f1183e070648c6a5767b923c97`;
-- `chapters_v4/30.md` — `bafb7e5335ba183363491325ed581e25d220998c`.
+- `chapters_v4/29.md` — `3ae36ccfc7d66fc9fa5d31ba3db1aa4c25b3e510`;
+- `chapters_v4/30.md` — `46676202ef5e041e57dcea2343309db62378c15c`.
 
 Предыдущий worklog `worklogs_v4/FINAL_29_30_FULL_AUDIT_2026-09-20.md` фиксировал PASS для более ранних blob:
 - 29: `d6a75b17fe86df94289e0282b5642269db42a2df`;
