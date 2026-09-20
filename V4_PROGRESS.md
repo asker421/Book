@@ -24,7 +24,7 @@
 |---|---:|---|---|
 | Глава 27 | 2137 | `d8114778af6e2e069423024c5d6d25c81a323241` | перечитана; без новой правки |
 | Глава 28 | 2715 | `5369e33d4997ed390cca498b24106a66323b4fbd` | surgical edit; targeted canon/continuity PASS |
-| Глава 29 | 2480 | `9fc9f1569c112fa65a834e4959d45ded388b5356` | post-audit rewrite: evolved humans + quantum binding + tooth-only stop; targeted canon/continuity/physics PASS |
+| Глава 29 | 2480 | `cc24a2be9aa277bd815a7d3a26a800ffb41f93ea` | post-audit rewrite: evolved humans + quantum binding + tooth-only stop; targeted canon/continuity/physics PASS |
 | Глава 30 | 2019 | `3733cdab75fe51b84918205066b8fa15ab0bd87a` | post-29 continuity edit; targeted PASS |
 | Интерлюдия V | 555 | `dadf38dd76e977b836fd1fbedea6ecc6622aa314` | перечитана; без новой правки |
 | Глава 31 | 1281 | `8849008535da61e966de7778292a4d6e676c0cfb` | surgical edit; targeted canon/continuity PASS |
@@ -232,7 +232,7 @@ Reader-flow delta по изменённым главам: **17 613 → 15 082 с
 
 ## Дополнение — Глава 29
 - Файл: `chapters_v4/29.md`.
-- Current content SHA: `9fc9f1569c112fa65a834e4959d45ded388b5356`.
+- Current content SHA: `cc24a2be9aa277bd815a7d3a26a800ffb41f93ea`.
 - 2480 слов без заголовка.
 - Прежний DOUBLE AUDIT и reader-flow сертификаты относятся к superseded blobs; текущая редакция прошла целевую canon/continuity/physics проверку, но новый DOUBLE AUDIT не заявляется.
 - Переход 28→29 прямо показывает временной разрыв: после эпохи Смотрителя прошло почти десять триллионов лет.
