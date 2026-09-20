@@ -32,7 +32,7 @@
 |---|---|---|---|
 | Индекс проекта | `MANIFEST.md` | все canon/ledger/audit files | PASS |
 | Финальная механика | `FINAL_CANON_OVERRIDE.md` | physics, terminology, reveal, chapters 34–35 | PATCHED / PASS |
-| Структура 35+5 | `CHAPTER_BY_CHAPTER_CANON.md` + `V3_ARCHITECTURE_MAP.md` | chapter map, ledgers, chapters_v3 | PATCHED / PASS |
+| Структура 30+4 | `V4_AUTHORING_RULES.md` + `V4_NAMING_CANON.md` + `CHAPTER_BY_CHAPTER_CANON.md` | ledgers, chapters_v4 | ACTIVE / PASS |
 | Reveal | `REVEAL_ORDER_CANON.md` | knowledge, terminology, foreshadow | PASS |
 | Знание персонажей | `KNOWLEDGE_LEDGER.md` | voices, motivation, chapters | PATCHED / PASS |
 | Причина/следствие | `CAUSE_EFFECT_LEDGER.md` | decisions, conflict, foreshadow, chapters | PATCHED / PASS |
@@ -64,20 +64,19 @@
 
 # 2. Структурная герметичность
 
-Текущий `chapters_v3/` содержит:
+Активный `chapters_v4/` содержит:
 
-- **35 основных глав**;
-- **5 интерлюдий**;
-- всего **40 художественных файлов**.
+- **30 основных глав**;
+- **4 интерлюдии**;
+- всего **34 художественных файла**.
 
-`CHAPTER_BY_CHAPTER_CANON.md` содержит явный контракт ровно для тех же 40 файлов.
+Порядок: 1–4 → I → 5–8 → II → 9–15 → III → 16–22 → IV → 23–30.
 
-Пропущенных chapter contracts: **0**.  
-Лишних chapter contracts: **0**.
+`CHAPTER_BY_CHAPTER_CANON.md` содержит активные contracts 1–30; старые V3 contracts финальных 31–35 больше не являются обязательными.
 
-`PHYSICS_CANON.md`, `ASGAR_STATE_LEDGER.md`, `KNOWLEDGE_LEDGER.md` покрывают главы 1–35 и интерлюдии I–V.
+`FINAL_CANON_OVERRIDE.md`, `TIME_CONTINUITY_CANON.md`, `ASGAR_STATE_LEDGER.md`, `TERMINOLOGY_CANON.md` и `MASTER_ROMAN_AUDIT.md` синхронизированы с 30+4.
 
-**Статус структуры: PATCHED / PASS.**
+**Статус структуры: ACTIVE / PASS.**
 
 ---
 
