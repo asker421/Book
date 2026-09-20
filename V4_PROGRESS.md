@@ -75,6 +75,21 @@
 - `MICRO_STAGING_CANON.md`;
 - `MANIFEST.md`.
 
-## Аудит 29–30
+## Аудит 29–30 — READY
 
-Идёт полный аудит по обязательному протоколу. Старые сертификаты прежних версий 29–35 к текущим SHA не применяются. READY может быть заявлен только после исправления найденных дефектов и двух независимых полных PASS подряд.
+Полный обязательный аудит завершён для точных художественных blob:
+
+- `chapters_v4/29.md` — `d6a75b17fe86df94289e0282b5642269db42a2df`;
+- `chapters_v4/30.md` — `3e5a763acbc1b4d9152cd31516e470b1f68e051a`.
+
+Проведены два независимых полных прохода после финальных fiction-repair: причинно-физический и cold-reader/literary. Проверены physics, single-worldline, door/mass, knowledge/reveal, terminology, language, motivation/anti-idiot, character flaw, voice, relationships, reaction, staging, body/inventory, 1↔30, 8↔30, foreshadow/payoff, prose/tics/self-proof и exit-state.
+
+Статус:
+- **глава 29 — READY**;
+- **глава 30 — READY**;
+- unresolved CRITICAL: 0;
+- unresolved MAJOR: 0.
+
+Полный протокол и список найденных/исправленных дефектов: `worklogs_v4/FINAL_29_30_FULL_AUDIT_2026-09-20.md`.
+
+Любое последующее изменение художественного текста 29 или 30 аннулирует READY для изменённого blob и требует повторного аудита затронутых gates.
