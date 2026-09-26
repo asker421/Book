@@ -111,3 +111,7 @@ All 30 chapters and 4 interludes were re-read literally from the current corpus 
 - Ch21–23 + Interlude IV: full literal line pass completed; no objective defect found.
 
 - Ch25 defect fixed: Olmer's «связи ... не существует» overclaimed beyond the archive evidence and conflicted with the later causal-loop reveal; changed to «связь ... не прослеживается».
+
+## Completion
+
+Literal line-by-line pass completed for all 30 chapters and all 4 interludes. New defects found in this pass: 3 (Ch7, Ch25, Ch30). All three were repaired in `main` and require final post-fix verification before release status is restored.
