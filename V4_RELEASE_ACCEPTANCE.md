@@ -1,0 +1,73 @@
+# V4 RELEASE ACCEPTANCE — «Красная будка»
+
+## Baseline
+
+Literary release-candidate baseline: `89d95ceb75124fa2c4e471454a654f0c58f4f8fc`.
+
+This ledger records final publication acceptance against the active V4 corpus (`chapters_v4/`, 30 chapters + 4 interludes). Any later prose change invalidates PASS for that file until rechecked.
+
+## Gates
+
+A chapter/interlude may be marked PASS only after:
+- cold-read of the full current blob;
+- prose/dialogue/tic check;
+- character voice and motivation check;
+- knowledge/reveal-order check;
+- physics/staging/time/body/inventory check;
+- setup/payoff and neighboring-scene check where applicable.
+
+Final release requires:
+- all 30 chapters + 4 interludes PASS;
+- CRITICAL = 0;
+- MAJOR = 0;
+- adversarial second pass on all modified files and cross-book hotspots;
+- active canon/document drift = 0;
+- final build QA against the final literary SHA.
+
+## Chapter status
+
+| Chapter | Status | Notes |
+| --- | --- | --- |
+| 1 | PASS | Cold-read: opening, Katya dialogue, older-Asgar seed, staging and prose clean |
+| 2 | PASS | Cold-read: operator/Rauf/Katya reactions and first return clean |
+| 3 | PASS | Cold-read + prior full verification: evidence discipline and memory contamination clean |
+| 4 | PASS | Cold-read: Asgar/Katya conflict remains morally frictional; service limits clean |
+| 5 | PASS | Cold-read: entry decision voluntary; physical risk established; no coercive rewrite |
+| 6 | PASS | Cold-read: 2039 identity/administrative sequence and family-memory grounding clean |
+| 7 | PENDING | — |
+| 8 | PENDING | — |
+| 9 | PENDING | — |
+| 10 | PENDING | — |
+| 11 | PENDING | — |
+| 12 | PENDING | — |
+| 13 | PENDING | — |
+| 14 | PENDING | — |
+| 15 | PENDING | — |
+| 16 | PENDING | — |
+| 17 | PENDING | — |
+| 18 | PENDING | — |
+| 19 | PENDING | — |
+| 20 | PENDING | — |
+| 21 | PENDING | — |
+| 22 | PENDING | — |
+| 23 | PENDING | — |
+| 24 | PENDING | — |
+| 25 | PENDING | — |
+| 26 | PENDING | — |
+| 27 | PENDING | — |
+| 28 | PENDING | — |
+| 29 | PENDING | — |
+| 30 | PENDING | — |
+
+## Interludes
+
+| Interlude | File | Status |
+| --- | --- | --- |
+| I | 04a.md | PENDING |
+| II | 08a.md | PENDING |
+| III | 15a.md | PENDING |
+| IV | 22a.md | PENDING |
+
+## Defects found in this release run
+
+None in chapters 1–6.
