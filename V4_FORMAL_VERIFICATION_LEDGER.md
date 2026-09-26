@@ -45,10 +45,10 @@ Status legend:
 | 24 | PASS | Olmer treats claims as unverified testimony; local checks precede trust; new Baku memories read as ordinary new recall | — | Ch23/25 boundary PASS |
 | 25 | FIXED | Early physics remains independent while concrete RETRO-1 architecture is no longer falsely declared independent of its historical trace | f93c339 | Current-main reread PASS |
 | 26 | FIXED | Two-year memory contamination remains explicit; late appearance now pays off the gray-hair/beard evidence seen in Ch1 without converting identity into fact | 209b586 | Current-main reread PASS |
-| 27 | PASS | Historical addressing is introduced as generic prior art; RETRO-1 causal loop remains unconfirmed; no early uniqueness invariant | — | Ch26/28 boundary PASS |
+| 27 | FIXED | Historical addressing remains generic prior art; impossible direct message to source was replaced with a question recorded into Asgar/service record | 88f798ad | Post-fix reread + Ch23/29 channel-continuity cross-check PASS |
 | 28 | FIXED | Corrected overstatement that nobody after Ar ever needed Asgar's help; repair now depends specifically on his human-sized hands without erasing prior work/measurements | bdcd35d | Current-main reread PASS; 4869a6b |
 | 29 | FIXED | Repeated passenger-not-planned reveal converted into an explicit confirmation of the Ch22 fact; source/causal-loop reveal order remains intact | b55f05e | Current-main reread PASS |
-| 30 | FIXED | 2014/2039 mirrors verified; fast ending preserved; uniqueness invariant appears only after failure; post-hoc mixed motive restored without making 2039 a prior plan | e73986e; 4d83c44 | Current-main reread PASS |
+| 30 | FIXED | 2014/2039 mirrors verified; fast ending preserved; uniqueness invariant appears only after failure; post-hoc mixed motive restored; final duplicated Katya beat removed | e73986e; 4d83c44; 983fa961 | Latest-blob reread PASS |
 
 ## Interludes verification
 
@@ -120,4 +120,4 @@ Status legend:
 
 ## Completion
 
-Formal sequential verification completed for all 30 chapters and all 4 interludes. Every chapter/interlude is PASS or FIXED with post-fix recheck PASS on current main blobs. Final adversarial cross-cut pass remains the release gate.
+Formal sequential verification completed for all 30 chapters and all 4 interludes. Every chapter/interlude is PASS or FIXED with post-fix recheck PASS on the final literary blobs. The adversarial cross-cut pass is complete; open CRITICAL = 0, open MAJOR = 0. Literary/canon release gate: READY at literary SHA `983fa961152cf636063d4117c64710eaf0b5f37e`.
