@@ -98,10 +98,13 @@ Checks:
 ## Current result
 - 30/30 chapters checked line by line.
 - 4/4 interludes checked line by line.
-- New objective defects found by this pass: 1.
-- Fixed: Ch7 unsupported Katya callback.
-- Open objective defects: 0.
-- Post-fix sweep of Ch1↔Ch7 and later water/cake/Katya callbacks: PASS.
+- Objective defect clusters found during the literal/post-fix pass: 4.
+  1. Ch7 — unsupported recalled Katya quote.
+  2. Ch25 — archive/Olmer wording overclaimed absence of RETRO-1 lineage beyond available evidence.
+  3. Ch28 — false recalled Mirena exchange after the long slope isolation.
+  4. Ch30 — missing/blurred automatic 2014→2039 selection causality and open passenger-record state.
+- All four defect clusters were repaired in `main`.
+- Open objective defects in the audited categories: 0.
 
 ## Final line-by-line verdict
 All 30 chapters and 4 interludes were re-read literally from the current corpus with previous PASS judgments ignored. One new objective continuity defect was found (Ch7 unsupported recalled quote), fixed, and rechecked against Ch1 and later callbacks. No other objective knowledge-provenance, future-knowledge, false-memory, ordinary-reaction, body/object-state, reveal-order, or sentence-logic defect remains known after this pass.
@@ -114,4 +117,55 @@ All 30 chapters and 4 interludes were re-read literally from the current corpus 
 
 ## Completion
 
-Literal line-by-line pass completed for all 30 chapters and all 4 interludes. New defects found in this pass: 3 (Ch7, Ch25, Ch30). All three were repaired in `main` and independently rechecked against their source/reveal context. Post-fix verification: PASS. Open objective defects in the audited categories: 0.
+Literal line-by-line pass completed for all 30 chapters and all 4 interludes. Previous PASS judgments were not trusted as evidence. Every current prose file was re-identified by blob SHA after the post-fix phase.
+
+### Repairs produced/confirmed by this pass
+- Ch7: `caaf025d443a4e297b9a56ab525d1e43f8caba29` — replace unsupported Katya callback with the exact Ch1 line.
+- Ch28: `e519cbbafc181634fe1444ac6130134f65b938aa` — correct the remembered Mirena exchange to the actual Ch26 question/answer.
+- Ch25: `2d2d41b0def82d964ee2877f31e31ca76185dcc9` — change an absolute lineage denial to the evidence-bounded “не прослеживается”.
+- Ch30: `e87849196695bdb36d50f1cad1e293aa8bcc9c99`, `94785a99409c27d8b1c07b740babea583865c695`, `20ba59ed003170630fc4c19b3e7eb64ff6593657` — restore/clarify automatic state selection, skipped 2014 states, 2039 causality and the still-open passenger record.
+
+### Coverage proof
+Repository head when this proof table was captured: `86ddf374e8388f80604e6b06a4f58648cf06b545`.
+
+| File | Blob SHA | Lines |
+| --- | --- | ---: |
+| 01.md | 1d2a1f5013c2793c842c994269bf1c4f48725dcd | 232 |
+| 02.md | 1345f8342520adcd6789baa3fdb7366bdc5b2063 | 443 |
+| 03.md | e8b137a44c17a8511707fda59199e426eab645df | 355 |
+| 04.md | 56273392f5ff4a00024501a3f5407c934afd8ee5 | 433 |
+| 04a.md | 5e7050dd2de1eb9effc4390ccbb168cb1910ece6 | 98 |
+| 05.md | ca87f1e18ffab55880264af9e9edffbb35ae7131 | 569 |
+| 06.md | aa7eda7b6c9d9f027b77833ec8f39f1d5c31da54 | 458 |
+| 07.md | 3f1b20eee68f4f3639ec53427a48207579787a71 | 559 |
+| 08.md | 68d31fdd80cd0a6ed904b777384c3fba3fab658e | 638 |
+| 08a.md | 8f8d1637a2f268f48f44553378635d96458c8f8d | 76 |
+| 09.md | 1fbff633b8397bbc3681e06a8bc8be89ea74eb42 | 537 |
+| 10.md | 3e69a1114c0bfad9b1a91dead6cf947de2327000 | 551 |
+| 11.md | 52fcc9b2d6d0597c30a082c1fcb64fd252592cf5 | 553 |
+| 12.md | c2f2b467565730745f3729279c0ab179d7fdd65e | 465 |
+| 13.md | a33df876d0d85cc5e76793a96b5e721acb8f1ef1 | 543 |
+| 14.md | 5253928e793dcc1c4ae6d504ab9047d0640d82d8 | 269 |
+| 15.md | a26553bed5247e481db4f2bd82b83374820133cc | 306 |
+| 15a.md | 57fd5c868e8f1bc3c6d062f0170aefd96e4c322a | 271 |
+| 16.md | ba8c4102c77ed1f52f352311ed8551f9c7084c36 | 290 |
+| 17.md | 98def3f92eb7611c1c9ffdbde72d676b78f7fdc4 | 337 |
+| 18.md | a70eb12610a5fe25ad4e62b85f6912915d2f8afe | 459 |
+| 19.md | 1b44719bbd98dd85d1187ac88804edf4c834c8c7 | 480 |
+| 20.md | 5fbf3af86f9c8ac91f24684489a430ae85ce79c5 | 477 |
+| 21.md | af5bf5c1a37bcdd5abe16e3b71bc340a63b4fd8f | 659 |
+| 22.md | b29db8df71ee4dedd6fe3130f8cf166e0bd4db7f | 561 |
+| 22a.md | 514e60e47c367ade220665188a7a42c4f9c74d3d | 60 |
+| 23.md | 79e5337a44713cbf23d243cbac7e9ca8e353c13a | 383 |
+| 24.md | 98af1cd35e946d712b4fb90dcdcb816968f5cb82 | 471 |
+| 25.md | b1acc8264f67cfd227b6aaa1c25f03275bbc8837 | 391 |
+| 26.md | 9bab3e8a66e9f26616029b8fe38067f4400efd1a | 477 |
+| 27.md | 5c61f97c67d978b69ec56e80f3e10c8f567a1643 | 330 |
+| 28.md | db88dc008ec8cea82f3be450f539d47584837139 | 627 |
+| 29.md | 01b8b493929ad73478c90c7a3eaec1ddf7c23ab7 | 268 |
+| 30.md | c478ac950e3e7298e397c73230907f761b7459e0 | 233 |
+
+Total audited corpus: **34 files / 13,859 lines**.
+
+### Final status
+All 34 current prose files are accounted for by blob SHA and line count. Open objective defects in the audited categories: **0 known**. Any later prose edit invalidates the affected file's PASS until that new blob is re-read.
