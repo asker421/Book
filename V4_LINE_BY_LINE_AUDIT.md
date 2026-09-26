@@ -48,7 +48,7 @@ Checks:
 | 18.md | PASS | PASS | Sayma separates prior testimony, source chain, retelling and hypothesis; remembered water exchange traced to Ch1 |
 | 19.md | PASS | 480 lines: integration/conflict/accident reactions mundane; unexplained utility fault not blamed on Asgar |
 | 20.md | PASS | 477 lines: separation option presented neutrally; Mirena refuses to choose for him; Asgar's choice is earned |
-| 21.md | PENDING | — |
+| 21.md | PASS | PASS | arrivals office and Tessa explicitly separate Asgar claims from measurements/model; endpoint and return purpose remain unknown |
 | 22.md | PENDING | — |
 | 22a.md | PENDING | — |
 | 23.md | PENDING | — |
@@ -73,3 +73,5 @@ Checks:
 - Ch16–18: full literal line pass completed; suspicious Ch18 water callback verified against Ch1 and is genuine.
 
 - Ch16–20: full literal line pass completed; no objective defect found.
+
+- Ch19–21: full literal line pass completed; no objective defect found.
