@@ -43,12 +43,12 @@ Final release requires:
 | 13 | PASS | Release cold-read / current-blob cross-check clean |
 | 14 | PASS | Release cold-read / current-blob cross-check clean |
 | 15 | PASS | Release cold-read / current-blob cross-check clean |
-| 16 | PENDING | — |
-| 17 | PENDING | — |
-| 18 | PENDING | — |
-| 19 | PENDING | — |
-| 20 | PENDING | — |
-| 21 | PENDING | — |
+| 16 | PASS | Release cold-read / structure / voice / physics cross-check clean |
+| 17 | PASS | Release cold-read / structure / voice / physics cross-check clean |
+| 18 | PASS | Release cold-read / structure / voice / physics cross-check clean |
+| 19 | PASS | Release cold-read / structure / voice / physics cross-check clean |
+| 20 | PASS | Release cold-read / structure / voice / physics cross-check clean |
+| 21 | PASS | Release cold-read / structure / voice / physics cross-check clean |
 | 22 | PENDING | — |
 | 23 | PENDING | — |
 | 24 | PENDING | — |
@@ -70,4 +70,4 @@ Final release requires:
 
 ## Defects found in this release run
 
-None in chapters 1–15 or Interludes I–III.
+None in chapters 1–21 or Interludes I–III.
