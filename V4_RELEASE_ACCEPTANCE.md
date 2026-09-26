@@ -82,7 +82,7 @@ Release-run defects found and fixed: Ch27 impossible direct message to source; C
 - Open MAJOR defects: 0.
 - Active canon/document drift: 0.
 - Final literary SHA: `983fa961152cf636063d4117c64710eaf0b5f37e`.
-- Publishing workflow run: `36257857139` — SUCCESS.
+- Publishing workflow run: `36258292411` — SUCCESS.
 - Release-line lock: PASS.
 - Approved-cover lock: PASS.
 - EPUB artifact: built and uploaded.
