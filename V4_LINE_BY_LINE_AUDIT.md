@@ -107,3 +107,5 @@ Checks:
 All 30 chapters and 4 interludes were re-read literally from the current corpus with previous PASS judgments ignored. One new objective continuity defect was found (Ch7 unsupported recalled quote), fixed, and rechecked against Ch1 and later callbacks. No other objective knowledge-provenance, future-knowledge, false-memory, ordinary-reaction, body/object-state, reveal-order, or sentence-logic defect remains known after this pass.
 
 - Fresh-main final-block SHA recheck after concurrent edits: PASS — 27 `5c61f97c...`, 28 `db88dc00...`, 29 `01b8b493...`, 30 `87d06a4b...` are the blobs actually read in the completed audit.
+
+- Ch21–23 + Interlude IV: full literal line pass completed; no objective defect found.
