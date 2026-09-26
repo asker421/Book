@@ -43,8 +43,8 @@ Status legend:
 | 22 | PASS | Project-purpose reveal occurs only after explicit archive lookup; post-close mass check and empty-module design match canon | — | Ch21/23 + Interlude IV boundary PASS |
 | 23 | PASS | Asgar corrects his own overstatement; Mirena separates confirmed infrastructure facts from unknowns | — | Ch22/24 boundary PASS |
 | 24 | PASS | Olmer treats claims as unverified testimony; local checks precede trust; new Baku memories read as ordinary new recall | — | Ch23/25 boundary PASS |
-| 25 | PENDING | — | — | — |
-| 26 | PENDING | — | — | — |
+| 25 | PASS | External booth form is explicitly separated from independent physics history; external-mass research is not falsely tied to RETRO-1 | — | Ch24/26 boundary PASS |
+| 26 | PASS | Two-year isolation degrades memory; stadium-man resemblance is treated as contamination-prone hypothesis and first description is preserved separately | — | Ch25/27 + Ch1/3/19 cross-check PASS |
 | 27 | PENDING | — | — | — |
 | 28 | PENDING | — | — | — |
 | 29 | PENDING | — | — | — |
@@ -60,6 +60,10 @@ Status legend:
 | IV | 22a.md | PASS | Early 2014 trace is linked only as similar registration; witness account remains a separate source and identity is unresolved |
 
 ## Findings log
+
+- Ch24: PASS — Olmer verifies local conditions and geological history only; Asgar explicitly supplies the RETRO-related facts he knows.
+- Ch25: PASS — visual-form lineage and physics lineage are kept separate; archival external-mass work is explicitly not linked to Asgar's specific machine.
+- Ch26: PASS — memory degradation is dramatized rather than hidden; Asgar recognizes that his present appearance may contaminate the 2014 memory and protects the original account.
 
 - Ch22: PASS — original mission is not treated as previously known; engineers retrieve the old project only after Asgar asks what returns.
 - Interlude IV: PASS — early pre-closure signal is grouped statistically only; identity and cause remain unknown, with Asgar's account kept separate.
