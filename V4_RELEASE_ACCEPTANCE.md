@@ -87,5 +87,10 @@ Release-run defects found and fixed: Ch27 impossible direct message to source; C
 - Approved-cover lock: PASS.
 - EPUB artifact: built and uploaded.
 - Publishing package: built and uploaded.
+- PDF metadata: PASS (`Красная будка`, `Аскер Исмайлов`).
+- DOCX metadata/timestamps: PASS.
+- Package SHA256 manifest: PASS.
+- EPUB structure/navigation/final line: PASS.
+- Interior PDF visual spot-check (first/final page): PASS.
 - Build output: 77,074 words, 385 pages.
 - Physical-print hold: calculated interior spine is 19.25 mm while approved wrap artwork uses 21.5 mm. Confirm final paper stock/binding spine with printer before sending the wrap to press.
