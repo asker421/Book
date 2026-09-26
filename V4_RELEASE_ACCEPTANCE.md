@@ -49,9 +49,9 @@ Final release requires:
 | 19 | PASS | Release cold-read / structure / voice / physics cross-check clean |
 | 20 | PASS | Release cold-read / structure / voice / physics cross-check clean |
 | 21 | PASS | Release cold-read / structure / voice / physics cross-check clean |
-| 22 | PENDING | — |
-| 23 | PENDING | — |
-| 24 | PENDING | — |
+| 22 | PASS | Release cold-read/current-blob acceptance clean across prose, voice, motivation, knowledge, physics and continuity |
+| 23 | PASS | Release cold-read/current-blob acceptance clean across prose, voice, motivation, knowledge, physics and continuity |
+| 24 | PASS | Release cold-read/current-blob acceptance clean across prose, voice, motivation, knowledge, physics and continuity |
 | 25 | PENDING | — |
 | 26 | PENDING | — |
 | 27 | PENDING | — |
@@ -66,7 +66,7 @@ Final release requires:
 | I | 04a.md | PASS |
 | II | 08a.md | PASS |
 | III | 15a.md | PASS |
-| IV | 22a.md | PENDING |
+| IV | 22a.md | PASS |
 
 ## Defects found in this release run
 
