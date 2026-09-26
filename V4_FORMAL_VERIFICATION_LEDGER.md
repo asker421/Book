@@ -40,9 +40,9 @@ Status legend:
 | 19 | PASS | Stadium-man resemblance remains weak personal hypothesis; scar and visual traits are previously grounded | — | Ch18/20 + Ch1/3 cross-check PASS |
 | 20 | PASS | Stay/continue choice is informed and voluntary; Mirena, Tayra and Arved do not decide for Asgar | — | Ch19/21 boundary PASS |
 | 21 | PASS | Tessa uses only local measurements + Asgar reports; no access to operator project knowledge; endpoint remains unknown | — | Ch20/22 boundary PASS |
-| 22 | PENDING | — | — | — |
-| 23 | PENDING | — | — | — |
-| 24 | PENDING | — | — | — |
+| 22 | PASS | Project-purpose reveal occurs only after explicit archive lookup; post-close mass check and empty-module design match canon | — | Ch21/23 + Interlude IV boundary PASS |
+| 23 | PASS | Asgar corrects his own overstatement; Mirena separates confirmed infrastructure facts from unknowns | — | Ch22/24 boundary PASS |
+| 24 | PASS | Olmer treats claims as unverified testimony; local checks precede trust; new Baku memories read as ordinary new recall | — | Ch23/25 boundary PASS |
 | 25 | PENDING | — | — | — |
 | 26 | PENDING | — | — | — |
 | 27 | PENDING | — | — | — |
@@ -57,9 +57,14 @@ Status legend:
 | I | 04a.md | PASS | Service discovers unplanned living mass only after door closure; unknown earlier man remains unresolved observation |
 | II | 08a.md | PASS | Service can model Asgar's mass contribution but does not yet know project purpose or safe passenger separation |
 | III | 15a.md | PASS | Mirena receives explicit handoff; Korvin enforces informed choice and operator knowledge limits |
-| IV | 22a.md | PENDING | — |
+| IV | 22a.md | PASS | Early 2014 trace is linked only as similar registration; witness account remains a separate source and identity is unresolved |
 
 ## Findings log
+
+- Ch22: PASS — empty autonomous module, service volume, post-door mass registration and self-return are revealed only after Mirena/engineers reopen the old project.
+- Interlude IV: PASS — pre-closure anomaly is grouped by measurement only; the older man remains an unresolved observation, not an identified Asgar.
+- Ch23: PASS — Asgar explicitly corrects his own summary where it overstates the state of separation work; source/infrastructure uncertainty is preserved.
+- Ch24: PASS — Olmer verifies environment and logs before accepting any larger story; newly surfaced domestic Baku details are presented as fresh ordinary memories, not callbacks.
 
 - Ch19: PASS — scar creates a plausible resemblance cue only; sedina/hudoba were already observed in Ch1 and explicitly recalled in Ch3.
 - Ch20: PASS — Mirena presents both real options without steering; Tayra states her preference openly; Arved does not expel Asgar.
