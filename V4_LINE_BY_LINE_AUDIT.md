@@ -46,8 +46,8 @@ Checks:
 | 16.md | PASS | PASS | Mirena knowledge fully sourced by handoff/service telemetry/Asgar report; external scene remains invisible to her |
 | 17.md | PASS | PASS | Arved/Tayra first-contact reactions are risk-first and skeptical; no genre acceptance |
 | 18.md | PASS | PASS | Sayma separates prior testimony, source chain, retelling and hypothesis; remembered water exchange traced to Ch1 |
-| 19.md | PENDING | — |
-| 20.md | PENDING | — |
+| 19.md | PASS | 480 lines: integration/conflict/accident reactions mundane; unexplained utility fault not blamed on Asgar |
+| 20.md | PASS | 477 lines: separation option presented neutrally; Mirena refuses to choose for him; Asgar's choice is earned |
 | 21.md | PENDING | — |
 | 22.md | PENDING | — |
 | 22a.md | PENDING | — |
@@ -71,3 +71,5 @@ Checks:
 - Ch13–15 + Interlude III: full literal line pass completed; no objective defect found.
 
 - Ch16–18: full literal line pass completed; suspicious Ch18 water callback verified against Ch1 and is genuine.
+
+- Ch16–20: full literal line pass completed; no objective defect found.
