@@ -28,9 +28,9 @@ Status legend:
 | 7 | PASS | Katya/family/archive knowledge develops from lived history and verified records; no premature mechanism claims | — | Ch6/8 boundary PASS |
 | 8 | PASS | 2039 mirror matches Ch30; source concept introduced with explicit limits; family reactions remain human | — | Ch7/9 + Ch30 mirror PASS |
 | 9 | FIXED | Inessa knowledge leak, Asgar age-memory reset, and unsupported stair memory repaired | e25abe6; 68447b3; d9dbadf | Full post-fix reread PASS |
-| 10 | PENDING | — | — | — |
-| 11 | PENDING | — | — | — |
-| 12 | PENDING | — | — | — |
+| 10 | PASS | Martin keeps hypotheses separate from evidence; Inessa remains safety-bounded; no knowledge leak | — | Ch9/11 boundary PASS |
+| 11 | PASS | Archive/translation work explicitly preserves source provenance; routines grow on-page | — | Ch10/12 boundary PASS |
+| 12 | PASS | Safety decisions and entry choice remain voluntary; source question is already established | — | Ch11/13 boundary PASS |
 | 13 | PENDING | — | — | — |
 | 14 | PENDING | — | — | — |
 | 15 | PENDING | — | — | — |
@@ -51,6 +51,10 @@ Status legend:
 | 30 | PENDING | — | — | — |
 
 ## Findings log
+
+- Ch10: PASS — Martin labels resemblance vs causation and keeps Asgar's testimony separate from research conclusions.
+- Ch11: PASS — source-provenance discipline is explicit; no unsupported biographical callback found.
+- Ch12: PASS — operator and Inessa state uncertainty; Asgar's question about the source follows directly from Ch8.
 
 - Ch7: PASS — Katya's 25-year knowledge is lived experience; institutions still verify rather than believe.
 - Ch8: PASS — external 2039 materialization, silent acoustics and spatial collapse directly match Ch30; source is defined without implying construction site or selectable date.
