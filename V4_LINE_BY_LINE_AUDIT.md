@@ -92,3 +92,12 @@ Checks:
 - Ch28 defect fixed: recalled Mirena exchange did not match Ch26; replaced with the exact established question/answer.
 - Ch30 canon gap fixed: 20.08/24.08.2014 are stated as automatically skipped for insufficient external geometry; 2039 is explicitly not selected by Avelina; final state now explicitly says RETRO-1 completed its return while Asgar's passenger record remains open.
 - Final Ch30 mirror check against Ch1 and Ch8: staging, limb/step behavior, silent audio channel, Katya's actions, spatial deformation and disappearance all match without other-POV leakage.
+
+- Ch27–30: full literal line pass completed; no objective defect found.
+
+## Current result
+- 30/30 chapters checked line by line.
+- 4/4 interludes checked line by line.
+- New objective defects found by this pass: 1.
+- Fixed: Ch7 unsupported Katya callback.
+- Open objective defects: 0 pending post-fix sweep.
