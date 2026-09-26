@@ -93,8 +93,8 @@
 
 ### Финальный стык
 - `chapters_v4/28.md` — `159fdc3e4b9800a2addddeb7d97c8d8d47e4aea0`;
-- `chapters_v4/29.md` — `3ae36ccfc7d66fc9fa5d31ba3db1aa4c25b3e510`;
-- `chapters_v4/30.md` — `46676202ef5e041e57dcea2343309db62378c15c`.
+- `chapters_v4/29.md` — `01b8b493929ad73478c90c7a3eaec1ddf7c23ab7`;
+- `chapters_v4/30.md` — `d535bdd5bf8ce3fdbd6c25a819b27aa801162315`.
 
 Предыдущий worklog `worklogs_v4/FINAL_29_30_FULL_AUDIT_2026-09-20.md` фиксировал PASS для более ранних blob:
 - 29: `d6a75b17fe86df94289e0282b5642269db42a2df`;
