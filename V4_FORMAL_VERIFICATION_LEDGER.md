@@ -45,7 +45,7 @@ Status legend:
 | 24 | PASS | Olmer treats claims as unverified testimony; local checks precede trust; new Baku memories read as ordinary new recall | — | Ch23/25 boundary PASS |
 | 25 | PASS | External booth form is explicitly separated from independent physics history; external-mass research is not falsely tied to RETRO-1 | — | Ch24/26 boundary PASS |
 | 26 | PASS | Two-year isolation degrades memory; stadium-man resemblance is treated as contamination-prone hypothesis and first description is preserved separately | — | Ch25/27 + Ch1/3/19 cross-check PASS |
-| 27 | PENDING | — | — | — |
+| 27 | PASS | Historical addressing is introduced as generic prior art; RETRO-1 causal loop remains unconfirmed; no early uniqueness invariant | — | Ch26/28 boundary PASS |
 | 28 | PENDING | — | — | — |
 | 29 | PENDING | — | — | — |
 | 30 | PENDING | — | — | — |
@@ -60,6 +60,10 @@ Status legend:
 | IV | 22a.md | PASS | Early 2014 trace is linked only as similar registration; witness account remains a separate source and identity is unresolved |
 
 ## Findings log
+
+- Ch25: FIXED/rechecked — early physics can develop independently, but the chapter no longer claims the concrete RETRO-1 architecture is technically independent of its historical trace; this preserves the Ch29 causal-loop reveal.
+- Ch26: PASS — older-man identity is explicitly treated as a hypothesis vulnerable to memory reconstruction; Asgar asks Mirena to preserve his original description separately.
+- Ch27: PASS — historical addressing and a generic causal-loop example provide fair-play without identifying RETRO-1's origin or stating the later uniqueness invariant.
 
 - Ch24: PASS — Olmer verifies local conditions and geological history only; Asgar explicitly supplies the RETRO-related facts he knows.
 - Ch25: PASS — visual-form lineage and physics lineage are kept separate; archival external-mass work is explicitly not linked to Asgar's specific machine.
