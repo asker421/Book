@@ -43,12 +43,12 @@ Status legend:
 | 22 | PASS | Project-purpose reveal occurs only after explicit archive lookup; post-close mass check and empty-module design match canon | — | Ch21/23 + Interlude IV boundary PASS |
 | 23 | PASS | Asgar corrects his own overstatement; Mirena separates confirmed infrastructure facts from unknowns | — | Ch22/24 boundary PASS |
 | 24 | PASS | Olmer treats claims as unverified testimony; local checks precede trust; new Baku memories read as ordinary new recall | — | Ch23/25 boundary PASS |
-| 25 | PASS | External booth form is explicitly separated from independent physics history; external-mass research is not falsely tied to RETRO-1 | — | Ch24/26 boundary PASS |
-| 26 | PASS | Two-year isolation degrades memory; stadium-man resemblance is treated as contamination-prone hypothesis and first description is preserved separately | — | Ch25/27 + Ch1/3/19 cross-check PASS |
+| 25 | FIXED | Early physics remains independent while concrete RETRO-1 architecture is no longer falsely declared independent of its historical trace | f93c339 | Current-main reread PASS |
+| 26 | FIXED | Two-year memory contamination remains explicit; late appearance now pays off the gray-hair/beard evidence seen in Ch1 without converting identity into fact | 209b586 | Current-main reread PASS |
 | 27 | PASS | Historical addressing is introduced as generic prior art; RETRO-1 causal loop remains unconfirmed; no early uniqueness invariant | — | Ch26/28 boundary PASS |
-| 28 | PASS | Watcher/solar AI, acoustic bridge to Mirena, repair scene and final channel degradation match canon | — | Ch27/29 boundary PASS |
-| 29 | PASS | Source geography, no universal year, RETRO-1 causal-loop origin, empty-module design and historical aperture all revealed in correct order | — | Ch28/30 boundary PASS |
-| 30 | FIXED | 2014 and 2039 mirrors verified; post-2039 ending shortened, uniqueness invariant stated once, RETRO-1 closure made final with no sequel-hook | e73986e | Full post-fix reread PASS |
+| 28 | FIXED | Corrected overstatement that nobody after Ar ever needed Asgar's help; repair now depends specifically on his human-sized hands without erasing prior work/measurements | bdcd35d | Current-main reread PASS; 4869a6b |
+| 29 | FIXED | Repeated passenger-not-planned reveal converted into an explicit confirmation of the Ch22 fact; source/causal-loop reveal order remains intact | b55f05e | Current-main reread PASS |
+| 30 | FIXED | 2014/2039 mirrors verified; fast ending preserved; uniqueness invariant appears only after failure; post-hoc mixed motive restored without making 2039 a prior plan | e73986e; 4d83c44 | Current-main reread PASS |
 
 ## Interludes verification
 
@@ -60,6 +60,9 @@ Status legend:
 | IV | 22a.md | PASS | Early 2014 trace is linked only as similar registration; witness account remains a separate source and identity is unresolved |
 
 ## Findings log
+
+- Canon sync: stale 2039 selection rule in FINAL_CANON_OVERRIDE.md was corrected. Current rule: 2014 historical-volume reconciliation automatically skips insufficient 20.08/24.08.2014 exterior states and reaches 24.08.2039; neither Asgar nor Avelina selects that date. Fix: b766476.
+- Ch30 latest-blob recheck after mixed-motive patch: PASS — finale remains fast; no repeated engineering sequence or sequel-hook was reintroduced.
 
 - Ch28: PASS — Watcher is an ancient solar-powered AI; Mirena reaches him only through an acoustic bridge into RETRO-1's existing phone; the service channel degrades and ends with `До связи`. Current-main recheck after the parallel work-history continuity fix also PASS.
 - Ch29: PASS — source is the artificial receiving node, not Earth; no universal calendar answer is given; causal-loop origin and the empty-module/post-close mass logic are revealed here, not earlier.
@@ -117,4 +120,4 @@ Status legend:
 
 ## Completion
 
-Formal sequential verification completed for all 30 chapters and all 4 interludes. Every chapter/interlude is now PASS or FIXED with post-fix recheck PASS.
+Formal sequential verification completed for all 30 chapters and all 4 interludes. Every chapter/interlude is PASS or FIXED with post-fix recheck PASS on current main blobs. Final adversarial cross-cut pass remains the release gate.
