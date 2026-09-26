@@ -54,10 +54,10 @@ Final release requires:
 | 24 | PASS | Release cold-read/current-blob acceptance clean across prose, voice, motivation, knowledge, physics and continuity |
 | 25 | PASS | Release cold-read: archive provenance, loop foreshadowing and prose clean after causal-line fix |
 | 26 | PASS | Release cold-read: survival progression, body state and stadium-man hypothesis/memory contamination clean |
-| 27 | PASS | Release cold-read: historical addressing fair-play without stealing final reveal; motivation and prose clean |
-| 28 | PENDING | — |
-| 29 | PENDING | — |
-| 30 | PENDING | — |
+| 27 | PASS | Rechecked after source-message fix: question now travels only as part of Asgar/service record; historical addressing fair-play and prose clean |
+| 28 | PASS | Release cold-read/current-blob acceptance clean; final canon, prose, staging, knowledge and payoff checks passed |
+| 29 | PASS | Release cold-read/current-blob acceptance clean; final canon, prose, staging, knowledge and payoff checks passed |
+| 30 | PASS | Release cold-read/current-blob acceptance clean; final canon, prose, staging, knowledge and payoff checks passed |
 
 ## Interludes
 
@@ -70,4 +70,4 @@ Final release requires:
 
 ## Defects found in this release run
 
-None in chapters 1–27 or Interludes I–IV.
+Release-run defects found and fixed: Ch27 impossible direct message to source; Ch30 canonical final-line regression; Ch30 Asgar knowledge leak about elapsed 2039 time. All modified files require adversarial recheck before final READY.
