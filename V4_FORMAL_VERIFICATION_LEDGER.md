@@ -22,9 +22,9 @@ Status legend:
 | 1 | PASS | Opening knowledge/reaction chain and 2014/30 mirror verified; no unsupported callback | — | Ch30 opening cross-check PASS |
 | 2 | PASS | Katya/Rauf/operator reactions remain evidence-bounded; no premature mechanism knowledge | — | Ch1/3 boundary PASS |
 | 3 | PASS | CCTV/investigation dialogue preserves uncertainty; memory contamination explicitly controlled | — | Ch1/2 and Ch30 mirror PASS |
-| 4 | PENDING | — | — | — |
-| 5 | PENDING | — | — | — |
-| 6 | PENDING | — | — | — |
+| 4 | PASS | Voluntary risk decisions, Katya resistance, Rauf caution and operator limits all provenance-safe | — | Ch3/5 boundary PASS |
+| 5 | PASS | Entry decision remains Asgar's; Katya explicitly rejects shared responsibility; no future knowledge leak | — | Ch4/6 boundary PASS |
+| 6 | PASS | 2039 identity verification is mundane/evidence-based; family-photo memory is locally grounded | — | Ch5/7 boundary PASS |
 | 7 | PENDING | — | — | — |
 | 8 | PENDING | — | — | — |
 | 9 | PENDING | — | — | — |
@@ -51,6 +51,10 @@ Status legend:
 | 30 | PENDING | — | — | — |
 
 ## Findings log
+
+- Ch4: PASS — operator states uncertainty instead of promises; Katya/Rauf reactions remain ordinary and bounded by observed risk.
+- Ch5: PASS — Asgar's decision to enter is explicitly his; Katya says not to frame it as a joint decision.
+- Ch6: PASS — institutional identity checks precede acceptance; the older son's inability to stay still for a photo is anchored to the displayed blurred family photo, not an unsupported callback.
 
 - Ch1: PASS — older Asgar visual/gait/gesture and spoken mirror checked directly against Ch30.
 - Ch2: PASS — no character accepts the time anomaly beyond available evidence; operator's surprise at the unknown man is preserved.
