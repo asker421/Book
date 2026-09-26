@@ -61,7 +61,7 @@ Status legend:
 
 ## Findings log
 
-- Ch28: PASS — Watcher is an ancient solar-powered AI; Mirena reaches him only through an acoustic bridge into RETRO-1's existing phone; the service channel degrades and ends with `До связи`.
+- Ch28: PASS — Watcher is an ancient solar-powered AI; Mirena reaches him only through an acoustic bridge into RETRO-1's existing phone; the service channel degrades and ends with `До связи`. Current-main recheck after the parallel work-history continuity fix also PASS.
 - Ch29: PASS — source is the artificial receiving node, not Earth; no universal calendar answer is given; causal-loop origin and the empty-module/post-close mass logic are revealed here, not earlier.
 - Ch30: FIXED/rechecked — stadium scene mirrors Ch1, 2039 scene mirrors Ch8 with Asgar already outside the cabin; uniqueness of the preserved passenger load is explained only after the failed 2039 permanence; ending now closes RETRO-1 immediately and ends on the empty space where Katya was reachable.
 
