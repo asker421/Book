@@ -274,21 +274,32 @@
 
 # 10. Artistic audit state
 
-Текущие художественные blob финала на момент синхронизации документации:
+Финальный литературный SHA активного художественного корпуса: `983fa961152cf636063d4117c64710eaf0b5f37e`.
 
-- `chapters_v4/28.md` — `159fdc3e4b9800a2addddeb7d97c8d8d47e4aea0`;
+Текущие финальные blob:
+- `chapters_v4/28.md` — `00c0e52127020df4bf874f4b903f0a47984979ac`;
 - `chapters_v4/29.md` — `01b8b493929ad73478c90c7a3eaec1ddf7c23ab7`;
-- `chapters_v4/30.md` — `d535bdd5bf8ce3fdbd6c25a819b27aa801162315`.
-
-Старый READY-аудит 29–30 относился к другим blob и **не переносится автоматически**.
+- `chapters_v4/30.md` — `7d9e0261419da3898ed1c03c2b3419f39043044f`.
 
 Текущий полный роман-аудит:
-- документация V4: синхронизируется этим циклом;
-- художественный корпус: **AUDIT IN PROGRESS**;
-- текущий READY для 29–30: **RE-AUDIT REQUIRED** до фиксации нового протокола на этих SHA;
-- release-grade literary/canon verdict: **BLOCKED до завершения текущего полного аудита**.
+- 30 глав + 4 интерлюдии: **PASS/FIXED + post-fix recheck PASS**;
+- adversarial cross-book pass: **PASS**;
+- reveal / knowledge / physics / time / body / inventory / staging: **PASS**;
+- CRITICAL: **0**;
+- MAJOR: **0**;
+- fiction/canon verdict: **READY**.
 
-Это не означает, что главы 29–30 признаны плохими. Это означает только, что прежний формальный PASS был привязан к старым blob и больше не является доказательством.
+Artifact QA на том же literary SHA:
+- workflow run `36257857139`: **SUCCESS**;
+- V4-only release lock: **PASS**;
+- approved-cover lock: **PASS**;
+- EPUB: валиден, 35 секций, финальная глава содержит последнюю каноническую строку и последнюю правку без дубля Кати;
+- print interior: 385 страниц, формат 145×215 мм, PDF открывается и рендерится корректно;
+- publishing package: все внутренние SHA256 совпадают.
+
+Печатная оговорка: расчётная толщина блока в текущем build-script — около **19,25 мм**, утверждённая обложка имеет корешок **21,5 мм**. Перед физической печатью требуется сверка с шаблоном и бумагой конкретной типографии; это не блокирует литературный/электронный релиз.
+
+**RELEASE-GRADE LITERARY/CANON VERDICT: READY.**
 
 ---
 
