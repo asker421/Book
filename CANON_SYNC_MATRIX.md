@@ -290,7 +290,7 @@
 - fiction/canon verdict: **READY**.
 
 Artifact QA на том же literary SHA:
-- workflow run `36257857139`: **SUCCESS**;
+- workflow run `36258292411`: **SUCCESS**;
 - V4-only release lock: **PASS**;
 - approved-cover lock: **PASS**;
 - EPUB: валиден, 35 секций, финальная глава содержит последнюю каноническую строку и последнюю правку без дубля Кати;
