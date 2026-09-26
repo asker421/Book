@@ -70,4 +70,22 @@ Final release requires:
 
 ## Defects found in this release run
 
-Release-run defects found and fixed: Ch27 impossible direct message to source; Ch30 canonical final-line regression; Ch30 Asgar knowledge leak about elapsed 2039 time. All modified files require adversarial recheck before final READY.
+Release-run defects found and fixed: Ch27 impossible direct message to source; Ch30 canonical final-line regression; Ch30 Asgar knowledge leak about elapsed 2039 time; Ch30 duplicated Katya beat; stale final-beat documentation. All modified fiction files received adversarial recheck. Active canon drift scan: 0 hits.
+
+
+## Final acceptance
+
+- Literary corpus: READY.
+- 30 chapters: PASS.
+- 4 interludes: PASS.
+- Open CRITICAL defects: 0.
+- Open MAJOR defects: 0.
+- Active canon/document drift: 0.
+- Final literary SHA: `983fa961152cf636063d4117c64710eaf0b5f37e`.
+- Publishing workflow run: `36257857139` — SUCCESS.
+- Release-line lock: PASS.
+- Approved-cover lock: PASS.
+- EPUB artifact: built and uploaded.
+- Publishing package: built and uploaded.
+- Build output: 77,074 words, 385 pages.
+- Physical-print hold: calculated interior spine is 19.25 mm while approved wrap artwork uses 21.5 mm. Confirm final paper stock/binding spine with printer before sending the wrap to press.
