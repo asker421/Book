@@ -31,10 +31,10 @@ Checks:
 | 04.md | PASS | 433 lines: family/Rauf responses risk-first and ordinary; no mechanism knowledge beyond phone statements |
 | 04a.md | PASS | 98 lines: service discovers passenger only post-close; older-man trace remains unresolved |
 | 05.md | PASS | 569 lines: entry decision voluntary and contested; 2039 disbelief/verification sequence is mundane |
-| 06.md | PENDING | — |
-| 07.md | PENDING | — |
-| 08.md | PENDING | — |
-| 08a.md | PENDING | — |
+| 06.md | PASS | 458 lines: ordinary identity recovery; institutional verification precedes acceptance; memories self-contained |
+| 07.md | FIXED | 559 lines: unsupported stadium callback replaced with exact established Ch1 line; post-fix local reread PASS |
+| 08.md | PASS | 638 lines: Katya/service reactions stay knowledge-bounded; 2039 hook uses observable geometry only |
+| 08a.md | PASS | 76 lines: model-side knowledge sourced from telemetry and Asgar's report; no purpose/identity leak |
 | 09.md | PENDING | — |
 | 10.md | PENDING | — |
 | 11.md | PENDING | — |
@@ -63,3 +63,5 @@ Checks:
 ## Findings log
 
 - 01–05 + Interlude I: full literal line pass completed; no objective defect found.
+
+- Ch7 defect fixed: invented recalled quote «Главное — чтобы ты приехал» had no prior textual source; replaced with established Ch1 quote «Тогда не тяни. И воду не забудь, пожалуйста».
