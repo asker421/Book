@@ -35,10 +35,10 @@ Checks:
 | 07.md | FIXED | 559 lines: unsupported stadium callback replaced with exact established Ch1 line; post-fix local reread PASS |
 | 08.md | PASS | 638 lines: Katya/service reactions stay knowledge-bounded; 2039 hook uses observable geometry only |
 | 08a.md | PASS | 76 lines: model-side knowledge sourced from telemetry and Asgar's report; no purpose/identity leak |
-| 09.md | PENDING | — |
-| 10.md | PENDING | — |
-| 11.md | PENDING | — |
-| 12.md | PENDING | — |
+| 09.md | PASS | 537 lines: post-fix memory provenance clean; doctor/Inessa remain evidence-bounded |
+| 10.md | PASS | 551 lines: Martin labels hypotheses and provenance; no causal overclaim or future-knowledge leak |
+| 11.md | PASS | 553 lines: routines/memories grow on-page; archive-work dialogue preserves exact-speech discipline |
+| 12.md | PASS | 465 lines: safety/evacuation and entry decision remain voluntary; source terminology already established |
 | 13.md | PENDING | — |
 | 14.md | PENDING | — |
 | 15.md | PENDING | — |
@@ -65,3 +65,5 @@ Checks:
 - 01–05 + Interlude I: full literal line pass completed; no objective defect found.
 
 - Ch7 defect fixed: invented recalled quote «Главное — чтобы ты приехал» had no prior textual source; replaced with established Ch1 quote «Тогда не тяни. И воду не забудь, пожалуйста».
+
+- Ch9–12: literal line pass completed; no new objective defect found.
