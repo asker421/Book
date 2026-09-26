@@ -277,8 +277,8 @@
 Текущие художественные blob финала на момент синхронизации документации:
 
 - `chapters_v4/28.md` — `159fdc3e4b9800a2addddeb7d97c8d8d47e4aea0`;
-- `chapters_v4/29.md` — `3ae36ccfc7d66fc9fa5d31ba3db1aa4c25b3e510`;
-- `chapters_v4/30.md` — `46676202ef5e041e57dcea2343309db62378c15c`.
+- `chapters_v4/29.md` — `01b8b493929ad73478c90c7a3eaec1ddf7c23ab7`;
+- `chapters_v4/30.md` — `d535bdd5bf8ce3fdbd6c25a819b27aa801162315`.
 
 Старый READY-аудит 29–30 относился к другим blob и **не переносится автоматически**.
 
