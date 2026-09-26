@@ -46,9 +46,9 @@ Status legend:
 | 25 | PASS | External booth form is explicitly separated from independent physics history; external-mass research is not falsely tied to RETRO-1 | — | Ch24/26 boundary PASS |
 | 26 | PASS | Two-year isolation degrades memory; stadium-man resemblance is treated as contamination-prone hypothesis and first description is preserved separately | — | Ch25/27 + Ch1/3/19 cross-check PASS |
 | 27 | PASS | Historical addressing is introduced as generic prior art; RETRO-1 causal loop remains unconfirmed; no early uniqueness invariant | — | Ch26/28 boundary PASS |
-| 28 | PENDING | — | — | — |
-| 29 | PENDING | — | — | — |
-| 30 | PENDING | — | — | — |
+| 28 | PASS | Watcher/solar AI, acoustic bridge to Mirena, repair scene and final channel degradation match canon | — | Ch27/29 boundary PASS |
+| 29 | PASS | Source geography, no universal year, RETRO-1 causal-loop origin, empty-module design and historical aperture all revealed in correct order | — | Ch28/30 boundary PASS |
+| 30 | FIXED | 2014 and 2039 mirrors verified; post-2039 ending shortened, uniqueness invariant stated once, RETRO-1 closure made final with no sequel-hook | e73986e | Full post-fix reread PASS |
 
 ## Interludes verification
 
@@ -60,6 +60,10 @@ Status legend:
 | IV | 22a.md | PASS | Early 2014 trace is linked only as similar registration; witness account remains a separate source and identity is unresolved |
 
 ## Findings log
+
+- Ch28: PASS — Watcher is an ancient solar-powered AI; Mirena reaches him only through an acoustic bridge into RETRO-1's existing phone; the service channel degrades and ends with `До связи`.
+- Ch29: PASS — source is the artificial receiving node, not Earth; no universal calendar answer is given; causal-loop origin and the empty-module/post-close mass logic are revealed here, not earlier.
+- Ch30: FIXED/rechecked — stadium scene mirrors Ch1, 2039 scene mirrors Ch8 with Asgar already outside the cabin; uniqueness of the preserved passenger load is explained only after the failed 2039 permanence; ending now closes RETRO-1 immediately and ends on the empty space where Katya was reachable.
 
 - Ch25: FIXED/rechecked — early physics can develop independently, but the chapter no longer claims the concrete RETRO-1 architecture is technically independent of its historical trace; this preserves the Ch29 causal-loop reveal.
 - Ch26: PASS — older-man identity is explicitly treated as a hypothesis vulnerable to memory reconstruction; Asgar asks Mirena to preserve his original description separately.
@@ -110,3 +114,7 @@ Status legend:
 - Ch2: PASS — no character accepts the time anomaly beyond available evidence; operator's surprise at the unknown man is preserved.
 - Ch3: PASS — Rauf distinguishes camera evidence from Asgar's claims; image enhancement is explicitly treated as unreliable for identification.
 
+
+## Completion
+
+Formal sequential verification completed for all 30 chapters and all 4 interludes. Every chapter/interlude is now PASS or FIXED with post-fix recheck PASS.
