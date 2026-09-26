@@ -43,9 +43,9 @@ Checks:
 | 14.md | PASS | PASS | Local route/safety knowledge is earned; temporal-anomaly label comes only from machine protocol |
 | 15.md | PASS | PASS | Protocol provenance investigated on-page; identity/cause/purpose remain explicitly unknown |
 | 15a.md | PASS | PASS | Mirena handoff is explicit; Asgar-reported facts retain attribution; operator cannot choose for him |
-| 16.md | PENDING | — |
-| 17.md | PENDING | — |
-| 18.md | PENDING | — |
+| 16.md | PASS | PASS | Mirena knowledge fully sourced by handoff/service telemetry/Asgar report; external scene remains invisible to her |
+| 17.md | PASS | PASS | Arved/Tayra first-contact reactions are risk-first and skeptical; no genre acceptance |
+| 18.md | PASS | PASS | Sayma separates prior testimony, source chain, retelling and hypothesis; remembered water exchange traced to Ch1 |
 | 19.md | PENDING | — |
 | 20.md | PENDING | — |
 | 21.md | PENDING | — |
@@ -69,3 +69,5 @@ Checks:
 - Ch9–12: literal line pass completed; no new objective defect found.
 
 - Ch13–15 + Interlude III: full literal line pass completed; no objective defect found.
+
+- Ch16–18: full literal line pass completed; suspicious Ch18 water callback verified against Ch1 and is genuine.
