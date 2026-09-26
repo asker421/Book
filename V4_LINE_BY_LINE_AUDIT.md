@@ -109,3 +109,5 @@ All 30 chapters and 4 interludes were re-read literally from the current corpus 
 - Fresh-main final-block SHA recheck after concurrent edits: PASS — 27 `5c61f97c...`, 28 `db88dc00...`, 29 `01b8b493...`, 30 `87d06a4b...` are the blobs actually read in the completed audit.
 
 - Ch21–23 + Interlude IV: full literal line pass completed; no objective defect found.
+
+- Ch25 defect fixed: Olmer's «связи ... не существует» overclaimed beyond the archive evidence and conflicted with the later causal-loop reveal; changed to «связь ... не прослеживается».
