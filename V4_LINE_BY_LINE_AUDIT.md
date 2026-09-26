@@ -53,8 +53,8 @@ Checks:
 | 22a.md | PASS | PASS | Similar pre-close signal grouped statistically only; older man remains unidentified; Asgar report kept separate |
 | 23.md | PASS | PASS | Tessa/Asgar explicitly correct overstatement about finished separation; source uncertainty and service limits preserved |
 | 24.md | PASS | PASS | Olmer verifies local facts first; Asgar identifies provenance of every RETRO claim; Baku memories are self-contained |
-| 25.md | PENDING | — |
-| 26.md | PENDING | — |
+| 25.md | PASS | 391 lines: red-form lineage explicitly separated from physics/provenance; archive prevents desired inference |
+| 26.md | PASS | 477 lines: survival continuity coherent; stadium-self hypothesis remains contaminated/uncertain and first description is preserved |
 | 27.md | PENDING | — |
 | 28.md | PENDING | — |
 | 29.md | PENDING | — |
@@ -77,3 +77,5 @@ Checks:
 - Ch19–21: full literal line pass completed; no objective defect found.
 
 - Ch22–24 + Interlude IV: full literal line pass completed; no objective defect found.
+
+- Ch21–26 + Interlude IV: full literal line pass completed; no objective defect found.
