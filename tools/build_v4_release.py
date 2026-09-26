@@ -151,6 +151,10 @@ def esc(s): return html.escape(s,quote=False).replace("—","&#8212;")
 class BookPDF:
     def __init__(self,path):
         self.c=canvas.Canvas(str(path),pagesize=(PAGE_W,PAGE_H),pageCompression=1)
+        self.c.setTitle(TITLE)
+        self.c.setAuthor(AUTHOR)
+        self.c.setSubject("Роман")
+        self.c.setCreator("asker421/Book V4 publishing pipeline")
         self.page=0; self.started_body=False; self.first_page_of_section=False
     def margins(self):
         # odd = recto, binding edge left; even = verso, binding edge right
@@ -315,6 +319,8 @@ def build_docx(secs):
                 if first: q.paragraph_format.first_line_indent=Mm(0)
                 first=False
     cp=d.core_properties; cp.title=TITLE; cp.author=AUTHOR; cp.subject="Роман"; cp.keywords=", ".join(SUBJECTS)
+    build_dt=datetime.now(timezone.utc).replace(tzinfo=None)
+    cp.created=build_dt; cp.modified=build_dt
     d.save(p); return p
 
 def build_cover(pages):
@@ -341,6 +347,10 @@ def build_cover(pages):
     wrap_image.save(temp, "JPEG", quality=95, optimize=True)
     try:
         c = canvas.Canvas(str(pdf), pagesize=(total_w * mm, total_h * mm), pageCompression=1)
+        c.setTitle(f"{TITLE} — полная обложка")
+        c.setAuthor(AUTHOR)
+        c.setSubject("Полная печатная обложка")
+        c.setCreator("asker421/Book V4 publishing pipeline")
         c.drawImage(str(temp), 0, 0, width=total_w * mm, height=total_h * mm,
                     preserveAspectRatio=False, mask="auto")
         c.showPage()
@@ -385,7 +395,7 @@ def main():
       "word_count":total_words,"print_pages":pages,"isbn":None,"publisher":None,
       "cover_spine_mm":spine,"spine_assumption":"Утверждённый автором artwork использует корешок 21.5 мм. Если шаблон типографии требует другую ширину, переделывается artwork, а не масштабируется готовая обложка.",
       "cover_source":"assets/cover_wrap.png (единственный утверждённый источник)","cover_source_git_blob_sha1":approved_cover.APPROVED_BLOB_SHA1,
-      "source":"asker421/Book main, chapters_v4, final publishing build 2026-09-20","build_revision":build_revision(),
+      "source":f"asker421/Book main, chapters_v4, final publishing build {datetime.now(timezone.utc).date().isoformat()}","build_revision":build_revision(),
       "description":DESCRIPTION,"subjects":SUBJECTS
     }
     meta_p=OUT/"publication_metadata.json"; meta_p.write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding="utf-8")
