@@ -52,9 +52,9 @@ Final release requires:
 | 22 | PASS | Release cold-read/current-blob acceptance clean across prose, voice, motivation, knowledge, physics and continuity |
 | 23 | PASS | Release cold-read/current-blob acceptance clean across prose, voice, motivation, knowledge, physics and continuity |
 | 24 | PASS | Release cold-read/current-blob acceptance clean across prose, voice, motivation, knowledge, physics and continuity |
-| 25 | PENDING | — |
-| 26 | PENDING | — |
-| 27 | PENDING | — |
+| 25 | PASS | Release cold-read: archive provenance, loop foreshadowing and prose clean after causal-line fix |
+| 26 | PASS | Release cold-read: survival progression, body state and stadium-man hypothesis/memory contamination clean |
+| 27 | PASS | Release cold-read: historical addressing fair-play without stealing final reveal; motivation and prose clean |
 | 28 | PENDING | — |
 | 29 | PENDING | — |
 | 30 | PENDING | — |
@@ -70,4 +70,4 @@ Final release requires:
 
 ## Defects found in this release run
 
-None in chapters 1–21 or Interludes I–III.
+None in chapters 1–27 or Interludes I–IV.
