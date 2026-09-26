@@ -56,9 +56,9 @@ Checks:
 | 25.md | PASS | 391 lines: red-form lineage explicitly separated from physics/provenance; archive prevents desired inference |
 | 26.md | PASS | 477 lines: survival continuity coherent; stadium-self hypothesis remains contaminated/uncertain and first description is preserved |
 | 27.md | PASS | PASS | Historical addressing introduced with limits; loop example is generic; source question travels only with Asgar/service record |
-| 28.md | PENDING | — |
-| 29.md | PENDING | — |
-| 30.md | PENDING | — |
+| 28.md | PASS | PASS | Watcher/Mirena acoustic bridge, repair, injury and farewell line-by-line clean; new rain memory is self-contained |
+| 29.md | PASS | PASS | Receiving-side/source, no universal year, RETRO-1 loop and 2014 access revealed only from Avelina/project record |
+| 30.md | PASS | PASS | Ch1 and Ch8 mirrors verified against source lines; no other-POV leak; uniqueness explanation occurs only after failed 2039 permanence |
 
 ## Findings log
 
@@ -81,3 +81,5 @@ Checks:
 - Ch21–26 + Interlude IV: full literal line pass completed; no objective defect found.
 
 - Ch25–27: full literal line pass completed; no new objective defect found.
+
+- Ch28–30: full literal line pass completed. Ch30 mirror dialogue/staging independently cross-checked against Ch1 and Ch8.
