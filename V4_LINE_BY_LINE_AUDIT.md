@@ -39,10 +39,10 @@ Checks:
 | 10.md | PASS | 551 lines: Martin labels hypotheses and provenance; no causal overclaim or future-knowledge leak |
 | 11.md | PASS | 553 lines: routines/memories grow on-page; archive-work dialogue preserves exact-speech discipline |
 | 12.md | PASS | 465 lines: safety/evacuation and entry decision remain voluntary; source terminology already established |
-| 13.md | PENDING | — |
-| 14.md | PENDING | — |
-| 15.md | PENDING | — |
-| 15a.md | PENDING | — |
+| 13.md | PASS | PASS | Local first contact, calendar verification and survival reactions remain mundane; right-knee injury tracked |
+| 14.md | PASS | PASS | Local route/safety knowledge is earned; temporal-anomaly label comes only from machine protocol |
+| 15.md | PASS | PASS | Protocol provenance investigated on-page; identity/cause/purpose remain explicitly unknown |
+| 15a.md | PASS | PASS | Mirena handoff is explicit; Asgar-reported facts retain attribution; operator cannot choose for him |
 | 16.md | PENDING | — |
 | 17.md | PENDING | — |
 | 18.md | PENDING | — |
@@ -67,3 +67,5 @@ Checks:
 - Ch7 defect fixed: invented recalled quote «Главное — чтобы ты приехал» had no prior textual source; replaced with established Ch1 quote «Тогда не тяни. И воду не забудь, пожалуйста».
 
 - Ch9–12: literal line pass completed; no new objective defect found.
+
+- Ch13–15 + Interlude III: full literal line pass completed; no objective defect found.
