@@ -34,9 +34,9 @@ Final release requires:
 | 4 | PASS | Cold-read: Asgar/Katya conflict remains morally frictional; service limits clean |
 | 5 | PASS | Cold-read: entry decision voluntary; physical risk established; no coercive rewrite |
 | 6 | PASS | Cold-read: 2039 identity/administrative sequence and family-memory grounding clean |
-| 7 | PENDING | — |
-| 8 | PENDING | — |
-| 9 | PENDING | — |
+| 7 | PASS | Cold-read: Katya reunion, archive reactions, early 2039 hook and emotional continuity clean |
+| 8 | PASS | Cold-read: Katya/Asgar conflict, source terminology, 2039 geometry and dialogue realism clean |
+| 9 | PASS | Cold-read: Inessa/doctor post-fix dialogue, grief/search sequence, memory provenance and prose clean |
 | 10 | PENDING | — |
 | 11 | PENDING | — |
 | 12 | PENDING | — |
@@ -63,11 +63,11 @@ Final release requires:
 
 | Interlude | File | Status |
 | --- | --- | --- |
-| I | 04a.md | PENDING |
-| II | 08a.md | PENDING |
+| I | 04a.md | PASS |
+| II | 08a.md | PASS |
 | III | 15a.md | PENDING |
 | IV | 22a.md | PENDING |
 
 ## Defects found in this release run
 
-None in chapters 1–6.
+None in chapters 1–9 or Interludes I–II.
