@@ -31,9 +31,9 @@ Status legend:
 | 10 | PASS | Martin keeps hypotheses separate from evidence; Inessa remains safety-bounded; no knowledge leak | — | Ch9/11 boundary PASS |
 | 11 | PASS | Archive/translation work explicitly preserves source provenance; routines grow on-page | — | Ch10/12 boundary PASS |
 | 12 | PASS | Safety decisions and entry choice remain voluntary; source question is already established | — | Ch11/13 boundary PASS |
-| 13 | PENDING | — | — | — |
-| 14 | PENDING | — | — | — |
-| 15 | PENDING | — | — | — |
+| 13 | PASS | Locals verify threat/date before accepting Asgar's story; no anomaly expertise is assumed | — | Ch12/14 boundary PASS |
+| 14 | PASS | Local survival knowledge remains local; 12m disagreement is observed, not interpreted as future canon | — | Ch13/15 boundary PASS |
+| 15 | PASS | Temporal-anomaly protocol origin is derived on-page from machine archive; operator explicitly lacks prior knowledge | — | Ch14/16 boundary PASS |
 | 16 | PENDING | — | — | — |
 | 17 | PENDING | — | — | — |
 | 18 | PENDING | — | — | — |
@@ -51,6 +51,10 @@ Status legend:
 | 30 | PENDING | — | — | — |
 
 ## Findings log
+
+- Ch13: PASS — Radmila/Damir/Nazar treat Asgar as an unknown person in a dangerous environment and verify calendar claims rather than adopting them.
+- Ch14: PASS — all technical behavior comes from local survival practice and direct measurements; ~12m disagreement is merely observed.
+- Ch15: PASS — `temporal anomaly` reveal is source-traced from a surviving civil protocol; identity and causation remain explicitly unknown.
 
 - Ch10: PASS — Martin labels resemblance vs causation and keeps Asgar's testimony separate from research conclusions.
 - Ch11: PASS — source-provenance discipline is explicit; no unsupported biographical callback found.
