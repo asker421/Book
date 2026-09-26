@@ -25,9 +25,9 @@ Status legend:
 | 4 | PASS | Voluntary risk decisions, Katya resistance, Rauf caution and operator limits all provenance-safe | — | Ch3/5 boundary PASS |
 | 5 | PASS | Entry decision remains Asgar's; Katya explicitly rejects shared responsibility; no future knowledge leak | — | Ch4/6 boundary PASS |
 | 6 | PASS | 2039 identity verification is mundane/evidence-based; family-photo memory is locally grounded | — | Ch5/7 boundary PASS |
-| 7 | PENDING | — | — | — |
-| 8 | PENDING | — | — | — |
-| 9 | PENDING | — | — | — |
+| 7 | PASS | Katya/family/archive knowledge develops from lived history and verified records; no premature mechanism claims | — | Ch6/8 boundary PASS |
+| 8 | PASS | 2039 mirror matches Ch30; source concept introduced with explicit limits; family reactions remain human | — | Ch7/9 + Ch30 mirror PASS |
+| 9 | FIXED | Inessa knowledge leak, Asgar age-memory reset, and unsupported stair memory repaired | e25abe6; 68447b3; d9dbadf | Full post-fix reread PASS |
 | 10 | PENDING | — | — | — |
 | 11 | PENDING | — | — | — |
 | 12 | PENDING | — | — | — |
@@ -51,6 +51,10 @@ Status legend:
 | 30 | PENDING | — | — | — |
 
 ## Findings log
+
+- Ch7: PASS — Katya's 25-year knowledge is lived experience; institutions still verify rather than believe.
+- Ch8: PASS — external 2039 materialization, silent acoustics and spatial collapse directly match Ch30; source is defined without implying construction site or selectable date.
+- Ch9: FIXED/rechecked — Inessa now asks what Asgar means by transition; doctor treats non-aging as already known; unsupported stair callback removed and replaced with locally grounded family-photo memory.
 
 - Ch4: PASS — operator states uncertainty instead of promises; Katya/Rauf reactions remain ordinary and bounded by observed risk.
 - Ch5: PASS — Asgar's decision to enter is explicitly his; Katya says not to frame it as a joint decision.
