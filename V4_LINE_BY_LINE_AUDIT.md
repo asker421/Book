@@ -25,12 +25,12 @@ Checks:
 
 | File | Status | Findings |
 | --- | --- | --- |
-| 01.md | PENDING | — |
-| 02.md | PENDING | — |
-| 03.md | PENDING | — |
-| 04.md | PENDING | — |
-| 04a.md | PENDING | — |
-| 05.md | PENDING | — |
+| 01.md | PASS | 232 lines: young-Asgar reactions mundane; older-Asgar seed observational only; no future knowledge |
+| 02.md | PASS | 443 lines: date/disappearance verified through phone, Katya, guard, records; Katya/Rauf stay evidence-bounded |
+| 03.md | PASS | 355 lines: CCTV provenance and memory contamination handled explicitly; no overclaim from enhanced image |
+| 04.md | PASS | 433 lines: family/Rauf responses risk-first and ordinary; no mechanism knowledge beyond phone statements |
+| 04a.md | PASS | 98 lines: service discovers passenger only post-close; older-man trace remains unresolved |
+| 05.md | PASS | 569 lines: entry decision voluntary and contested; 2039 disbelief/verification sequence is mundane |
 | 06.md | PENDING | — |
 | 07.md | PENDING | — |
 | 08.md | PENDING | — |
@@ -61,3 +61,5 @@ Checks:
 | 30.md | PENDING | — |
 
 ## Findings log
+
+- 01–05 + Interlude I: full literal line pass completed; no objective defect found.
