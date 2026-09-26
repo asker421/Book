@@ -100,4 +100,8 @@ Checks:
 - 4/4 interludes checked line by line.
 - New objective defects found by this pass: 1.
 - Fixed: Ch7 unsupported Katya callback.
-- Open objective defects: 0 pending post-fix sweep.
+- Open objective defects: 0.
+- Post-fix sweep of Ch1↔Ch7 and later water/cake/Katya callbacks: PASS.
+
+## Final line-by-line verdict
+All 30 chapters and 4 interludes were re-read literally from the current corpus with previous PASS judgments ignored. One new objective continuity defect was found (Ch7 unsupported recalled quote), fixed, and rechecked against Ch1 and later callbacks. No other objective knowledge-provenance, future-knowledge, false-memory, ordinary-reaction, body/object-state, reveal-order, or sentence-logic defect remains known after this pass.
