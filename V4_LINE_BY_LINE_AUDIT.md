@@ -85,3 +85,5 @@ Checks:
 - Ch28–30: full literal line pass completed. Ch30 mirror dialogue/staging independently cross-checked against Ch1 and Ch8.
 
 - Ch21–23 + Interlude IV: full literal line pass completed; no objective defect found. Ch23 domestic-memory callback traced to Ch1 line 55.
+
+- Ch24–26: full literal line pass completed; no objective defect found.
