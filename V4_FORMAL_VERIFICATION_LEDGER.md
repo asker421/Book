@@ -37,9 +37,9 @@ Status legend:
 | 16 | PASS | Mirena knowledge comes from explicit handoff/service telemetry; date choice and sensing limits remain bounded | — | Interlude III + Ch15/17 boundary PASS |
 | 17 | PASS | Ar locals treat Asgar as an unverified risk; Arved checks claims before integration | — | Ch16/18 boundary PASS |
 | 18 | PASS | Sayma separates source, retelling, translation and hypothesis; 'return to first door' exposed as later borrowing | — | Ch17/19 boundary PASS |
-| 19 | PENDING | — | — | — |
-| 20 | PENDING | — | — | — |
-| 21 | PENDING | — | — | — |
+| 19 | PASS | Stadium-man resemblance remains weak personal hypothesis; scar and visual traits are previously grounded | — | Ch18/20 + Ch1/3 cross-check PASS |
+| 20 | PASS | Stay/continue choice is informed and voluntary; Mirena, Tayra and Arved do not decide for Asgar | — | Ch19/21 boundary PASS |
+| 21 | PASS | Tessa uses only local measurements + Asgar reports; no access to operator project knowledge; endpoint remains unknown | — | Ch20/22 boundary PASS |
 | 22 | PENDING | — | — | — |
 | 23 | PENDING | — | — | — |
 | 24 | PENDING | — | — | — |
@@ -60,6 +60,10 @@ Status legend:
 | IV | 22a.md | PENDING | — |
 
 ## Findings log
+
+- Ch19: PASS — scar creates a plausible resemblance cue only; sedina/hudoba were already observed in Ch1 and explicitly recalled in Ch3.
+- Ch20: PASS — Mirena presents both real options without steering; Tayra states her preference openly; Arved does not expel Asgar.
+- Ch21: PASS — Tessa distinguishes local measurement, model inference and Asgar's terminology; she does not know project purpose, source location or operator-side mechanics.
 
 - Ch16: PASS — Mirena's service knowledge is fully sourced by Interlude III handoff and live contour data; she cannot see the outside scene or select dates.
 - Ch17: PASS — Tayra/Arved verify danger, calendar and identity claims rather than treating time travel as established fact.
