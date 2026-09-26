@@ -49,10 +49,10 @@ Checks:
 | 19.md | PASS | 480 lines: integration/conflict/accident reactions mundane; unexplained utility fault not blamed on Asgar |
 | 20.md | PASS | 477 lines: separation option presented neutrally; Mirena refuses to choose for him; Asgar's choice is earned |
 | 21.md | PASS | PASS | arrivals office and Tessa explicitly separate Asgar claims from measurements/model; endpoint and return purpose remain unknown |
-| 22.md | PENDING | — |
-| 22a.md | PENDING | — |
-| 23.md | PENDING | — |
-| 24.md | PENDING | — |
+| 22.md | PASS | PASS | Project-purpose reveal is sourced from newly raised project archive; Mirena admits prior ignorance; conflict remains human |
+| 22a.md | PASS | PASS | Similar pre-close signal grouped statistically only; older man remains unidentified; Asgar report kept separate |
+| 23.md | PASS | PASS | Tessa/Asgar explicitly correct overstatement about finished separation; source uncertainty and service limits preserved |
+| 24.md | PASS | PASS | Olmer verifies local facts first; Asgar identifies provenance of every RETRO claim; Baku memories are self-contained |
 | 25.md | PENDING | — |
 | 26.md | PENDING | — |
 | 27.md | PENDING | — |
@@ -75,3 +75,5 @@ Checks:
 - Ch16–20: full literal line pass completed; no objective defect found.
 
 - Ch19–21: full literal line pass completed; no objective defect found.
+
+- Ch22–24 + Interlude IV: full literal line pass completed; no objective defect found.
