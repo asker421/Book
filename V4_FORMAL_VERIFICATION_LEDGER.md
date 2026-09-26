@@ -19,9 +19,9 @@ Status legend:
 
 | Chapter | Status | Findings | Fix commit | Recheck |
 | ---: | --- | --- | --- | --- |
-| 1 | PENDING | — | — | — |
-| 2 | PENDING | — | — | — |
-| 3 | PENDING | — | — | — |
+| 1 | PASS | Opening knowledge/reaction chain and 2014/30 mirror verified; no unsupported callback | — | Ch30 opening cross-check PASS |
+| 2 | PASS | Katya/Rauf/operator reactions remain evidence-bounded; no premature mechanism knowledge | — | Ch1/3 boundary PASS |
+| 3 | PASS | CCTV/investigation dialogue preserves uncertainty; memory contamination explicitly controlled | — | Ch1/2 and Ch30 mirror PASS |
 | 4 | PENDING | — | — | — |
 | 5 | PENDING | — | — | — |
 | 6 | PENDING | — | — | — |
@@ -51,4 +51,8 @@ Status legend:
 | 30 | PENDING | — | — | — |
 
 ## Findings log
+
+- Ch1: PASS — older Asgar visual/gait/gesture and spoken mirror checked directly against Ch30.
+- Ch2: PASS — no character accepts the time anomaly beyond available evidence; operator's surprise at the unknown man is preserved.
+- Ch3: PASS — Rauf distinguishes camera evidence from Asgar's claims; image enhancement is explicitly treated as unreliable for identification.
 
