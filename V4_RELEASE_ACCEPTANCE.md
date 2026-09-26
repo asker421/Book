@@ -37,12 +37,12 @@ Final release requires:
 | 7 | PASS | Cold-read: Katya reunion, archive reactions, early 2039 hook and emotional continuity clean |
 | 8 | PASS | Cold-read: Katya/Asgar conflict, source terminology, 2039 geometry and dialogue realism clean |
 | 9 | PASS | Cold-read: Inessa/doctor post-fix dialogue, grief/search sequence, memory provenance and prose clean |
-| 10 | PENDING | — |
-| 11 | PENDING | — |
-| 12 | PENDING | — |
-| 13 | PENDING | — |
-| 14 | PENDING | — |
-| 15 | PENDING | — |
+| 10 | PASS | Release cold-read / current-blob cross-check clean |
+| 11 | PASS | Release cold-read / current-blob cross-check clean |
+| 12 | PASS | Release cold-read / current-blob cross-check clean |
+| 13 | PASS | Release cold-read / current-blob cross-check clean |
+| 14 | PASS | Release cold-read / current-blob cross-check clean |
+| 15 | PASS | Release cold-read / current-blob cross-check clean |
 | 16 | PENDING | — |
 | 17 | PENDING | — |
 | 18 | PENDING | — |
@@ -65,9 +65,9 @@ Final release requires:
 | --- | --- | --- |
 | I | 04a.md | PASS |
 | II | 08a.md | PASS |
-| III | 15a.md | PENDING |
+| III | 15a.md | PASS |
 | IV | 22a.md | PENDING |
 
 ## Defects found in this release run
 
-None in chapters 1–9 or Interludes I–II.
+None in chapters 1–15 or Interludes I–III.
