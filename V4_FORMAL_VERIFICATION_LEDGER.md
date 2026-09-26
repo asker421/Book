@@ -34,9 +34,9 @@ Status legend:
 | 13 | PASS | Locals verify threat/date before accepting Asgar's story; no anomaly expertise is assumed | — | Ch12/14 boundary PASS |
 | 14 | PASS | Local survival knowledge remains local; 12m disagreement is observed, not interpreted as future canon | — | Ch13/15 boundary PASS |
 | 15 | PASS | Temporal-anomaly protocol origin is derived on-page from machine archive; operator explicitly lacks prior knowledge | — | Ch14/16 boundary PASS |
-| 16 | PENDING | — | — | — |
-| 17 | PENDING | — | — | — |
-| 18 | PENDING | — | — | — |
+| 16 | PASS | Mirena knowledge comes from explicit handoff/service telemetry; date choice and sensing limits remain bounded | — | Interlude III + Ch15/17 boundary PASS |
+| 17 | PASS | Ar locals treat Asgar as an unverified risk; Arved checks claims before integration | — | Ch16/18 boundary PASS |
+| 18 | PASS | Sayma separates source, retelling, translation and hypothesis; 'return to first door' exposed as later borrowing | — | Ch17/19 boundary PASS |
 | 19 | PENDING | — | — | — |
 | 20 | PENDING | — | — | — |
 | 21 | PENDING | — | — | — |
@@ -50,7 +50,23 @@ Status legend:
 | 29 | PENDING | — | — | — |
 | 30 | PENDING | — | — | — |
 
+## Interludes verification
+
+| Interlude | File | Status | Findings |
+| --- | --- | --- | --- |
+| I | 04a.md | PASS | Service discovers unplanned living mass only after door closure; unknown earlier man remains unresolved observation |
+| II | 08a.md | PASS | Service can model Asgar's mass contribution but does not yet know project purpose or safe passenger separation |
+| III | 15a.md | PASS | Mirena receives explicit handoff; Korvin enforces informed choice and operator knowledge limits |
+| IV | 22a.md | PENDING | — |
+
 ## Findings log
+
+- Ch16: PASS — Mirena's service knowledge is fully sourced by Interlude III handoff and live contour data; she cannot see the outside scene or select dates.
+- Ch17: PASS — Tayra/Arved verify danger, calendar and identity claims rather than treating time travel as established fact.
+- Ch18: PASS — Sayma preserves provenance at every step; the legendary return-home ending is explicitly a later textual borrowing, not prophecy.
+- Interlude I: PASS — first detection of extra living mass is shown operationally after closure; no design interpretation is available yet.
+- Interlude II: PASS — model subtraction of Asgar's mass is not confused with knowing why the apparatus was designed or how to separate him safely.
+- Interlude III: PASS — Mirena's knowledge and ethical operating frame are transferred on-page.
 
 - Ch13: PASS — Radmila/Damir/Nazar treat Asgar as an unknown person in a dangerous environment and verify calendar claims rather than adopting them.
 - Ch14: PASS — all technical behavior comes from local survival practice and direct measurements; ~12m disagreement is merely observed.
