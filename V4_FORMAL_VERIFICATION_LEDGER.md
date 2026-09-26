@@ -61,6 +61,11 @@ Status legend:
 
 ## Findings log
 
+- Ch22: PASS — original mission is not treated as previously known; engineers retrieve the old project only after Asgar asks what returns.
+- Interlude IV: PASS — early pre-closure signal is grouped statistically only; identity and cause remain unknown, with Asgar's account kept separate.
+- Ch23: PASS — Tessa receives project facts through Asgar. The key/door/barefoot-Katya memory is directly grounded in Ch1.
+
+
 - Ch22: PASS — empty autonomous module, service volume, post-door mass registration and self-return are revealed only after Mirena/engineers reopen the old project.
 - Interlude IV: PASS — pre-closure anomaly is grouped by measurement only; the older man remains an unresolved observation, not an identified Asgar.
 - Ch23: PASS — Asgar explicitly corrects his own summary where it overstates the state of separation work; source/infrastructure uncertainty is preserved.
